@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import mammoth from 'mammoth';
 import { rateLimit } from '@/lib/rateLimit';
 import { z } from 'zod';
-const pdf = require('pdf-parse');
+const pdfParse = require('pdf-parse');
+const pdf = typeof pdfParse === 'function' ? pdfParse : (pdfParse.default || pdfParse);
 
 const parseUrlSchema = z.object({
   url: z.string().url('Invalid remote file URL'),
