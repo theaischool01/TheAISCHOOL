@@ -139,7 +139,7 @@ export default function PartnersSection() {
               <h3 className="text-3xl font-black text-gray-950 tracking-tight leading-tight">
                 Program Partners
               </h3>
-              <p className="text-sm font-semibold text-neutral-500 max-w-sm">
+              <p className="text-sm font-semibold text-slate-700 max-w-sm">
                 Strategic organizations supporting innovation, research, and AI education initiatives.
               </p>
             </div>
@@ -180,10 +180,10 @@ export default function PartnersSection() {
             <h3 className="text-4xl md:text-5xl font-black text-gray-950 tracking-tight uppercase leading-none">
               Our Eco System Partners
             </h3>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-neutral-500 tracking-tight uppercase leading-none">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-slate-700 tracking-tight uppercase leading-none">
               Make It Possible
             </h3>
-            <p className="text-sm font-semibold text-neutral-400 mt-4 max-w-sm">
+            <p className="text-sm font-semibold text-slate-600 mt-4 max-w-sm">
               Connecting our curriculum and talent network directly with global industrial leaders.
             </p>
           </div>

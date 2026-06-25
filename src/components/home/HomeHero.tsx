@@ -48,7 +48,7 @@ export default function HomeHero() {
     <section 
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full min-h-[92vh] bg-white text-[#171717] flex flex-col justify-between pt-24 pb-12 overflow-hidden border-b border-neutral-150/50 select-none z-10"
+      className="relative w-full min-h-[80vh] bg-white text-[#171717] flex flex-col justify-between pt-14 pb-12 overflow-hidden border-b border-neutral-150/50 select-none z-10"
     >
       {/* 1. Engineering paper style background grid (0.5px lines, opacity 4%) */}
       <div 
@@ -118,10 +118,9 @@ export default function HomeHero() {
           </div>
 
           {/* Description */}
-          <p className="text-neutral-500 text-sm md:text-base leading-relaxed font-sans font-medium max-w-lg">
+          <p className="text-gray-700 text-sm md:text-base leading-relaxed font-sans font-medium max-w-lg">
             At The AI School, we don't just teach. We empower students, professionals, and founders to build real products, resolve real-world challenges, and architect the AI ecosystem.
           </p>
-
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a
@@ -141,53 +140,94 @@ export default function HomeHero() {
           </div>
         </div>
 
-        {/* Right Side (55% on desktop - Premium Grounded Center Image + Orbit Framework) */}
-        <div className="lg:col-span-7 flex justify-center items-center relative min-h-[380px] sm:min-h-[480px] lg:min-h-[520px] w-full overflow-visible">
+        {/* Right Side (55% on desktop - Interactive Knowledge Transformation Flow Engine) */}
+        <div className="lg:col-span-7 flex justify-center items-center relative min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] w-full overflow-visible select-none">
           {mounted && (
-            <>
-              {/* Static Premium Orbit SVG Layer */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-                <svg 
-                  className="w-[580px] h-[580px] min-w-[580px] min-h-[580px] opacity-100" 
-                  viewBox="0 0 600 600"
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* Concentric Orbit Rings (Extremely thin, very light red) */}
-                  {/* Inner Ring (Radius: 90px) */}
-                  <circle cx="300" cy="300" r="90" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.12" />
-                  {/* Medium Ring (Radius: 155px) */}
-                  <circle cx="300" cy="300" r="155" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.12" />
-                  {/* Outer Ring (Radius: 220px) */}
-                  <circle cx="300" cy="300" r="220" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.12" />
-
-                  {/* Elegant Intersecting Bezier Curves (Satellite trajectories) */}
-                  <path d="M110 200 C 200 240, 400 130, 490 270" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.08" />
-                  <path d="M170 470 C 230 360, 430 430, 510 210" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.06" />
-
-                  {/* Orbit Nodes (Different sizes, filled vs outlined, 70-90% opacity) */}
-                  {/* Inner Ring Nodes (R = 90) */}
-                  <circle cx="363.6" cy="363.6" r="3" stroke="#EE1C25" strokeWidth="1.5" strokeOpacity="0.8" fill="none" />
-                  <circle cx="231.3" cy="242.1" r="2" fill="#EE1C25" fillOpacity="0.85" />
-
-                  {/* Medium Ring Nodes (R = 155) */}
-                  <circle cx="190.4" cy="409.6" r="4" fill="#EE1C25" fillOpacity="0.8" />
-                  <circle cx="434.2" cy="222.5" r="3" stroke="#EE1C25" strokeWidth="1.5" strokeOpacity="0.75" fill="none" />
-                  <circle cx="353.0" cy="154.3" r="2" fill="#EE1C25" fillOpacity="0.85" />
-
-                  {/* Outer Ring Nodes (R = 220) */}
-                  <circle cx="512.5" cy="357.0" r="4" stroke="#EE1C25" strokeWidth="1.5" strokeOpacity="0.8" fill="none" />
-                  <circle cx="83.3" cy="261.8" r="3" fill="#EE1C25" fillOpacity="0.8" />
-                </svg>
+            <div className="relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] lg:w-[580px] lg:h-[580px] flex items-center justify-center">
+              
+              {/* Subtle background glow & engineering grids */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                <div className="absolute w-[80%] h-[80%] bg-[radial-gradient(circle,rgba(255,255,255,1)_0%,rgba(238,28,37,0.008)_40%,rgba(238,28,37,0.001)_75%,transparent_100%)] rounded-full blur-[60px]" />
               </div>
 
-              {/* Central Logo composition */}
-              <div className="relative w-full max-w-[170px] sm:max-w-[215px] lg:max-w-[280px] aspect-[4/3] flex items-center justify-center z-20">
-                
-                {/* Subtle premium light field behind the logo (soft radial white glow, light red tint, large blurred circle) */}
-                <div className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,255,255,1)_0%,rgba(238,28,37,0.012)_35%,rgba(238,28,37,0.003)_65%,transparent_100%)] rounded-full blur-[60px] pointer-events-none z-0" />
+              {/* SVG Trajectories & Flow Particles Layer */}
+              <svg 
+                className="absolute inset-0 w-full h-full pointer-events-none z-10" 
+                viewBox="0 0 600 600"
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Curved flow paths (extremely thin, brand red tint, mathematically balanced endpoints) */}
+                {/* 1. AI Education -> Center */}
+                <path id="flow-edu" d="M 128 195 Q 190 230 300 315" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.08" />
+                {/* 2. Coding & Dev -> Center */}
+                <path id="flow-code" d="M 90 315 Q 180 305 300 315" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.08" />
+                {/* 3. AI Research -> Center */}
+                <path id="flow-research" d="M 128 435 Q 190 400 300 315" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.08" />
+                {/* 4. Center -> Startup Incubation */}
+                <path id="flow-startup" d="M 300 315 Q 410 230 472 195" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.08" />
+                {/* 5. Center -> Career Support */}
+                <path id="flow-career" d="M 300 315 Q 420 305 510 315" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.08" />
+                {/* 6. Center -> Community */}
+                <path id="flow-comm" d="M 300 315 Q 410 400 472 435" stroke="#EE1C25" strokeWidth="1.2" strokeOpacity="0.08" />
 
-                {/* Grounding soft wide elliptical shadow beneath the logo */}
+                {/* Animated Particles flowing along paths */}
+                {/* AI Education stream particles (Flowing in) */}
+                <circle r="3" fill="#EE1C25" opacity="0.8">
+                  <animateMotion path="M 128 195 Q 190 230 300 315" dur="4.2s" repeatCount="indefinite" begin="0s" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1" />
+                </circle>
+                <circle r="2" fill="#EE1C25" opacity="0.4">
+                  <animateMotion path="M 128 195 Q 190 230 300 315" dur="4.2s" repeatCount="indefinite" begin="2.1s" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1" />
+                </circle>
+
+                {/* Coding & Development stream particles (Flowing in) */}
+                <circle r="2.5" fill="#EE1C25" opacity="0.7">
+                  <animateMotion path="M 90 315 Q 180 305 300 315" dur="3.6s" repeatCount="indefinite" begin="0.8s" calcMode="spline" keyTimes="0;1" keySplines="0.1 0.8 0.3 1" />
+                </circle>
+                <circle r="4" fill="#EE1C25" opacity="0.9">
+                  <animateMotion path="M 90 315 Q 180 305 300 315" dur="3.6s" repeatCount="indefinite" begin="2.4s" calcMode="spline" keyTimes="0;1" keySplines="0.1 0.8 0.3 1" />
+                </circle>
+
+                {/* AI Research stream particles (Flowing in) */}
+                <circle r="3.5" fill="#EE1C25" opacity="0.75">
+                  <animateMotion path="M 128 435 Q 190 400 300 315" dur="4.8s" repeatCount="indefinite" begin="0.5s" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.1 1" />
+                </circle>
+                <circle r="2" fill="#EE1C25" opacity="0.5">
+                  <animateMotion path="M 128 435 Q 190 400 300 315" dur="4.8s" repeatCount="indefinite" begin="2.8s" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.1 1" />
+                </circle>
+
+                {/* Startup Incubation stream particles (Flowing out) */}
+                <circle r="3" fill="#EE1C25" opacity="0.8">
+                  <animateMotion path="M 300 315 Q 410 230 472 195" dur="4.5s" repeatCount="indefinite" begin="1.2s" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.4 1" />
+                </circle>
+                <circle r="2.5" fill="#EE1C25" opacity="0.55">
+                  <animateMotion path="M 300 315 Q 410 230 472 195" dur="4.5s" repeatCount="indefinite" begin="3.2s" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.4 1" />
+                </circle>
+
+                {/* Career Support stream particles (Flowing out) */}
+                <circle r="4" fill="#EE1C25" opacity="0.85">
+                  <animateMotion path="M 300 315 Q 420 305 510 315" dur="3.9s" repeatCount="indefinite" begin="0.2s" calcMode="spline" keyTimes="0;1" keySplines="0.4 0.1 0.2 0.9" />
+                </circle>
+                <circle r="2" fill="#EE1C25" opacity="0.4">
+                  <animateMotion path="M 300 315 Q 420 305 510 315" dur="3.9s" repeatCount="indefinite" begin="2.0s" calcMode="spline" keyTimes="0;1" keySplines="0.4 0.1 0.2 0.9" />
+                </circle>
+
+                {/* Community stream particles (Flowing out) */}
+                <circle r="3" fill="#EE1C25" opacity="0.75">
+                  <animateMotion path="M 300 315 Q 410 400 472 435" dur="5.0s" repeatCount="indefinite" begin="1.6s" calcMode="spline" keyTimes="0;1" keySplines="0.3 0.2 0.1 0.8" />
+                </circle>
+                <circle r="2" fill="#EE1C25" opacity="0.3">
+                  <animateMotion path="M 300 315 Q 410 400 472 435" dur="5.0s" repeatCount="indefinite" begin="3.8s" calcMode="spline" keyTimes="0;1" keySplines="0.3 0.2 0.1 0.8" />
+                </circle>
+              </svg>
+
+              {/* Central AI Engine Logo Composition (Lowered by 15px for optical center alignment) */}
+              <div className="relative w-full max-w-[155px] sm:max-w-[200px] lg:max-w-[260px] aspect-[4/3] flex items-center justify-center z-20 top-[15px]">
+                
+                {/* Subtle radial white backdrop light behind center logo */}
+                <div className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,255,255,1)_0%,rgba(238,28,37,0.006)_40%,transparent_80%)] rounded-full blur-[50px] pointer-events-none z-0" />
+
+                {/* Grounding shadow beneath center engine */}
                 <motion.div
                   animate={shouldReduceMotion ? {} : {
                     scaleX: [1, 0.96, 1],
@@ -199,7 +239,7 @@ export default function HomeHero() {
                     repeatType: "reverse",
                     ease: "easeInOut",
                   }}
-                  className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[110%] h-3.5 bg-black/[0.06] blur-[22px] rounded-full pointer-events-none z-10"
+                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[110%] h-3.5 bg-black/[0.05] blur-[22px] rounded-full pointer-events-none z-10"
                 />
 
                 <motion.div
@@ -208,12 +248,12 @@ export default function HomeHero() {
                     y: coords.y,
                   }}
                   animate={{
-                    y: shouldReduceMotion ? 0 : [0, -1.5, 0], // Ultra-subtle float (1.5px)
+                    y: shouldReduceMotion ? 0 : [0, -1.5, 0], // Subtle slow float
                   }}
                   transition={{
                     x: { type: "spring", stiffness: 100, damping: 20 },
                     y: {
-                      duration: 12.0, // Slow 12s duration loop for maximum elegance
+                      duration: 12.0,
                       repeat: Infinity,
                       repeatType: "reverse",
                       ease: "easeInOut",
@@ -221,26 +261,112 @@ export default function HomeHero() {
                   }}
                   className="relative w-full h-full flex justify-center items-center z-20 group cursor-pointer"
                 >
-                  {/* Centered Image Artwork container with minimal, ultra-soft shadow and gradual feathering mask */}
                   <div 
-                    className="relative w-full h-full filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.005)] mix-blend-multiply"
+                    className="relative w-full h-full mix-blend-multiply"
                     style={{
-                      maskImage: "radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 95%)",
-                      WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 95%)",
+                      maskImage: "radial-gradient(ellipse 55% 40% at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 90%)",
+                      WebkitMaskImage: "radial-gradient(ellipse 55% 40% at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 90%)",
                     }}
                   >
                     <Image
                       src="/assets/image copy.png"
-                      alt="Premium AI Ecosystem Illustration"
+                      alt="The AI School Logo Engine"
                       fill
                       priority
-                      sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 280px"
-                      className="object-contain pointer-events-none select-none transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                      sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 260px"
+                      className="object-contain pointer-events-none select-none mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-[1.01]"
                     />
                   </div>
                 </motion.div>
               </div>
-            </>
+
+              {/* Interactive Glassmorphic Origin Nodes (Mathematically balanced equidistant spacing around logo center) */}
+              
+              {/* 1. AI Education (Top Left) */}
+              <motion.div 
+                animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
+                transition={{ duration: 6.0, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-[32.5%] left-[21.3%] -translate-x-1/2 -translate-y-1/2 z-30"
+              >
+                <div className="bg-white/70 border border-neutral-150/50 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-center gap-2 hover:border-red-200 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] opacity-80" />
+                  <span className="text-[10px] font-black uppercase tracking-wider text-neutral-500 font-sans">
+                    AI Education
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* 2. Coding & Development (Middle Left) */}
+              <motion.div 
+                animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
+                transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                className="absolute top-[52.5%] left-[15%] -translate-x-1/2 -translate-y-1/2 z-30"
+              >
+                <div className="bg-white/70 border border-neutral-150/50 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-center gap-2 hover:border-red-200 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] opacity-80" />
+                  <span className="text-[10px] font-black uppercase tracking-wider text-neutral-500 font-sans">
+                    Coding & Development
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* 3. AI Research (Bottom Left) */}
+              <motion.div 
+                animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
+                transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                className="absolute top-[72.5%] left-[21.3%] -translate-x-1/2 -translate-y-1/2 z-30"
+              >
+                <div className="bg-white/70 border border-neutral-150/50 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-center gap-2 hover:border-red-200 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] opacity-80" />
+                  <span className="text-[10px] font-black uppercase tracking-wider text-neutral-500 font-sans">
+                    AI Research
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* 4. Startup Incubation (Top Right) */}
+              <motion.div 
+                animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
+                transition={{ duration: 6.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                className="absolute top-[32.5%] right-[21.3%] translate-x-1/2 -translate-y-1/2 z-30"
+              >
+                <div className="bg-white/70 border border-neutral-150/50 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-center gap-2 hover:border-red-200 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] opacity-80 animate-pulse" />
+                  <span className="text-[10px] font-black uppercase tracking-wider text-neutral-500 font-sans">
+                    Startup Incubation
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* 5. Career Support (Middle Right) */}
+              <motion.div 
+                animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
+                transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 1.1 }}
+                className="absolute top-[52.5%] right-[15%] translate-x-1/2 -translate-y-1/2 z-30"
+              >
+                <div className="bg-white/70 border border-neutral-150/50 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-center gap-2 hover:border-red-200 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] opacity-80" />
+                  <span className="text-[10px] font-black uppercase tracking-wider text-neutral-500 font-sans">
+                    Career Support
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* 6. Community (Bottom Right) */}
+              <motion.div 
+                animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
+                transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut", delay: 1.9 }}
+                className="absolute top-[72.5%] right-[21.3%] translate-x-1/2 -translate-y-1/2 z-30"
+              >
+                <div className="bg-white/70 border border-neutral-150/50 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-center gap-2 hover:border-red-200 hover:shadow-md transition-all duration-300 group cursor-pointer">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#EE1C25] opacity-80" />
+                  <span className="text-[10px] font-black uppercase tracking-wider text-neutral-500 font-sans">
+                    Community
+                  </span>
+                </div>
+              </motion.div>
+
+            </div>
           )}
         </div>
       </div>
@@ -255,14 +381,14 @@ export default function HomeHero() {
       {/* Grayscale Trust Banner in Glass Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 mt-12">
         <div className="w-full bg-white/40 border border-neutral-150/70 backdrop-blur-md rounded-2xl p-6 md:py-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-          <span className="text-[10px] font-black uppercase tracking-widest text-neutral-400 font-sans">
+          <span className="text-[10px] font-black uppercase tracking-widest text-gray-600 font-sans">
             Trusted by Learners & Startups Across India
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 opacity-40 grayscale hover:opacity-60 transition-opacity">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 transition-opacity duration-300">
             {trustCompanies.map((logo, idx) => (
               <span 
                 key={idx} 
-                className="text-sm font-black font-heading tracking-widest text-neutral-500 hover:text-neutral-900 transition-colors uppercase"
+                className="text-sm font-black font-heading tracking-widest text-neutral-400 hover:text-[#EE1C25] opacity-50 hover:opacity-100 transition-all duration-300 ease-in-out uppercase cursor-pointer"
               >
                 {logo.name}
               </span>

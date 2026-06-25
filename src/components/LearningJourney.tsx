@@ -64,7 +64,7 @@ export default function LearningJourney() {
               Your Journey Into AI Starts Here
             </h2>
 
-            <p className="text-neutral-500 text-sm font-semibold leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <p className="text-slate-700 text-sm font-semibold leading-relaxed max-w-lg mx-auto lg:mx-0">
               From AI Fundamentals to real-world AI projects, follow a structured path designed by industry experts to make you industry-ready.
             </p>
 
