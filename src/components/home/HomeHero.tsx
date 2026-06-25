@@ -45,13 +45,13 @@ export default function HomeHero() {
   ];
 
   return (
-    <section 
+    <section
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative w-full min-h-[80vh] bg-white text-[#171717] flex flex-col justify-between pt-14 pb-12 overflow-hidden border-b border-neutral-150/50 select-none z-10"
     >
       {/* 1. Engineering paper style background grid (0.5px lines, opacity 4%) */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none opacity-[0.04] z-0"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5) 0.5px, transparent 0.5px), linear-gradient(to bottom, rgba(0,0,0,0.5) 0.5px, transparent 0.5px)`,
@@ -93,7 +93,7 @@ export default function HomeHero() {
 
       {/* Hero Content Wrapper */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center flex-1">
-        
+
         {/* Left Side (45% on desktop layout) */}
         <div className="lg:col-span-5 space-y-7 flex flex-col items-start text-left z-20">
           {/* Badge */}
@@ -119,12 +119,12 @@ export default function HomeHero() {
 
           {/* Description */}
           <p className="text-gray-700 text-sm md:text-base leading-relaxed font-sans font-medium max-w-lg">
-            At The AI School, we don't just teach. We empower students, professionals, and founders to build real products, resolve real-world challenges, and architect the AI ecosystem.
+            At TheAISCHOOL, we don't just teach. We empower students, professionals, and founders to build real products, resolve real-world challenges, and architect the AI ecosystem.
           </p>
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a
-              href="/courses"
+              href="/learn"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-full transition-all duration-200 shadow-[0_4px_12px_rgba(238,28,37,0.15)] hover:shadow-[0_4px_20px_rgba(238,28,37,0.25)] active:scale-98"
             >
               <span>Explore Programs</span>
@@ -144,17 +144,17 @@ export default function HomeHero() {
         <div className="lg:col-span-7 flex justify-center items-center relative min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] w-full overflow-visible select-none">
           {mounted && (
             <div className="relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] lg:w-[580px] lg:h-[580px] flex items-center justify-center">
-              
+
               {/* Subtle background glow & engineering grids */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                 <div className="absolute w-[80%] h-[80%] bg-[radial-gradient(circle,rgba(255,255,255,1)_0%,rgba(238,28,37,0.008)_40%,rgba(238,28,37,0.001)_75%,transparent_100%)] rounded-full blur-[60px]" />
               </div>
 
               {/* SVG Trajectories & Flow Particles Layer */}
-              <svg 
-                className="absolute inset-0 w-full h-full pointer-events-none z-10" 
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none z-10"
                 viewBox="0 0 600 600"
-                fill="none" 
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 {/* Curved flow paths (extremely thin, brand red tint, mathematically balanced endpoints) */}
@@ -223,7 +223,7 @@ export default function HomeHero() {
 
               {/* Central AI Engine Logo Composition (Lowered by 15px for optical center alignment) */}
               <div className="relative w-full max-w-[155px] sm:max-w-[200px] lg:max-w-[260px] aspect-[4/3] flex items-center justify-center z-20 top-[15px]">
-                
+
                 {/* Subtle radial white backdrop light behind center logo */}
                 <div className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,255,255,1)_0%,rgba(238,28,37,0.006)_40%,transparent_80%)] rounded-full blur-[50px] pointer-events-none z-0" />
 
@@ -261,7 +261,7 @@ export default function HomeHero() {
                   }}
                   className="relative w-full h-full flex justify-center items-center z-20 group cursor-pointer"
                 >
-                  <div 
+                  <div
                     className="relative w-full h-full mix-blend-multiply"
                     style={{
                       maskImage: "radial-gradient(ellipse 55% 40% at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 90%)",
@@ -281,9 +281,9 @@ export default function HomeHero() {
               </div>
 
               {/* Interactive Glassmorphic Origin Nodes (Mathematically balanced equidistant spacing around logo center) */}
-              
+
               {/* 1. AI Education (Top Left) */}
-              <motion.div 
+              <motion.div
                 animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
                 transition={{ duration: 6.0, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-[32.5%] left-[21.3%] -translate-x-1/2 -translate-y-1/2 z-30"
@@ -297,7 +297,7 @@ export default function HomeHero() {
               </motion.div>
 
               {/* 2. Coding & Development (Middle Left) */}
-              <motion.div 
+              <motion.div
                 animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
                 transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
                 className="absolute top-[52.5%] left-[15%] -translate-x-1/2 -translate-y-1/2 z-30"
@@ -311,7 +311,7 @@ export default function HomeHero() {
               </motion.div>
 
               {/* 3. AI Research (Bottom Left) */}
-              <motion.div 
+              <motion.div
                 animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
                 transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                 className="absolute top-[72.5%] left-[21.3%] -translate-x-1/2 -translate-y-1/2 z-30"
@@ -325,7 +325,7 @@ export default function HomeHero() {
               </motion.div>
 
               {/* 4. Startup Incubation (Top Right) */}
-              <motion.div 
+              <motion.div
                 animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
                 transition={{ duration: 6.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
                 className="absolute top-[32.5%] right-[21.3%] translate-x-1/2 -translate-y-1/2 z-30"
@@ -339,7 +339,7 @@ export default function HomeHero() {
               </motion.div>
 
               {/* 5. Career Support (Middle Right) */}
-              <motion.div 
+              <motion.div
                 animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
                 transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 1.1 }}
                 className="absolute top-[52.5%] right-[15%] translate-x-1/2 -translate-y-1/2 z-30"
@@ -353,7 +353,7 @@ export default function HomeHero() {
               </motion.div>
 
               {/* 6. Community (Bottom Right) */}
-              <motion.div 
+              <motion.div
                 animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
                 transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut", delay: 1.9 }}
                 className="absolute top-[72.5%] right-[21.3%] translate-x-1/2 -translate-y-1/2 z-30"
@@ -386,8 +386,8 @@ export default function HomeHero() {
           </span>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 transition-opacity duration-300">
             {trustCompanies.map((logo, idx) => (
-              <span 
-                key={idx} 
+              <span
+                key={idx}
                 className="text-sm font-black font-heading tracking-widest text-neutral-400 hover:text-[#EE1C25] opacity-50 hover:opacity-100 transition-all duration-300 ease-in-out uppercase cursor-pointer"
               >
                 {logo.name}

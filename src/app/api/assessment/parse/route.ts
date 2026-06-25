@@ -1,9 +1,9 @@
+
 import { NextResponse } from 'next/server';
 import mammoth from 'mammoth';
 import { rateLimit } from '@/lib/rateLimit';
 import { z } from 'zod';
-const pdfParse = require('pdf-parse');
-const pdf = typeof pdfParse === 'function' ? pdfParse : (pdfParse.default || pdfParse);
+const pdf = require('pdf-parse');
 
 const parseUrlSchema = z.object({
   url: z.string().url('Invalid remote file URL'),
@@ -44,12 +44,12 @@ export async function POST(req: Request) {
       try {
         const parsedUrl = new URL(url);
         const hostname = parsedUrl.hostname.toLowerCase();
-        
+
         // Strict whitelist: must end with utfs.io or uploadthing.com or subdomains
-        const isAllowedDomain = 
-          hostname === 'utfs.io' || 
-          hostname.endsWith('.utfs.io') || 
-          hostname === 'uploadthing.com' || 
+        const isAllowedDomain =
+          hostname === 'utfs.io' ||
+          hostname.endsWith('.utfs.io') ||
+          hostname === 'uploadthing.com' ||
           hostname.endsWith('.uploadthing.com');
 
         if (!isAllowedDomain) {
@@ -60,8 +60,8 @@ export async function POST(req: Request) {
         // Reject local or private subnets explicitly
         const localPatterns = [
           'localhost', '127.0.0.1', '::1', '0.0.0.0',
-          '10.', '192.168.', '172.16.', '172.17.', '172.18.', '172.19.', 
-          '172.20.', '172.21.', '172.22.', '172.23.', '172.24.', '172.25.', 
+          '10.', '192.168.', '172.16.', '172.17.', '172.18.', '172.19.',
+          '172.20.', '172.21.', '172.22.', '172.23.', '172.24.', '172.25.',
           '172.26.', '172.27.', '172.28.', '172.29.', '172.30.', '172.31.'
         ];
 

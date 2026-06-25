@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { 
-  Link2Off, 
-  BookOpen, 
-  Terminal, 
-  GitBranch, 
-  Users, 
-  Code, 
+import {
+  Link2Off,
+  BookOpen,
+  Terminal,
+  GitBranch,
+  Users,
+  Code,
   Award,
   Sparkles,
   ArrowRight,
@@ -96,7 +96,7 @@ export default function XRayTransform() {
   return (
     <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
       <div className="max-w-6xl mx-auto space-y-28">
-        
+
         {/* ================= SECTION TITLE ================= */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">
@@ -112,7 +112,7 @@ export default function XRayTransform() {
 
         {/* ================= BENTO GRID CHALLENGE LAYOUT ================= */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10">
-          
+
           {/* Card 1: Isolation (col-span-12 lg:col-span-7) */}
           <div className="group relative bg-white border border-neutral-200/80 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-7 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-[#EE1C25]/40 hover:shadow-[0_20px_50px_-20px_rgba(238,28,37,0.12)] cursor-pointer">
             {/* Background 01 */}
@@ -123,7 +123,7 @@ export default function XRayTransform() {
               <div className="p-4 bg-red-50 text-[#EE1C25] rounded-2xl border border-red-100/50 group-hover:scale-105 transition-transform duration-300">
                 <Link2Off className="w-8 h-8" />
               </div>
-              
+
               {/* Disconnected Node Metaphor */}
               <svg className="w-24 h-16 opacity-30 group-hover:opacity-60 transition-opacity" viewBox="0 0 100 60" fill="none">
                 <circle cx="20" cy="30" r="4" fill="#EE1C25" />
@@ -227,8 +227,8 @@ export default function XRayTransform() {
         {/* Narrative transition text */}
         <div className="text-center pt-4 relative z-10">
           <p className="text-neutral-500 font-semibold text-sm max-w-lg mx-auto leading-relaxed">
-            These challenges are exactly why we built <br/>
-            <span className="text-[#EE1C25] font-black">The AI School Transformation System</span>.
+            These challenges are exactly why we built <br />
+            <span className="text-[#EE1C25] font-black">TheAISCHOOL Transformation System</span>.
           </p>
         </div>
 
@@ -251,7 +251,7 @@ export default function XRayTransform() {
             {steps.map((step) => {
               const Icon = step.icon;
               return (
-                <div 
+                <div
                   key={step.number}
                   className={`sticky top-24 min-h-[460px] md:min-h-[480px] w-full ${step.bgClass} border border-neutral-200/80 rounded-[2.5rem] p-8 md:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 overflow-hidden ${step.zIndexClass}`}
                 >
@@ -280,8 +280,8 @@ export default function XRayTransform() {
                     </p>
 
                     <div className="flex flex-wrap gap-2.5 pt-2">
-                      <a 
-                        href="#register" 
+                      <a
+                        href="#register"
                         className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#EE1C25] hover:text-[#d61920] transition-colors"
                       >
                         Enroll Now
