@@ -17,6 +17,19 @@ model Course {
   createdAt       DateTime                   @default(now())
   updatedAt       DateTime                   @updatedAt
   recommendations AssessmentRecommendation[]
+  registrations   CourseRegistration[]
+}
+
+model CourseRegistration {
+  id              String   @id @default(cuid())
+  name            String
+  email           String
+  phone           String
+  college         String
+  year            String
+  courseId        String
+  course          Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
 }
 
 model AssessmentQuestion {

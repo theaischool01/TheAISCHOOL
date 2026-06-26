@@ -48,7 +48,7 @@ export default function HomeHero() {
     <section
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full min-h-[80vh] bg-white text-[#171717] flex flex-col justify-between pt-14 pb-12 overflow-hidden border-b border-neutral-150/50 select-none z-10"
+      className="relative w-full min-h-[45vh] bg-white text-[#171717] flex flex-col justify-between pt-3 pb-3 overflow-hidden border-b border-neutral-150/50 select-none z-10"
     >
       {/* 1. Engineering paper style background grid (0.5px lines, opacity 4%) */}
       <div
@@ -370,7 +370,7 @@ export default function HomeHero() {
       </div>
 
       {/* Grayscale Trust Banner in Glass Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 mt-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 mt-2">
         <div className="w-full bg-white/40 border border-neutral-150/70 backdrop-blur-md rounded-2xl p-6 md:py-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <span className="text-[10px] font-black uppercase tracking-widest text-gray-600 font-sans">
             Trusted by Learners & Startups Across India

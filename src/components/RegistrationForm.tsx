@@ -17,19 +17,55 @@ export default function UnifiedRegistrationForm() {
   const [targetPosition, setTargetPosition] = useState('AI Curriculum Architect');
   const [targetCourse, setTargetCourse] = useState('Building Your AI Agent (For Coders)');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Server-side integration placeholder:
-    // Pushes payload data with intent tag to database. 
-    // If intent === 'admin' (matched background pin parameters later), flags role.
+    if (intent === 'student') {
+      try {
+        // Get course slug from course title (mapping to seed data)
+        const courseMap: Record<string, string> = {
+          'Building Your AI Agent (For Coders)': 'building-your-ai-agent-for-coders',
+          'Data Analysis with AI and PowerBI (All)': 'data-analysis-with-ai-and-powerbi',
+          'Prompt Engineering 101': 'prompt-engineering-101',
+          'Advanced AI Architectures (RAG)': 'building-your-ai-agent-for-coders', // Fallback to existing course
+        };
+        
+        const courseSlug = courseMap[targetCourse] || 'building-your-ai-agent-for-coders';
+        
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            college: organization,
+            year: '2024', // Default year, could be added as a field
+            courseSlug,
+          }),
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          alert('Registration successful!');
+          setName(''); setEmail(''); setPhone(''); setOrganization(''); setAddress('');
+        } else {
+          alert('Registration failed. Please try again.');
+        }
+      } catch (error) {
+        alert('Registration failed. Please try again.');
+      }
+    } else {
+      // Career track - placeholder for now
+      setTimeout(() => {
+        alert('Job application submitted successfully!');
+        setName(''); setEmail(''); setPhone(''); setOrganization(''); setAddress('');
+      }, 1500);
+    }
     
-    setTimeout(() => {
-      setIsLoading(false);
-      alert(`Registration successful for ${intent === 'student' ? 'Course Track' : 'Career Position Queue'}!`);
-      setName(''); setEmail(''); setPhone(''); setOrganization(''); setAddress('');
-    }, 1500);
+    setIsLoading(false);
   };
 
   return (
