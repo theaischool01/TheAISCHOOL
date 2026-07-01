@@ -167,15 +167,7 @@ export default function PartnersSection() {
         {/* ================= SECTION 2: ECOSYSTEM PARTNERS (HACKCULTURE STYLE) ================= */}
         <div className="bg-neutral-50/50 rounded-[2.5rem] border border-neutral-200/60 p-8 md:p-12 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 relative min-h-[480px]">
 
-          {/* Left Text Box */}
-          <div className="lg:w-1/2 space-y-1 text-center lg:text-left relative z-20">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-950 tracking-tight uppercase leading-none">
-              Our Eco System Partners
-            </h3>
-
-          </div>
-
-          {/* Right Scrolling Wall Box */}
+          {/* Left Scrolling Wall Box */}
           <div className="lg:w-1/2 w-full h-[400px] overflow-hidden relative flex gap-4 select-none">
             {/* Top and Bottom Fades for smooth blend */}
             <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-neutral-50/80 to-transparent z-10 pointer-events-none" />
@@ -185,6 +177,14 @@ export default function PartnersSection() {
             <LogoColumn items={col1} direction="up" speedClass="30s" />
             <LogoColumn items={col2} direction="down" speedClass="25s" />
             <LogoColumn items={col3} direction="up" speedClass="28s" />
+          </div>
+
+          {/* Right Text Box */}
+          <div className="lg:w-1/2 space-y-1 text-center lg:text-right relative z-20">
+            <h3 className="text-4xl md:text-5xl font-black tracking-tight uppercase leading-none">
+              <span className="text-gray-950">Our </span>
+              <span className="text-[#EE1C25]">Eco System Partners</span>
+            </h3>
           </div>
 
         </div>
