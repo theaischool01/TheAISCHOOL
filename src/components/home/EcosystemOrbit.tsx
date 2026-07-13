@@ -177,13 +177,13 @@ export default function EcosystemOrbit() {
               </svg>
 
               {/* STATIONARY CENTER BRAND NODE (glow, shadow, rotation preserved, next/image logo) */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none z-20 flex items-center justify-center w-36 h-36">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none z-20 flex items-center justify-center w-28 h-28 opacity-96">
                 <div className="relative w-full h-full">
                   <Image 
                     src="/images/copy.png" 
                     alt="The AI School Logo" 
                     fill
-                    sizes="144px"
+                    sizes="112px"
                     className="object-contain relative z-10" 
                     priority
                   />
