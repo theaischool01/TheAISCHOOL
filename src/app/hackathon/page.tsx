@@ -2,16 +2,19 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import HackathonFeatures from "@/components/hackathon/HackathonFeatures";
+import HackathonTimeline from "@/components/hackathon/HackathonTimeline";
+import HackathonFuture from "@/components/hackathon/HackathonFuture";
+import RegistrationForm from "@/components/home/RegistrationForm";
 import { 
   Trophy, 
   Users, 
-  ChevronRight,
   Clock,
   Laptop
 } from "lucide-react";
 
-// Stat Cards Content
 const snapshotStats = [
   {
     value: "30+",
@@ -43,7 +46,6 @@ const snapshotStats = [
   }
 ];
 
-// Animated Statistics
 const statsData = [
   { value: 19, label: "Finalists Shortlisted" },
   { value: 3500, label: "Teams Registered", suffix: "+" },
@@ -52,7 +54,6 @@ const statsData = [
   { value: 4.5, label: "Prize Pool (Lakhs)", suffix: "L" }
 ];
 
-// Gallery Images (Curated 6 Images for Homepage Preview)
 const galleryImages = [
   {
     src: "/images/hackathon_group1.jpg",
@@ -78,15 +79,29 @@ const galleryImages = [
     src: "/images/hackathon_group3.png",
     alt: "Delegates and organizers group photo at hackathon summit",
     className: "md:col-span-2 md:row-span-1"
+  },
+  {
+    src: "/images/hackathon_team1.png",
+    alt: "Hackathon team working space session",
+    className: "md:col-span-1 md:row-span-1"
+  },
+  {
+    src: "/images/hackathon_working2.png",
+    alt: "Mentors guiding teams on network protocols",
+    className: "md:col-span-1 md:row-span-1"
+  },
+  {
+    src: "/images/hackathon_felicitation1.png",
+    alt: "Award presentation to the top winners",
+    className: "md:col-span-2 md:row-span-1"
   }
 ];
 
-export default function WorldsLargestAIHackathon() {
+export default function DedicatedHackathonPage() {
   const [visibleStats, setVisibleStats] = useState<number[]>([0, 0, 0, 0, 0]);
   const statsSectionRef = useRef<HTMLDivElement>(null);
   const [hasAnimatedStats, setHasAnimatedStats] = useState(false);
 
-  // Intersection Observer for counting up statistics
   useEffect(() => {
     const currentRef = statsSectionRef.current;
     const observer = new IntersectionObserver(
@@ -104,7 +119,6 @@ export default function WorldsLargestAIHackathon() {
             const newStats = statsData.map((stat) => {
               const target = stat.value;
               const progress = currentStep / steps;
-              // Handle float values for decimal counter like 4.5L
               if (target % 1 !== 0) {
                 return parseFloat((target * progress).toFixed(1));
               }
@@ -133,14 +147,12 @@ export default function WorldsLargestAIHackathon() {
   }, [hasAnimatedStats]);
 
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading overflow-hidden">
-      {/* Light Radial Background Mesh Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[radial-gradient(circle,rgba(238,28,37,0.02)_0%,transparent_70%)] pointer-events-none z-0" />
+    <main className="relative min-h-screen bg-white">
+      <Header />
 
-      <div className="max-w-7xl mx-auto space-y-24 relative z-10">
-        
-        {/* ================= SECTION 1: HERO ================= */}
-        <div className="text-center space-y-6 max-w-4xl mx-auto">
+      {/* ================= HERO & HEADLINE ================= */}
+      <section className="w-full bg-white pt-36 pb-20 px-6 md:px-12 relative font-heading">
+        <div className="max-w-7xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-50 border border-red-100 rounded-full">
             <span className="w-2 h-2 rounded-full bg-[#EE1C25] animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-widest text-[#EE1C25]">
@@ -148,17 +160,19 @@ export default function WorldsLargestAIHackathon() {
             </span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-gray-950 tracking-tight leading-tight uppercase">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-gray-950 tracking-tight leading-tight uppercase">
             World&#39;s Largest <span className="text-[#EE1C25]">AI Hackathon</span>
-          </h2>
+          </h1>
 
           <p className="text-base md:text-lg font-semibold text-slate-600 max-w-2xl mx-auto leading-relaxed">
             India&#39;s premier AI innovation platform connecting students, developers, and industry leaders through live networks and collaborative engineering.
           </p>
         </div>
+      </section>
 
-        {/* ================= SECTION 2: HIGHLIGHTS SNAPSHOT ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* ================= EVENT SNAPSHOT HIGHLIGHTS ================= */}
+      <section className="w-full bg-white pb-20 px-6 md:px-12 font-heading">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {snapshotStats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
@@ -183,52 +197,17 @@ export default function WorldsLargestAIHackathon() {
             );
           })}
         </div>
+      </section>
 
-        {/* ================= SECTION 3: GALLERY PREVIEW ================= */}
-        <div className="space-y-12">
-          <div className="text-center space-y-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">
-              Innovation in Action
-            </span>
-            <h3 className="text-3xl font-black text-gray-950 uppercase">
-              Hackathon Gallery
-            </h3>
-          </div>
+      {/* ================= HACKATHON FEATURES (MODULAR) ================= */}
+      <HackathonFeatures />
 
-          <div className="relative group/gallery">
-            <Link href="/hackathon#gallery">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px] cursor-pointer">
-                {galleryImages.map((img, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`relative overflow-hidden rounded-[2rem] border border-gray-200/80 group shadow-xs ${img.className}`}
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover group-hover:scale-102 transition-transform duration-500"
-                      priority={idx === 0}
-                    />
-                  </div>
-                ))}
-              </div>
-              {/* Premium Hover Blur Card Overlay */}
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-xs flex items-center justify-center opacity-0 group-hover/gallery:opacity-100 transition-opacity duration-300 rounded-[2rem] z-20 pointer-events-none">
-                <div className="bg-white border border-gray-200 px-8 py-4 rounded-full shadow-lg text-sm font-black text-gray-950 uppercase tracking-widest flex items-center gap-2 transform translate-y-4 group-hover/gallery:translate-y-0 transition-transform duration-300">
-                  View Full Gallery <ChevronRight className="w-4 h-4 text-[#EE1C25]" />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
+      {/* ================= HACKATHON CYCLE TIMELINE (MODULAR) ================= */}
+      <HackathonTimeline />
 
-        {/* ================= SECTION 4: IMPACT STATISTICS & CTA ================= */}
-        <div 
-          ref={statsSectionRef}
-          className="bg-slate-50 border border-gray-100 rounded-[2.5rem] py-16 px-8 grid grid-cols-2 md:grid-cols-5 gap-8 text-center"
-        >
+      {/* ================= STATISTICS & OUTCOMES ================= */}
+      <section ref={statsSectionRef} className="w-full bg-white py-20 px-6 md:px-12 font-heading">
+        <div className="max-w-7xl mx-auto bg-slate-50 border border-gray-100 rounded-[2.5rem] py-16 px-8 grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
           {statsData.map((stat, idx) => (
             <div key={idx} className="space-y-2">
               <span className="block text-4xl md:text-5xl font-black text-gray-950 tracking-tight font-heading">
@@ -240,19 +219,54 @@ export default function WorldsLargestAIHackathon() {
             </div>
           ))}
         </div>
+      </section>
 
-        {/* Explore CTA Button */}
-        <div className="text-center">
-          <Link
-            href="/hackathon"
-            className="group inline-flex items-center justify-center gap-3 bg-[#EE1C25] hover:bg-[#d61920] text-white font-bold text-xs uppercase tracking-widest px-10 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-          >
-            Explore Full Hackathon Experience
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+      {/* ================= FULL GALLERY ================= */}
+      <section id="gallery" className="w-full bg-white py-20 px-6 md:px-12 font-heading">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">
+              Innovation in Action
+            </span>
+            <h2 className="text-3xl font-black text-gray-950 uppercase">
+              Hackathon Gallery
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+            {galleryImages.map((img, idx) => (
+              <div 
+                key={idx} 
+                className={`relative overflow-hidden rounded-[2rem] border border-gray-200/80 group shadow-xs ${img.className}`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority={idx === 0}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-10">
+                  <span className="text-white text-xs font-bold font-heading uppercase tracking-wide">
+                    {img.alt}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
+      {/* ================= FUTURE PLATFORM CARD (MODULAR) ================= */}
+      <HackathonFuture />
+
+      {/* ================= REGISTER INTEREST FORM ================= */}
+      <div id="register" className="border-t border-gray-100">
+        <RegistrationForm />
       </div>
-    </section>
+
+      <Footer />
+    </main>
   );
 }
