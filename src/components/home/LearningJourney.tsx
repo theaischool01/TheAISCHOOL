@@ -2,7 +2,77 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { BookOpen, BrainCircuit, Bot, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, BrainCircuit, Bot, Sparkles } from "lucide-react";
+
+// Layout Geometry Constants
+const CONTAINER_WIDTH = 600;
+const CONTAINER_HEIGHT = 500;
+
+const CENTER_X = CONTAINER_WIDTH / 2; // 300
+const CENTER_Y = CONTAINER_HEIGHT / 2; // 250
+
+const CARD_WIDTH = 220;
+const CARD_HEIGHT = 160;
+
+const NODE_SIZE = 112;
+const NODE_RADIUS = NODE_SIZE / 2; // 56
+
+const OUTER_MARGIN_X = 40;
+const OUTER_MARGIN_Y = 40;
+
+const LEFT_X = OUTER_MARGIN_X; // 40
+const RIGHT_X = CONTAINER_WIDTH - OUTER_MARGIN_X - CARD_WIDTH; // 600 - 40 - 220 = 340
+
+const TOP_Y = OUTER_MARGIN_Y; // 40
+const BOTTOM_Y = CONTAINER_HEIGHT - OUTER_MARGIN_Y - CARD_HEIGHT; // 500 - 40 - 160 = 300
+
+// Helper to calculate exact start and end points for SVG paths
+// Start points are on the boundary of the center node (radius 56).
+// End points connect to the nearest corner/edge of the stage cards.
+const getPathData = (stageIndex: number) => {
+  // Center is at (300, 250)
+  // Distance from center to corners for bezier target control points
+  switch (stageIndex) {
+    case 0: { // Top Left (Card sits between X: 40-260, Y: 40-200)
+      // Card bottom-right corner is at (260, 200)
+      // Path starts at northwest edge of center node: (300 - cos(45)*56, 250 - sin(45)*56)
+      const startX = CENTER_X - NODE_RADIUS * Math.SQRT1_2;
+      const startY = CENTER_Y - NODE_RADIUS * Math.SQRT1_2;
+      const endX = LEFT_X + CARD_WIDTH; // 260
+      const endY = TOP_Y + CARD_HEIGHT; // 200
+      return `M ${endX} ${endY} C ${(endX + startX) / 2} ${endY}, ${startX} ${(endY + startY) / 2}, ${startX} ${startY}`;
+    }
+    case 1: { // Bottom Left (Card sits between X: 40-260, Y: 300-460)
+      // Card top-right corner is at (260, 300)
+      // Path starts at southwest edge of center node
+      const startX = CENTER_X - NODE_RADIUS * Math.SQRT1_2;
+      const startY = CENTER_Y + NODE_RADIUS * Math.SQRT1_2;
+      const endX = LEFT_X + CARD_WIDTH; // 260
+      const endY = BOTTOM_Y; // 300
+      return `M ${endX} ${endY} C ${(endX + startX) / 2} ${endY}, ${startX} ${(endY + startY) / 2}, ${startX} ${startY}`;
+    }
+    case 2: { // Top Right (Card sits between X: 340-560, Y: 40-200)
+      // Card bottom-left corner is at (340, 200)
+      // Path starts at northeast edge of center node
+      const startX = CENTER_X + NODE_RADIUS * Math.SQRT1_2;
+      const startY = CENTER_Y - NODE_RADIUS * Math.SQRT1_2;
+      const endX = RIGHT_X; // 340
+      const endY = TOP_Y + CARD_HEIGHT; // 200
+      return `M ${endX} ${endY} C ${(endX + startX) / 2} ${endY}, ${startX} ${(endY + startY) / 2}, ${startX} ${startY}`;
+    }
+    case 3: { // Bottom Right (Card sits between X: 340-560, Y: 300-460)
+      // Card top-left corner is at (340, 300)
+      // Path starts at southeast edge of center node
+      const startX = CENTER_X + NODE_RADIUS * Math.SQRT1_2;
+      const startY = CENTER_Y + NODE_RADIUS * Math.SQRT1_2;
+      const endX = RIGHT_X; // 340
+      const endY = BOTTOM_Y; // 300
+      return `M ${endX} ${endY} C ${(endX + startX) / 2} ${endY}, ${startX} ${(endY + startY) / 2}, ${startX} ${startY}`;
+    }
+    default:
+      return "";
+  }
+};
 
 const stages = [
   {
@@ -69,9 +139,7 @@ export default function LearningJourney() {
                 className="group inline-flex items-center gap-2.5 bg-[#EE1C25] hover:bg-[#d61920] text-white font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               >
                 Explore Programs
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
@@ -79,67 +147,43 @@ export default function LearningJourney() {
           {/* ================= RIGHT SIDE: INTERACTIVE PATHWAY ================= */}
           <div className="lg:col-span-7 relative min-h-[520px] flex items-center justify-center">
             {/* Desktop Visualization (Hidden on Mobile/Tablet) */}
-            <div className="hidden lg:block w-[600px] h-[500px] relative select-none">
+            <div 
+              className="hidden lg:block relative select-none"
+              style={{ width: CONTAINER_WIDTH, height: CONTAINER_HEIGHT }}
+            >
               {/* SVG pathways from center to stage cards */}
               <svg
                 className="absolute inset-0 w-full h-full pointer-events-none z-10"
-                viewBox="0 0 600 500"
+                viewBox={`0 0 ${CONTAINER_WIDTH} ${CONTAINER_HEIGHT}`}
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* 
-                  Center Node is at (300, 250) with radius 56.
-                  Outer boundaries of the center node:
-                  Top: (300, 194), Bottom: (300, 306), Left: (244, 250), Right: (356, 250)
-                  
-                  Card Positions:
-                  Card 1 (Top Left): Center (140, 115)
-                  Card 2 (Bottom Left): Center (140, 385)
-                  Card 3 (Top Right): Center (460, 115)
-                  Card 4 (Bottom Right): Center (460, 385)
-                */}
-                
-                {/* Stage 1 path (Top Left) */}
-                <path
-                  d="M 140 115 C 200 115, 220 220, 260 230"
-                  stroke={activeStage === 0 ? "#EE1C25" : "#E5E7EB"}
-                  strokeWidth={activeStage === 0 ? "3" : "1.5"}
-                  className="transition-all duration-300"
-                />
-
-                {/* Stage 2 path (Bottom Left) */}
-                <path
-                  d="M 140 385 C 200 385, 220 280, 260 270"
-                  stroke={activeStage === 1 ? "#EE1C25" : "#E5E7EB"}
-                  strokeWidth={activeStage === 1 ? "3" : "1.5"}
-                  className="transition-all duration-300"
-                />
-
-                {/* Stage 3 path (Top Right) */}
-                <path
-                  d="M 460 115 C 400 115, 380 220, 340 230"
-                  stroke={activeStage === 2 ? "#EE1C25" : "#E5E7EB"}
-                  strokeWidth={activeStage === 2 ? "3" : "1.5"}
-                  className="transition-all duration-300"
-                />
-
-                {/* Stage 4 path (Bottom Right) */}
-                <path
-                  d="M 460 385 C 400 385, 380 280, 340 270"
-                  stroke={activeStage === 3 ? "#EE1C25" : "#E5E7EB"}
-                  strokeWidth={activeStage === 3 ? "3" : "1.5"}
-                  className="transition-all duration-300"
-                />
+                {stages.map((_, idx) => (
+                  <path
+                    key={idx}
+                    d={getPathData(idx)}
+                    stroke={activeStage === idx ? "#EE1C25" : "#E5E7EB"}
+                    strokeWidth={activeStage === idx ? "3" : "1.5"}
+                    className="transition-all duration-300"
+                  />
+                ))}
               </svg>
 
-              {/* CENTER HUB (Exactly at 300, 250) */}
+              {/* CENTER HUB (Exactly centered mathematically) */}
               <div
-                className="absolute left-[300px] top-[250px] -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white border border-neutral-200 rounded-full flex items-center justify-center shadow-md z-20 select-none animate-subtle-float"
+                className="absolute bg-white border border-neutral-200 rounded-full flex items-center justify-center shadow-md z-20 select-none"
+                style={{
+                  left: CENTER_X,
+                  top: CENTER_Y,
+                  transform: "translate(-50%, -50%)",
+                  width: NODE_SIZE,
+                  height: NODE_SIZE,
+                }}
               >
                 <div className="absolute inset-1.5 border border-dashed border-red-200/50 rounded-full" />
                 <div className="relative w-[65%] h-[65%]">
                   <Image
-                    src="/assets/logo.png"
+                    src="/images/logo.png"
                     alt="The AI School Logo"
                     fill
                     sizes="80px"
@@ -149,11 +193,17 @@ export default function LearningJourney() {
                 </div>
               </div>
 
-              {/* STAGE 1 CARD (Top Left - Center 140, 115 -> Left 36, Top 30) */}
+              {/* STAGE 1 CARD (Top Left) */}
               <div
                 onMouseEnter={() => setActiveStage(0)}
                 onMouseLeave={() => setActiveStage(null)}
-                className="absolute left-[36px] top-[30px] w-52 group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none animate-float-delay-1 z-30"
+                className="absolute group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none z-30"
+                style={{
+                  left: LEFT_X,
+                  top: TOP_Y,
+                  width: CARD_WIDTH,
+                  height: CARD_HEIGHT,
+                }}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="p-2 bg-red-50 text-[#EE1C25] border border-red-100 rounded-lg">
@@ -173,11 +223,17 @@ export default function LearningJourney() {
                 </div>
               </div>
 
-              {/* STAGE 2 CARD (Bottom Left - Center 140, 385 -> Left 36, Top 300) */}
+              {/* STAGE 2 CARD (Bottom Left) */}
               <div
                 onMouseEnter={() => setActiveStage(1)}
                 onMouseLeave={() => setActiveStage(null)}
-                className="absolute left-[36px] top-[300px] w-52 group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none animate-float-delay-2 z-30"
+                className="absolute group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none z-30"
+                style={{
+                  left: LEFT_X,
+                  top: BOTTOM_Y,
+                  width: CARD_WIDTH,
+                  height: CARD_HEIGHT,
+                }}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="p-2 bg-red-50 text-[#EE1C25] border border-red-100 rounded-lg">
@@ -197,11 +253,17 @@ export default function LearningJourney() {
                 </div>
               </div>
 
-              {/* STAGE 3 CARD (Top Right - Center 460, 115 -> Left 348, Top 30) */}
+              {/* STAGE 3 CARD (Top Right) */}
               <div
                 onMouseEnter={() => setActiveStage(2)}
                 onMouseLeave={() => setActiveStage(null)}
-                className="absolute left-[348px] top-[30px] w-56 group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none animate-float-delay-3 z-30"
+                className="absolute group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none z-30"
+                style={{
+                  left: RIGHT_X,
+                  top: TOP_Y,
+                  width: CARD_WIDTH,
+                  height: CARD_HEIGHT,
+                }}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="p-2 bg-red-50 text-[#EE1C25] border border-red-100 rounded-lg">
@@ -221,11 +283,17 @@ export default function LearningJourney() {
                 </div>
               </div>
 
-              {/* STAGE 4 CARD (Bottom Right - Center 460, 385 -> Left 348, Top 300) */}
+              {/* STAGE 4 CARD (Bottom Right) */}
               <div
                 onMouseEnter={() => setActiveStage(3)}
                 onMouseLeave={() => setActiveStage(null)}
-                className="absolute left-[348px] top-[300px] w-56 group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none animate-float-delay-4 z-30"
+                className="absolute group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none z-30"
+                style={{
+                  left: RIGHT_X,
+                  top: BOTTOM_Y,
+                  width: CARD_WIDTH,
+                  height: CARD_HEIGHT,
+                }}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="p-2 bg-red-50 text-[#EE1C25] border border-red-100 rounded-lg">
@@ -281,59 +349,6 @@ export default function LearningJourney() {
           </div>
         </div>
       </div>
-
-      {/* Subtle floating animations global styles */}
-      <style jsx global>{`
-        @keyframes subtleFloat {
-          0%, 100% {
-            transform: translate(-50%, -50%) translateY(-3px);
-          }
-          50% {
-            transform: translate(-50%, -50%) translateY(3px);
-          }
-        }
-        @keyframes float1 {
-          0%, 100% { transform: translateY(-2px); }
-          50% { transform: translateY(2px); }
-        }
-        @keyframes float2 {
-          0%, 100% { transform: translateY(2px); }
-          50% { transform: translateY(-2px); }
-        }
-        @keyframes float3 {
-          0%, 100% { transform: translateY(-3px); }
-          50% { transform: translateY(3px); }
-        }
-        @keyframes float4 {
-          0%, 100% { transform: translateY(3px); }
-          50% { transform: translateY(-3px); }
-        }
-        .animate-subtle-float {
-          animation: subtleFloat 7s ease-in-out infinite;
-        }
-        .animate-float-delay-1 {
-          animation: float1 8s ease-in-out infinite;
-        }
-        .animate-float-delay-2 {
-          animation: float2 9s ease-in-out infinite;
-        }
-        .animate-float-delay-3 {
-          animation: float3 7.5s ease-in-out infinite;
-        }
-        .animate-float-delay-4 {
-          animation: float4 8.5s ease-in-out infinite;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .animate-subtle-float,
-          .animate-float-delay-1,
-          .animate-float-delay-2,
-          .animate-float-delay-3,
-          .animate-float-delay-4 {
-            animation: none !important;
-            transform: none !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
