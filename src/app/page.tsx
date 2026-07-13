@@ -1,81 +1,47 @@
-import { ArrowRight, MessageCircle, Sparkles, TrendingUp, Users, CheckCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import HomeHero from "@/components/home/HomeHero";
-import BentoGrid from "@/components/BentoGrid";
-import MagneticButton from "@/components/MagneticButton";
-import PartnersSection from "@/components/PartnersSection";
-import LearningJourney from "@/components/LearningJourney";
-import EcosystemOrbit from "@/components/EcosystemOrbit";
-import MentorCarousel from "@/components/MentorCarousel";
-import XRayTransform from "@/components/XRayTransform";
-import PlacementJourney from "@/components/PlacementJourney";
-import RegistrationForm from "@/components/RegistrationForm";
+import PartnersSection from "@/components/home/PartnersSection";
+import LearningJourney from "@/components/home/LearningJourney";
+import FlagshipLearningFrameworks from "@/components/home/FlagshipLearningFrameworks";
+import EcosystemOrbit from "@/components/home/EcosystemOrbit";
+import AssessmentJourney from "@/components/home/AssessmentJourney";
+import WorldsLargestAIHackathon from "@/components/home/WorldsLargestAIHackathon";
+import PlacementJourney from "@/components/home/PlacementJourney";
+import RegistrationForm from "@/components/home/RegistrationForm";
 import Footer from "@/components/Footer";
 
-// Layout metrics cards details
-const METRICS = [
-  { value: "4.9★", label: "Mentor Rating", icon: Sparkles },
-  { value: "10,000+", label: "Engineers Trained", icon: Users },
-  { value: "100%", label: "Hands-on Internships", icon: CheckCircle },
-  { value: "3x", label: "Career Acceleration", icon: TrendingUp },
-];
-
 export default function Home() {
-
   return (
     <main className="relative min-h-screen bg-white">
       {/* Header Navigation */}
       <Header />
 
-      {/* 1. New Redesigned Homepage Hero */}
+      {/* 1. Hero */}
       <HomeHero />
 
-      {/* 2. Program & Ecosystem Partners */}
+      {/* 2. Program Partners & Ecosystem Partners */}
       <PartnersSection />
 
-      {/* 2.5. Student Learning Journey */}
+      {/* 3. Learning Journey (Student AI Path) */}
       <LearningJourney />
 
-      {/* 2.6. The AI School Ecosystem */}
+      {/* 4. Flagship Learning Frameworks */}
+      <FlagshipLearningFrameworks />
+
+      {/* 5. Explore • Learn • Transform Orbit */}
       <EcosystemOrbit />
 
-      {/* 3. X-Ray Transform Grid (Friction & Antidote) */}
-      <XRayTransform />
+      {/* 6. AI Readiness Assessment Journey */}
+      <AssessmentJourney />
 
-      {/* 4. Course Tracks Matrix */}
-      <BentoGrid />
+      {/* 7. World's Largest AI Hackathon (Placeholder) */}
+      <WorldsLargestAIHackathon />
 
-      {/* 5. Performance Data Matrix (Metrics Section) */}
-      <section className="py-24 bg-white relative z-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {METRICS.map((metric, idx) => {
-              const Icon = metric.icon;
-              return (
-                <div key={idx} className="text-center flex flex-col items-center">
-                  <div className="p-3 bg-red-50 text-[#EE1C25] rounded-2xl mb-4 shadow-sm border border-red-100/50">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <div className="text-4xl font-extrabold font-heading text-[#171717] mb-1">
-                    {metric.value}
-                  </div>
-                  <div className="text-sm font-semibold text-neutral-400 uppercase tracking-wider">
-                    {metric.label}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Founders & Mentors Carousel */}
-      <MentorCarousel />
-
-      {/* 7. Placement Journey Cards */}
+      {/* 8. Placement Journey */}
       <PlacementJourney />
 
-      {/* 8. Minimalist Registration Form */}
+      {/* 9. Registration Form */}
       <RegistrationForm />
 
       {/* Footer */}

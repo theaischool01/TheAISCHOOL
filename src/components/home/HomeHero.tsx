@@ -27,14 +27,7 @@ export default function HomeHero() {
     setCoords({ x: 0, y: 0 });
   };
 
-  const trustCompanies = [
-    { name: "Google" },
-    { name: "AWS" },
-    { name: "Microsoft" },
-    { name: "NVIDIA" },
-    { name: "GitHub" },
-    { name: "Hugging Face" }
-  ];
+
 
   const particles = [
     { top: "15%", left: "10%", size: 3 },
@@ -362,31 +355,6 @@ export default function HomeHero() {
         </div>
       </div>
 
-      {/* 4. Bottom Background Wave Mesh Decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none overflow-hidden z-0">
-        <svg className="absolute bottom-0 w-full h-24 text-[#ef4444] opacity-[0.08]" preserveAspectRatio="none" viewBox="0 0 1440 74">
-          <path fill="currentColor" d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,74L1320,74C1200,74,960,74,720,74C480,74,240,74,120,74L0,74Z"></path>
-        </svg>
-      </div>
-
-      {/* Grayscale Trust Banner in Glass Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 mt-2">
-        <div className="w-full bg-white/40 border border-neutral-150/70 backdrop-blur-md rounded-2xl p-6 md:py-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-          <span className="text-[10px] font-black uppercase tracking-widest text-gray-600 font-sans">
-            Trusted by Learners & Startups Across India
-          </span>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 transition-opacity duration-300">
-            {trustCompanies.map((logo, idx) => (
-              <span
-                key={idx}
-                className="text-sm font-black font-heading tracking-widest text-neutral-400 hover:text-[#EE1C25] opacity-50 hover:opacity-100 transition-all duration-300 ease-in-out uppercase cursor-pointer"
-              >
-                {logo.name}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
