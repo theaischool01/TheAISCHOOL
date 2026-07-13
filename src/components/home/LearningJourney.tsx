@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, BookOpen, BrainCircuit, Bot, Award, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, BookOpen, BrainCircuit, Bot, Sparkles } from "lucide-react";
 
 const stages = [
   {
@@ -138,9 +139,16 @@ export default function LearningJourney() {
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white border-2 border-neutral-200 rounded-full flex flex-col items-center justify-center shadow-xl z-20 select-none animate-subtle-float"
               >
                 <div className="absolute inset-1.5 border border-dashed border-red-200 rounded-full" />
-                <span className="text-[10px] font-black tracking-widest text-neutral-400">THE</span>
-                <span className="text-sm font-black tracking-widest text-gray-950">AI SCHOOL</span>
-                <span className="text-[9px] font-black tracking-widest text-[#EE1C25] mt-0.5">ENGINE</span>
+                <div className="relative w-[70%] h-[70%]">
+                  <Image
+                    src="/images/logo.png"
+                    alt="The AI School Logo"
+                    fill
+                    sizes="80px"
+                    className="object-contain relative z-10"
+                    priority
+                  />
+                </div>
               </div>
 
               {/* STAGE 1 CARD (Top Left) */}

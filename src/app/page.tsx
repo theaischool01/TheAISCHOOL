@@ -5,6 +5,8 @@ import PartnersSection from "@/components/home/PartnersSection";
 import LearningJourney from "@/components/home/LearningJourney";
 import FlagshipLearningFrameworks from "@/components/home/FlagshipLearningFrameworks";
 import EcosystemOrbit from "@/components/home/EcosystemOrbit";
+import CareerJourneyCarousel from "@/components/home/CareerJourneyCarousel";
+import GoogleReviews from "@/components/home/GoogleReviews";
 import AssessmentJourney from "@/components/home/AssessmentJourney";
 import WorldsLargestAIHackathon from "@/components/home/WorldsLargestAIHackathon";
 import PlacementJourney from "@/components/home/PlacementJourney";
@@ -32,16 +34,22 @@ export default function Home() {
       {/* 5. Explore • Learn • Transform Orbit */}
       <EcosystemOrbit />
 
-      {/* 6. AI Readiness Assessment Journey */}
+      {/* 6. Career Journey Carousel (Infinite Timelines) */}
+      <CareerJourneyCarousel />
+
+      {/* 7. Google Reviews (Verified Live Student Ticker) */}
+      <GoogleReviews />
+
+      {/* 8. AI Readiness Assessment Journey */}
       <AssessmentJourney />
 
-      {/* 7. World's Largest AI Hackathon (Placeholder) */}
+      {/* 9. World's Largest AI Hackathon (Placeholder) */}
       <WorldsLargestAIHackathon />
 
-      {/* 8. Placement Journey */}
+      {/* 10. Placement Journey */}
       <PlacementJourney />
 
-      {/* 9. Registration Form */}
+      {/* 11. Registration Form */}
       <RegistrationForm />
 
       {/* Footer */}
