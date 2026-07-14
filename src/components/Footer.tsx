@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
@@ -14,8 +15,15 @@ export default function Footer() {
           {/* Column 1: Brand Info & Social Network Array */}
           <div className="md:col-span-4 space-y-4">
             <div className="flex items-center space-x-2">
-              <Link href="/" className="text-2xl font-black tracking-tighter uppercase font-sans hover:opacity-90 transition-opacity">
-                THE <span className="text-[#EE1C25]">AI</span> SCHOOL
+              <Link href="/" className="hover:opacity-90 transition-opacity block relative w-[180px] h-[40px]">
+                <Image
+                  src="/images/footer_logo.jpg"
+                  alt="THE AI SCHOOL"
+                  fill
+                  sizes="180px"
+                  className="object-contain filter invert"
+                  priority
+                />
               </Link>
             </div>
             <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-xs">
