@@ -75,7 +75,7 @@ export default function MentorsGrid() {
       name: "Anjaneyalu T",
       title: "Manager, AI and Data Science",
       initials: "AT",
-      image: "/images/mentor_anjaneyalu.png",
+      image: "/images/mentor_anjaneyulu.png",
       bio: "Senior Data Scientist with experience in Computer Vision, Natural Language Processing, and structured data analysis.",
       linkedin: "https://www.linkedin.com/company/theaischool/",
     },
