@@ -14,19 +14,19 @@ export default function Footer() {
           
           {/* Column 1: Brand Info & Social Network Array */}
           <div className="md:col-span-4 space-y-4">
-            <div className="flex items-center space-x-2">
-              <Link href="/" className="hover:opacity-90 transition-opacity block relative w-[180px] h-[40px]">
+            <div className="flex items-center space-x-2 mb-3">
+              <Link href="/" className="hover:opacity-90 transition-opacity block relative w-[180px] h-10">
                 <Image
-                  src="/images/footer_logo.jpg"
+                  src="/images/logo-footer.png"
                   alt="THE AI SCHOOL"
                   fill
                   sizes="180px"
-                  className="object-contain filter invert"
+                  className="object-contain"
                   priority
                 />
               </Link>
             </div>
-            <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-xs">
+            <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-xs pt-1">
               India’s only school where startup Leaders teach AI skills.
             </p>
             
