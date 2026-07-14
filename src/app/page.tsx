@@ -37,7 +37,7 @@ export default function Home() {
       <AssessmentJourney />
 
       {/* 7. Course Snapshot */}
-      <CourseSnapshot illustration="/images/course-snapshot-hero.png" />
+      <CourseSnapshot />
 
       {/* 8. World's Largest AI Hackathon (Placeholder) */}
       <WorldsLargestAIHackathon />
