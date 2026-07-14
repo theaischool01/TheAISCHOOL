@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function MentorsGrid() {
   const [showAll, setShowAll] = useState(false);
@@ -10,6 +11,7 @@ export default function MentorsGrid() {
       name: "Vikas Patel",
       title: "ML Scientist @ Nykaa",
       initials: "VP",
+      image: "/images/mentor_vikas.png",
       bio: "Machine Learning Scientist at Nykaa with extensive experience in insurance, healthcare, finance, and e-commerce.",
       linkedin: "https://www.linkedin.com/company/theaischool/",
     },
@@ -17,6 +19,7 @@ export default function MentorsGrid() {
       name: "Sagnik Pal",
       title: "Generative AI Consultant & Trainer",
       initials: "SP",
+      image: "/images/mentor_sagnik.png",
       bio: "Expert in leveraging AI and cutting-edge technologies to drive transformative business outcomes.",
       linkedin: "https://www.linkedin.com/company/theaischool/",
     },
@@ -24,6 +27,7 @@ export default function MentorsGrid() {
       name: "Akhil Vydyula",
       title: "Senior Data Scientist @ PwC",
       initials: "AV",
+      image: "/images/mentor_akhil.png",
       bio: "Senior Data Scientist at PwC, Data & Analytics and Engineering Specialist.",
       linkedin: "https://www.linkedin.com/company/theaischool/",
     },
@@ -31,6 +35,7 @@ export default function MentorsGrid() {
       name: "Anshu Pandey",
       title: "Head of Technology @ Blue Data",
       initials: "AP",
+      image: "/images/mentor_anshu.png",
       bio: "Head of Technology at Blue Data, helping enterprises accelerate their data and AI transformation strategy.",
       linkedin: "https://www.linkedin.com/company/theaischool/",
     },
@@ -38,6 +43,7 @@ export default function MentorsGrid() {
       name: "Harish Kumar",
       title: "Lead Data Scientist",
       initials: "HK",
+      image: "/images/mentor_harish.png",
       bio: "11 years of IT experience; has conducted over 60 training sessions in Generative AI, ML/AI, and AWS.",
       linkedin: "https://www.linkedin.com/company/theaischool/",
     },
@@ -96,9 +102,19 @@ export default function MentorsGrid() {
             >
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  {/* Smaller Avatar: 96px */}
-                  <div className="w-16 h-16 rounded-full bg-slate-200 text-slate-600 font-extrabold text-xl flex items-center justify-center shrink-0 border border-slate-300/40 select-none">
-                    {mentor.initials}
+                  {/* Avatar Container: Sinks in Image if configured, else Initials Fallback */}
+                  <div className="w-16 h-16 rounded-full bg-slate-200 text-slate-600 font-extrabold text-xl flex items-center justify-center shrink-0 border border-slate-300/40 overflow-hidden relative select-none">
+                    {mentor.image ? (
+                      <Image
+                        src={mentor.image}
+                        alt={mentor.name}
+                        fill
+                        sizes="64px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      mentor.initials
+                    )}
                   </div>
                   <div>
                     <h4 className="text-xs font-black text-gray-900 tracking-tight uppercase leading-snug">
