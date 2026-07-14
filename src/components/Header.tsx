@@ -98,7 +98,6 @@ const CATEGORIES: Category[] = [
 export default function Header() {
   const [activeCategory, setActiveCategory] = useState("ai-internship");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [registerDropdownOpen, setRegisterDropdownOpen] = useState(false);
 
   const activeCourses = CATEGORIES.find((c) => c.id === activeCategory)?.courses || [];
 
@@ -157,16 +156,6 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <ul className="flex items-center gap-6 list-none m-0 p-0">
-              <li>
-                <a href="/about-us" className="px-3 py-2 text-sm font-bold text-[#171717] hover:text-[#EE1C25] transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/career" className="px-3 py-2 text-sm font-bold text-[#171717] hover:text-[#EE1C25] transition-colors">
-                  Career
-                </a>
-              </li>
               <li className="relative group/nav-item">
                 <a
                   href="/learn"
@@ -214,6 +203,11 @@ export default function Header() {
                 </div>
               </li>
               <li>
+                <a href="/about-us" className="px-3 py-2 text-sm font-bold text-[#171717] hover:text-[#EE1C25] transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
                 <a href="/blogs" className="px-3 py-2 text-sm font-bold text-[#171717] hover:text-[#EE1C25] transition-colors">
                   Blogs
                 </a>
@@ -221,11 +215,6 @@ export default function Header() {
               <li>
                 <a href="/contact-us" className="px-3 py-2 text-sm font-bold text-[#171717] hover:text-[#EE1C25] transition-colors">
                   Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="/earn-with-us" className="px-3 py-2 text-sm font-bold text-[#171717] hover:text-[#EE1C25] transition-colors">
-                  Earn with us
                 </a>
               </li>
             </ul>
@@ -238,33 +227,6 @@ export default function Header() {
               <a href="/login" className="text-sm font-extrabold text-[#171717] hover:text-[#EE1C25] transition-colors">
                 Login
               </a>
-              <div className="relative">
-                <button
-                  onClick={() => setRegisterDropdownOpen(!registerDropdownOpen)}
-                  className="bg-[#EE1C25] hover:bg-neutral-900 text-white text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-300 shadow-md flex items-center gap-1.5 focus:outline-none"
-                >
-                  <span>Register Today</span>
-                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${registerDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {registerDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white border border-black/5 rounded-xl shadow-xl py-2 z-[1000] animate-in fade-in slide-in-from-top-2 duration-150">
-                    <a
-                      href="/#register"
-                      onClick={() => setRegisterDropdownOpen(false)}
-                      className="block px-4 py-2.5 text-xs font-bold text-neutral-800 hover:bg-neutral-50 hover:text-[#EE1C25] transition-colors"
-                    >
-                      Student Registration
-                    </a>
-                    <a
-                      href="/register"
-                      onClick={() => setRegisterDropdownOpen(false)}
-                      className="block px-4 py-2.5 text-xs font-bold text-neutral-800 hover:bg-neutral-50 hover:text-[#EE1C25] transition-colors border-t border-neutral-100"
-                    >
-                      Candidate Registration
-                    </a>
-                  </div>
-                )}
-              </div>
             </div>
 
             <div className="flex items-center gap-2">
@@ -297,18 +259,8 @@ export default function Header() {
           <div className="md:hidden w-full bg-white border-t border-black/5 px-6 py-4 animate-in fade-in slide-in-from-top-4 duration-200">
             <ul className="flex flex-col list-none m-0 p-0">
               <li>
-                <a href="/about-us" className="block font-bold text-[#171717] py-2">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/career" className="block font-bold text-[#171717] py-2">
-                  Career
-                </a>
-              </li>
-              <li>
                 <div className="font-bold text-sm text-[#6B7280] mb-2">Learn</div>
-                <div className="flex flex-col gap-1.5 pl-3 border-l border-neutral-100">
+                <div className="flex flex-col gap-1.5 pl-3 border-l border-neutral-100 mb-2">
                   {CATEGORIES.map((cat) => (
                     <div key={cat.id} className="py-1">
                       <div className="text-xs font-extrabold text-[#171717] mb-1">{cat.name}</div>
@@ -324,6 +276,11 @@ export default function Header() {
                 </div>
               </li>
               <li>
+                <a href="/about-us" className="block font-bold text-[#171717] py-2">
+                  About Us
+                </a>
+              </li>
+              <li>
                 <a href="/blogs" className="block font-bold text-[#171717] py-2">
                   Blogs
                 </a>
@@ -333,24 +290,10 @@ export default function Header() {
                   Contact Us
                 </a>
               </li>
-              <li>
-                <a href="/earn-with-us" onClick={() => setMobileMenuOpen(false)} className="block font-bold text-[#171717] py-2">
-                  Earn with us
-                </a>
-              </li>
               <li className="pt-2 border-t border-neutral-100 flex flex-col gap-3">
                 <a href="/login" onClick={() => setMobileMenuOpen(false)} className="block text-center font-bold text-[#171717] hover:text-[#EE1C25] py-2.5 rounded-lg border border-neutral-200">
                   Login
                 </a>
-                <div className="flex flex-col gap-1.5 bg-neutral-50 p-2.5 rounded-xl border border-neutral-100">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-neutral-400 text-center">Register Today</span>
-                  <a href="/#register" onClick={() => setMobileMenuOpen(false)} className="block text-center font-black bg-[#EE1C25] text-white py-2 rounded-lg text-xs uppercase tracking-wider">
-                    Student Option
-                  </a>
-                  <a href="/register" onClick={() => setMobileMenuOpen(false)} className="block text-center font-black bg-neutral-900 hover:bg-neutral-800 text-white py-2 rounded-lg text-xs uppercase tracking-wider">
-                    Candidate Option
-                  </a>
-                </div>
               </li>
             </ul>
           </div>
