@@ -15,12 +15,12 @@ export default function Footer() {
           {/* Column 1: Brand Info & Social Network Array */}
           <div className="md:col-span-4 space-y-4">
             <div className="flex items-center">
-              <Link href="/" className="relative w-44 h-14 block hover:opacity-90 transition-opacity">
+              <Link href="/" className="relative w-52 h-16 block hover:opacity-90 transition-opacity">
                 <Image
                   src="/images/logo-footer.png"
                   alt="The AI School Logo"
                   fill
-                  sizes="176px"
+                  sizes="208px"
                   className="object-contain"
                   priority
                 />
