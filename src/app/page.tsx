@@ -9,6 +9,7 @@ import GoogleReviews from "@/components/home/GoogleReviews";
 import AssessmentJourney from "@/components/home/AssessmentJourney";
 import CourseSnapshot from "@/components/home/CourseSnapshot";
 import WorldsLargestAIHackathon from "@/components/home/WorldsLargestAIHackathon";
+import TeamPreview from "@/components/home/TeamPreview";
 import RegistrationForm from "@/components/home/RegistrationForm";
 import Footer from "@/components/Footer";
 
@@ -42,10 +43,13 @@ export default function Home() {
       {/* 8. World's Largest AI Hackathon (Placeholder) */}
       <WorldsLargestAIHackathon />
 
-      {/* 8. Trusted by Thousands of Learners (Google Reviews Carousel) */}
+      {/* 9. Team Teaser Section */}
+      <TeamPreview />
+
+      {/* 10. Trusted by Thousands of Learners (Google Reviews Carousel) */}
       <GoogleReviews />
 
-      {/* 9. Registration Form */}
+      {/* 11. Registration Form */}
       <RegistrationForm />
 
       {/* Footer */}

@@ -9,6 +9,9 @@ import { Target, Compass, Globe, Users, ArrowUpRight, CheckCircle2 } from 'lucid
 import AboutHero from "@/components/about/AboutHero";
 import Visionaries from "@/components/about/Visionaries";
 import OurStory from "@/components/about/OurStory";
+import LeadershipGrid from "@/components/about/LeadershipGrid";
+import IndustryPartnersGrid from "@/components/about/IndustryPartnersGrid";
+import MentorsGrid from "@/components/about/MentorsGrid";
 
 export default function AboutUsPage() {
 
@@ -24,6 +27,15 @@ export default function AboutUsPage() {
       
       {/* ================= SECTION 3: INLINE REVEAL LEADERSHIP STORIES ================= */}
       <Visionaries />
+
+      {/* ================= SECTION 4: LEADERSHIP GRID ================= */}
+      <LeadershipGrid />
+
+      {/* ================= SECTION 5: PARTNERS GRID ================= */}
+      <IndustryPartnersGrid />
+
+      {/* ================= SECTION 6: MENTORS GRID ================= */}
+      <MentorsGrid />
 
       <Footer />
     </main>
