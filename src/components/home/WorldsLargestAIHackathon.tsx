@@ -13,53 +13,53 @@ import {
 } from "lucide-react";
 
 // Consolidated Bento Statistic Cards
-// Combines highlights (Hours, Mentors, Workshops, Prize Pool) & key metrics into a single layout
+// Option A: Clean, unified single-row card sizing scaling to equal dimensions
 const bentoStats = [
   {
     value: "3500+",
     label: "Teams Registered",
     desc: "National participation from leading universities and developer collectives.",
     icon: Users,
-    sizeClass: "md:col-span-2 md:row-span-2 bg-gradient-to-br from-[#EE1C25] to-[#d61920] text-white border-red-500 shadow-lg"
+    sizeClass: "bg-gradient-to-br from-[#EE1C25] to-[#d61920] text-white border-red-500 shadow-lg"
   },
   {
     value: "30+ Hrs",
     label: "Co-creation Sprint",
     desc: "Non-stop brainstorm and code sprint to build working prototypes.",
     icon: Clock,
-    sizeClass: "md:col-span-1 md:row-span-1"
+    sizeClass: ""
   },
   {
     value: "113",
     label: "Active Participants",
     desc: "Vetted builders coding live.",
     icon: GraduationCap,
-    sizeClass: "md:col-span-1 md:row-span-1"
+    sizeClass: ""
   },
   {
     value: "19",
     label: "Finalists Shortlisted",
     desc: "Pitched to the Grand Jury panel.",
     icon: Trophy,
-    sizeClass: "md:col-span-1 md:row-span-1"
+    sizeClass: ""
   },
   {
     value: "₹4.5L",
     label: "Cash Prize Pool",
-    desc: "Distributed across winners, runners-up, and top innovative prototypes.",
+    desc: "Distributed across winners, runners-up, and innovative prototypes.",
     icon: Trophy,
-    sizeClass: "md:col-span-2 md:row-span-1"
+    sizeClass: "sm:col-span-2 md:col-span-1"
   },
   {
     value: "33+",
     label: "Colleges Represented",
     desc: "Pan-India institutional representation.",
     icon: Laptop,
-    sizeClass: "md:col-span-1 md:row-span-1"
+    sizeClass: ""
   }
 ];
 
-// Curated 4 Images for a Tight Bento Gallery Grid (Reduces scroll height by ~40-50%)
+// Curated 4 Images for a Tight Bento Gallery Grid
 const galleryImages = [
   {
     src: "/images/hackathon_group1.jpg",
@@ -157,10 +157,10 @@ export default function WorldsLargestAIHackathon() {
           </p>
         </div>
 
-        {/* ================= SECTION 2: CONSOLIDATED BENTO STATS GRID ================= */}
+        {/* ================= SECTION 2: CONSOLIDATED SINGLE-ROW STATS GRID ================= */}
         <div 
           ref={statsSectionRef}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
         >
           {bentoStats.map((stat, idx) => {
             const Icon = stat.icon;
@@ -168,7 +168,7 @@ export default function WorldsLargestAIHackathon() {
             return (
               <div 
                 key={idx}
-                className={`group border rounded-3xl p-6 transition-all duration-300 flex flex-col justify-between min-h-[160px] ${
+                className={`group border rounded-3xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[160px] ${
                   isHero 
                     ? stat.sizeClass 
                     : "bg-gradient-to-br from-white to-slate-50 border-gray-100 hover:shadow-lg hover:-translate-y-1 hover:border-red-100 " + stat.sizeClass
@@ -178,15 +178,15 @@ export default function WorldsLargestAIHackathon() {
                   <div className={`p-2.5 rounded-xl w-fit ${
                     isHero ? "bg-white/10 text-white" : "bg-red-50 text-[#EE1C25] border border-red-100"
                   }`}>
-                    <Icon className="w-4.5 h-4.5" />
+                    <Icon className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className={`block text-[10px] font-bold uppercase tracking-wider ${
+                    <span className={`block text-[9px] font-bold uppercase tracking-wider ${
                       isHero ? "text-white/70" : "text-neutral-400"
                     }`}>
                       {stat.label}
                     </span>
-                    <p className={`text-[11px] font-semibold mt-1 leading-normal ${
+                    <p className={`text-[10px] font-semibold mt-1 leading-tight ${
                       isHero ? "text-white/80" : "text-neutral-500"
                     }`}>
                       {stat.desc}
@@ -194,7 +194,7 @@ export default function WorldsLargestAIHackathon() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <span className="text-3xl font-black tracking-tight leading-none">
+                  <span className="text-2xl font-black tracking-tight leading-none">
                     {idx === 0 ? `${visibleStats[0]}+` : 
                      idx === 1 ? `${visibleStats[1]}+ Hrs` : 
                      idx === 2 ? `${visibleStats[2]}` : 

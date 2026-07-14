@@ -158,7 +158,7 @@ export default function CourseSnapshot() {
                   }}
                 >
                   <div className="w-3.5 h-3.5 rounded-full bg-red-50 text-[#EE1C25] flex items-center justify-center shrink-0 border border-red-100">
-                    <Check className="w-2 h-2 stroke-[3]" />
+                    <Check className="w-2.5 h-2.5 stroke-[3]" />
                   </div>
                   <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wide">
                     {item}
@@ -183,44 +183,50 @@ export default function CourseSnapshot() {
 
           {/* ================= RIGHT COLUMN (45% ON DESKTOP) ================= */}
           <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center w-full">
-            {/* Visual Frame Wrapper with glow and particle backdrops */}
-            <div className="relative w-full max-w-[340px] lg:max-w-[380px] aspect-square rounded-[40px] bg-gradient-to-tr from-slate-50 to-white border border-gray-100 p-6 shadow-xl flex items-center justify-center overflow-visible">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(238,28,37,0.06)_0%,transparent_75%)] pointer-events-none" />
+            {/* Visual Frame Wrapper with rounded border-box framing preventing boundary clipping */}
+            <div className="relative w-full max-w-[340px] lg:max-w-[380px] aspect-square rounded-[32px] bg-gradient-to-br from-slate-50 to-white border border-gray-100 p-8 shadow-xl flex items-center justify-center overflow-visible">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(238,28,37,0.06)_0%,transparent_75%)] pointer-events-none rounded-[32px]" />
               
               {/* Floating accent particles */}
-              <div className="absolute top-6 left-6 w-2 h-2 rounded-full bg-red-400/40 animate-pulse" />
-              <div className="absolute bottom-8 right-6 w-3 h-3 rounded-full bg-red-300/30 animate-pulse delay-500" />
+              <div className="absolute top-4 left-4 w-2 h-2 rounded-full bg-red-400/40 animate-pulse" />
+              <div className="absolute bottom-4 right-4 w-3 h-3 rounded-full bg-red-300/30 animate-pulse delay-500" />
 
               {/* Coded Product Mockup Composition */}
-              <div className="relative w-full h-full flex items-center justify-center select-none">
+              <div className="relative w-full h-full flex items-center justify-center select-none overflow-visible">
                 
-                {/* 1. Main Course Card Mockup with Browser Top Bar */}
-                <div className="absolute w-[85%] bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-2xl rotate-1 z-10">
+                {/* 1. Main Course Card Mockup */}
+                <div className="absolute w-[82%] bg-white border border-gray-150 rounded-2xl overflow-hidden shadow-2xl rotate-1 z-10">
                   {/* Browser-style top bar */}
-                  <div className="bg-slate-50 border-b border-gray-100 px-4 py-2 flex items-center gap-1.5">
+                  <div className="bg-slate-50 border-b border-gray-100 px-3.5 py-1.5 flex items-center gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
                     <div className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
                     <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
                   </div>
                   
-                  <div className="p-4">
+                  <div className="p-3.5 relative">
                     {/* Thumbnail Block */}
-                    <div className="w-full h-24 bg-gradient-to-tr from-slate-100 to-slate-50 rounded-2xl mb-3 relative overflow-hidden flex items-center justify-center border border-gray-50">
-                      <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
-                        <Cpu className="w-5 h-5 text-[#EE1C25]" />
+                    <div className="w-full h-20 bg-gradient-to-tr from-slate-100 to-slate-50 rounded-xl mb-2.5 relative overflow-hidden flex items-center justify-center border border-gray-50">
+                      <div className="w-8.5 h-8.5 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
+                        <Cpu className="w-4 h-4 text-[#EE1C25]" />
                       </div>
                     </div>
+                    {/* Rating badge sits as a small corner tag inside the main card */}
+                    <div className="absolute top-5 right-5 bg-white/95 backdrop-blur-xs border border-gray-150 rounded-full px-2 py-0.5 shadow-sm flex items-center gap-1 z-20">
+                      <Star className="w-2.5 h-2.5 fill-[#FBBC05] stroke-none" />
+                      <span className="text-[8px] font-black text-gray-950">4.9</span>
+                    </div>
+
                     {/* Course Title Line */}
-                    <h4 className="text-xs font-black text-gray-950 uppercase tracking-wide mb-2">
+                    <h4 className="text-[10px] font-black text-gray-950 uppercase tracking-wide mb-2">
                       Advanced Generative AI
                     </h4>
                     {/* Progress Bar Container */}
-                    <div className="space-y-1.5">
-                      <div className="flex justify-between items-center text-[9px] font-bold text-neutral-400 uppercase tracking-wider">
-                        <span>Course Progress</span>
+                    <div className="space-y-1">
+                      <div className="flex justify-between items-center text-[8px] font-bold text-neutral-400 uppercase tracking-wider">
+                        <span>Progress</span>
                         <span className="text-[#EE1C25]">85%</span>
                       </div>
-                      <div className="w-full h-1.5 bg-neutral-100 rounded-full overflow-hidden">
+                      <div className="w-full h-1 bg-neutral-100 rounded-full overflow-hidden">
                         <div 
                           className="h-full bg-[#EE1C25] rounded-full transition-all duration-1000 ease-out" 
                           style={{ width: progressWidth }} 
@@ -230,32 +236,28 @@ export default function CourseSnapshot() {
                   </div>
                 </div>
 
-                {/* 2. Certificate / Badge Card (Overlapping bottom-left with float drift animation) */}
-                <div className="absolute -bottom-2 -left-4 w-[48%] bg-white border border-gray-150 rounded-2xl p-3 shadow-lg -rotate-6 z-25 flex items-center gap-2 animate-float-slow">
-                  <div className="p-1.5 bg-red-50 text-[#EE1C25] rounded-lg border border-red-100">
-                    <Trophy className="w-4 h-4" />
+                {/* 2. Certificate / Badge Card (Overlapping bottom-left with safe margins) */}
+                <div className="absolute -bottom-4 -left-5 w-[48%] bg-white border border-gray-150 rounded-xl p-2.5 shadow-lg -rotate-6 z-25 flex items-center gap-2 animate-float-slow">
+                  <div className="p-1 bg-red-50 text-[#EE1C25] rounded-md border border-red-100">
+                    <Trophy className="w-3.5 h-3.5" />
                   </div>
                   <div className="leading-tight">
-                    <span className="block text-[9px] font-black text-gray-950 uppercase">Certified</span>
-                    <span className="block text-[8px] font-bold text-neutral-400 uppercase tracking-wider">AI Engineer</span>
+                    <span className="block text-[8px] font-black text-gray-950 uppercase">Certified</span>
+                    <span className="block text-[7px] font-bold text-neutral-400 uppercase tracking-wider">AI Engineer</span>
                   </div>
                 </div>
 
-                {/* 3. Mentor Chat Bubble (Overlapping top-right with delayed float drift animation) */}
-                <div className="absolute -top-4 -right-4 w-[52%] bg-white border border-gray-150 rounded-2xl p-3 shadow-lg rotate-3 z-20 flex gap-2.5 items-start animate-float-slower">
-                  <div className="p-1.5 bg-red-50 text-[#EE1C25] rounded-full border border-red-100 shrink-0">
-                    <MessageCircle className="w-3.5 h-3.5" />
+                {/* 3. Mentor Chat Bubble (Overlapping top-right with live status indicator) */}
+                <div className="absolute -top-6 -right-5 w-[52%] bg-white border border-gray-150 rounded-xl p-2.5 shadow-lg rotate-3 z-20 flex gap-2.5 items-start animate-float-slower">
+                  <div className="p-1 bg-red-50 text-[#EE1C25] rounded-full border border-red-100 shrink-0 relative">
+                    <MessageCircle className="w-3 h-3" />
+                    {/* Green Live Online Status Indicator */}
+                    <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-[#25D366] rounded-full border border-white" />
                   </div>
-                  <div className="space-y-1 leading-none">
-                    <span className="block text-[9px] font-black text-gray-950">Mentor Feedback</span>
-                    <span className="block text-[8px] font-bold text-slate-500">Code review complete</span>
+                  <div className="space-y-0.5 leading-none">
+                    <span className="block text-[8px] font-black text-gray-950">Mentor Feedback</span>
+                    <span className="block text-[7px] font-bold text-slate-500">Code review complete</span>
                   </div>
-                </div>
-
-                {/* 4. Stat Chip (Floating near top-left) */}
-                <div className="absolute top-16 -left-6 bg-white border border-gray-150 rounded-full px-3 py-1 shadow-md rotate-2 z-15 flex items-center gap-1.5">
-                  <Star className="w-3 h-3 fill-[#FBBC05] stroke-none" />
-                  <span className="text-[9px] font-black text-gray-950 tracking-wider">4.9 RATING</span>
                 </div>
 
               </div>
@@ -268,11 +270,11 @@ export default function CourseSnapshot() {
       <style jsx global>{`
         @keyframes floatSlow {
           0%, 100% { transform: translateY(0) rotate(-6deg); }
-          50% { transform: translateY(-6px) rotate(-4deg); }
+          50% { transform: translateY(-4px) rotate(-4deg); }
         }
         @keyframes floatSlower {
           0%, 100% { transform: translateY(0) rotate(3deg); }
-          50% { transform: translateY(-4px) rotate(5deg); }
+          50% { transform: translateY(-3px) rotate(4deg); }
         }
         .animate-float-slow {
           animation: floatSlow 6s ease-in-out infinite;
