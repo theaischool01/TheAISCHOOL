@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export default function TeamPreview() {
@@ -10,17 +11,32 @@ export default function TeamPreview() {
       name: "Susanta Srinath Reddy",
       role: "Founder/CEO",
       initials: "SR",
+      image: "/mentors/srinath.webp",
     },
     {
       name: "K. Spandana",
       role: "Co-Founder",
       initials: "KS",
+      image: "/mentors/spandana.webp",
     },
   ];
 
-  // Dummy initials for avatars
-  const partnerAvatars = ["AC", "GK", "KB", "RM", "RR"];
-  const mentorAvatars = ["VP", "SP", "AV", "AP", "HK", "MB"];
+  const partnerAvatars = [
+    { initials: "AC", image: "/mentors/arun.webp",   name: "Arun Chinnachamy" },
+    { initials: "GK", image: "/mentors/gopi.webp",   name: "Gopi Krishna" },
+    { initials: "KB", image: "/mentors/kiran.webp",  name: "Kiran Babu" },
+    { initials: "RM", image: "/mentors/raja.webp",   name: "Raja Mamidi" },
+    { initials: "RR", image: "/mentors/ranjan.webp", name: "Ranjan Relan" },
+  ];
+
+  const mentorAvatars = [
+    { initials: "VP", image: "/images/mentor_vikas_v2.png",   name: "Vikas Patel" },
+    { initials: "SP", image: "/images/mentor_sagnik_v2.png",  name: "Sagnik Pal" },
+    { initials: "AV", image: "/images/mentor_akhil_v2.png",   name: "Akhil Vydyula" },
+    { initials: "AP", image: "/images/mentor_anshu_v2.png",   name: "Anshu Pandey" },
+    { initials: "HK", image: "/images/mentor_harish_v2.png",  name: "Harish Kumar" },
+    { initials: "MB", image: "/images/mentor_mohit.png",      name: "Mohit Bhatia" },
+  ];
 
   return (
     <section className="w-full bg-white py-16 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading select-none">
@@ -46,9 +62,19 @@ export default function TeamPreview() {
                 key={idx} 
                 className="bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center shadow-xs hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                {/* 120px Circular Avatar Fallback */}
-                <div className="w-24 h-24 rounded-full bg-slate-200 text-slate-600 font-extrabold text-2xl flex items-center justify-center mb-4 border border-slate-300/40 select-none">
-                  {founder.initials}
+                {/* 96px Circular Avatar with real photo */}
+                <div className="w-24 h-24 rounded-full bg-slate-200 text-slate-600 font-extrabold text-2xl flex items-center justify-center mb-4 border border-slate-300/40 overflow-hidden relative shrink-0">
+                  {founder.image ? (
+                    <Image
+                      src={founder.image}
+                      alt={founder.name}
+                      fill
+                      sizes="96px"
+                      className="object-cover"
+                    />
+                  ) : (
+                    founder.initials
+                  )}
                 </div>
                 <div>
                   <h4 className="text-xs font-black text-gray-900 tracking-tight uppercase leading-snug">
@@ -82,14 +108,26 @@ export default function TeamPreview() {
                 </Link>
               </div>
 
-              {/* Avatar Cluster */}
+              {/* Avatar Cluster with real photos */}
               <div className="flex items-center -space-x-3.5 pl-2 shrink-0">
                 {partnerAvatars.map((avatar, idx) => (
                   <div 
                     key={idx} 
-                    className="w-11 h-11 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-black text-slate-600 shadow-sm"
+                    className="w-11 h-11 rounded-full bg-slate-200 border-2 border-white overflow-hidden relative shadow-sm shrink-0"
                   >
-                    {avatar}
+                    {avatar.image ? (
+                      <Image
+                        src={avatar.image}
+                        alt={avatar.name}
+                        fill
+                        sizes="44px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <span className="flex items-center justify-center w-full h-full text-[10px] font-black text-slate-600">
+                        {avatar.initials}
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>
@@ -112,14 +150,26 @@ export default function TeamPreview() {
                 </Link>
               </div>
 
-              {/* Avatar Cluster */}
+              {/* Avatar Cluster with real photos */}
               <div className="flex items-center -space-x-3.5 pl-2 shrink-0">
                 {mentorAvatars.map((avatar, idx) => (
                   <div 
                     key={idx} 
-                    className="w-11 h-11 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-black text-slate-600 shadow-sm"
+                    className="w-11 h-11 rounded-full bg-slate-200 border-2 border-white overflow-hidden relative shadow-sm shrink-0"
                   >
-                    {avatar}
+                    {avatar.image ? (
+                      <Image
+                        src={avatar.image}
+                        alt={avatar.name}
+                        fill
+                        sizes="44px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <span className="flex items-center justify-center w-full h-full text-[10px] font-black text-slate-600">
+                        {avatar.initials}
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>
