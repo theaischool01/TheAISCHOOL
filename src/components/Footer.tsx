@@ -4,7 +4,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Mail, Phone } from 'lucide-react';
 
-export default function Footer() {
+interface FooterProps {
+  taglineText?: string;
+  courses?: { label: string; href: string }[];
+  contactEmail?: string;
+  contactPhone?: string;
+  contactAddress?: string;
+}
+
+export default function Footer({
+  taglineText = "India’s only school where startup Leaders teach AI skills.",
+  courses = [
+    { label: "Build Your AI Agent", href: "/courses/building-your-ai-agent-for-coders" },
+    { label: "Data Analysis & PowerBI", href: "/courses/data-analysis-with-ai-and-powerbi" },
+    { label: "Prompt Engineering 101", href: "/courses/prompt-engineering-101" },
+    { label: "Advanced RAG Systems", href: "/courses/advanced-ai-architectures-rag" },
+  ],
+  contactEmail = "support@theaischool.co",
+  contactPhone = "+91 90309 06584",
+  contactAddress = "T-hub 2.0, Knowledge City, Hyderabad, Telangana, 500081",
+}: FooterProps) {
   return (
     <footer className="w-full bg-gradient-to-tr from-[#1a0203] via-black to-[#3d0a0d] text-white pt-16 pb-8 px-6 md:px-12 relative border-t border-white/5">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -27,7 +46,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-xs sm:pl-0.5">
-              India’s only school where startup Leaders teach AI skills.
+              {taglineText}
             </p>
             
             <div className="flex items-center justify-center sm:justify-start space-x-4 pt-1 w-full sm:pl-0.5">
@@ -75,32 +94,35 @@ export default function Footer() {
           <div className="md:col-span-3 space-y-4">
             <h4 className="text-sm font-black tracking-wider uppercase text-white">Our Courses</h4>
             <ul className="space-y-2.5 text-sm font-semibold text-neutral-300">
-              <li><Link href="/courses/building-your-ai-agent-for-coders" className="hover:text-white transition-colors">Build Your AI Agent</Link></li>
-              <li><Link href="/courses/data-analysis-with-ai-and-powerbi" className="hover:text-white transition-colors">Data Analysis & PowerBI</Link></li>
-              <li><Link href="/courses/prompt-engineering-101" className="hover:text-white transition-colors">Prompt Engineering 101</Link></li>
-              <li><Link href="/courses/advanced-ai-architectures-rag" className="hover:text-white transition-colors">Advanced RAG Systems</Link></li>
+              {courses.map((course, idx) => (
+                <li key={idx}>
+                  <Link href={course.href} className="hover:text-white transition-colors">
+                    {course.label}
+                  </Link>
+                </li>
+              ))}
               <li><a href="#courses-section" className="text-xs text-neutral-500 hover:text-[#EE1C25] transition-colors block pt-1">View All Specialized Tracks →</a></li>
             </ul>
           </div>
 
-          {/* Column 4: T-Hub Operations Information */}
+          {/* Column 4: Operations Information */}
           <div className="md:col-span-3 space-y-4">
             <h4 className="text-sm font-black tracking-wider uppercase text-white">Contact Us</h4>
             <ul className="space-y-4 text-sm font-semibold text-neutral-300">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-[#EE1C25] shrink-0 mt-0.5" />
-                <span className="leading-snug">T-hub 2.0, Knowledge City, Hyderabad, Telangana, 500081</span>
+                <span className="leading-snug">{contactAddress}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[#EE1C25] shrink-0" />
-                <a href="mailto:support@theaischool.co" className="hover:text-white transition-colors truncate">
-                  support@theaischool.co
+                <a href={`mailto:${contactEmail}`} className="hover:text-white transition-colors truncate font-heading">
+                  {contactEmail}
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#EE1C25] shrink-0" />
-                <a href="tel:+919030906584" className="hover:text-white transition-colors">
-                  +91 90309 06584
+                <a href={`tel:${contactPhone.replace(/\s+/g, '')}`} className="hover:text-white transition-colors">
+                  {contactPhone}
                 </a>
               </li>
             </ul>

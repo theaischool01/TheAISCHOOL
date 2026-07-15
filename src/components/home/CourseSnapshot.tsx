@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
+import Link from "next/link";
 import { Check, BookOpen, Layers, Cpu, Award } from "lucide-react";
 import CourseSnapshotVisual from "./CourseSnapshotVisual";
 
-const checklistItems = [
+const defaultChecklist = [
   "Learn from Startup Founders",
   "Live Industry Projects",
   "Personal Mentorship",
@@ -13,11 +14,39 @@ const checklistItems = [
   "Placement Support",
 ];
 
-export default function CourseSnapshot() {
+interface CourseSnapshotProps {
+  badgeText?: string;
+  heading?: string;
+  subtext?: string;
+  stats?: { value: number; label: string; icon: string }[];
+  checklist?: string[];
+  ctaText?: string;
+}
+
+export default function CourseSnapshot({
+  badgeText = "Course Snapshot",
+  heading,
+  subtext = "Master production-grade workflows through live network challenges, mentored co-creation loops, and professional certifications.",
+  stats = [
+    { value: 100, label: "Hours Learning", icon: "BookOpen" },
+    { value: 7, label: "Industry Projects", icon: "Layers" },
+    { value: 10, label: "GenAI Tools", icon: "Cpu" },
+  ],
+  checklist = defaultChecklist,
+  ctaText = "Explore Curriculum",
+}: CourseSnapshotProps) {
   const [visibleStats, setVisibleStats] = useState<number[]>([0, 0, 0]);
   const [isChecklistVisible, setIsChecklistVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Fallback heading text preserving layout linebreaks
+  const headingText = heading || (
+    <>
+      Everything You Need To <br className="hidden sm:inline" />
+      Become <span className="text-[#EE1C25]">Industry Ready</span>
+    </>
+  );
 
   useEffect(() => {
     const currentRef = sectionRef.current;
@@ -33,7 +62,7 @@ export default function CourseSnapshot() {
           const stepTime = duration / steps;
           let currentStep = 0;
 
-          const targets = [100, 7, 10];
+          const targets = stats.map(s => s.value);
           const timer = setInterval(() => {
             currentStep++;
             const progress = currentStep / steps;
@@ -61,7 +90,7 @@ export default function CourseSnapshot() {
         observer.unobserve(currentRef);
       }
     };
-  }, [hasAnimated]);
+  }, [hasAnimated, stats]);
 
   return (
     <section
@@ -81,52 +110,42 @@ export default function CourseSnapshot() {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-0.5 bg-red-50 border border-red-100 rounded-full">
                 <span className="text-[9px] font-black uppercase tracking-widest text-[#EE1C25]">
-                  Course Snapshot
+                  {badgeText}
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-950 tracking-tight leading-tight uppercase">
-                Everything You Need To <br className="hidden sm:inline" />
-                Become <span className="text-[#EE1C25]">Industry Ready</span>
+                {headingText}
               </h2>
               <p className="text-slate-600 text-xs sm:text-sm font-semibold leading-relaxed max-w-xl">
-                Master production-grade workflows through live network challenges, mentored co-creation loops, and professional certifications.
+                {subtext}
               </p>
             </div>
 
             {/* Asymmetrical Bento layout for Statistic Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {/* Metric 1 */}
-              <div className="group bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-4 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-red-100 transition-all duration-300">
-                <BookOpen className="w-4 h-4 text-[#EE1C25] mb-2" />
-                <span className="block text-3xl font-black text-gray-950 tracking-tight">
-                  {visibleStats[0]}+
-                </span>
-                <span className="block text-[10px] font-bold text-neutral-400 uppercase tracking-wider mt-0.5">
-                  Hours Learning
-                </span>
-              </div>
+              {stats.map((stat, idx) => {
+                const IconComponent =
+                  stat.icon === "BookOpen"
+                    ? BookOpen
+                    : stat.icon === "Layers"
+                    ? Layers
+                    : Cpu;
 
-              {/* Metric 2 */}
-              <div className="group bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-4 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-red-100 transition-all duration-300">
-                <Layers className="w-4 h-4 text-[#EE1C25] mb-2" />
-                <span className="block text-3xl font-black text-gray-950 tracking-tight">
-                  {visibleStats[1]}+
-                </span>
-                <span className="block text-[10px] font-bold text-neutral-400 uppercase tracking-wider mt-0.5">
-                  Industry Projects
-                </span>
-              </div>
-
-              {/* Metric 3 */}
-              <div className="group bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-4 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-red-100 transition-all duration-300">
-                <Cpu className="w-4 h-4 text-[#EE1C25] mb-2" />
-                <span className="block text-3xl font-black text-gray-950 tracking-tight">
-                  {visibleStats[2]}+
-                </span>
-                <span className="block text-[10px] font-bold text-neutral-400 uppercase tracking-wider mt-0.5">
-                  GenAI Tools
-                </span>
-              </div>
+                return (
+                  <div
+                    key={idx}
+                    className="group bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-4 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-red-100 transition-all duration-300"
+                  >
+                    <IconComponent className="w-4 h-4 text-[#EE1C25] mb-2" />
+                    <span className="block text-3xl font-black text-gray-950 tracking-tight">
+                      {visibleStats[idx] || 0}+
+                    </span>
+                    <span className="block text-[10px] font-bold text-neutral-400 uppercase tracking-wider mt-0.5">
+                      {stat.label}
+                    </span>
+                  </div>
+                );
+              })}
 
               {/* Career focused - Asymmetrical Bento Span Card */}
               <div className="group bg-gradient-to-br from-[#EE1C25] to-[#d61920] border border-red-500 rounded-2xl p-4 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-white">
@@ -144,7 +163,7 @@ export default function CourseSnapshot() {
 
             {/* Checklist Flowing Wrap Layout */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {checklistItems.map((item, idx) => (
+              {checklist.map((item, idx) => (
                 <div
                   key={idx}
                   className={`inline-flex items-center gap-2 px-3 py-1.5 bg-neutral-50/70 border border-gray-100 rounded-full shadow-xs hover:border-red-200 transition-all duration-500 transform ${
@@ -168,15 +187,15 @@ export default function CourseSnapshot() {
 
             {/* CTA Button */}
             <div className="pt-2">
-              <a
+              <Link
                 href="/learn"
                 className="group inline-flex items-center gap-2 bg-[#EE1C25] hover:bg-[#d61920] text-white font-bold text-xs uppercase tracking-widest px-7 py-3.5 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               >
-                Explore Curriculum
+                {ctaText}
                 <span className="group-hover:translate-x-1 transition-transform inline-block">
                   →
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -196,6 +215,11 @@ export default function CourseSnapshot() {
               </div>
             </div>
           </div>
+
+          {/* Link element imports for dynamic typing correctness */}
+          <span className="hidden">
+            <Link href="/" />
+          </span>
 
         </div>
       </div>

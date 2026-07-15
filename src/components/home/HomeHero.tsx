@@ -5,7 +5,19 @@ import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-export default function HomeHero() {
+interface HomeHeroProps {
+  badgeText?: string;
+  headline?: React.ReactNode;
+  exploreCtaText?: string;
+  assessmentCtaText?: string;
+}
+
+export default function HomeHero({
+  badgeText = "WHERE INTELLIGENCE MEETS INNOVATION.",
+  headline,
+  exploreCtaText = "Explore Programs",
+  assessmentCtaText = "Take Assessment",
+}: HomeHeroProps) {
   const shouldReduceMotion = useReducedMotion();
   const [mounted, setMounted] = useState(false);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
@@ -27,7 +39,16 @@ export default function HomeHero() {
     setCoords({ x: 0, y: 0 });
   };
 
+  const defaultHeadline = (
+    <>
+      India's Only School to Learn AI Skills from Tech Startup{" "}
+      <span className="text-[#EE1C25] relative inline-block">
+        Founders & Leaders.
+      </span>
+    </>
+  );
 
+  const headlineContent = headline || defaultHeadline;
 
   const particles = [
     { top: "15%", left: "10%", size: 3 },
@@ -94,13 +115,10 @@ export default function HomeHero() {
           {/* Heading */}
           <div className="space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[46px] font-black font-heading text-[#171717] tracking-tight leading-[1.12]">
-              India's Only School to Learn AI Skills from Tech Startup{" "}
-              <span className="text-[#EE1C25] relative inline-block">
-                Founders & Leaders.
-              </span>
+              {headlineContent}
             </h1>
             <p className="text-[#6B7280] font-heading font-extrabold text-xs sm:text-sm tracking-widest uppercase">
-              WHERE INTELLIGENCE MEETS INNOVATION.
+              {badgeText}
             </p>
           </div>
 
@@ -111,7 +129,7 @@ export default function HomeHero() {
               href="/learn"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-full transition-all duration-200 shadow-[0_4px_12px_rgba(238,28,37,0.15)] hover:shadow-[0_4px_20px_rgba(238,28,37,0.25)] active:scale-98"
             >
-              <span>Explore Programs</span>
+              <span>{exploreCtaText}</span>
               <ArrowRight className="w-4 h-4" />
             </a>
 
@@ -119,7 +137,7 @@ export default function HomeHero() {
               href="/assessment"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-neutral-200 bg-white hover:bg-neutral-50 text-[#171717] text-xs font-black uppercase tracking-wider rounded-full shadow-sm transition-all duration-200 active:scale-98"
             >
-              <span>Take Assessment</span>
+              <span>{assessmentCtaText}</span>
             </a>
           </div>
         </div>
