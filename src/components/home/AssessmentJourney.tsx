@@ -91,19 +91,20 @@ const steps = [
 
 export default function AssessmentJourney() {
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
+    <section className="w-full bg-white py-28 lg:py-36 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
       <div className="max-w-6xl mx-auto">
 
         {/* ================= TRANSFORMATION PROCESS (STICKY STACK SCROLL) ================= */}
         <div className="space-y-12 pt-8">
-          <div className="text-center space-y-2 max-w-xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">
-              YOUR AI JOURNEY
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#EE1C25]">
+              THE AI SCHOOL
             </span>
-            <h3 className="text-2xl md:text-4xl font-black text-gray-950 tracking-tight font-heading">
-              From Beginner to AI Engineer
+            <h3 className="text-3xl md:text-5xl font-black tracking-tight font-heading leading-[1.1] uppercase">
+              <span className="text-gray-950 block">YOUR AI JOURNEY</span>
+              <span className="text-[#EE1C25] block text-2xl md:text-4xl mt-2">FROM BEGINNER TO AI ENGINEER</span>
             </h3>
-            <p className="text-sm font-semibold text-neutral-500">
+            <p className="text-sm font-semibold text-neutral-500 max-w-lg mx-auto">
               A structured learning journey designed by startup founders and engineering leaders.
             </p>
           </div>

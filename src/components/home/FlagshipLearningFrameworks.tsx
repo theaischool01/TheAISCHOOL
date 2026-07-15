@@ -11,7 +11,7 @@ import {
 
 export default function FlagshipLearningFrameworks() {
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
+    <section className="w-full bg-white py-28 lg:py-36 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
       <div className="max-w-6xl mx-auto space-y-16">
 
         {/* ================= SECTION TITLE ================= */}
@@ -19,8 +19,9 @@ export default function FlagshipLearningFrameworks() {
           <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">
             THE PATHWAY
           </span>
-          <h2 className="text-3xl md:text-5xl font-black text-gray-950 tracking-tight leading-tight">
-            Flagship Learning Frameworks
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase">
+            <span className="text-gray-950 block">FLAGSHIP</span>
+            <span className="text-[#EE1C25] block mt-1">LEARNING FRAMEWORKS</span>
           </h2>
           <p className="text-sm font-semibold text-neutral-500">
             Outcome-focused specialized engineering tracks built for immediate industry applicability.

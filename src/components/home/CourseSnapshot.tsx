@@ -95,7 +95,7 @@ export default function CourseSnapshot({
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white py-12 lg:py-0 lg:h-[calc(100vh-100px)] lg:max-h-[680px] lg:min-h-[580px] px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading flex items-center select-none"
+      className="w-full bg-white py-28 lg:py-36 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading flex items-center select-none"
     >
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[700px] h-[300px] bg-red-500/5 blur-[120px] pointer-events-none rounded-full" />

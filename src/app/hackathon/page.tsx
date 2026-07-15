@@ -58,42 +58,50 @@ const galleryImages = [
   {
     src: "/images/hackathon_group1.jpg",
     alt: "5G & 6G Hackathon Participants Group Photo",
-    className: "md:col-span-2 md:row-span-2"
+    className: "md:col-span-2 md:row-span-2",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_stage1.jpg",
     alt: "Hackathon Stage Winners & VIP Ceremony",
-    className: "md:col-span-2 md:row-span-1"
+    className: "md:col-span-2 md:row-span-1",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_working1.png",
     alt: "Participants building AI prototypes",
-    className: "md:col-span-1 md:row-span-1"
+    className: "md:col-span-1 md:row-span-1",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_pitch1.png",
     alt: "AI project pitch to judges panel",
-    className: "md:col-span-1 md:row-span-1"
+    className: "md:col-span-1 md:row-span-1",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_group3.png",
     alt: "Delegates and organizers group photo at hackathon summit",
-    className: "md:col-span-2 md:row-span-1"
+    className: "md:col-span-2 md:row-span-1",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_team1.png",
     alt: "Hackathon team working space session",
-    className: "md:col-span-1 md:row-span-1"
+    className: "md:col-span-1 md:row-span-1",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_working2.png",
     alt: "Mentors guiding teams on network protocols",
-    className: "md:col-span-1 md:row-span-1"
+    className: "md:col-span-1 md:row-span-1",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_felicitation1.png",
-    alt: "Award presentation to the top winners",
-    className: "md:col-span-2 md:row-span-1"
+    alt: "Founder Receiving Recognition Award",
+    className: "md:col-span-2 md:row-span-1",
+    objectPosition: "object-top" // Ensures the founder is not cut off
   }
 ];
 
@@ -244,7 +252,7 @@ export default function DedicatedHackathonPage() {
                   alt={img.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`object-cover ${img.objectPosition || "object-center"} group-hover:scale-105 transition-transform duration-500`}
                   priority={idx === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-10">

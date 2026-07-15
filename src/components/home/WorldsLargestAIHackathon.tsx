@@ -12,74 +12,132 @@ import {
   GraduationCap
 } from "lucide-react";
 
-// Consolidated Bento Statistic Cards
-// Option A: Clean, unified single-row card sizing scaling to equal dimensions
+// Consolidated Bento Statistic Cards with Premium Color Themes
 const bentoStats = [
   {
-    value: "3500+",
     label: "Teams Registered",
-    desc: "National participation from leading universities and developer collectives.",
+    desc: "National participation from leading universities.",
     icon: Users,
-    sizeClass: "bg-gradient-to-br from-[#EE1C25] to-[#d61920] text-white border-red-500 shadow-lg"
+    theme: {
+      bg: "from-red-500/[0.03] to-red-600/[0.01]",
+      border: "border-red-100 group-hover:border-red-300",
+      iconBg: "bg-red-50 text-[#EE1C25]",
+      glow: "group-hover:shadow-[0_20px_40px_-15px_rgba(238,28,37,0.15)]",
+      suffix: "+"
+    }
   },
   {
-    value: "30+ Hrs",
     label: "Co-creation Sprint",
     desc: "Non-stop brainstorm and code sprint to build working prototypes.",
     icon: Clock,
-    sizeClass: ""
+    theme: {
+      bg: "from-orange-500/[0.03] to-orange-600/[0.01]",
+      border: "border-orange-100 group-hover:border-orange-300",
+      iconBg: "bg-orange-50 text-orange-500",
+      glow: "group-hover:shadow-[0_20px_40px_-15px_rgba(249,115,22,0.15)]",
+      suffix: "+ Hrs"
+    }
   },
   {
-    value: "113",
     label: "Active Participants",
     desc: "Vetted builders coding live.",
-    icon: GraduationCap,
-    sizeClass: ""
+    icon: Users,
+    theme: {
+      bg: "from-blue-500/[0.03] to-blue-600/[0.01]",
+      border: "border-blue-100 group-hover:border-blue-300",
+      iconBg: "bg-blue-50 text-blue-500",
+      glow: "group-hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.15)]",
+      suffix: ""
+    }
   },
   {
-    value: "19",
     label: "Finalists Shortlisted",
     desc: "Pitched to the Grand Jury panel.",
     icon: Trophy,
-    sizeClass: ""
+    theme: {
+      bg: "from-purple-500/[0.03] to-purple-600/[0.01]",
+      border: "border-purple-100 group-hover:border-purple-300",
+      iconBg: "bg-purple-50 text-purple-500",
+      glow: "group-hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.15)]",
+      suffix: ""
+    }
   },
   {
-    value: "₹4.5L",
     label: "Cash Prize Pool",
-    desc: "Distributed across winners, runners-up, and innovative prototypes.",
+    desc: "Distributed across winners and innovative prototypes.",
     icon: Trophy,
-    sizeClass: "sm:col-span-2 md:col-span-1"
+    theme: {
+      bg: "from-yellow-500/[0.03] to-yellow-600/[0.01]",
+      border: "border-yellow-100 group-hover:border-yellow-300",
+      iconBg: "bg-yellow-50 text-yellow-600",
+      glow: "group-hover:shadow-[0_20px_40px_-15px_rgba(234,179,8,0.15)]",
+      prefix: "₹",
+      suffix: "L"
+    }
   },
   {
-    value: "33+",
     label: "Colleges Represented",
     desc: "Pan-India institutional representation.",
     icon: Laptop,
-    sizeClass: ""
+    theme: {
+      bg: "from-emerald-500/[0.03] to-emerald-600/[0.01]",
+      border: "border-emerald-100 group-hover:border-emerald-300",
+      iconBg: "bg-emerald-50 text-emerald-500",
+      glow: "group-hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.15)]",
+      suffix: "+"
+    }
   }
 ];
 
-// Curated 4 Images for a Tight Bento Gallery Grid
+// Curated 8 Images for a Seamless Premium Gallery Grid (2 Large, 4 Medium, 2 Small)
 const galleryImages = [
   {
     src: "/images/hackathon_group1.jpg",
     alt: "5G & 6G Hackathon Participants Group Photo",
-    className: "md:col-span-2 md:row-span-2"
+    className: "md:col-span-2 md:row-span-2",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_stage1.jpg",
     alt: "Hackathon Stage Winners & VIP Ceremony",
-    className: "md:col-span-2 md:row-span-1"
+    className: "md:col-span-2 md:row-span-1",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_working1.png",
     alt: "Participants building AI prototypes",
-    className: "md:col-span-1 md:row-span-1"
+    className: "md:col-span-1 md:row-span-1",
+    objectPosition: "object-center"
   },
   {
     src: "/images/hackathon_pitch1.png",
     alt: "AI project pitch to judges panel",
-    className: "md:col-span-1 md:row-span-1"
+    className: "md:col-span-1 md:row-span-1",
+    objectPosition: "object-center"
+  },
+  {
+    src: "/images/hackathon_group3.png",
+    alt: "Delegates and organizers group photo at hackathon summit",
+    className: "md:col-span-2 md:row-span-1",
+    objectPosition: "object-center"
+  },
+  {
+    src: "/images/hackathon_team1.png",
+    alt: "Hackathon team working space session",
+    className: "md:col-span-1 md:row-span-1",
+    objectPosition: "object-center"
+  },
+  {
+    src: "/images/hackathon_working2.png",
+    alt: "Mentors guiding teams on network protocols",
+    className: "md:col-span-1 md:row-span-1",
+    objectPosition: "object-center"
+  },
+  {
+    src: "/images/hackathon_felicitation1.png",
+    alt: "Founder Receiving Recognition Award",
+    className: "md:col-span-2 md:row-span-1",
+    objectPosition: "object-top" // Prevents the founder's face from being cut off
   }
 ];
 
@@ -133,7 +191,7 @@ export default function WorldsLargestAIHackathon() {
   }, [hasAnimatedStats]);
 
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading overflow-hidden select-none">
+    <section className="w-full bg-white py-28 lg:py-36 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading overflow-hidden select-none">
       {/* Light Radial Background Mesh Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[radial-gradient(circle,rgba(238,28,37,0.02)_0%,transparent_70%)] pointer-events-none z-0" />
 
@@ -160,49 +218,49 @@ export default function WorldsLargestAIHackathon() {
         {/* ================= SECTION 2: CONSOLIDATED SINGLE-ROW STATS GRID ================= */}
         <div 
           ref={statsSectionRef}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6"
         >
           {bentoStats.map((stat, idx) => {
             const Icon = stat.icon;
-            const isHero = stat.sizeClass.includes("bg-[#EE1C25]");
+            const t = stat.theme;
+            
+            const rawVal = visibleStats[idx];
+            let displayVal = rawVal.toString();
+            if (t.prefix) displayVal = t.prefix + displayVal;
+            if (t.suffix) displayVal = displayVal + t.suffix;
+
             return (
               <div 
                 key={idx}
-                className={`group border rounded-3xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[160px] ${
-                  isHero 
-                    ? stat.sizeClass 
-                    : "bg-gradient-to-br from-white to-slate-50 border-gray-100 hover:shadow-lg hover:-translate-y-1 hover:border-red-100 " + stat.sizeClass
-                }`}
+                className={`group relative bg-gradient-to-br ${t.bg} border ${t.border} rounded-2xl p-6 flex flex-col justify-between min-h-[220px] transition-all duration-350 ${t.glow} hover:-translate-y-1 overflow-hidden`}
               >
-                <div className="space-y-3">
-                  <div className={`p-2.5 rounded-xl w-fit ${
-                    isHero ? "bg-white/10 text-white" : "bg-red-50 text-[#EE1C25] border border-red-100"
-                  }`}>
-                    <Icon className="w-4 h-4" />
+                {/* Decorative background grid pattern inside card */}
+                <div 
+                  className="absolute inset-0 opacity-[0.015] pointer-events-none" 
+                  style={{
+                    backgroundImage: `linear-gradient(to right, gray 1px, transparent 1px), linear-gradient(to bottom, gray 1px, transparent 1px)`,
+                    backgroundSize: '15px 15px'
+                  }}
+                />
+                
+                <div className="space-y-4 relative z-10">
+                  <div className={`p-3 rounded-full w-fit ${t.iconBg} shadow-sm transition-transform duration-350 group-hover:scale-110`}>
+                    <Icon className="w-5 h-5" />
                   </div>
+                  
                   <div>
-                    <span className={`block text-[9px] font-bold uppercase tracking-wider ${
-                      isHero ? "text-white/70" : "text-neutral-400"
-                    }`}>
+                    <h4 className="text-sm font-black text-gray-950 uppercase tracking-wide">
                       {stat.label}
-                    </span>
-                    <p className={`text-[10px] font-semibold mt-1 leading-tight ${
-                      isHero ? "text-white/80" : "text-neutral-500"
-                    }`}>
+                    </h4>
+                    <p className="text-xs font-semibold text-neutral-500 mt-1.5 leading-relaxed">
                       {stat.desc}
                     </p>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <span className={`text-2xl font-black tracking-tight leading-none ${
-                    isHero ? "text-white" : "text-gray-950"
-                  }`}>
-                    {idx === 0 ? `${visibleStats[0]}+` : 
-                     idx === 1 ? `${visibleStats[1]}+ Hrs` : 
-                     idx === 2 ? `${visibleStats[2]}` : 
-                     idx === 3 ? `${visibleStats[3]}` : 
-                     idx === 4 ? `₹${visibleStats[4]}L` : 
-                     `${visibleStats[5]}+`}
+
+                <div className="mt-6 relative z-10">
+                  <span className="text-3xl lg:text-4xl font-black tracking-tight text-gray-950 block">
+                    {displayVal}
                   </span>
                 </div>
               </div>
@@ -234,7 +292,7 @@ export default function WorldsLargestAIHackathon() {
                       alt={img.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover group-hover:scale-102 transition-transform duration-500"
+                      className={`object-cover ${img.objectPosition} group-hover:scale-102 transition-transform duration-500`}
                     />
                   </div>
                 ))}
