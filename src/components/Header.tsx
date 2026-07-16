@@ -237,11 +237,6 @@ export default function Header() {
           {/* Flags and Mobile toggler */}
           <div className="flex items-center gap-5">
             {/* Desktop Action Buttons */}
-            <div className="hidden md:flex items-center gap-5 mr-1 relative">
-              <a href="/login" className="text-sm font-extrabold text-[#171717] hover:text-[#EE1C25] transition-colors">
-                Login
-              </a>
-            </div>
 
             <div className="flex items-center gap-2">
               {getSupportedRegions().includes("in") && (
@@ -317,11 +312,6 @@ export default function Header() {
               <li>
                 <a href="/contact-us" onClick={() => setMobileMenuOpen(false)} className="block font-bold text-[#171717] py-2">
                   Contact Us
-                </a>
-              </li>
-              <li className="pt-2 border-t border-neutral-100 flex flex-col gap-3">
-                <a href="/login" onClick={() => setMobileMenuOpen(false)} className="block text-center font-bold text-[#171717] hover:text-[#EE1C25] py-2.5 rounded-lg border border-neutral-200">
-                  Login
                 </a>
               </li>
             </ul>

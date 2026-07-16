@@ -21,21 +21,21 @@ model Course {
 }
 
 model CourseRegistration {
-  id              String   @id @default(cuid())
-  name            String
-  email           String
-  phone           String
-  college         String
-  year            String
-  courseId        String
-  course          Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
-  createdAt       DateTime @default(now())
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  college   String
+  year      String
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
 }
 
 model AssessmentQuestion {
   id          String             @id @default(cuid())
-  category    String             // Python, SQL, AI Fundamentals, Machine Learning, Generative AI, Cloud, Data Analytics, Problem Solving
-  difficulty  String             // Beginner, Intermediate, Advanced
+  category    String // Python, SQL, AI Fundamentals, Machine Learning, Generative AI, Cloud, Data Analytics, Problem Solving
+  difficulty  String // Beginner, Intermediate, Advanced
   question    String
   explanation String?
   options     AssessmentOption[]
@@ -51,9 +51,9 @@ model AssessmentOption {
 }
 
 model AssessmentLead {
-  id             String              @id @default(cuid())
+  id             String               @id @default(cuid())
   name           String
-  email          String              @unique
+  email          String               @unique
   phone          String
   college        String
   degree         String
@@ -62,13 +62,13 @@ model AssessmentLead {
   githubUrl      String?
   portfolioUrl   String?
   resumeUrl      String?
-  resumeStatus   String              @default("PENDING") // PENDING, PROCESSING, COMPLETED, FAILED
-  source         String?             // e.g. Homepage CTA, Assessment CTA, LinkedIn, etc.
-  leadScore      Int?                // 0-100 score
-  status         String              @default("NEW") // NEW, CONTACTED, QUALIFIED, ENROLLED, REJECTED
-  updatedBy      String?             // Auditing: who updated status
-  createdAt      DateTime            @default(now())
-  updatedAt      DateTime            @updatedAt
+  resumeStatus   String               @default("PENDING") // PENDING, PROCESSING, COMPLETED, FAILED
+  source         String? // e.g. Homepage CTA, Assessment CTA, LinkedIn, etc.
+  leadScore      Int? // 0-100 score
+  status         String               @default("NEW") // NEW, CONTACTED, QUALIFIED, ENROLLED, REJECTED
+  updatedBy      String? // Auditing: who updated status
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
   sessions       AssessmentSession[]
   emailLogs      AssessmentEmailLog[]
 }
@@ -77,16 +77,16 @@ model AssessmentSession {
   id                  String             @id @default(cuid())
   leadId              String
   lead                AssessmentLead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
-  skillsMatrix        Json?              // e.g. { "python": true, "sql": false }
-  candidateProfile    String?            // Beginner, Intermediate, Advanced
-  interestVector      Json?              // e.g. { "GenAI": 92, "Data Science": 74 }
+  skillsMatrix        Json? // e.g. { "python": true, "sql": false }
+  candidateProfile    String? // Beginner, Intermediate, Advanced
+  interestVector      Json? // e.g. { "GenAI": 92, "Data Science": 74 }
   overallReadiness    Float?
   technicalFoundation Float?
   problemSolving      Float?
   industryReadiness   Float?
   learningVelocity    Float?
   overallScore        Float?
-  skillGapAnalysis    Json?              // { "currentSkills": [...], "missingSkills": [...] }
+  skillGapAnalysis    Json? // { "currentSkills": [...], "missingSkills": [...] }
   createdAt           DateTime           @default(now())
   answers             AssessmentAnswer[]
   results             AssessmentResult[]
@@ -98,7 +98,7 @@ model AssessmentAnswer {
   session        AssessmentSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
   questionId     String
   selectedAnswer String
-  score          Int               // e.g., 0 or 10
+  score          Int // e.g., 0 or 10
   timestamp      DateTime          @default(now())
 }
 
@@ -123,7 +123,7 @@ model AssessmentRecommendation {
   course          Course           @relation(fields: [courseId], references: [id], onDelete: Cascade)
   confidenceScore Float
   alignmentScore  Float
-  type            String           // PRIMARY, SECONDARY
+  type            String // PRIMARY, SECONDARY
   createdAt       DateTime         @default(now())
 }
 
@@ -131,8 +131,57 @@ model AssessmentEmailLog {
   id               String         @id @default(cuid())
   assessmentLeadId String
   lead             AssessmentLead @relation(fields: [assessmentLeadId], references: [id], onDelete: Cascade)
-  emailType        String         // e.g. ASSESSMENT_COMPLETED
-  status           String         // SENT, FAILED
+  emailType        String // e.g. ASSESSMENT_COMPLETED
+  status           String // SENT, FAILED
   sentAt           DateTime       @default(now())
   error            String?
+}
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  sessions     Session[]
+}
+
+model Session {
+  id        String    @id @default(cuid())
+  adminId   String
+  admin     AdminUser @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+  expiresAt DateTime
+}
+
+model ContactRequest {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  region    String   @default("in")
+  createdAt DateTime @default(now())
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  region    String   @default("in")
+  createdAt DateTime @default(now())
+}
+
+model HackathonRegistration {
+  id         String   @id @default(cuid())
+  teamName   String
+  leaderName String
+  email      String
+  phone      String
+  college    String
+  members    Json
+  idea       String?
+  region     String   @default("in")
+  createdAt  DateTime @default(now())
 }

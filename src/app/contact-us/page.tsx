@@ -3,24 +3,46 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, ShieldCheck } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useRegion } from '@/context/RegionContext';
 
 export const dynamic = 'force-dynamic';
 
 export default function ContactUsPage() {
+  const { currentRegion } = useRegion();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [mobile, setMobile] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: mobile,
+          subject: "Contact Form Inquiry",
+          message,
+          region: currentRegion,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert("Message securely routed to our support team. We will reply within 24 hours.");
+        setName(''); setEmail(''); setMobile(''); setMessage('');
+      } else {
+        alert("Failed to submit message. Please try again.");
+      }
+    } catch (err) {
+      alert("Failed to submit message. Please try again.");
+    } finally {
       setLoading(false);
-      alert("Message securely routed to our support team. We will reply within 24 hours.");
-      setName(''); setEmail(''); setMobile(''); setMessage('');
-    }, 1200);
+    }
   };
 
   return (

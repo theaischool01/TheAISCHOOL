@@ -89,7 +89,6 @@ export default function Footer() {
               <li><Link href="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/career" className="hover:text-white transition-colors">Careers</Link></li>
               <li><Link href="/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
-              <li><Link href="/login" className="hover:text-[#EE1C25] text-white transition-colors font-bold">Portal Login</Link></li>
               <li><a href="#register" className="hover:text-white transition-colors">Earn with us</a></li>
             </ul>
           </div>
