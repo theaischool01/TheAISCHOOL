@@ -103,11 +103,11 @@ export default function Visionaries() {
   );
 
   return (
-    <section id="leadership" className="w-full bg-white text-slate-900 py-24 px-6 md:px-12 relative overflow-hidden select-none border-b border-gray-200">
+    <section id="leadership" className="w-full bg-white text-slate-900 py-14 px-6 md:px-12 relative overflow-hidden select-none border-b border-gray-200">
       {/* Red lighting accent */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full bg-red-50 blur-[120px] pointer-events-none z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto space-y-24">
+      <div className="relative z-10 max-w-7xl mx-auto space-y-12">
         
         {/* ================= CATEGORY 1: FEATURED FOUNDERS ================= */}
         <div className="space-y-12">

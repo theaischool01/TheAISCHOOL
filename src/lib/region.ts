@@ -7,7 +7,7 @@ export function getSupportedRegions(): string[] {
   if (envVal) {
     return envVal.split(",").map((s) => s.trim().toLowerCase());
   }
-  return ["in"];
+  return ["in", "us", "ph"];
 }
 
 export function getRegionConfig(code?: string): RegionConfig {

@@ -92,8 +92,8 @@ const steps = [
 
 export default function XRayTransform() {
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
-      <div className="max-w-6xl mx-auto space-y-28">
+    <section className="w-full bg-white py-14 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
+      <div className="max-w-6xl mx-auto space-y-16">
 
         {/* ================= SECTION TITLE ================= */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">

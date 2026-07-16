@@ -27,7 +27,7 @@ export default function OurStory() {
   };
 
   return (
-    <section className="w-full bg-white text-neutral-900 py-32 relative select-none">
+    <section className="w-full bg-white text-neutral-900 py-16 relative select-none">
       
       {/* Chapter 01: Who We Are */}
       <div id="who-we-are" className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -71,7 +71,7 @@ export default function OurStory() {
       </div>
 
       {/* Thin elegant horizontal spacer divider */}
-      <div className="max-w-7xl mx-auto my-28 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto my-16 px-6 md:px-12">
         <div className="h-px w-full bg-neutral-100" />
       </div>
 
@@ -116,7 +116,7 @@ export default function OurStory() {
       </div>
 
       {/* Thin elegant horizontal spacer divider */}
-      <div className="max-w-7xl mx-auto my-28 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto my-16 px-6 md:px-12">
         <div className="h-px w-full bg-neutral-100" />
       </div>
 

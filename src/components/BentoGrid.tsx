@@ -82,7 +82,7 @@ export default function BentoGrid() {
   };
 
   return (
-    <section className="py-24 bg-neutral-50/70 border-t border-neutral-100 overflow-hidden">
+    <section className="py-14 bg-neutral-50/70 border-t border-neutral-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Block */}

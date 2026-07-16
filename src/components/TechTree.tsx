@@ -119,7 +119,7 @@ const treeNodes: TreeNode[] = [
 
 export default function TechTree() {
   return (
-    <section className="w-full bg-white py-32 px-6 md:px-12 border-t border-gray-100 relative overflow-hidden min-h-[900px] font-heading z-10">
+    <section className="w-full bg-white py-16 px-6 md:px-12 border-t border-gray-100 relative overflow-hidden min-h-[750px] font-heading z-10">
       
       {/* Decorative ambient background blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 blur-[140px] pointer-events-none rounded-full" />

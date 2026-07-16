@@ -4,7 +4,7 @@ import React from "react";
 
 export default function HackathonFuture() {
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
+    <section className="w-full bg-white py-14 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
       <div className="max-w-7xl mx-auto">
         <div className="bg-slate-50 border border-gray-150 rounded-[2.5rem] p-12 text-center relative overflow-hidden max-w-4xl mx-auto space-y-6">
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-red-500/5 blur-[80px] rounded-full pointer-events-none" />

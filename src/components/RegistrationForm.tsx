@@ -69,7 +69,7 @@ export default function UnifiedRegistrationForm() {
   };
 
   return (
-    <section id="register" className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative overflow-hidden">
+    <section id="register" className="w-full bg-white py-14 px-6 md:px-12 border-t border-gray-100 relative overflow-hidden">
       {/* Subtle ambient lighting focusing attention directly on the form core */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#EE1C25]/5 to-transparent blur-[120px] pointer-events-none rounded-full" />
       

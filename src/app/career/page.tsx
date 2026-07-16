@@ -39,7 +39,7 @@ export default function CareerPage() {
       <Header />
       
       {/* ================= HERO SECTION (HIGH TEXT CONTRAST) ================= */}
-      <section className="w-full bg-neutral-950 text-white py-24 px-6 md:px-12 relative overflow-hidden">
+      <section className="w-full bg-neutral-950 text-white py-14 px-6 md:px-12 relative overflow-hidden">
         {/* Deep ambient red-glow portal blur */}
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#EE1C25]/10 via-transparent to-transparent blur-[120px] pointer-events-none rounded-full" />
         <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-gradient-to-br from-white/[0.02] to-transparent blur-[80px] pointer-events-none" />
@@ -89,7 +89,7 @@ export default function CareerPage() {
       </section>
 
       {/* ================= OPEN WORKSPACE POSITIONS TIMELINE ================= */}
-      <section className="max-w-6xl mx-auto px-6 md:px-12 py-24 space-y-10">
+      <section className="max-w-6xl mx-auto px-6 md:px-12 py-14 space-y-10">
         <div className="border-b border-gray-100 pb-4">
           <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">
             Open Workspace Positions

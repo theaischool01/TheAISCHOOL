@@ -34,7 +34,7 @@ const row2Partners = [
 
 export default function PartnerMarquee() {
   return (
-    <section className="w-full bg-white py-24 overflow-hidden border-t border-gray-100 flex flex-col space-y-12 select-none relative z-10 font-heading">
+    <section className="w-full bg-white py-14 overflow-hidden border-t border-gray-100 flex flex-col space-y-12 select-none relative z-10 font-heading">
       
       {/* Section Typography Title */}
       <div className="text-center space-y-2 pb-2">

@@ -117,7 +117,7 @@ function LogoColumn({ items, direction, speedClass }: LogoColumnProps) {
 
 export default function PartnersSection() {
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 relative border-t border-gray-100 z-10 font-heading">
+    <section className="w-full bg-white py-14 px-6 md:px-12 relative border-t border-gray-100 z-10 font-heading">
       <div className="max-w-7xl mx-auto space-y-16">
 
 

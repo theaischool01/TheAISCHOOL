@@ -58,8 +58,8 @@ const solutions = [
 
 export default function ProblemSolution() {
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
-      <div className="max-w-7xl mx-auto space-y-20">
+    <section className="w-full bg-white py-14 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
+      <div className="max-w-7xl mx-auto space-y-12">
         
         {/* ================= PART A: THE PAIN POINTS ================= */}
         <div className="space-y-12 text-center max-w-4xl mx-auto">

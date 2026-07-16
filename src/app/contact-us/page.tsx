@@ -49,7 +49,7 @@ export default function ContactUsPage() {
     <main className="w-full bg-white text-gray-900 font-sans min-h-screen select-none">
       <Header />
       
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         {/* ================= LEFT SIDE: CORPORATE INFO WORKSPACE ================= */}
         <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">

@@ -132,12 +132,12 @@ export default function EcosystemOrbit() {
   const outerPos = getPositions(outerRingCourses.length, 41);
 
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading overflow-hidden">
+    <section className="w-full bg-white py-14 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading overflow-hidden">
       
       {/* Soft central red radial glow */}
       <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-red-500/5 blur-[140px] pointer-events-none rounded-full" />
 
-      <div className="max-w-7xl mx-auto space-y-20 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         
         {/* ================= PRIMARY GRID MATRIX ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

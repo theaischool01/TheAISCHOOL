@@ -48,7 +48,7 @@ export default function IndustryPartnersGrid() {
   ];
 
   return (
-    <section className="w-full bg-white py-20 md:py-28 px-6 md:px-12 font-heading select-none">
+    <section className="w-full bg-white py-12 md:py-16 px-6 md:px-12 font-heading select-none">
       <div className="max-w-6xl mx-auto space-y-12">
         
         {/* Title */}

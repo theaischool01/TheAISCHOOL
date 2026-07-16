@@ -66,7 +66,7 @@ export default function Timeline() {
   const [activeStep, setActiveStep] = useState<number>(0);
 
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 border-t border-gray-100 relative z-10">
+    <section className="w-full bg-white py-14 px-6 md:px-12 border-t border-gray-100 relative z-10">
       <div className="max-w-6xl mx-auto space-y-16">
         
         {/* ================= SECTION HEADER ================= */}
