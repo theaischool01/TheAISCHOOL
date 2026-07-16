@@ -11,7 +11,7 @@ import {
 
 export default function FlagshipLearningFrameworks() {
   return (
-    <section className="w-full bg-white py-28 lg:py-36 px-6 md:px-12 relative z-10 font-heading">
+    <section className="w-full bg-white py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading">
       <div className="max-w-6xl mx-auto space-y-16">
 
         {/* ================= SECTION TITLE ================= */}

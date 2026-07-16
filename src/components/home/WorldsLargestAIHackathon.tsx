@@ -205,7 +205,7 @@ export default function WorldsLargestAIHackathon() {
   }, [hasAnimatedStats]);
 
   return (
-    <section className="w-full bg-white py-28 lg:py-36 px-6 md:px-12 relative z-10 font-heading overflow-hidden select-none">
+    <section className="w-full bg-white py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading overflow-hidden select-none">
       {/* Light Radial Background Mesh Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[radial-gradient(circle,rgba(238,28,37,0.02)_0%,transparent_70%)] pointer-events-none z-0" />
 
