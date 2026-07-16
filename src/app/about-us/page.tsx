@@ -163,11 +163,23 @@ function TeamMemberCard({ member, size = 120, isPremium = false, description = "
   );
 }
 
-// ================= MAIN COMPONENT =================
-
 export default function AboutUsPage() {
   const [activeSection, setActiveSection] = useState("story");
   const [showStickyNav, setShowStickyNav] = useState(false);
+  const [activeTab, setActiveTab] = useState<'us' | 'them'>('us');
+  const [displayTab, setDisplayTab] = useState<'us' | 'them'>('us');
+  const [fadeOpacity, setFadeOpacity] = useState(1);
+
+  const handleTabChange = (tab: 'us' | 'them') => {
+    if (tab === activeTab) return;
+    setFadeOpacity(0);
+    setActiveTab(tab);
+    setTimeout(() => {
+      setDisplayTab(tab);
+      setFadeOpacity(1);
+    }, 150);
+  };
+
   const heroRef = useRef<HTMLDivElement>(null);
 
   const sectionsRef = {
@@ -544,78 +556,98 @@ export default function AboutUsPage() {
         </div>
       </div>
 
-      {/* ================= 7. WHY US (Redesigned Row-by-Row Comparison Table) ================= */}
+      {/* ================= 7. WHY US (Redesigned Toggle Comparison layout) ================= */}
       <div id="whyUs" ref={sectionsRef.whyUs} className="w-full bg-white py-14 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto space-y-12">
+        <div className="max-w-xl mx-auto space-y-12">
+          
           <div className="text-center space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE TRANSFORMATION</span>
             <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">The AI School vs. Typical Bootcamp</h2>
           </div>
 
-          <RevealOnScroll className="border border-gray-200 rounded-3xl overflow-hidden shadow-md">
-            {/* Header row */}
-            <div className="grid grid-cols-2 bg-gray-50 border-b border-gray-200 p-4 text-center">
-              <div className="font-black text-gray-900 text-sm uppercase tracking-wider relative flex items-center justify-center">
-                <span>The AI School</span>
-                <span className="absolute top-0 right-0 bg-[#EE1C25] text-white text-[8px] font-black uppercase tracking-widest py-0.5 px-1.5 rounded-sm transform translate-x-2 -translate-y-2">
-                  RECOMMENDED
-                </span>
-              </div>
-              <div className="font-black text-gray-400 text-sm uppercase tracking-wider">
+          <RevealOnScroll className="space-y-8">
+            {/* Sliding Toggle Control */}
+            <div className="relative flex bg-gray-100 rounded-full p-1.5 w-[320px] md:w-[360px] mx-auto border border-gray-200">
+              {/* Sliding background */}
+              <div 
+                className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-[#EE1C25] transition-all duration-300 ease-in-out"
+                style={{
+                  width: 'calc(50% - 3px)',
+                  transform: activeTab === 'us' ? 'translateX(0)' : 'translateX(100%)'
+                }}
+              />
+              <button 
+                onClick={() => handleTabChange('us')}
+                className={`w-1/2 relative z-10 py-2.5 text-center text-[10px] font-black uppercase tracking-widest transition-colors duration-200 cursor-pointer ${
+                  activeTab === 'us' ? 'text-white' : 'text-slate-500 hover:text-slate-900'
+                }`}
+              >
+                The AI School
+              </button>
+              <button 
+                onClick={() => handleTabChange('them')}
+                className={`w-1/2 relative z-10 py-2.5 text-center text-[10px] font-black uppercase tracking-widest transition-colors duration-200 cursor-pointer ${
+                  activeTab === 'them' ? 'text-white' : 'text-slate-500 hover:text-slate-900'
+                }`}
+              >
                 Typical Bootcamp
-              </div>
+              </button>
             </div>
 
-            {/* Alternating Rows */}
-            {[
-              {
-                topic: "Mentors",
-                us: "Startup Founders & Industry Leaders",
-                them: "Certified Trainers"
-              },
-              {
-                topic: "Curriculum",
-                us: "Live real-world startup projects",
-                them: "Textbook case studies"
-              },
-              {
-                topic: "Support",
-                us: "1:1 mentorship, hackathons, placement support",
-                them: "Self-paced videos only"
-              },
-              {
-                topic: "Network",
-                us: "Lifetime alumni + founder network",
-                them: "No ongoing community"
-              }
-            ].map((row, idx) => (
-              <div key={idx} className={`grid grid-cols-2 p-5 items-center relative gap-4 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50/30"}`}>
-                
-                {/* Center Divider/VS Badge on Desktop */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center w-7 h-7 bg-white border border-gray-200 rounded-full text-[9px] font-black text-gray-400 z-10 shadow-xs">
-                  VS
+            {/* Single Comparison Card Panel with Cross-fade transition */}
+            <div 
+              style={{ opacity: fadeOpacity }}
+              className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-md transition-opacity duration-150 ease-in-out relative overflow-hidden"
+            >
+              {displayTab === 'us' && (
+                <div className="absolute top-0 right-0 bg-[#EE1C25] text-white text-[8px] font-black uppercase tracking-widest py-1 px-3 rounded-bl-xl">
+                  RECOMMENDED
                 </div>
+              )}
 
-                {/* AI School Column */}
-                <div className="flex items-start space-x-3 pr-2 md:pr-4">
-                  <CheckCircle2 className="w-5 h-5 text-[#EE1C25] shrink-0 fill-red-500/10 mt-0.5" />
-                  <div>
-                    <span className="block text-[9px] font-black text-gray-400 uppercase tracking-widest">{row.topic}</span>
-                    <span className="font-extrabold text-gray-900 text-xs md:text-sm">{row.us}</span>
+              <div className="divide-y divide-gray-100 space-y-6">
+                {[
+                  {
+                    topic: "Mentors",
+                    us: "Startup Founders & Industry Leaders",
+                    them: "Certified Trainers"
+                  },
+                  {
+                    topic: "Curriculum",
+                    us: "Live real-world startup projects",
+                    them: "Textbook case studies"
+                  },
+                  {
+                    topic: "Support",
+                    us: "1:1 mentorship, hackathons, placement support",
+                    them: "Self-paced videos only"
+                  },
+                  {
+                    topic: "Network",
+                    us: "Lifetime alumni + founder network",
+                    them: "No ongoing community"
+                  }
+                ].map((row, idx) => (
+                  <div key={idx} className={`flex items-start space-x-4 ${idx === 0 ? "" : "pt-6"}`}>
+                    {displayTab === 'us' ? (
+                      <div className="w-10 h-10 rounded-full bg-red-50 text-[#EE1C25] flex items-center justify-center shrink-0 border border-red-100">
+                        <CheckCircle2 className="w-5 h-5 fill-red-500/10" />
+                      </div>
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-neutral-100 text-neutral-400 flex items-center justify-center shrink-0 border border-neutral-200">
+                        <MinusCircle className="w-5 h-5" />
+                      </div>
+                    )}
+                    <div>
+                      <span className="block text-[9px] font-black text-gray-400 uppercase tracking-widest">{row.topic}</span>
+                      <span className="font-extrabold text-gray-900 text-sm md:text-base mt-0.5 block leading-snug">
+                        {displayTab === 'us' ? row.us : row.them}
+                      </span>
+                    </div>
                   </div>
-                </div>
-
-                {/* Typical Bootcamp Column */}
-                <div className="flex items-start space-x-3 pl-2 md:pl-6 border-l border-gray-100">
-                  <MinusCircle className="w-5 h-5 text-gray-300 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="block text-[9px] font-black text-gray-400 uppercase tracking-widest">{row.topic}</span>
-                    <span className="font-bold text-slate-500 text-xs md:text-sm">{row.them}</span>
-                  </div>
-                </div>
-
+                ))}
               </div>
-            ))}
+            </div>
           </RevealOnScroll>
         </div>
       </div>
