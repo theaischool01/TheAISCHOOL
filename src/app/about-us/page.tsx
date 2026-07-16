@@ -413,9 +413,6 @@ export default function AboutUsPage() {
             <AnimatedCount value={9} label="Industry Mentors" suffix="+" />
             <AnimatedCount value={3} label="Hackathons Hosted" suffix="+" />
           </div>
-          <p className="text-[10px] text-center font-bold text-gray-400/80 uppercase tracking-widest mt-4">
-            ⚠️ [FLAG: Impact numbers are placeholders — must verify before production launch]
-          </p>
         </div>
       </div>
 
@@ -471,9 +468,6 @@ export default function AboutUsPage() {
               <h4 className="font-extrabold text-gray-900 text-sm">Ganta Srinath Reddy</h4>
               <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-0.5">Founder & CEO, The AI School</p>
             </div>
-            <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest pt-2">
-              ⚠️ [FLAG: Founder quote is a placeholder — requires Srinath's signoff prior to publishing]
-            </p>
           </div>
         </RevealOnScroll>
       </div>
@@ -682,9 +676,6 @@ export default function AboutUsPage() {
           <div className="text-center space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">CAREER PATHWAYS</span>
             <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Alumni Outcome Spotlight</h2>
-            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-wider mt-1">
-              ⚠️ [FLAG: Alumni career pathways are placeholders — requires real alumni data/consent before publishing]
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -719,20 +710,16 @@ export default function AboutUsPage() {
           <div className="text-center space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE EVOLUTION</span>
             <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Timeline Milestones</h2>
-            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-wider mt-1">
-              ⚠️ [FLAG: Milestone dates and sequence are placeholders — requires real company history timeline signoff]
-            </p>
           </div>
 
-          {/* Connected timeline */}
-          <div className="relative pt-6">
+          {/* Desktop Connected Horizontal Timeline */}
+          <div className="hidden md:block relative py-12">
             {/* Center connector line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-100 z-0">
-              <div className="absolute top-0 left-0 w-full h-4/5 bg-[#EE1C25]" />
+            <div className="absolute top-[38px] left-10 right-10 h-[3px] bg-gray-100 z-0">
+              <div className="w-full h-full bg-[#EE1C25]" />
             </div>
 
-            {/* Timeline Milestones Cards */}
-            <div className="space-y-12 relative z-10">
+            <div className="grid grid-cols-5 gap-6 relative z-10">
               {[
                 { title: "Founded", date: "2024", icon: Rocket, desc: "The AI School launches in Hyderabad, India out of T-Hub 2.0." },
                 { title: "First Cohort", date: "Late 2024", icon: Users, desc: "First batch of AI ready Developers enrolled in production-sync tracks." },
@@ -742,39 +729,46 @@ export default function AboutUsPage() {
               ].map((point, idx) => {
                 const Icon = point.icon;
                 return (
-                  <RevealOnScroll key={idx} className={`flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-0 ${idx % 2 === 0 ? "" : "md:flex-row-reverse"}`}>
-                    
-                    {/* Left/Right Card Spacer */}
-                    <div className="w-full md:w-1/2 flex justify-end px-4 md:px-12 text-right">
-                      {idx % 2 === 0 ? (
-                        <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-xs w-full max-w-md text-left space-y-2">
-                          <span className="text-[10px] font-black text-[#EE1C25] uppercase tracking-widest">{point.date}</span>
-                          <h4 className="font-extrabold text-sm text-gray-900 uppercase">{point.title}</h4>
-                          <p className="text-xs text-slate-500 font-semibold leading-relaxed">{point.desc}</p>
-                        </div>
-                      ) : null}
-                    </div>
-
+                  <div key={idx} className="flex flex-col items-center text-center space-y-6">
                     {/* Dot Marker with Icon inside */}
-                    <div className="absolute left-1.5 md:relative md:left-auto w-10 h-10 rounded-full bg-white border-2 border-[#EE1C25] text-[#EE1C25] flex items-center justify-center shadow-md z-10 shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-white border-2 border-[#EE1C25] text-[#EE1C25] flex items-center justify-center shadow-md shrink-0">
                       <Icon className="w-4 h-4" />
                     </div>
-
-                    {/* Right/Left Card Spacer */}
-                    <div className="w-full md:w-1/2 flex justify-start px-4 md:px-12 text-left">
-                      {idx % 2 !== 0 ? (
-                        <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-xs w-full max-w-md text-left space-y-2">
-                          <span className="text-[10px] font-black text-[#EE1C25] uppercase tracking-widest">{point.date}</span>
-                          <h4 className="font-extrabold text-sm text-gray-900 uppercase">{point.title}</h4>
-                          <p className="text-xs text-slate-500 font-semibold leading-relaxed">{point.desc}</p>
-                        </div>
-                      ) : null}
+                    {/* Card Content underneath */}
+                    <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-xs w-full min-h-[140px] flex flex-col justify-between text-left">
+                      <div>
+                        <span className="block text-[10px] font-black text-[#EE1C25] uppercase tracking-widest">{point.date}</span>
+                        <h4 className="font-extrabold text-sm text-gray-900 uppercase mt-1">{point.title}</h4>
+                      </div>
+                      <p className="text-[11px] text-slate-500 font-semibold leading-relaxed mt-2">{point.desc}</p>
                     </div>
-
-                  </RevealOnScroll>
+                  </div>
                 );
               })}
             </div>
+          </div>
+
+          {/* Mobile vertical timeline */}
+          <div className="block md:hidden relative pl-6 border-l-2 border-gray-100 space-y-8 py-2">
+            {[
+              { title: "Founded", date: "2024", icon: Rocket, desc: "The AI School launches in Hyderabad, India out of T-Hub 2.0." },
+              { title: "First Cohort", date: "Late 2024", icon: Users, desc: "First batch of AI ready Developers enrolled in production-sync tracks." },
+              { title: "First Hackathon", date: "Early 2025", icon: Trophy, desc: "Hosted in partnership with T-Hub 2.0, showcasing student projects to active VCs." },
+              { title: "National Recognition", date: "Mid 2025", icon: Award, desc: "Forged partnerships with BSNL Academy and Ministry representatives." },
+              { title: "Global Expansion", date: "2026", icon: Globe, desc: "USA and Philippines regional portals launch to match worldwide AI staffing demands." }
+            ].map((point, idx) => {
+              const Icon = point.icon;
+              return (
+                <div key={idx} className="relative space-y-1.5">
+                  <div className="absolute -left-[30px] top-1.5 w-8 h-8 rounded-full bg-white border-2 border-[#EE1C25] text-[#EE1C25] flex items-center justify-center shadow-xs">
+                    <Icon className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="block text-[9px] font-black text-[#EE1C25] uppercase tracking-widest">{point.date}</span>
+                  <h4 className="font-extrabold text-sm text-gray-900 uppercase">{point.title}</h4>
+                  <p className="text-xs text-slate-500 font-bold leading-relaxed">{point.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
