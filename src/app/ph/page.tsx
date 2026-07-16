@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import HomePage from "@/components/home/HomePage";
 
 export const metadata: Metadata = {
-  title: "The AI School - Learn AI Skills from Startup Leaders",
-  description: "India's only school where startup leaders teach AI skills directly. Get hands-on internships, prompt engineering, and agent building courses.",
+  title: "The AI School Philippines - Master AI Engineering",
+  description: "Philippines' first tech school for practical AI engineering, agent development, and prompt engineering.",
   alternates: {
-    canonical: "https://theaischool.co",
+    canonical: "https://theaischool.co/ph",
     languages: {
       "en-IN": "https://theaischool.co",
       "en-US": "https://theaischool.co/us",
@@ -15,6 +15,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  return <HomePage region="in" />;
+export default function PHHome() {
+  return <HomePage region="ph" />;
 }
