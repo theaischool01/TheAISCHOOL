@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { useRegion } from "@/context/RegionContext";
 import { REGIONS } from "@/config/regions";
+import { getSupportedRegions } from "@/lib/region";
 
 interface Course {
   name: string;
@@ -243,27 +244,33 @@ export default function Header() {
             </div>
 
             <div className="flex items-center gap-2">
-              <img
-                src="https://flagcdn.com/w40/in.png"
-                alt="India Flag"
-                onClick={() => handleRegionChange("in")}
-                className={`w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform ${currentRegion === "in" ? "ring-2 ring-[#EE1C25]" : "opacity-60"}`}
-                title="India"
-              />
-              <img
-                src="https://flagcdn.com/w40/us.png"
-                alt="USA Flag"
-                onClick={() => handleRegionChange("us")}
-                className={`w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform ${currentRegion === "us" ? "ring-2 ring-[#EE1C25]" : "opacity-60"}`}
-                title="United States"
-              />
-              <img
-                src="https://flagcdn.com/w40/ph.png"
-                alt="Philippines Flag"
-                onClick={() => handleRegionChange("ph")}
-                className={`w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform ${currentRegion === "ph" ? "ring-2 ring-[#EE1C25]" : "opacity-60"}`}
-                title="Philippines"
-              />
+              {getSupportedRegions().includes("in") && (
+                <img
+                  src="https://flagcdn.com/w40/in.png"
+                  alt="India Flag"
+                  onClick={() => handleRegionChange("in")}
+                  className={`w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform ${currentRegion === "in" ? "ring-2 ring-[#EE1C25]" : "opacity-60"}`}
+                  title="India"
+                />
+              )}
+              {getSupportedRegions().includes("us") && (
+                <img
+                  src="https://flagcdn.com/w40/us.png"
+                  alt="USA Flag"
+                  onClick={() => handleRegionChange("us")}
+                  className={`w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform ${currentRegion === "us" ? "ring-2 ring-[#EE1C25]" : "opacity-60"}`}
+                  title="United States"
+                />
+              )}
+              {getSupportedRegions().includes("ph") && (
+                <img
+                  src="https://flagcdn.com/w40/ph.png"
+                  alt="Philippines Flag"
+                  onClick={() => handleRegionChange("ph")}
+                  className={`w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform ${currentRegion === "ph" ? "ring-2 ring-[#EE1C25]" : "opacity-60"}`}
+                  title="Philippines"
+                />
+              )}
             </div>
 
             <button

@@ -2,6 +2,14 @@ import { REGIONS, RegionConfig } from "@/config/regions";
 
 const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || "in";
 
+export function getSupportedRegions(): string[] {
+  const envVal = process.env.NEXT_PUBLIC_SUPPORTED_REGIONS;
+  if (envVal) {
+    return envVal.split(",").map((s) => s.trim().toLowerCase());
+  }
+  return ["in"];
+}
+
 export function getRegionConfig(code?: string): RegionConfig {
   const targetCode = code?.toLowerCase() || DEFAULT_REGION;
   return REGIONS[targetCode] || REGIONS[DEFAULT_REGION];

@@ -32,6 +32,17 @@ export function RegionProvider({
     setLayoutConfig(HOME_LAYOUTS[code] || HOME_LAYOUTS.in);
   };
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const path = window.location.pathname;
+      if (path.startsWith("/us")) {
+        setRegion("us");
+      } else if (path.startsWith("/ph")) {
+        setRegion("ph");
+      }
+    }
+  }, []);
+
   return (
     <RegionContext.Provider value={{ currentRegion, regionConfig, layoutConfig, setRegion }}>
       {children}

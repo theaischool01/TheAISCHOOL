@@ -16,7 +16,6 @@
     "@uploadthing/react": "^7.3.3",
     "dotenv": "^17.4.2",
     "framer-motion": "^12.40.0",
-    "lightningcss-win32-x64-msvc": "^1.32.0",
     "lucide-react": "^1.18.0",
     "mammoth": "^1.12.0",
     "next": "16.2.9",

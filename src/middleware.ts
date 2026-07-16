@@ -1,26 +1,35 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const SUPPORTED_REGIONS = ["in", "us", "ph"];
-const DEFAULT_REGION = "in";
-
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const { pathname } = url;
 
-  // 1. Only run redirect logic for the root path exactly
+  // Resolve supported regions and default region from env dynamically
+  const supportedEnv = process.env.NEXT_PUBLIC_SUPPORTED_REGIONS || "in";
+  const supportedRegions = supportedEnv.split(",").map((s) => s.trim().toLowerCase());
+  const defaultRegion = (process.env.NEXT_PUBLIC_DEFAULT_REGION || "in").toLowerCase();
+
+  // 1. Guard check: If a user tries to access a disabled region route, redirect to "/"
+  const firstSegment = pathname.split("/")[1]?.toLowerCase();
+  if (["us", "ph"].includes(firstSegment) && !supportedRegions.includes(firstSegment)) {
+    url.pathname = "/";
+    return NextResponse.redirect(url);
+  }
+
+  // 2. Only run geo-redirect logic for the root path exactly
   if (pathname !== "/") {
     return NextResponse.next();
   }
 
-  // 2. Resolve preferred region
-  // Priority: 1. Cookie, 2. GeoIP headers, 3. Browser language, 4. Default India
+  // 3. Resolve preferred region
+  // Priority: 1. Cookie, 2. GeoIP headers, 3. Browser language, 4. Default
   let detectedRegion = "";
 
   // A. Check preferred_region cookie
-  const cookieRegion = request.cookies.get("preferred_region")?.value;
-  if (cookieRegion && SUPPORTED_REGIONS.includes(cookieRegion.toLowerCase())) {
-    detectedRegion = cookieRegion.toLowerCase();
+  const cookieRegion = request.cookies.get("preferred_region")?.value?.toLowerCase();
+  if (cookieRegion && supportedRegions.includes(cookieRegion)) {
+    detectedRegion = cookieRegion;
   }
 
   // B. Check Cloudflare or Hostinger proxy country headers
@@ -29,7 +38,7 @@ export function middleware(request: NextRequest) {
     const xCountry = request.headers.get("x-country-code") || request.headers.get("x-vercel-ip-country");
     const country = (cfCountry || xCountry || "").toLowerCase();
 
-    if (SUPPORTED_REGIONS.includes(country)) {
+    if (supportedRegions.includes(country)) {
       detectedRegion = country;
     }
   }
@@ -45,12 +54,12 @@ export function middleware(request: NextRequest) {
   }
 
   // D. Fallback to default
-  if (!detectedRegion) {
-    detectedRegion = DEFAULT_REGION;
+  if (!detectedRegion || !supportedRegions.includes(detectedRegion)) {
+    detectedRegion = defaultRegion;
   }
 
-  // 3. Perform redirect if the detected region is not India (since India is served at "/")
-  if (detectedRegion !== "in") {
+  // 4. Perform redirect if the detected region is supported and not India (served at "/")
+  if (detectedRegion !== "in" && supportedRegions.includes(detectedRegion)) {
     url.pathname = `/${detectedRegion}`;
     return NextResponse.redirect(url);
   }

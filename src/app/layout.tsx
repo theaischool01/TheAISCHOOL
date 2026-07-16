@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { RegionProvider } from "@/context/RegionContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full scroll-smooth antialiased">
       <body className="font-sans min-h-full bg-white text-[#171717]">
-        {children}
+        <RegionProvider initialRegion={process.env.NEXT_PUBLIC_DEFAULT_REGION || "in"}>
+          {children}
+        </RegionProvider>
       </body>
     </html>
   );
