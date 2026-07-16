@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import Image from "next/image";
 import { Star } from "lucide-react";
 
 interface Review {
@@ -53,77 +52,83 @@ const reviews: Review[] = [
   },
 ];
 
+const GoogleGLogo = () => (
+  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fill="#4285F4"
+      d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69c-.29 1.5-1.14 2.77-2.4 3.61v3h3.86c2.26-2.09 3.59-5.17 3.59-8.46z"
+    />
+    <path
+      fill="#34A853"
+      d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.37 24 12 24z"
+    />
+    <path
+      fill="#FBBC05"
+      d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"
+    />
+    <path
+      fill="#EA4335"
+      d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.37 0 3.26 2.7 1.29 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z"
+    />
+  </svg>
+);
+
+const getInitials = (name: string) => {
+  const parts = name.split(" ");
+  if (parts.length >= 2) {
+    return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
+  }
+  return name.slice(0, 2).toUpperCase();
+};
+
 function ReviewCard({ review }: { review: Review }) {
   return (
     <div 
-      className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 w-[450px] shrink-0 select-none"
+      className="relative bg-white border border-gray-200/80 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between space-y-5 w-[360px] md:w-[400px] shrink-0 select-none group overflow-hidden"
     >
-      <div className="space-y-4">
-        {/* Header Information */}
-        <div className="flex items-center space-x-3">
-          <div className="p-2 bg-gray-50 rounded-xl text-gray-700 border border-gray-100">
-            <svg className="w-5 h-5 text-[#EE1C25]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-              <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
-            </svg>
-          </div>
-          <div>
-            <h4 className="font-extrabold text-gray-950 leading-tight font-heading flex items-center gap-2">
-              {review.name}
-            </h4>
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Verified Google Review</span>
-          </div>
-        </div>
+      {/* Decorative vertical red hover bar (hardware-accelerated, no reflow) */}
+      <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#EE1C25] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center z-10" />
 
-        {/* Main Review Quote */}
-        <div className="relative min-h-[85px] flex flex-col justify-center">
-          <svg className="w-8 h-8 text-red-500/5 absolute -top-2 -left-2" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-          </svg>
-          <p className="text-gray-600 text-sm leading-relaxed relative z-10 pl-4 border-l-2 border-red-100 italic">
-            &ldquo;{review.text}&rdquo;
-          </p>
-        </div>
+      {/* Decorative large quotation mark */}
+      <div className="absolute top-2 right-6 text-neutral-100/80 text-7xl font-serif select-none pointer-events-none leading-none">
+        &ldquo;
       </div>
 
-      {/* Google Review Details Widget */}
-      <div className="bg-gray-50 border border-gray-100 rounded-2xl p-4 flex items-center justify-between gap-2">
-        <div className="flex items-center space-x-2.5">
-          <div className="flex gap-0.5">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="w-3.5 h-3.5 fill-[#FBBC05] stroke-none" />
-            ))}
+      {/* Main Review Quote */}
+      <div className="pt-2">
+        <p className="text-gray-600 text-sm md:text-base leading-relaxed font-medium font-sans">
+          {review.text}
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="w-full border-t border-gray-100 pt-4 flex items-center justify-between">
+        
+        {/* Left Side: Avatar, Name & Stars */}
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-red-600 font-extrabold text-xs uppercase transition-transform duration-250 group-hover:scale-105 shrink-0">
+            {getInitials(review.name)}
           </div>
-          <div className="truncate">
-            <div className="text-[10px] uppercase font-bold tracking-wider text-gray-400">Google Review</div>
-          </div>
-        </div>
-
-        <div className="text-xs font-black text-gray-400">|</div>
-
-        <div className="text-center">
-          <div className="text-xs font-extrabold text-gray-700">4.9 / 5 Rating</div>
-        </div>
-
-        <div className="text-xs font-black text-gray-400">|</div>
-
-        <div className="flex items-center space-x-2 text-right">
-          <div className="truncate">
-            <div className="text-[10px] uppercase font-bold tracking-wider text-gray-400">Google Logo</div>
-            <div className="text-[9px] font-extrabold text-neutral-400 uppercase tracking-widest">Verified Review</div>
-          </div>
-          <div className="w-8 h-8 bg-white border border-gray-200 rounded-lg flex items-center justify-center shrink-0 shadow-xs relative">
-            <div className="relative w-4 h-4">
-              <Image
-                src="/assets/logo.png"
-                alt="Google Logo"
-                fill
-                sizes="16px"
-                className="object-contain"
-              />
+          <div>
+            <h4 className="font-extrabold text-gray-900 leading-tight font-heading text-sm">
+              {review.name}
+            </h4>
+            <div className="flex gap-0.5 mt-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-[#F5A623] stroke-none" />
+              ))}
             </div>
           </div>
         </div>
+
+        {/* Right Side: Google branding */}
+        <div className="flex items-center space-x-2 bg-gray-50 border border-gray-100 rounded-lg py-1.5 px-2.5">
+          <GoogleGLogo />
+          <span className="text-[10px] font-black text-neutral-400 uppercase tracking-widest leading-none">
+            Verified
+          </span>
+        </div>
+
       </div>
     </div>
   );
@@ -133,7 +138,7 @@ export default function GoogleReviews() {
   const duplicatedReviews = reviews.concat(reviews).concat(reviews);
   const rowRef = useRef<HTMLDivElement>(null);
 
-  // Touch handlers for mobile
+  // Touch handlers for mobile scrolling
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [isDown, setIsDown] = useState(false);
@@ -169,20 +174,20 @@ export default function GoogleReviews() {
           </p>
         </div>
 
-        {/* Marquee Row */}
+        {/* Marquee Row container */}
         <div 
           ref={rowRef}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={() => setIsDown(false)}
-          className="relative w-full overflow-hidden py-4 select-none scrollbar-hide"
+          className="relative w-full overflow-hidden py-4 select-none scrollbar-hide marquee-container"
         >
           {/* Left and Right Gradient Fades */}
           <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
           <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
-          {/* Marquee Mover */}
-          <div className="flex gap-8 animate-marquee-left hover:pause-animation w-max will-change-transform">
+          {/* Marquee Mover with animation */}
+          <div className="flex gap-8 animate-marquee-left w-max will-change-transform">
             {duplicatedReviews.map((review, idx) => (
               <ReviewCard key={`${review.name}-${idx}`} review={review} />
             ))}
@@ -201,14 +206,14 @@ export default function GoogleReviews() {
           }
         }
         .animate-marquee-left {
-          animation: marqueeLeft 30s linear infinite;
+          animation: marqueeLeft 48s linear infinite;
         }
-        .hover\\:pause-animation:hover {
+        .marquee-container:hover .animate-marquee-left {
           animation-play-state: paused;
         }
         @media (max-width: 768px) {
           .animate-marquee-left {
-            animation-duration: 45s;
+            animation-duration: 65s;
           }
         }
         .scrollbar-hide::-webkit-scrollbar {
