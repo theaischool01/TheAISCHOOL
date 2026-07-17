@@ -443,11 +443,9 @@ export default function AboutUsPage() {
         <div id="story" ref={sectionsRef.story} className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
           <RevealOnScroll className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="flex items-center gap-3">
-                <span className="text-3xl md:text-4xl font-black text-[#C1121C]/20">01</span>
-                <span className="h-px w-8 bg-neutral-200" />
-                <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#C1121C]">Who We Are</span>
-              </div>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1] uppercase font-heading">
+                <span className="text-[#C1121C]">Who We</span> <span className="text-gray-950">Are</span>
+              </h2>
               <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
                 The AI School was founded to break down the barrier between theoretical academic courses and actual startup production requirements. We operate out of T-Hub 2.0 in Hyderabad, providing students direct links to real startups, founders, and engineers.
               </p>
