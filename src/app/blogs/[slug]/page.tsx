@@ -2612,23 +2612,6 @@ export default function BlogDetailPage({ params }: { params: any }) {
               <ArrowLeft className="w-4 h-4" /> Back to insights
             </button>
 
-            <div className="space-y-4">
-              <div className="text-[10px] font-black uppercase tracking-widest text-[#EE1C25]">Written By</div>
-              <div className="flex items-center gap-4">
-                <img 
-                  src={post.author.avatar} 
-                  alt={post.author.name} 
-                  className="w-14 h-14 rounded-full border-2 border-[#EE1C25] object-cover"
-                />
-                <div>
-                  <div className="text-base font-black text-gray-900 leading-tight">{post.author.name}</div>
-                  <div className="text-xs font-semibold text-gray-400">{post.author.role}</div>
-                </div>
-              </div>
-            </div>
-
-            <hr className="border-neutral-200" />
-
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <div className="text-[10px] font-black uppercase tracking-widest text-[#EE1C25]">Published</div>

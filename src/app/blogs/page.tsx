@@ -300,18 +300,7 @@ export default function BlogsPage() {
                   </p>
                 </div>
 
-                <div className="pt-8 border-t border-gray-100 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <img 
-                      src={featuredPost.author.avatar} 
-                      alt={featuredPost.author.name}
-                      className="w-10 h-10 rounded-full border border-gray-200 object-cover"
-                    />
-                    <div>
-                      <div className="text-xs font-black text-gray-900">{featuredPost.author.name}</div>
-                      <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{featuredPost.author.role}</div>
-                    </div>
-                  </div>
+                <div className="pt-8 border-t border-gray-100 flex items-center justify-end">
                   <span className="w-10 h-10 flex items-center justify-center bg-gray-900 text-white rounded-full group-hover:bg-[#EE1C25] transition-colors duration-300">
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -359,18 +348,7 @@ export default function BlogsPage() {
                 </div>
 
                 <div className="p-6 pt-0">
-                  <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <img 
-                        src={post.author.avatar} 
-                        alt={post.author.name}
-                        className="w-8 h-8 rounded-full border border-gray-200 object-cover"
-                      />
-                      <div>
-                        <div className="text-xs font-black text-gray-900">{post.author.name}</div>
-                        <div className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{post.author.role}</div>
-                      </div>
-                    </div>
+                  <div className="pt-4 border-t border-gray-50 flex items-center justify-end">
                     <span className="w-8 h-8 flex items-center justify-center bg-gray-50 text-gray-900 rounded-full group-hover:bg-[#EE1C25] group-hover:text-white transition-colors duration-300">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
