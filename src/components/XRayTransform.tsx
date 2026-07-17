@@ -399,11 +399,11 @@ export default function XRayTransform() {
                   </div>
 
                   {/* Right Column: Visual Mockup Panel */}
-                  <div className="lg:w-1/2 w-full bg-neutral-50 border border-neutral-200/60 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[220px]">
+                  <div className="lg:w-1/2 w-full bg-red-50/40 border border-red-100 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[220px] transition-colors duration-300 hover:bg-red-50/60">
                     <div className="space-y-4">
-                      <div className="flex items-center space-x-2 border-b border-neutral-200/50 pb-3">
-                        <MessageSquareCode className="w-4 h-4 text-neutral-400" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                      <div className="flex items-center space-x-2 border-b border-red-100 pb-3">
+                        <MessageSquareCode className="w-4 h-4 text-[#EE1C25]/60" />
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#EE1C25]/80">
                           {step.detailTitle}
                         </span>
                       </div>
@@ -420,7 +420,7 @@ export default function XRayTransform() {
                       </div>
                     </div>
 
-                    <div className="pt-6 border-t border-neutral-200/40 flex items-center justify-between text-[9px] font-bold text-neutral-400 uppercase tracking-widest">
+                    <div className="pt-6 border-t border-red-100/60 flex items-center justify-between text-[9px] font-bold text-[#EE1C25]/60 uppercase tracking-widest">
                       <span>Live Production Env</span>
                       <span>Verified System</span>
                     </div>
