@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { useRegion } from "@/context/RegionContext";
 import { REGIONS } from "@/config/regions";
@@ -100,6 +101,7 @@ const CATEGORIES: Category[] = [
 
 export default function Header() {
   const { currentRegion, regionConfig, setRegion } = useRegion();
+  const pathname = usePathname();
   const [activeCategory, setActiveCategory] = useState("ai-internship");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -178,9 +180,14 @@ export default function Header() {
               <li className="relative group/nav-item">
                 <a
                   href="/learn"
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-bold text-[#171717] hover:text-[#EE1C25] hover:bg-neutral-50 rounded-lg transition-all duration-200"
+                  className={`flex items-center gap-1 px-3 py-2 text-sm font-bold hover:text-[#EE1C25] hover:bg-neutral-50 rounded-lg transition-all duration-200 relative ${
+                    pathname === "/learn" || pathname.startsWith("/courses/") ? "text-[#EE1C25]" : "text-[#171717]"
+                  }`}
                 >
                   Learn <ChevronDown className="w-4 h-4 group-hover/nav-item:rotate-180 transition-transform duration-200" />
+                  {(pathname === "/learn" || pathname.startsWith("/courses/")) && (
+                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#EE1C25] rounded-full" />
+                  )}
                 </a>
 
                 {/* Mega Dropdown Menu */}
@@ -223,10 +230,19 @@ export default function Header() {
               </li>
               {regionConfig.navigation.map((nav, idx) => {
                 if (nav.url === "/learn") return null; // Already rendered with mega menu
+                const isActive = pathname === nav.url || (nav.url !== "/" && pathname.startsWith(nav.url));
                 return (
                   <li key={idx}>
-                    <a href={nav.url} className="px-3 py-2 text-sm font-bold text-[#171717] hover:text-[#EE1C25] transition-colors">
+                    <a 
+                      href={nav.url} 
+                      className={`px-3 py-2 text-sm font-bold hover:text-[#EE1C25] transition-colors relative block ${
+                        isActive ? "text-[#EE1C25]" : "text-[#171717]"
+                      }`}
+                    >
                       {nav.name}
+                      {isActive && (
+                        <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#EE1C25] rounded-full" />
+                      )}
                     </a>
                   </li>
                 );
