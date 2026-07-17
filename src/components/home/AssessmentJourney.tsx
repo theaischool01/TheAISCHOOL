@@ -113,7 +113,7 @@ export default function AssessmentJourney() {
           <div className="relative space-y-16 max-w-5xl mx-auto">
             {steps.map((step, idx) => {
               const Icon = step.icon;
-              const bgClass = idx % 2 === 0 ? "bg-white" : "bg-red-50/30";
+              const bgClass = idx % 2 === 0 ? "bg-white" : "bg-[#FFF5F5]";
               const isFinalStep = idx === steps.length - 1;
 
               return (
