@@ -34,29 +34,29 @@ export default function FlagshipLearningFrameworks() {
           {/* Card 1: AI Agent Development (col-span-7) — swapped to first */}
           <div
             onClick={() => window.location.href = "/learn"}
-            className="group relative bg-[#C1121C] border border-[#C1121C] rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-7 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.35)] cursor-pointer"
+            className="group relative bg-[#FFF5F5] border border-red-100 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-7 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-red-300 hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.12)] cursor-pointer"
           >
             {/* Background 01 */}
-            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-white opacity-[0.06] select-none pointer-events-none font-sans">
+            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-[#C1121C] opacity-[0.03] select-none pointer-events-none font-sans">
               01
             </span>
             <div className="flex justify-between items-start">
-              <div className="p-4 bg-white text-black rounded-2xl border border-white group-hover:scale-105 transition-transform duration-300">
+              <div className="p-4 bg-red-50 text-[#C1121C] rounded-2xl border border-red-100/50 group-hover:scale-105 transition-transform duration-300">
                 <Terminal className="w-8 h-8" />
               </div>
 
               {/* Stack Metaphor */}
-              <svg className="w-20 h-16 opacity-40 group-hover:opacity-75 transition-opacity" viewBox="0 0 80 60" fill="none">
-                <path d="M 10 15 L 70 15 L 60 25 L 20 25 Z" fill="#C1121C" stroke="#FFFFFF" strokeWidth="1.5" />
-                <path d="M 10 30 L 70 30 L 60 40 L 20 40 Z" fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="1.5" />
-                <line x1="20" y1="15" x2="20" y2="40" stroke="#FFFFFF" strokeWidth="2" />
+              <svg className="w-20 h-16 opacity-30 group-hover:opacity-60 transition-opacity" viewBox="0 0 80 60" fill="none">
+                <path d="M 10 15 L 70 15 L 60 25 L 20 25 Z" fill="#FFF5F5" stroke="#C1121C" strokeWidth="1.5" />
+                <path d="M 10 30 L 70 30 L 60 40 L 20 40 Z" fill="#E5E7EB" stroke="#C1121C" strokeWidth="1.5" />
+                <line x1="20" y1="15" x2="20" y2="40" stroke="#C1121C" strokeWidth="2" />
               </svg>
             </div>
 
             <div className="space-y-3 z-10 my-4">
               <div>
-                <h4 className="text-xl font-bold text-white font-heading">AI Agent Development</h4>
-                <p className="text-xs text-red-100 font-semibold leading-relaxed mt-1">
+                <h4 className="text-xl font-bold text-gray-950 font-heading">AI Agent Development</h4>
+                <p className="text-xs text-neutral-500 font-semibold leading-relaxed mt-1">
                   Design autonomous AI agents with memory, tools, workflows and reasoning.
                 </p>
               </div>
@@ -64,22 +64,22 @@ export default function FlagshipLearningFrameworks() {
               {/* Tech Stack Pills */}
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {["CrewAI", "LangChain", "ChromaDB", "Python", "Autogen"].map((tech) => (
-                  <span key={tech} className="bg-white border border-white text-black text-[9px] font-bold px-2 py-0.5 rounded-full">
+                  <span key={tech} className="bg-white border border-red-100 text-neutral-600 text-[9px] font-bold px-2 py-0.5 rounded-full">
                     {tech}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-4 border-t border-red-400/30 z-10">
-              <div className="flex items-center space-x-2 text-[9px] text-red-100 font-bold uppercase tracking-wider">
+            <div className="flex items-center justify-between pt-4 border-t border-red-100 z-10">
+              <div className="flex items-center space-x-2 text-[9px] text-neutral-400 font-bold uppercase tracking-wider">
                 <span>Live Projects</span>
                 <span>•</span>
                 <span>Industry Mentors</span>
                 <span>•</span>
                 <span>Placement Ready</span>
               </div>
-              <div className="text-xs font-black uppercase tracking-wider text-white flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200 shrink-0">
+              <div className="text-xs font-black uppercase tracking-wider text-[#C1121C] flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200 shrink-0">
                 <span>Explore Program</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
@@ -203,30 +203,30 @@ export default function FlagshipLearningFrameworks() {
           {/* Card 4: AI for Business & Analytics (col-span-4) */}
           <div
             onClick={() => window.location.href = "/learn"}
-            className="group relative bg-[#C1121C] border border-[#C1121C] rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-4 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.35)] cursor-pointer"
+            className="group relative bg-[#FFF5F5] border border-red-100 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-4 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-red-300 hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.12)] cursor-pointer"
           >
             {/* Background 04 */}
-            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-white opacity-[0.06] select-none pointer-events-none font-sans">
+            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-[#C1121C] opacity-[0.03] select-none pointer-events-none font-sans">
               04
             </span>
             <div className="flex justify-between items-start">
-              <div className="p-4 bg-white text-black rounded-2xl border border-white group-hover:scale-105 transition-transform duration-300">
+              <div className="p-4 bg-red-50 text-[#C1121C] rounded-2xl border border-red-100/50 group-hover:scale-105 transition-transform duration-300">
                 <GitBranch className="w-8 h-8" />
               </div>
 
               {/* Branching Roadmap Metaphor */}
-              <svg className="w-16 h-16 opacity-40 group-hover:opacity-75 transition-opacity" viewBox="0 0 60 60" fill="none">
-                <path d="M 10 50 C 10 30, 30 30, 30 10" stroke="#FFFFFF" strokeWidth="1.5" strokeDasharray="3 3" />
-                <path d="M 30 50 C 30 30, 50 30, 50 10" stroke="#FFFFFF" strokeWidth="1.5" />
-                <circle cx="30" cy="10" r="3" fill="#000000" />
-                <circle cx="50" cy="10" r="3" fill="#FFFFFF" />
+              <svg className="w-16 h-16 opacity-30 group-hover:opacity-60 transition-opacity" viewBox="0 0 60 60" fill="none">
+                <path d="M 10 50 C 10 30, 30 30, 30 10" stroke="#D1D5DB" strokeWidth="1.5" strokeDasharray="3 3" />
+                <path d="M 30 50 C 30 30, 50 30, 50 10" stroke="#C1121C" strokeWidth="1.5" />
+                <circle cx="30" cy="10" r="3" fill="#C1121C" />
+                <circle cx="50" cy="10" r="3" fill="#C1121C" />
               </svg>
             </div>
 
             <div className="space-y-3 z-10 my-4">
               <div>
-                <h4 className="text-xl font-bold text-white font-heading">AI for Business &amp; Analytics</h4>
-                <p className="text-xs text-red-100 font-semibold leading-relaxed mt-1">
+                <h4 className="text-xl font-bold text-gray-950 font-heading">AI for Business &amp; Analytics</h4>
+                <p className="text-xs text-neutral-500 font-semibold leading-relaxed mt-1">
                   Transform business problems into AI-powered data solutions and intelligent decision systems.
                 </p>
               </div>
@@ -234,20 +234,20 @@ export default function FlagshipLearningFrameworks() {
               {/* Tech Stack Pills */}
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {["PowerBI", "Python", "SQL", "Pandas", "Scikit-Learn"].map((tech) => (
-                  <span key={tech} className="bg-white border border-white text-black text-[9px] font-bold px-2 py-0.5 rounded-full">
+                  <span key={tech} className="bg-white border border-red-100 text-neutral-600 text-[9px] font-bold px-2 py-0.5 rounded-full">
                     {tech}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-4 border-t border-red-400/30 z-10">
-              <div className="flex items-center space-x-2 text-[9px] text-red-100 font-bold uppercase tracking-wider">
+            <div className="flex items-center justify-between pt-4 border-t border-red-100 z-10">
+              <div className="flex items-center space-x-2 text-[9px] text-neutral-400 font-bold uppercase tracking-wider">
                 <span>Live Projects</span>
                 <span>•</span>
                 <span>Placement Ready</span>
               </div>
-              <div className="text-xs font-black uppercase tracking-wider text-white flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200 shrink-0">
+              <div className="text-xs font-black uppercase tracking-wider text-[#C1121C] flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200 shrink-0">
                 <span>Explore Program</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
