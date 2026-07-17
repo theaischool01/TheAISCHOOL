@@ -81,13 +81,19 @@ const getInitials = (name: string) => {
   return name.slice(0, 2).toUpperCase();
 };
 
-function ReviewCard({ review }: { review: Review }) {
+function ReviewCard({ review, idx }: { review: Review; idx: number }) {
+  const isRedShaded = idx % 2 === 1;
+
   return (
     <div 
-      className="relative bg-white border border-gray-200/80 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between space-y-5 w-[360px] md:w-[400px] shrink-0 select-none group overflow-hidden"
+      className={`relative ${
+        isRedShaded 
+          ? "bg-[#FFF5F5] border border-red-100/70" 
+          : "bg-white border border-gray-200/80"
+      } rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between space-y-5 w-[360px] md:w-[400px] shrink-0 select-none group overflow-hidden`}
     >
       {/* Decorative vertical red hover bar (hardware-accelerated, no reflow) */}
-      <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#EE1C25] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center z-10" />
+      <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#C1121C] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center z-10" />
 
       {/* Decorative large quotation mark */}
       <div className="absolute top-2 right-6 text-neutral-100/80 text-7xl font-serif select-none pointer-events-none leading-none">
@@ -96,17 +102,21 @@ function ReviewCard({ review }: { review: Review }) {
 
       {/* Main Review Quote */}
       <div className="pt-2">
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed font-medium font-sans">
+        <p className={`${isRedShaded ? "text-gray-700" : "text-gray-600"} text-sm md:text-base leading-relaxed font-medium font-sans`}>
           {review.text}
         </p>
       </div>
 
       {/* Divider */}
-      <div className="w-full border-t border-gray-100 pt-4 flex items-center justify-between">
+      <div className={`w-full border-t ${isRedShaded ? "border-red-100" : "border-gray-100"} pt-4 flex items-center justify-between`}>
         
         {/* Left Side: Avatar, Name & Stars */}
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-red-600 font-extrabold text-xs uppercase transition-transform duration-250 group-hover:scale-105 shrink-0">
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-xs uppercase transition-transform duration-250 group-hover:scale-105 shrink-0 ${
+            isRedShaded 
+              ? "bg-[#C1121C] text-white border border-[#C1121C]" 
+              : "bg-red-50 border border-red-100 text-red-600"
+          }`}>
             {getInitials(review.name)}
           </div>
           <div>
@@ -122,7 +132,11 @@ function ReviewCard({ review }: { review: Review }) {
         </div>
 
         {/* Right Side: Google branding */}
-        <div className="flex items-center space-x-2 bg-gray-50 border border-gray-100 rounded-lg py-1.5 px-2.5">
+        <div className={`flex items-center space-x-2 border rounded-lg py-1.5 px-2.5 ${
+          isRedShaded 
+            ? "bg-white border-red-100" 
+            : "bg-gray-50 border-gray-100"
+        }`}>
           <GoogleGLogo />
           <span className="text-[10px] font-black text-neutral-400 uppercase tracking-widest leading-none">
             Verified
@@ -189,7 +203,7 @@ export default function GoogleReviews() {
           {/* Marquee Mover with animation */}
           <div className="flex gap-8 animate-marquee-left w-max will-change-transform">
             {duplicatedReviews.map((review, idx) => (
-              <ReviewCard key={`${review.name}-${idx}`} review={review} />
+              <ReviewCard key={`${review.name}-${idx}`} review={review} idx={idx} />
             ))}
           </div>
         </div>
