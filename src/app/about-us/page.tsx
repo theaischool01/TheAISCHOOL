@@ -584,7 +584,7 @@ export default function AboutUsPage() {
                 { icon: ShieldCheck, title: "Industry Sync", desc: "Our syllabus shifts dynamically according to modern LLM benchmarks and frameworks." },
                 { icon: Compass, title: "Curiosity Always", desc: "Encouraging experimentations with cutting-edge agent pipelines and custom configurations." }
               ].map((v, idx) => {
-                const isRedCard = idx === 0 || idx === 2;
+                const isRedCard = idx === 1 || idx === 3;
                 return (
                   <RevealOnScroll 
                     key={idx} 
