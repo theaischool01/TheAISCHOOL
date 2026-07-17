@@ -422,30 +422,7 @@ export default function AboutUsPage() {
         </div>
       </SectionWrapper>
 
-      {/* ================= STICKY SUB-NAVIGATION BAR ================= */}
-      {showStickyNav && (
-        <div className="sticky top-20 w-full bg-white/95 backdrop-blur-md border-b border-gray-150 z-[990] py-3.5 px-6 hidden md:block animate-in fade-in slide-in-from-top-2 duration-200">
-          <div className="max-w-6xl mx-auto flex items-center justify-between">
-            <span className="text-xs font-black uppercase tracking-widest text-gray-400">About Section Menu</span>
-            <div className="flex space-x-8">
-              {(Object.keys(sectionsRef) as Array<keyof typeof sectionsRef>).map((key) => {
-                const labelMap = { story: "Story", impact: "Impact", whyUs: "Why Us", people: "People", journey: "Journey" };
-                return (
-                  <button
-                    key={key}
-                    onClick={() => scrollToSection(key)}
-                    className={`text-xs font-black uppercase tracking-widest transition-colors cursor-pointer ${
-                      activeSection === key ? "text-[#EE1C25]" : "text-gray-500 hover:text-gray-900"
-                    }`}
-                  >
-                    {labelMap[key]}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )}
+
 
       {/* ================= 2. IMPACT BY THE NUMBERS ================= */}
       <SectionWrapper tone="tinted">
