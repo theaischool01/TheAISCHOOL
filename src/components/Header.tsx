@@ -121,6 +121,8 @@ export default function Header() {
   const pathname = usePathname();
   const [activeCategory, setActiveCategory] = useState("ai-internship");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileLearnOpen, setMobileLearnOpen] = useState(false);
+  const [mobileActiveCategory, setMobileActiveCategory] = useState<string | null>(null);
 
   const activeCourses = CATEGORIES.find((c) => c.id === activeCategory)?.courses || [];
 
@@ -136,7 +138,7 @@ export default function Header() {
   return (
     <>
       {/* Announcement Bar with Social Links */}
-      <div className="w-full bg-[#EE1C25] text-white py-2.5 px-8 relative z-[1000] border-b border-white/5">
+      <div className="w-full bg-[#C1121C] text-white py-2.5 px-8 relative z-[1000] border-b border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-semibold tracking-wide">
           {/* Social Links */}
           <div className="flex items-center gap-4">
@@ -197,13 +199,13 @@ export default function Header() {
               <li className="relative group/nav-item">
                 <a
                   href="/learn"
-                  className={`flex items-center gap-1 px-3 py-2 text-sm font-bold hover:text-[#EE1C25] hover:bg-neutral-50 rounded-lg transition-all duration-200 relative ${
-                    pathname === "/learn" || pathname.startsWith("/courses/") ? "text-[#EE1C25]" : "text-[#171717]"
+                  className={`flex items-center gap-1 px-3 py-2 text-sm font-bold hover:text-[#C1121C] hover:bg-neutral-50 rounded-lg transition-all duration-200 relative ${
+                    pathname === "/learn" || pathname.startsWith("/courses/") ? "text-[#C1121C]" : "text-[#171717]"
                   }`}
                 >
                   Learn <ChevronDown className="w-4 h-4 group-hover/nav-item:rotate-180 transition-transform duration-200" />
                   {(pathname === "/learn" || pathname.startsWith("/courses/")) && (
-                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#EE1C25] rounded-full" />
+                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#C1121C] rounded-full" />
                   )}
                 </a>
 
@@ -218,7 +220,7 @@ export default function Header() {
                           onMouseEnter={() => setActiveCategory(cat.id)}
                           className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-left text-sm font-bold transition-all duration-150 ${
                             activeCategory === cat.id
-                              ? "bg-[#EE1C25] text-white"
+                              ? "bg-[#C1121C] text-white"
                               : "text-[#171717] hover:bg-neutral-150"
                           }`}
                         >
@@ -235,7 +237,7 @@ export default function Header() {
                           <a
                             key={idx}
                             href={course.url}
-                            className="p-4 rounded-lg bg-neutral-50 hover:bg-red-50/40 border-l-3 border-transparent hover:border-[#EE1C25] text-sm font-medium text-[#171717] hover:text-[#EE1C25] transition-all duration-200 shadow-sm"
+                            className="p-4 rounded-lg bg-neutral-50 hover:bg-red-50/40 border-l-3 border-transparent hover:border-[#C1121C] text-sm font-medium text-[#171717] hover:text-[#C1121C] transition-all duration-200 shadow-sm"
                           >
                             {course.name}
                           </a>
@@ -252,13 +254,13 @@ export default function Header() {
                   <li key={idx}>
                     <a 
                       href={nav.url} 
-                      className={`px-3 py-2 text-sm font-bold hover:text-[#EE1C25] transition-colors relative block ${
-                        isActive ? "text-[#EE1C25]" : "text-[#171717]"
+                      className={`px-3 py-2 text-sm font-bold hover:text-[#C1121C] transition-colors relative block ${
+                        isActive ? "text-[#C1121C]" : "text-[#171717]"
                       }`}
                     >
                       {nav.name}
                       {isActive && (
-                        <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#EE1C25] rounded-full" />
+                        <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#C1121C] rounded-full" />
                       )}
                     </a>
                   </li>
@@ -313,37 +315,73 @@ export default function Header() {
 
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden w-full bg-white border-t border-black/5 px-6 py-4 animate-in fade-in slide-in-from-top-4 duration-200">
+          <div className="md:hidden w-full bg-white border-t border-black/5 px-6 py-4 animate-in fade-in slide-in-from-top-4 duration-200 max-h-[75vh] overflow-y-auto">
             <ul className="flex flex-col list-none m-0 p-0">
               <li>
-                <div className="font-bold text-sm text-[#6B7280] mb-2">Learn</div>
-                <div className="flex flex-col gap-1.5 pl-3 border-l border-neutral-100 mb-2">
-                  {CATEGORIES.map((cat) => (
-                    <div key={cat.id} className="py-1">
-                      <div className="text-xs font-extrabold text-[#171717] mb-1">{cat.name}</div>
-                      <div className="flex flex-col gap-1 pl-2">
-                        {cat.courses.slice(0, 3).map((course, idx) => (
-                          <a key={idx} href={course.url} className="text-xs text-[#6B7280] hover:text-[#EE1C25]">
-                            {course.name}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <button
+                  onClick={() => setMobileLearnOpen(!mobileLearnOpen)}
+                  className="flex items-center justify-between w-full font-bold text-[#171717] py-3 text-left border-b border-neutral-100"
+                >
+                  <span>Learn</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileLearnOpen ? 'rotate-180 text-[#C1121C]' : 'text-neutral-400'}`} />
+                </button>
+                {mobileLearnOpen && (
+                  <div className="flex flex-col gap-1 pl-3 border-l-2 border-neutral-100 my-2">
+                    {CATEGORIES.map((cat) => {
+                      const isCatOpen = mobileActiveCategory === cat.id;
+                      return (
+                        <div key={cat.id} className="py-1">
+                          <button
+                            onClick={() => setMobileActiveCategory(isCatOpen ? null : cat.id)}
+                            className="flex items-center justify-between w-full text-xs font-bold text-neutral-700 py-2 text-left hover:text-[#C1121C]"
+                          >
+                            <span>{cat.name}</span>
+                            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isCatOpen ? 'rotate-180 text-[#C1121C]' : 'text-neutral-400'}`} />
+                          </button>
+                          {isCatOpen && (
+                            <div className="flex flex-col gap-2 pl-3 mt-1 pb-2 border-l border-red-100">
+                              {cat.courses.map((course, idx) => (
+                                <a
+                                  key={idx}
+                                  href={course.url}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="text-xs text-neutral-500 hover:text-[#C1121C] py-1 block transition-colors leading-relaxed"
+                                >
+                                  {course.name}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </li>
               <li>
-                <a href="/about-us" className="block font-bold text-[#171717] py-2">
+                <a 
+                  href="/about-us" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block font-bold text-[#171717] py-3 border-b border-neutral-100"
+                >
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/blogs" className="block font-bold text-[#171717] py-2">
+                <a 
+                  href="/blogs" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block font-bold text-[#171717] py-3 border-b border-neutral-100"
+                >
                   Blogs
                 </a>
               </li>
               <li>
-                <a href="/contact-us" onClick={() => setMobileMenuOpen(false)} className="block font-bold text-[#171717] py-2">
+                <a 
+                  href="/contact-us" 
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className="block font-bold text-[#171717] py-3"
+                >
                   Contact Us
                 </a>
               </li>

@@ -152,7 +152,7 @@ export default function LearnPage() {
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-red-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto text-center relative z-10 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25] font-heading">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#C1121C] font-heading">
             OUR CURRICULUM
           </span>
           <h1 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tight font-heading max-w-4xl mx-auto leading-tight">
@@ -168,18 +168,18 @@ export default function LearnPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10">
           
-          {/* Left Category Tabs (Sticky) */}
-          <div className="space-y-2 lg:sticky lg:top-28 self-start">
-            <h3 className="text-xs font-black uppercase tracking-wider text-neutral-400 mb-4 px-2">
+          {/* Left Category Tabs (Sticky desktop, Horizontal scroll mobile) */}
+          <div className="flex overflow-x-auto gap-2 pb-4 scrollbar-none whitespace-nowrap lg:flex-col lg:overflow-visible lg:pb-0 lg:space-y-2 lg:sticky lg:top-28 self-start">
+            <h3 className="hidden lg:block text-xs font-black uppercase tracking-wider text-neutral-400 mb-4 px-2">
               Filter Categories
             </h3>
             
             <button
               onClick={() => setSelectedCategory("all")}
-              className={`flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-left text-xs font-bold transition-all ${
+              className={`shrink-0 flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
                 selectedCategory === "all"
-                  ? "bg-[#EE1C25] text-white shadow-md shadow-red-500/10"
-                  : "text-neutral-600 hover:bg-neutral-50 hover:text-[#EE1C25]"
+                  ? "bg-[#C1121C] text-white shadow-md shadow-red-500/10"
+                  : "text-neutral-600 bg-neutral-50 hover:bg-neutral-100 hover:text-[#C1121C]"
               }`}
             >
               <span>All Specializations</span>
@@ -190,13 +190,13 @@ export default function LearnPage() {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-left text-xs font-bold transition-all ${
+                className={`shrink-0 flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   selectedCategory === cat.id
-                    ? "bg-[#EE1C25] text-white shadow-md shadow-red-500/10"
-                    : "text-neutral-600 hover:bg-neutral-50 hover:text-[#EE1C25]"
+                    ? "bg-[#C1121C] text-white shadow-md shadow-red-500/10"
+                    : "text-neutral-600 bg-neutral-50 hover:bg-neutral-100 hover:text-[#C1121C]"
                 }`}
               >
-                <span className="truncate pr-2">{cat.name}</span>
+                <span className="truncate pr-1">{cat.name}</span>
                 <GraduationCap className="w-3.5 h-3.5 opacity-70 shrink-0" />
               </button>
             ))}
@@ -218,7 +218,7 @@ export default function LearnPage() {
                     className="group bg-white border border-gray-200 rounded-3xl p-6 flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-xl hover:border-red-500/20 transition-all duration-300 relative overflow-hidden"
                   >
                     {/* Top Accent line */}
-                    <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-[#EE1C25] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+                    <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-[#C1121C] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
 
                     <div>
                       {/* Badges */}
@@ -229,7 +229,7 @@ export default function LearnPage() {
                         <div className="flex items-center gap-1.5">
                           <span className={`text-[9px] font-extrabold px-2 py-0.5 rounded-full border flex items-center gap-1 ${
                             course.audience === "For Coders" 
-                              ? "bg-red-50/50 text-[#EE1C25] border-red-100/50" 
+                              ? "bg-red-50/50 text-[#C1121C] border-red-100/50" 
                               : "bg-green-50 text-green-700 border-green-100"
                           }`}>
                             {course.audience === "For Coders" ? (
@@ -248,7 +248,7 @@ export default function LearnPage() {
                       </div>
 
                       {/* Course title & details */}
-                      <h3 className="text-lg font-black text-gray-900 pt-1 group-hover:text-[#EE1C25] transition-colors duration-200 font-heading leading-tight">
+                      <h3 className="text-lg font-black text-gray-900 pt-1 group-hover:text-[#C1121C] transition-colors duration-200 font-heading leading-tight">
                         {course.name}
                       </h3>
                       <p className="text-xs text-neutral-500 leading-relaxed font-sans font-medium mt-3 mb-6">
@@ -262,7 +262,7 @@ export default function LearnPage() {
                       </span>
                       <a
                         href={course.url}
-                        className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wider text-[#EE1C25] hover:text-neutral-900 transition-colors"
+                        className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wider text-[#C1121C] hover:text-neutral-900 transition-colors"
                       >
                         Explore Course
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
