@@ -111,7 +111,7 @@ function TeamMemberCard({ member, size = 120, isPremium = false, description = "
 
   return (
     <div 
-      className={`border rounded-2xl p-6 flex flex-col items-center text-center space-y-4 hover:-translate-y-1 hover:shadow-md transition-all group duration-300 relative overflow-hidden ${
+      className={`h-full w-full border rounded-2xl p-6 flex flex-col items-center text-center space-y-4 hover:-translate-y-1 hover:shadow-md transition-all group duration-300 relative overflow-hidden ${
         isPremium ? "bg-white border-gray-200/90 shadow-xs" : "bg-gray-50/50 border-gray-150"
       }`}
     >
@@ -706,7 +706,7 @@ export default function AboutUsPage() {
                 <h3 className="text-xs font-black uppercase tracking-widest text-[#EE1C25] border-b border-gray-100 pb-2">Leadership Team</h3>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                   {leadership.map((l, idx) => (
-                    <RevealOnScroll key={idx} delay={idx * 80}>
+                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
                       <TeamMemberCard member={l} size={140} isPremium={true} description={l.desc} />
                     </RevealOnScroll>
                   ))}
@@ -718,7 +718,7 @@ export default function AboutUsPage() {
                 <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Industry Partners & Advisors</h3>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                   {partners.map((p, idx) => (
-                    <RevealOnScroll key={idx} delay={idx * 80}>
+                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
                       <TeamMemberCard member={p} size={120} isPremium={false} description={p.desc} />
                     </RevealOnScroll>
                   ))}
@@ -730,7 +730,7 @@ export default function AboutUsPage() {
                 <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Technical Mentors</h3>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                   {mentors.map((m, idx) => (
-                    <RevealOnScroll key={idx} delay={idx * 80}>
+                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
                       <TeamMemberCard member={m} size={120} isPremium={false} />
                     </RevealOnScroll>
                   ))}
