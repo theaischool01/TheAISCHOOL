@@ -67,7 +67,7 @@ export default function CourseSnapshotUS() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white py-16 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading"
+      className="w-full bg-transparent py-16 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

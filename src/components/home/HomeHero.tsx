@@ -41,7 +41,7 @@ export default function HomeHero() {
     <section
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full min-h-[calc(100vh-76px)] bg-white text-[#171717] flex flex-col justify-center py-12 lg:py-20 overflow-hidden select-none z-10"
+      className="relative w-full min-h-[calc(100vh-76px)] bg-transparent text-[#171717] flex flex-col justify-center py-12 lg:py-20 overflow-hidden select-none z-10"
     >
       {/* 1. Engineering paper style background grid (0.5px lines, opacity 4%) */}
       <div

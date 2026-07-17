@@ -141,7 +141,7 @@ export default function LearningJourney() {
   }, []);
 
   return (
-    <section className="w-full bg-slate-50/50 py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading overflow-hidden">
+    <section className="w-full bg-transparent py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading overflow-hidden">
       {/* Subtle ambient lighting */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[300px] bg-red-500/5 blur-[120px] pointer-events-none rounded-full" />
 

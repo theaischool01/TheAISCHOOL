@@ -24,6 +24,7 @@ import USStatement from "@/components/us/USStatement";
 
 import { RegionProvider, useRegion } from "@/context/RegionContext";
 import { HOME_LAYOUTS } from "@/config/homeLayouts";
+import { SectionWrapper } from "@/components/shared/SectionWrapper";
 
 function MainLayout() {
   const { currentRegion, layoutConfig, regionConfig } = useRegion();
@@ -71,13 +72,33 @@ function MainLayout() {
     }
   };
 
+  const distinctSections = ["hackathon", "registration", "statement", "mission"];
+  let plainSectionIndex = 0;
+
   return (
     <main className="relative min-h-screen bg-white">
       {/* Dynamic Header */}
       <Header />
 
-      {/* Dynamic Sections */}
-      {layoutConfig.map((section) => renderSection(section))}
+      {/* Dynamic Sections with alternating backgrounds */}
+      {layoutConfig.map((section) => {
+        const element = renderSection(section);
+        if (!element) return null;
+
+        const isDistinct = distinctSections.includes(section);
+        if (isDistinct) {
+          return element;
+        }
+
+        const tone = plainSectionIndex % 2 === 0 ? "white" : "tinted";
+        plainSectionIndex++;
+
+        return (
+          <SectionWrapper key={section} tone={tone}>
+            {element}
+          </SectionWrapper>
+        );
+      })}
 
       {/* Dynamic Footer */}
       <Footer />

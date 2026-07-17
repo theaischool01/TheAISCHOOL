@@ -5,7 +5,7 @@ import { Target, ShieldCheck } from "lucide-react";
 
 export default function USMission() {
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
+    <section className="w-full bg-transparent py-16 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         
         {/* Our Mission Card */}

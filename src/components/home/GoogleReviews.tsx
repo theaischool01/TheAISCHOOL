@@ -158,7 +158,7 @@ export default function GoogleReviews() {
   };
 
   return (
-    <section className="w-full bg-white py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading overflow-hidden">
+    <section className="w-full bg-transparent py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Section Header */}

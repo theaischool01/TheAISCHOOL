@@ -32,7 +32,7 @@ const mainPartners = [
 
 export default function PartnersSection() {
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
+    <section className="w-full bg-transparent py-16 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Ecosystem Partners Small Strip */}

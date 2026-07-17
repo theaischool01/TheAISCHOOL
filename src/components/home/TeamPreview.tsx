@@ -39,7 +39,7 @@ export default function TeamPreview() {
   ];
 
   return (
-    <section className="w-full bg-white py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading select-none">
+    <section className="w-full bg-transparent py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading select-none">
       <div className="max-w-6xl mx-auto space-y-12">
         
         {/* Header Title */}
@@ -52,79 +52,79 @@ export default function TeamPreview() {
           </h3>
         </div>
 
-        {/* Bento-style Grid (Founders Left, Mentors/Partners Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        {/* Fully Vertical Stack: 3 Rows */}
+        <div className="flex flex-col gap-6 w-full">
           
-          {/* Left Column: Founders Block (5 Columns) */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-            {founders.map((founder, idx) => (
-              <div 
-                key={idx} 
-                className="bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-5 flex flex-col items-center text-center shadow-xs hover:-translate-y-1 hover:shadow-md transition-all duration-300"
-              >
-                {/* 96px Circular Avatar with real photo */}
-                <div className="w-24 h-24 rounded-full bg-slate-200 text-slate-600 font-extrabold text-2xl flex items-center justify-center mb-4 border border-slate-300/40 overflow-hidden relative shrink-0">
-                  {founder.image ? (
-                    <Image
-                      src={founder.image}
-                      alt={founder.name}
-                      fill
-                      sizes="96px"
-                      className="object-cover"
-                    />
-                  ) : (
-                    founder.initials
-                  )}
+          {/* ROW 1: Centered Founders Pair */}
+          <div className="w-full">
+            <div className="max-w-2xl mx-auto grid grid-cols-2 gap-6">
+              {founders.map((founder, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-6 flex flex-col items-center text-center shadow-xs hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+                >
+                  {/* 96px Circular Avatar with real photo */}
+                  <div className="w-24 h-24 rounded-full bg-slate-200 text-slate-600 font-extrabold text-2xl flex items-center justify-center mb-4 border border-slate-300/40 overflow-hidden relative shrink-0">
+                    {founder.image ? (
+                      <Image
+                        src={founder.image}
+                        alt={founder.name}
+                        fill
+                        sizes="96px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      founder.initials
+                    )}
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-black text-gray-900 tracking-tight uppercase leading-snug">
+                      {founder.name}
+                    </h4>
+                    <p className="text-[10px] font-extrabold text-[#EE1C25] uppercase tracking-wider mt-0.5">
+                      {founder.role}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-xs font-black text-gray-900 tracking-tight uppercase leading-snug">
-                    {founder.name}
-                  </h4>
-                  <p className="text-[10px] font-extrabold text-[#EE1C25] uppercase tracking-wider mt-0.5">
-                    {founder.role}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          {/* Right Column: Mentors & Partners Strips (7 Columns) */}
-          <div className="lg:col-span-7 flex flex-col justify-between gap-4">
-            
-            {/* Industry Partners Strip */}
-            <div className="bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 flex-1">
+          {/* ROW 2: Industry Partners Strip (Full-width) */}
+          <div className="w-full">
+            <div className="bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300">
               <div className="space-y-2">
                 <span className="text-[9px] font-black uppercase tracking-wider text-neutral-400">
                   Industry Partners
                 </span>
-                <p className="text-xs font-bold text-slate-700 leading-normal max-w-sm">
+                <p className="text-xs md:text-sm font-bold text-slate-700 leading-normal max-w-xl">
                   Backed by founders from Hyperleap.ai, Rava.ai, DotCheckout, AgentAnalytics.AI & more.
                 </p>
                 <Link 
                   href="/about-us" 
-                  className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-[#EE1C25] hover:text-[#d61920]"
+                  className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-[#EE1C25] hover:text-[#d61920] mt-1"
                 >
                   Meet Our Partners <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
 
-              {/* Avatar Cluster with real photos */}
-              <div className="flex items-center -space-x-3.5 pl-2 shrink-0">
+              {/* Avatar Cluster with slight spread to fit the wider space */}
+              <div className="flex items-center -space-x-4 pl-2 shrink-0 md:self-center">
                 {partnerAvatars.map((avatar, idx) => (
                   <div 
                     key={idx} 
-                    className="w-11 h-11 rounded-full bg-slate-200 border-2 border-white overflow-hidden relative shadow-sm shrink-0"
+                    className="w-16 h-16 rounded-full bg-slate-200 border-2 border-white overflow-hidden relative shadow-sm shrink-0"
                   >
                     {avatar.image ? (
                       <Image
                         src={avatar.image}
                         alt={avatar.name}
                         fill
-                        sizes="44px"
+                        sizes="64px"
                         className="object-cover"
                       />
                     ) : (
-                      <span className="flex items-center justify-center w-full h-full text-[10px] font-black text-slate-600">
+                      <span className="flex items-center justify-center w-full h-full text-xs font-black text-slate-600">
                         {avatar.initials}
                       </span>
                     )}
@@ -132,41 +132,43 @@ export default function TeamPreview() {
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Mentors Strip */}
-            <div className="bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 flex-1">
+          {/* ROW 3: Expert Network Strip (Full-width) */}
+          <div className="w-full">
+            <div className="bg-gradient-to-br from-white to-slate-50 border border-gray-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300">
               <div className="space-y-2">
                 <span className="text-[9px] font-black uppercase tracking-wider text-neutral-400">
                   Expert Network
                 </span>
-                <p className="text-xs font-bold text-slate-700 leading-normal max-w-sm">
+                <p className="text-xs md:text-sm font-bold text-slate-700 leading-normal max-w-xl">
                   Learn live with 9+ seasoned machine learning, platform engineering, and RAG architectures consultants.
                 </p>
                 <Link 
                   href="/about-us" 
-                  className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-[#EE1C25] hover:text-[#d61920]"
+                  className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-[#EE1C25] hover:text-[#d61920] mt-1"
                 >
                   View All Mentors <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
 
-              {/* Avatar Cluster with real photos */}
-              <div className="flex items-center -space-x-3.5 pl-2 shrink-0">
+              {/* Avatar Cluster with slight spread to fit the wider space */}
+              <div className="flex items-center -space-x-4 pl-2 shrink-0 md:self-center">
                 {mentorAvatars.map((avatar, idx) => (
                   <div 
                     key={idx} 
-                    className="w-11 h-11 rounded-full bg-slate-200 border-2 border-white overflow-hidden relative shadow-sm shrink-0"
+                    className="w-16 h-16 rounded-full bg-slate-200 border-2 border-white overflow-hidden relative shadow-sm shrink-0"
                   >
                     {avatar.image ? (
                       <Image
                         src={avatar.image}
                         alt={avatar.name}
                         fill
-                        sizes="44px"
+                        sizes="64px"
                         className="object-cover"
                       />
                     ) : (
-                      <span className="flex items-center justify-center w-full h-full text-[10px] font-black text-slate-600">
+                      <span className="flex items-center justify-center w-full h-full text-xs font-black text-slate-600">
                         {avatar.initials}
                       </span>
                     )}
@@ -174,7 +176,6 @@ export default function TeamPreview() {
                 ))}
               </div>
             </div>
-
           </div>
 
         </div>

@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function USHero() {
   return (
-    <section className="relative w-full min-h-[50vh] bg-white text-[#171717] flex flex-col justify-between pt-8 pb-8 overflow-hidden border-b border-neutral-100 select-none z-10 font-heading">
+    <section className="relative w-full min-h-[50vh] bg-transparent text-[#171717] flex flex-col justify-between pt-8 pb-8 overflow-hidden border-b border-neutral-100 select-none z-10 font-heading">
       {/* Background Grid */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03] z-0"

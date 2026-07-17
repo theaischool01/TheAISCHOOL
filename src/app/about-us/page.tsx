@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic';
 import React, { useState, useEffect, useRef } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { motion } from 'framer-motion';
 import { 
   Sparkles, Target, Compass, Award, ShieldCheck, Zap, 
@@ -392,32 +393,34 @@ export default function AboutUsPage() {
       <Header />
 
       {/* ================= 1. CINEMATIC HERO ================= */}
-      <div ref={heroRef} className="relative w-full bg-[#FCFCFD] text-slate-900 flex items-center justify-center pt-12 pb-20 border-b border-[#ECECEC]">
-        <div className="absolute inset-0 pointer-events-none opacity-[0.04] z-0" style={{ backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`, backgroundSize: "30px 30px" }} />
-        <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full bg-red-500/[0.015] blur-[120px] pointer-events-none z-0" />
-        
-        <div className="max-w-6xl mx-auto px-6 text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center space-x-2 bg-[#EE1C25]/10 border border-[#EE1C25]/20 rounded-full px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#EE1C25]">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Behind the Intelligence</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-none uppercase max-w-4xl mx-auto">
-            Practical AI Education <br />
-            <span className="text-[#EE1C25]">Built For Careers.</span>
-          </h1>
-          <p className="text-slate-500 text-sm md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-            We are startup founders, research engineers, and deployment consultants bridging the gap between theoretical knowledge and production-ready AI systems.
-          </p>
-          <div className="pt-4 flex justify-center gap-4">
-            <button onClick={() => scrollToSection("story")} className="bg-[#EE1C25] hover:bg-[#d61920] text-white font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-md cursor-pointer">
-              Our Story
-            </button>
-            <button onClick={() => scrollToSection("whyUs")} className="border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-sm cursor-pointer">
-              Why Choose Us
-            </button>
+      <SectionWrapper tone="white">
+        <div ref={heroRef} className="relative w-full bg-transparent text-slate-900 flex items-center justify-center pt-12 pb-20 border-b border-[#ECECEC]">
+          <div className="absolute inset-0 pointer-events-none opacity-[0.04] z-0" style={{ backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`, backgroundSize: "30px 30px" }} />
+          <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full bg-red-500/[0.015] blur-[120px] pointer-events-none z-0" />
+          
+          <div className="max-w-6xl mx-auto px-6 text-center space-y-6 relative z-10">
+            <div className="inline-flex items-center space-x-2 bg-[#EE1C25]/10 border border-[#EE1C25]/20 rounded-full px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#EE1C25]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Behind the Intelligence</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-none uppercase max-w-4xl mx-auto">
+              Practical AI Education <br />
+              <span className="text-[#EE1C25]">Built For Careers.</span>
+            </h1>
+            <p className="text-slate-500 text-sm md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
+              We are startup founders, research engineers, and deployment consultants bridging the gap between theoretical knowledge and production-ready AI systems.
+            </p>
+            <div className="pt-4 flex justify-center gap-4">
+              <button onClick={() => scrollToSection("story")} className="bg-[#EE1C25] hover:bg-[#d61920] text-white font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-md cursor-pointer">
+                Our Story
+              </button>
+              <button onClick={() => scrollToSection("whyUs")} className="border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all shadow-sm cursor-pointer">
+                Why Choose Us
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </SectionWrapper>
 
       {/* ================= STICKY SUB-NAVIGATION BAR ================= */}
       {showStickyNav && (
@@ -445,348 +448,395 @@ export default function AboutUsPage() {
       )}
 
       {/* ================= 2. IMPACT BY THE NUMBERS ================= */}
-      <div id="impact" ref={sectionsRef.impact} className="w-full bg-white border-b border-gray-100 py-14 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <AnimatedCount value={500} label="Students Trained" suffix="+" />
-            <AnimatedCount value={85} label="Outcome Rate" suffix="%" />
-            <AnimatedCount value={9} label="Industry Mentors" suffix="+" />
-            <AnimatedCount value={3} label="Hackathons Hosted" suffix="+" />
+      <SectionWrapper tone="tinted">
+        <div id="impact" ref={sectionsRef.impact} className="w-full bg-transparent border-b border-gray-100 py-14 px-6 md:px-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <AnimatedCount value={500} label="Students Trained" suffix="+" />
+              <AnimatedCount value={85} label="Outcome Rate" suffix="%" />
+              <AnimatedCount value={9} label="Industry Mentors" suffix="+" />
+              <AnimatedCount value={3} label="Hackathons Hosted" suffix="+" />
+            </div>
           </div>
         </div>
-      </div>
+      </SectionWrapper>
 
       {/* ================= 3. WHO WE ARE (team photo asset grayscale/duotone) ================= */}
-      <div id="story" ref={sectionsRef.story} className="w-full bg-white py-14 px-6 md:px-12 border-b border-gray-100">
-        <RevealOnScroll className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl md:text-4xl font-black text-[#EE1C25]/20">01</span>
-              <span className="h-px w-8 bg-neutral-200" />
-              <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#EE1C25]">Who We Are</span>
+      <SectionWrapper tone="white">
+        <div id="story" ref={sectionsRef.story} className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
+          <RevealOnScroll className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl md:text-4xl font-black text-[#EE1C25]/20">01</span>
+                <span className="h-px w-8 bg-neutral-200" />
+                <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#EE1C25]">Who We Are</span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] text-gray-950 uppercase">
+                Connecting Ambition with Practical AI Expertise.
+              </h2>
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
+                The AI School was founded to break down the barrier between theoretical academic courses and actual startup production requirements. We operate out of T-Hub 2.0 in Hyderabad, providing students direct links to real startups, founders, and engineers.
+              </p>
             </div>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] text-gray-950 uppercase">
-              Connecting Ambition with Practical AI Expertise.
-            </h2>
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
-              The AI School was founded to break down the barrier between theoretical academic courses and actual startup production requirements. We operate out of T-Hub 2.0 in Hyderabad, providing students direct links to real startups, founders, and engineers.
-            </p>
-          </div>
-          {/* Framed duotone group photo */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full aspect-[4/3] max-w-[480px] bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden p-2">
-              <div className="relative w-full h-full rounded-xl overflow-hidden filter grayscale-[40%]">
-                <img 
-                  src="/images/hackathon_stage1.jpg" 
-                  alt="The AI School team group photo on stage" 
-                  className="object-cover w-full h-full select-none"
-                />
-                {/* Red multiply blend overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 to-transparent mix-blend-multiply pointer-events-none" />
+            {/* Framed duotone group photo */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative w-full aspect-[4/3] max-w-[480px] bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden p-2">
+                <div className="relative w-full h-full rounded-xl overflow-hidden filter grayscale-[40%]">
+                  <img 
+                    src="/images/hackathon_stage1.jpg" 
+                    alt="The AI School team group photo on stage" 
+                    className="object-cover w-full h-full select-none"
+                  />
+                  {/* Red multiply blend overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 to-transparent mix-blend-multiply pointer-events-none" />
+                </div>
               </div>
             </div>
-          </div>
-        </RevealOnScroll>
-      </div>
+          </RevealOnScroll>
+        </div>
+      </SectionWrapper>
 
       {/* ================= 4. FOUNDER'S NOTE ================= */}
-      <div className="w-full bg-gray-50 border-b border-gray-150 py-14 px-6 md:px-12">
-        <RevealOnScroll className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          {/* Circular Photo (Zero overlap fallback) */}
-          <div className="w-28 h-28 rounded-full border-4 border-white shadow-md overflow-hidden shrink-0 bg-red-50 flex items-center justify-center relative">
-            <img 
-              src="/mentors/srinath.webp" 
-              alt="Ganta Srinath Reddy" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="space-y-4 text-center md:text-left flex-1">
-            <blockquote className="text-lg md:text-xl font-bold font-heading italic text-gray-800 leading-relaxed">
-              &ldquo;We built The AI School because certificates without careers weren't good enough. Every mentor here has built something real — and they're in the room with you while you build yours.&rdquo;
-            </blockquote>
-            <div>
-              <h4 className="font-extrabold text-gray-900 text-sm">Ganta Srinath Reddy</h4>
-              <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-0.5">Founder & CEO, The AI School</p>
+      <SectionWrapper tone="tinted">
+        <div className="w-full bg-transparent border-b border-gray-150 py-14 px-6 md:px-12">
+          <RevealOnScroll className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Circular Photo (Zero overlap fallback) */}
+            <div className="w-28 h-28 rounded-full border-4 border-white shadow-md overflow-hidden shrink-0 bg-red-50 flex items-center justify-center relative">
+              <img 
+                src="/mentors/srinath.webp" 
+                alt="Ganta Srinath Reddy" 
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
-        </RevealOnScroll>
-      </div>
+            <div className="space-y-4 text-center md:text-left flex-1">
+              <blockquote className="text-lg md:text-xl font-bold font-heading italic text-gray-800 leading-relaxed">
+                &ldquo;We built The AI School because certificates without careers weren't good enough. Every mentor here has built something real — and they're in the room with you while you build yours.&rdquo;
+              </blockquote>
+              <div>
+                <h4 className="font-extrabold text-gray-900 text-sm">Ganta Srinath Reddy</h4>
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-0.5">Founder & CEO, The AI School</p>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </SectionWrapper>
 
       {/* ================= 5. MISSION + COMMITMENT (Redesigned with top border & watermark) ================= */}
-      <div className="w-full bg-white py-14 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* Mission Card */}
-          <RevealOnScroll className="bg-gray-50 border border-gray-200 rounded-3xl p-8 space-y-6 relative overflow-hidden flex flex-col justify-between border-t-[3px] border-t-[#EE1C25]">
-            <Target className="absolute -bottom-8 -right-8 w-32 h-32 text-[#EE1C25]/[0.025] pointer-events-none" />
-            <div className="space-y-4 relative z-10">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-red-50 border-2 border-red-100 text-[#EE1C25] flex items-center justify-center shrink-0">
-                  <Target className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-extrabold text-lg text-gray-900 uppercase tracking-tight">Our Mission</h3>
-                  <p className="text-[10px] font-bold text-[#EE1C25] uppercase tracking-widest">DRIVE INNOVATION</p>
-                </div>
-              </div>
-              <p className="text-sm text-slate-600 font-semibold leading-relaxed pt-2">
-                Our mission is to drive innovation and continuous improvement through comprehensive educational programs, entrepreneurial support, and robust industry network pipelines in association with global organizations.
-              </p>
-            </div>
-          </RevealOnScroll>
-
-          {/* Commitment Card */}
-          <RevealOnScroll className="bg-gray-50 border border-gray-200 rounded-3xl p-8 space-y-6 relative overflow-hidden flex flex-col justify-between border-t-[3px] border-t-[#171717]" delay={150}>
-            <Compass className="absolute -bottom-8 -right-8 w-32 h-32 text-neutral-900/[0.02] pointer-events-none" />
-            <div className="space-y-4 relative z-10">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-neutral-100 border-2 border-neutral-200 text-neutral-800 flex items-center justify-center shrink-0">
-                  <Compass className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-extrabold text-lg text-gray-900 uppercase tracking-tight">Our Commitment</h3>
-                  <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">COLLABORATIVE GROWTH</p>
-                </div>
-              </div>
-              <p className="text-sm text-slate-600 font-semibold leading-relaxed pt-2">
-                Our commitment extends to fostering a collaborative ecosystem that encourages lifelong learning, cultivates creativity, and promotes sustainable growth by aligning efforts with the needs of the digital age.
-              </p>
-            </div>
-          </RevealOnScroll>
-
-        </div>
-      </div>
-
-      {/* ================= 6. OUR VALUES (Enhanced 64px icon & hover state) ================= */}
-      <div className="w-full bg-gray-50/50 py-14 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">FOUNDATIONAL ETHOS</span>
-            <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Core Values</h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Zap, title: "Real Mastery", desc: "No fluff or plain video libraries. We teach raw code, engineering stack and models deployment." },
-              { icon: Award, title: "Outcome-Driven", desc: "Success is measured in products built, startups launched, and high-impact job conversions." },
-              { icon: ShieldCheck, title: "Industry Sync", desc: "Our syllabus shifts dynamically according to modern LLM benchmarks and frameworks." },
-              { icon: Compass, title: "Curiosity Always", desc: "Encouraging experimentations with cutting-edge agent pipelines and custom configurations." }
-            ].map((v, idx) => (
-              <RevealOnScroll key={idx} className="bg-white border border-gray-200 p-6 rounded-2xl space-y-4 hover:shadow-md transition-shadow group cursor-default" delay={idx * 100}>
-                <div className="w-16 h-16 rounded-full bg-red-50 border-2 border-red-100 text-[#EE1C25] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  <v.icon className="w-6 h-6" />
-                </div>
-                <h4 className="font-extrabold text-gray-900 text-sm uppercase">{v.title}</h4>
-                <p className="text-xs text-slate-500 font-bold leading-relaxed">{v.desc}</p>
-              </RevealOnScroll>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ================= 7. WHY US (Redesigned Toggle Comparison layout) ================= */}
-      <div id="whyUs" ref={sectionsRef.whyUs} className="w-full bg-white py-12 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto space-y-10">
-          
-          <div className="text-center space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE TRANSFORMATION</span>
-            <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">The AI School vs. Typical Bootcamp</h2>
-          </div>
-
-          <RevealOnScroll className="space-y-6">
-            {/* Sliding Toggle Control */}
-            <div className="relative flex bg-gray-100 rounded-full p-1.5 w-[320px] md:w-[360px] mx-auto border border-gray-200">
-              {/* Sliding background */}
-              <div 
-                className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-[#EE1C25] transition-all duration-300 ease-in-out"
-                style={{
-                  width: 'calc(50% - 3px)',
-                  transform: activeTab === 'us' ? 'translateX(0)' : 'translateX(100%)'
-                }}
-              />
-              <button 
-                onClick={() => handleTabChange('us')}
-                className={`w-1/2 relative z-10 py-2.5 text-center text-[10px] font-black uppercase tracking-widest transition-colors duration-200 cursor-pointer ${
-                  activeTab === 'us' ? 'text-white' : 'text-slate-500 hover:text-slate-900'
-                }`}
-              >
-                The AI School
-              </button>
-              <button 
-                onClick={() => handleTabChange('them')}
-                className={`w-1/2 relative z-10 py-2.5 text-center text-[10px] font-black uppercase tracking-widest transition-colors duration-200 cursor-pointer ${
-                  activeTab === 'them' ? 'text-white' : 'text-slate-500 hover:text-slate-900'
-                }`}
-              >
-                Typical Bootcamp
-              </button>
-            </div>
-
-            {/* Single Comparison Card Panel with Cross-fade transition */}
-            <div 
-              style={{ opacity: fadeOpacity }}
-              className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-md transition-opacity duration-150 ease-in-out relative overflow-hidden"
-            >
-              {displayTab === 'us' && (
-                <div className="absolute top-0 right-0 bg-[#EE1C25] text-white text-[8px] font-black uppercase tracking-widest py-1 px-3 rounded-bl-xl">
-                  RECOMMENDED
-                </div>
-              )}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  {
-                    topic: "Mentors",
-                    us: "Startup Founders & Industry Leaders",
-                    them: "Certified Trainers"
-                  },
-                  {
-                    topic: "Curriculum",
-                    us: "Live real-world startup projects",
-                    them: "Textbook case studies"
-                  },
-                  {
-                    topic: "Support",
-                    us: "1:1 mentorship, hackathons, placement support",
-                    them: "Self-paced videos only"
-                  },
-                  {
-                    topic: "Network",
-                    us: "Lifetime alumni + founder network",
-                    them: "No ongoing community"
-                  }
-                ].map((row, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`flex items-start space-x-4 p-5 rounded-2xl border transition-all duration-300 ${
-                      displayTab === 'us' 
-                        ? 'bg-red-500/[0.01] border-red-100/70 hover:border-red-200/90 shadow-2xs' 
-                        : 'bg-neutral-50/50 border-neutral-200/60'
-                    }`}
-                  >
-                    {displayTab === 'us' ? (
-                      <div className="w-10 h-10 rounded-full bg-red-50 text-[#EE1C25] flex items-center justify-center shrink-0 border border-red-100">
-                        <CheckCircle2 className="w-5 h-5 fill-red-500/10" />
-                      </div>
-                    ) : (
-                      <div className="w-10 h-10 rounded-full bg-neutral-100 text-neutral-400 flex items-center justify-center shrink-0 border border-neutral-200">
-                        <MinusCircle className="w-5 h-5" />
-                      </div>
-                    )}
-                    <div>
-                      <span className="block text-[9px] font-black text-gray-400 uppercase tracking-widest">{row.topic}</span>
-                      <span className="font-extrabold text-gray-900 text-sm md:text-base mt-1 block leading-snug">
-                        {displayTab === 'us' ? row.us : row.them}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </div>
-
-      {/* ================= 8. PEOPLE (Redesigned with hierarchy and description context) ================= */}
-      <div id="people" ref={sectionsRef.people} className="w-full bg-white py-14 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto space-y-16">
-          <div className="text-center space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE ECOSYSTEM DIRECTORS</span>
-            <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Core Team</h2>
-          </div>
-
-          <div className="space-y-16">
+      <SectionWrapper tone="white">
+        <div className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            {/* Leadership Section (size 140px, premium bg-white) */}
-            <div className="space-y-6">
-              <h3 className="text-xs font-black uppercase tracking-widest text-[#EE1C25] border-b border-gray-100 pb-2">Leadership Team</h3>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                {leadership.map((l, idx) => (
-                  <RevealOnScroll key={idx} delay={idx * 80}>
-                    <TeamMemberCard member={l} size={140} isPremium={true} description={l.desc} />
-                  </RevealOnScroll>
-                ))}
-              </div>
-            </div>
-
-            {/* Strategic Advisors / Partners Section (size 120px) */}
-            <div className="space-y-6">
-              <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Industry Partners & Advisors</h3>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                {partners.map((p, idx) => (
-                  <RevealOnScroll key={idx} delay={idx * 80}>
-                    <TeamMemberCard member={p} size={120} isPremium={false} description={p.desc} />
-                  </RevealOnScroll>
-                ))}
-              </div>
-            </div>
-
-            {/* Technical Mentors Section (size 120px) */}
-            <div className="space-y-6">
-              <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Technical Mentors</h3>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                {mentors.map((m, idx) => (
-                  <RevealOnScroll key={idx} delay={idx * 80}>
-                    <TeamMemberCard member={m} size={120} isPremium={false} />
-                  </RevealOnScroll>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      {/* ================= 9. ALUMNI SPOTLIGHT ================= */}
-      <div className="w-full bg-gray-50/50 py-14 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">CAREER PATHWAYS</span>
-            <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Alumni Outcome Spotlight</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { name: "Priya S.", before: "Marketing Executive", after: "AI Product Analyst at ResHue", initials: "PS", story: "Leveraged LLM workflows to automate strategic marketing analysis." },
-              { name: "Rahul K.", before: "Junior Software Engineer", after: "Lead Agent Developer at rava.ai", initials: "RK", story: "Transitioned from legacy web structures to custom agent orchestration." },
-              { name: "Suresh P.", before: "College Graduate", after: "Generative AI Architect at DotCheckout", initials: "SP", story: "Graduated with 3 live startup deployment projects directly in his CV." }
-            ].map((alumni, idx) => (
-              <RevealOnScroll key={idx} className="bg-white border border-gray-200 p-6 rounded-2xl space-y-4 shadow-xs" delay={idx * 100}>
-                <div className="flex items-center space-x-3">
-                  <div className="w-9 h-9 rounded-full bg-red-50 text-[#EE1C25] font-extrabold text-[10px] uppercase flex items-center justify-center">
-                    {alumni.initials}
+            {/* Mission Card */}
+            <RevealOnScroll className="bg-gray-50 border border-gray-200 rounded-3xl p-8 space-y-6 relative overflow-hidden flex flex-col justify-between border-t-[3px] border-t-[#EE1C25]">
+              <Target className="absolute -bottom-8 -right-8 w-32 h-32 text-[#EE1C25]/[0.025] pointer-events-none" />
+              <div className="space-y-4 relative z-10">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-red-50 border-2 border-red-100 text-[#EE1C25] flex items-center justify-center shrink-0">
+                    <Target className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-gray-900 text-sm">{alumni.name}</h4>
+                    <h3 className="font-extrabold text-lg text-gray-900 uppercase tracking-tight">Our Mission</h3>
+                    <p className="text-[10px] font-bold text-[#EE1C25] uppercase tracking-widest">DRIVE INNOVATION</p>
                   </div>
                 </div>
-                <div className="space-y-1 border-t border-b border-gray-100 py-3 text-xs font-bold text-gray-700">
-                  <div>Before: <span className="text-gray-400">{alumni.before}</span></div>
-                  <div className="text-emerald-600 font-extrabold">After: {alumni.after}</div>
+                <p className="text-sm text-slate-600 font-semibold leading-relaxed pt-2">
+                  Our mission is to drive innovation and continuous improvement through comprehensive educational programs, entrepreneurial support, and robust industry network pipelines in association with global organizations.
+                </p>
+              </div>
+            </RevealOnScroll>
+
+            {/* Commitment Card */}
+            <RevealOnScroll className="bg-gray-50 border border-gray-200 rounded-3xl p-8 space-y-6 relative overflow-hidden flex flex-col justify-between border-t-[3px] border-t-[#171717]" delay={150}>
+              <Compass className="absolute -bottom-8 -right-8 w-32 h-32 text-neutral-900/[0.02] pointer-events-none" />
+              <div className="space-y-4 relative z-10">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-neutral-100 border-2 border-neutral-200 text-neutral-800 flex items-center justify-center shrink-0">
+                    <Compass className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold text-lg text-gray-900 uppercase tracking-tight">Our Commitment</h3>
+                    <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">COLLABORATIVE GROWTH</p>
+                  </div>
                 </div>
-                <p className="text-xs text-slate-500 leading-relaxed font-semibold">{alumni.story}</p>
-              </RevealOnScroll>
-            ))}
+                <p className="text-sm text-slate-600 font-semibold leading-relaxed pt-2">
+                  Our commitment extends to fostering a collaborative ecosystem that encourages lifelong learning, cultivates creativity, and promotes sustainable growth by aligning efforts with the needs of the digital age.
+                </p>
+              </div>
+            </RevealOnScroll>
+
           </div>
         </div>
-      </div>
+      </SectionWrapper>
 
-      {/* ================= 10. JOURNEY / MILESTONES (Redesigned Connected timeline cards) ================= */}
-      <div id="journey" ref={sectionsRef.journey} className="w-full bg-white py-14 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE EVOLUTION</span>
-            <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Timeline Milestones</h2>
-          </div>
-
-          {/* Desktop Connected Horizontal Timeline */}
-          <div className="hidden md:block relative py-12">
-            {/* Center connector line */}
-            <div className="absolute top-[38px] left-10 right-10 h-[3px] bg-gray-100 z-0">
-              <div className="w-full h-full bg-[#EE1C25]" />
+      {/* ================= 6. OUR VALUES (Enhanced 64px icon & hover state) ================= */}
+      <SectionWrapper tone="tinted">
+        <div className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">FOUNDATIONAL ETHOS</span>
+              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Core Values</h2>
             </div>
 
-            <div className="grid grid-cols-5 gap-6 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Zap, title: "Real Mastery", desc: "No fluff or plain video libraries. We teach raw code, engineering stack and models deployment." },
+                { icon: Award, title: "Outcome-Driven", desc: "Success is measured in products built, startups launched, and high-impact job conversions." },
+                { icon: ShieldCheck, title: "Industry Sync", desc: "Our syllabus shifts dynamically according to modern LLM benchmarks and frameworks." },
+                { icon: Compass, title: "Curiosity Always", desc: "Encouraging experimentations with cutting-edge agent pipelines and custom configurations." }
+              ].map((v, idx) => (
+                <RevealOnScroll key={idx} className="bg-white border border-gray-200 p-6 rounded-2xl space-y-4 hover:shadow-md transition-shadow group cursor-default" delay={idx * 100}>
+                  <div className="w-16 h-16 rounded-full bg-red-50 border-2 border-red-100 text-[#EE1C25] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <v.icon className="w-6 h-6" />
+                  </div>
+                  <h4 className="font-extrabold text-gray-900 text-sm uppercase">{v.title}</h4>
+                  <p className="text-xs text-slate-500 font-bold leading-relaxed">{v.desc}</p>
+                </RevealOnScroll>
+              ))}
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ================= 7. WHY US (Redesigned Toggle Comparison layout) ================= */}
+      <SectionWrapper tone="white">
+        <div id="whyUs" ref={sectionsRef.whyUs} className="w-full bg-transparent py-12 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-4xl mx-auto space-y-10">
+            
+            <div className="text-center space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE TRANSFORMATION</span>
+              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">The AI School vs. Typical Bootcamp</h2>
+            </div>
+
+            <RevealOnScroll className="space-y-6">
+              {/* Sliding Toggle Control */}
+              <div className="relative flex bg-gray-100 rounded-full p-1.5 w-[320px] md:w-[360px] mx-auto border border-gray-200">
+                {/* Sliding background */}
+                <div 
+                  className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-[#EE1C25] transition-all duration-300 ease-in-out"
+                  style={{
+                    width: 'calc(50% - 3px)',
+                    transform: activeTab === 'us' ? 'translateX(0)' : 'translateX(100%)'
+                  }}
+                />
+                <button 
+                  onClick={() => handleTabChange('us')}
+                  className={`w-1/2 relative z-10 py-2.5 text-center text-[10px] font-black uppercase tracking-widest transition-colors duration-200 cursor-pointer ${
+                    activeTab === 'us' ? 'text-white' : 'text-slate-500 hover:text-slate-900'
+                  }`}
+                >
+                  The AI School
+                </button>
+                <button 
+                  onClick={() => handleTabChange('them')}
+                  className={`w-1/2 relative z-10 py-2.5 text-center text-[10px] font-black uppercase tracking-widest transition-colors duration-200 cursor-pointer ${
+                    activeTab === 'them' ? 'text-white' : 'text-slate-500 hover:text-slate-900'
+                  }`}
+                >
+                  Typical Bootcamp
+                </button>
+              </div>
+
+              {/* Single Comparison Card Panel with Cross-fade transition */}
+              <div 
+                style={{ opacity: fadeOpacity }}
+                className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-md transition-opacity duration-150 ease-in-out relative overflow-hidden"
+              >
+                {displayTab === 'us' && (
+                  <div className="absolute top-0 right-0 bg-[#EE1C25] text-white text-[8px] font-black uppercase tracking-widest py-1 px-3 rounded-bl-xl">
+                    RECOMMENDED
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    {
+                      topic: "Mentors",
+                      us: "Startup Founders & Industry Leaders",
+                      them: "Certified Trainers"
+                    },
+                    {
+                      topic: "Curriculum",
+                      us: "Live real-world startup projects",
+                      them: "Textbook case studies"
+                    },
+                    {
+                      topic: "Support",
+                      us: "1:1 mentorship, hackathons, placement support",
+                      them: "Self-paced videos only"
+                    },
+                    {
+                      topic: "Network",
+                      us: "Lifetime alumni + founder network",
+                      them: "No ongoing community"
+                    }
+                  ].map((row, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`flex items-start space-x-4 p-5 rounded-2xl border transition-all duration-300 ${
+                        displayTab === 'us' 
+                          ? 'bg-red-500/[0.01] border-red-100/70 hover:border-red-200/90 shadow-2xs' 
+                          : 'bg-neutral-50/50 border-neutral-200/60'
+                      }`}
+                    >
+                      {displayTab === 'us' ? (
+                        <div className="w-10 h-10 rounded-full bg-red-50 text-[#EE1C25] flex items-center justify-center shrink-0 border border-red-100">
+                          <CheckCircle2 className="w-5 h-5 fill-red-500/10" />
+                        </div>
+                      ) : (
+                        <div className="w-10 h-10 rounded-full bg-neutral-100 text-neutral-400 flex items-center justify-center shrink-0 border border-neutral-200">
+                          <MinusCircle className="w-5 h-5" />
+                        </div>
+                      )}
+                      <div>
+                        <span className="block text-[9px] font-black text-gray-400 uppercase tracking-widest">{row.topic}</span>
+                        <span className="font-extrabold text-gray-900 text-sm md:text-base mt-1 block leading-snug">
+                          {displayTab === 'us' ? row.us : row.them}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ================= 8. PEOPLE (Redesigned with hierarchy and description context) ================= */}
+      <SectionWrapper tone="tinted">
+        <div id="people" ref={sectionsRef.people} className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-6xl mx-auto space-y-16">
+            <div className="text-center space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE ECOSYSTEM DIRECTORS</span>
+              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Core Team</h2>
+            </div>
+
+            <div className="space-y-16">
+              
+              {/* Leadership Section (size 140px, premium bg-white) */}
+              <div className="space-y-6">
+                <h3 className="text-xs font-black uppercase tracking-widest text-[#EE1C25] border-b border-gray-100 pb-2">Leadership Team</h3>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                  {leadership.map((l, idx) => (
+                    <RevealOnScroll key={idx} delay={idx * 80}>
+                      <TeamMemberCard member={l} size={140} isPremium={true} description={l.desc} />
+                    </RevealOnScroll>
+                  ))}
+                </div>
+              </div>
+
+              {/* Strategic Advisors / Partners Section (size 120px) */}
+              <div className="space-y-6">
+                <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Industry Partners & Advisors</h3>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                  {partners.map((p, idx) => (
+                    <RevealOnScroll key={idx} delay={idx * 80}>
+                      <TeamMemberCard member={p} size={120} isPremium={false} description={p.desc} />
+                    </RevealOnScroll>
+                  ))}
+                </div>
+              </div>
+
+              {/* Technical Mentors Section (size 120px) */}
+              <div className="space-y-6">
+                <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Technical Mentors</h3>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                  {mentors.map((m, idx) => (
+                    <RevealOnScroll key={idx} delay={idx * 80}>
+                      <TeamMemberCard member={m} size={120} isPremium={false} />
+                    </RevealOnScroll>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ================= 9. ALUMNI SPOTLIGHT ================= */}
+      <SectionWrapper tone="white">
+        <div className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">CAREER PATHWAYS</span>
+              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Alumni Outcome Spotlight</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { name: "Priya S.", before: "Marketing Executive", after: "AI Product Analyst at ResHue", initials: "PS", story: "Leveraged LLM workflows to automate strategic marketing analysis." },
+                { name: "Rahul K.", before: "Junior Software Engineer", after: "Lead Agent Developer at rava.ai", initials: "RK", story: "Transitioned from legacy web structures to custom agent orchestration." },
+                { name: "Suresh P.", before: "College Graduate", after: "Generative AI Architect at DotCheckout", initials: "SP", story: "Graduated with 3 live startup deployment projects directly in his CV." }
+              ].map((alumni, idx) => (
+                <RevealOnScroll key={idx} className="bg-white border border-gray-200 p-6 rounded-2xl space-y-4 shadow-xs" delay={idx * 100}>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-9 h-9 rounded-full bg-red-50 text-[#EE1C25] font-extrabold text-[10px] uppercase flex items-center justify-center">
+                      {alumni.initials}
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-gray-900 text-sm">{alumni.name}</h4>
+                    </div>
+                  </div>
+                  <div className="space-y-1 border-t border-b border-gray-100 py-3 text-xs font-bold text-gray-700">
+                    <div>Before: <span className="text-gray-400">{alumni.before}</span></div>
+                    <div className="text-emerald-600 font-extrabold">After: {alumni.after}</div>
+                  </div>
+                  <p className="text-xs text-slate-500 leading-relaxed font-semibold">{alumni.story}</p>
+                </RevealOnScroll>
+              ))}
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ================= 10. JOURNEY / MILESTONES (Redesigned Connected timeline cards) ================= */}
+      <SectionWrapper tone="tinted">
+        <div id="journey" ref={sectionsRef.journey} className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE EVOLUTION</span>
+              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Timeline Milestones</h2>
+            </div>
+
+            {/* Desktop Connected Horizontal Timeline */}
+            <div className="hidden md:block relative py-12">
+              {/* Center connector line */}
+              <div className="absolute top-[38px] left-10 right-10 h-[3px] bg-gray-100 z-0">
+                <div className="w-full h-full bg-[#EE1C25]" />
+              </div>
+
+              <div className="grid grid-cols-5 gap-6 relative z-10">
+                {[
+                  { title: "Founded", date: "2024", icon: Rocket, desc: "The AI School launches in Hyderabad, India out of T-Hub 2.0." },
+                  { title: "First Cohort", date: "Late 2024", icon: Users, desc: "First batch of AI ready Developers enrolled in production-sync tracks." },
+                  { title: "First Hackathon", date: "Early 2025", icon: Trophy, desc: "Hosted in partnership with T-Hub 2.0, showcasing student projects to active VCs." },
+                  { title: "National Recognition", date: "Mid 2025", icon: Award, desc: "Forged partnerships with BSNL Academy and Ministry representatives." },
+                  { title: "Global Expansion", date: "2026", icon: Globe, desc: "USA and Philippines regional portals launch to match worldwide AI staffing demands." }
+                ].map((point, idx) => {
+                  const Icon = point.icon;
+                  return (
+                    <div key={idx} className="flex flex-col items-center text-center space-y-6">
+                      {/* Dot Marker with Icon inside */}
+                      <div className="w-10 h-10 rounded-full bg-white border-2 border-[#EE1C25] text-[#EE1C25] flex items-center justify-center shadow-md shrink-0">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      {/* Card Content underneath */}
+                      <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-xs w-full min-h-[140px] flex flex-col justify-between text-left">
+                        <div>
+                          <span className="block text-[10px] font-black text-[#EE1C25] uppercase tracking-widest">{point.date}</span>
+                          <h4 className="font-extrabold text-sm text-gray-900 uppercase mt-1">{point.title}</h4>
+                        </div>
+                        <p className="text-[11px] text-slate-500 font-semibold leading-relaxed mt-2">{point.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile vertical timeline */}
+            <div className="block md:hidden relative pl-6 border-l-2 border-gray-100 space-y-8 py-2">
               {[
                 { title: "Founded", date: "2024", icon: Rocket, desc: "The AI School launches in Hyderabad, India out of T-Hub 2.0." },
                 { title: "First Cohort", date: "Late 2024", icon: Users, desc: "First batch of AI ready Developers enrolled in production-sync tracks." },
@@ -796,75 +846,48 @@ export default function AboutUsPage() {
               ].map((point, idx) => {
                 const Icon = point.icon;
                 return (
-                  <div key={idx} className="flex flex-col items-center text-center space-y-6">
-                    {/* Dot Marker with Icon inside */}
-                    <div className="w-10 h-10 rounded-full bg-white border-2 border-[#EE1C25] text-[#EE1C25] flex items-center justify-center shadow-md shrink-0">
-                      <Icon className="w-4 h-4" />
+                  <div key={idx} className="relative space-y-1.5">
+                    <div className="absolute -left-[30px] top-1.5 w-8 h-8 rounded-full bg-white border-2 border-[#EE1C25] text-[#EE1C25] flex items-center justify-center shadow-xs">
+                      <Icon className="w-3.5 h-3.5" />
                     </div>
-                    {/* Card Content underneath */}
-                    <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-xs w-full min-h-[140px] flex flex-col justify-between text-left">
-                      <div>
-                        <span className="block text-[10px] font-black text-[#EE1C25] uppercase tracking-widest">{point.date}</span>
-                        <h4 className="font-extrabold text-sm text-gray-900 uppercase mt-1">{point.title}</h4>
-                      </div>
-                      <p className="text-[11px] text-slate-500 font-semibold leading-relaxed mt-2">{point.desc}</p>
-                    </div>
+                    <span className="block text-[9px] font-black text-[#EE1C25] uppercase tracking-widest">{point.date}</span>
+                    <h4 className="font-extrabold text-sm text-gray-900 uppercase">{point.title}</h4>
+                    <p className="text-xs text-slate-500 font-bold leading-relaxed">{point.desc}</p>
                   </div>
                 );
               })}
             </div>
           </div>
-
-          {/* Mobile vertical timeline */}
-          <div className="block md:hidden relative pl-6 border-l-2 border-gray-100 space-y-8 py-2">
-            {[
-              { title: "Founded", date: "2024", icon: Rocket, desc: "The AI School launches in Hyderabad, India out of T-Hub 2.0." },
-              { title: "First Cohort", date: "Late 2024", icon: Users, desc: "First batch of AI ready Developers enrolled in production-sync tracks." },
-              { title: "First Hackathon", date: "Early 2025", icon: Trophy, desc: "Hosted in partnership with T-Hub 2.0, showcasing student projects to active VCs." },
-              { title: "National Recognition", date: "Mid 2025", icon: Award, desc: "Forged partnerships with BSNL Academy and Ministry representatives." },
-              { title: "Global Expansion", date: "2026", icon: Globe, desc: "USA and Philippines regional portals launch to match worldwide AI staffing demands." }
-            ].map((point, idx) => {
-              const Icon = point.icon;
-              return (
-                <div key={idx} className="relative space-y-1.5">
-                  <div className="absolute -left-[30px] top-1.5 w-8 h-8 rounded-full bg-white border-2 border-[#EE1C25] text-[#EE1C25] flex items-center justify-center shadow-xs">
-                    <Icon className="w-3.5 h-3.5" />
-                  </div>
-                  <span className="block text-[9px] font-black text-[#EE1C25] uppercase tracking-widest">{point.date}</span>
-                  <h4 className="font-extrabold text-sm text-gray-900 uppercase">{point.title}</h4>
-                  <p className="text-xs text-slate-500 font-bold leading-relaxed">{point.desc}</p>
-                </div>
-              );
-            })}
-          </div>
         </div>
-      </div>
+      </SectionWrapper>
 
       {/* ================= 11. GLOBAL REACH ================= */}
-      <div className="w-full bg-gray-50/50 py-14 px-6 md:px-12 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">ACTIVE REGIONS</span>
-            <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Global Operations</h2>
-          </div>
+      <SectionWrapper tone="white">
+        <div className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">ACTIVE REGIONS</span>
+              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Global Operations</h2>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { name: "India", code: "in", flag: "in.png", desc: "Headquarters based in T-Hub 2.0, Hyderabad. Main training and engineering hub." },
-              { name: "United States", code: "us", flag: "us.png", desc: "Marketing operations and tech stack curriculum alignments for US startups." },
-              { name: "Philippines", code: "ph", flag: "ph.png", desc: "Practical program pipelines matching ICT requirements in Southeast Asia." }
-            ].map((region, idx) => (
-              <RevealOnScroll key={idx} className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col space-y-4 hover:shadow-md transition-shadow" delay={idx * 100}>
-                <div className="flex items-center space-x-3">
-                  <img src={`https://flagcdn.com/w40/${region.flag}`} alt={region.name} className="w-7 rounded-sm shadow-sm" />
-                  <h4 className="font-extrabold text-gray-900 text-sm uppercase">{region.name}</h4>
-                </div>
-                <p className="text-xs text-slate-500 font-bold leading-relaxed">{region.desc}</p>
-              </RevealOnScroll>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { name: "India", code: "in", flag: "in.png", desc: "Headquarters based in T-Hub 2.0, Hyderabad. Main training and engineering hub." },
+                { name: "United States", code: "us", flag: "us.png", desc: "Marketing operations and tech stack curriculum alignments for US startups." },
+                { name: "Philippines", code: "ph", flag: "ph.png", desc: "Practical program pipelines matching ICT requirements in Southeast Asia." }
+              ].map((region, idx) => (
+                <RevealOnScroll key={idx} className="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col space-y-4 hover:shadow-md transition-shadow" delay={idx * 100}>
+                  <div className="flex items-center space-x-3">
+                    <img src={`https://flagcdn.com/w40/${region.flag}`} alt={region.name} className="w-7 rounded-sm shadow-sm" />
+                    <h4 className="font-extrabold text-gray-900 text-sm uppercase">{region.name}</h4>
+                  </div>
+                  <p className="text-xs text-slate-500 font-bold leading-relaxed">{region.desc}</p>
+                </RevealOnScroll>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </SectionWrapper>
 
       {/* ================= 12. CLOSING CTA BANNER ================= */}
       <div className="w-full bg-[#EE1C25] text-white py-16 px-8 relative overflow-hidden">
