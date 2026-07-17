@@ -583,15 +583,26 @@ export default function AboutUsPage() {
                 { icon: Award, title: "Outcome-Driven", desc: "Success is measured in products built, startups launched, and high-impact job conversions." },
                 { icon: ShieldCheck, title: "Industry Sync", desc: "Our syllabus shifts dynamically according to modern LLM benchmarks and frameworks." },
                 { icon: Compass, title: "Curiosity Always", desc: "Encouraging experimentations with cutting-edge agent pipelines and custom configurations." }
-              ].map((v, idx) => (
-                <RevealOnScroll key={idx} className="bg-white border border-gray-200 p-6 rounded-2xl space-y-4 hover:shadow-md transition-shadow group cursor-default" delay={idx * 100}>
-                  <div className="w-16 h-16 rounded-full bg-red-50 border-2 border-red-100 text-[#EE1C25] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                    <v.icon className="w-6 h-6" />
-                  </div>
-                  <h4 className="font-extrabold text-gray-900 text-sm uppercase">{v.title}</h4>
-                  <p className="text-xs text-slate-500 font-bold leading-relaxed">{v.desc}</p>
-                </RevealOnScroll>
-              ))}
+              ].map((v, idx) => {
+                const isRedCard = idx === 0 || idx === 2;
+                return (
+                  <RevealOnScroll 
+                    key={idx} 
+                    className={`${
+                      isRedCard ? "bg-[#EE1C25] border border-[#EE1C25]" : "bg-white border border-gray-200"
+                    } p-6 rounded-2xl space-y-4 hover:shadow-md transition-shadow group cursor-default`}
+                    delay={idx * 100}
+                  >
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${
+                      isRedCard ? "bg-white border-2 border-white text-black" : "bg-red-50 border-2 border-red-100 text-[#EE1C25]"
+                    }`}>
+                      <v.icon className="w-6 h-6" />
+                    </div>
+                    <h4 className={`font-extrabold text-sm uppercase ${isRedCard ? "text-white" : "text-gray-900"}`}>{v.title}</h4>
+                    <p className={`text-xs leading-relaxed ${isRedCard ? "text-red-100 font-semibold" : "text-slate-500 font-bold"}`}>{v.desc}</p>
+                  </RevealOnScroll>
+                );
+              })}
             </div>
           </div>
         </div>
