@@ -34,7 +34,7 @@ export default function FlagshipLearningFrameworks() {
           {/* Card 1: AI Agent Development (col-span-7) — swapped to first */}
           <div
             onClick={() => window.location.href = "/learn"}
-            className="group relative bg-[#EE1C25] border border-[#EE1C25] rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-7 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_20px_50px_-20px_rgba(238,28,37,0.3)] cursor-pointer"
+            className="group relative bg-[#C1121C] border border-[#C1121C] rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-7 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.35)] cursor-pointer"
           >
             {/* Background 01 */}
             <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-white opacity-[0.06] select-none pointer-events-none font-sans">
@@ -47,7 +47,7 @@ export default function FlagshipLearningFrameworks() {
 
               {/* Stack Metaphor */}
               <svg className="w-20 h-16 opacity-40 group-hover:opacity-75 transition-opacity" viewBox="0 0 80 60" fill="none">
-                <path d="M 10 15 L 70 15 L 60 25 L 20 25 Z" fill="#EE1C25" stroke="#FFFFFF" strokeWidth="1.5" />
+                <path d="M 10 15 L 70 15 L 60 25 L 20 25 Z" fill="#C1121C" stroke="#FFFFFF" strokeWidth="1.5" />
                 <path d="M 10 30 L 70 30 L 60 40 L 20 40 Z" fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="1.5" />
                 <line x1="20" y1="15" x2="20" y2="40" stroke="#FFFFFF" strokeWidth="2" />
               </svg>
@@ -203,7 +203,7 @@ export default function FlagshipLearningFrameworks() {
           {/* Card 4: AI for Business & Analytics (col-span-4) */}
           <div
             onClick={() => window.location.href = "/learn"}
-            className="group relative bg-[#EE1C25] border border-[#EE1C25] rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-4 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_20px_50px_-20px_rgba(238,28,37,0.3)] cursor-pointer"
+            className="group relative bg-[#C1121C] border border-[#C1121C] rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-4 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.35)] cursor-pointer"
           >
             {/* Background 04 */}
             <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-white opacity-[0.06] select-none pointer-events-none font-sans">

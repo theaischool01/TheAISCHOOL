@@ -566,7 +566,7 @@ export default function AboutUsPage() {
                   <RevealOnScroll 
                     key={idx} 
                     className={`${
-                      isRedCard ? "bg-[#EE1C25] border border-[#EE1C25]" : "bg-white border border-gray-200"
+                      isRedCard ? "bg-[#C1121C] border border-[#C1121C]" : "bg-white border border-gray-200"
                     } p-6 rounded-2xl space-y-4 hover:shadow-md transition-shadow group cursor-default`}
                     delay={idx * 100}
                   >
