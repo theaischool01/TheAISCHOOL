@@ -221,7 +221,7 @@ export default function CourseDetailPage({ params }: { params: any }) {
       <Header />
       
       {/* ================= HERO SECTION LAYER ================= */}
-      <section className="w-full bg-gradient-to-r from-neutral-950 via-neutral-900 to-[#EE1C25]/20 text-white py-14 px-6 md:px-12 relative overflow-hidden">
+      <section className="w-full bg-gradient-to-r from-neutral-950 via-neutral-900 to-[#C1121C]/20 text-white py-14 px-6 md:px-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           <div className="lg:col-span-7 space-y-6">
             <button onClick={() => window.history.back()} className="inline-flex items-center gap-2 text-xs font-bold text-neutral-400 hover:text-white transition-colors mb-4 uppercase tracking-widest">
@@ -236,8 +236,8 @@ export default function CourseDetailPage({ params }: { params: any }) {
           </div>
           <div className="lg:col-span-5 flex justify-center">
             {/* Standard geometric placeholder mimicking your cybernetic layout visual */}
-            <div className="w-72 h-72 rounded-full border-4 border-[#EE1C25]/40 flex items-center justify-center p-6 bg-black/40 relative animate-pulse shadow-2xl">
-              <span className="text-9xl font-sans font-black text-[#EE1C25]/20 absolute select-none">∞</span>
+            <div className="w-72 h-72 rounded-full border-4 border-[#C1121C]/40 flex items-center justify-center p-6 bg-black/40 relative animate-pulse shadow-2xl">
+              <span className="text-9xl font-sans font-black text-[#C1121C]/20 absolute select-none">∞</span>
               <span className="text-xs font-black tracking-widest text-white uppercase text-center relative z-10 font-heading">AI Architecture Portal</span>
             </div>
           </div>
@@ -257,10 +257,10 @@ export default function CourseDetailPage({ params }: { params: any }) {
                 {course.headline}
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-gray-100">
-                <div className="text-center p-4 bg-gray-50 rounded-2xl"><Smartphone className="w-5 h-5 mx-auto text-[#EE1C25] mb-1" /><span className="text-xs font-bold text-gray-700">Online Mode</span></div>
-                <div className="text-center p-4 bg-gray-50 rounded-2xl"><BarChart className="w-5 h-5 mx-auto text-[#EE1C25] mb-1" /><span className="text-xs font-bold text-gray-700">Skill Level</span></div>
-                <div className="text-center p-4 bg-gray-50 rounded-2xl"><Clock className="w-5 h-5 mx-auto text-[#EE1C25] mb-1" /><span className="text-xs font-bold text-gray-700">120 Hours</span></div>
-                <div className="text-center p-4 bg-gray-50 rounded-2xl"><Award className="w-5 h-5 mx-auto text-[#EE1C25] mb-1" /><span className="text-xs font-bold text-gray-700">Certified</span></div>
+                <div className="text-center p-4 bg-gray-50 rounded-2xl"><Smartphone className="w-5 h-5 mx-auto text-[#C1121C] mb-1" /><span className="text-xs font-bold text-gray-700">Online Mode</span></div>
+                <div className="text-center p-4 bg-gray-50 rounded-2xl"><BarChart className="w-5 h-5 mx-auto text-[#C1121C] mb-1" /><span className="text-xs font-bold text-gray-700">Skill Level</span></div>
+                <div className="text-center p-4 bg-gray-50 rounded-2xl"><Clock className="w-5 h-5 mx-auto text-[#C1121C] mb-1" /><span className="text-xs font-bold text-gray-700">120 Hours</span></div>
+                <div className="text-center p-4 bg-gray-50 rounded-2xl"><Award className="w-5 h-5 mx-auto text-[#C1121C] mb-1" /><span className="text-xs font-bold text-gray-700">Certified</span></div>
               </div>
             </div>
 
@@ -277,15 +277,15 @@ export default function CourseDetailPage({ params }: { params: any }) {
                         className="w-full p-5 text-left flex items-center justify-between font-bold text-gray-900 bg-white hover:bg-gray-50/50 transition-colors"
                       >
                         <div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-[#EE1C25] block mb-1">Module {index + 1}</span>
+                          <span className="text-xs font-bold uppercase tracking-wider text-[#C1121C] block mb-1">Module {index + 1}</span>
                           <span className="text-base font-extrabold text-gray-900">{mod.name}</span>
                         </div>
-                        {isOpen ? <ChevronUp className="w-4 h-4 text-[#EE1C25]" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+                        {isOpen ? <ChevronUp className="w-4 h-4 text-[#C1121C]" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
                       </button>
                       {isOpen && (
                         <div className="p-6 bg-gray-50/50 border-t border-gray-100 space-y-3">
                           {mod.points.map((pt: string, pIdx: number) => (
-                            <div key={pIdx} className="flex items-start text-sm text-gray-600"><span className="text-[#EE1C25] mr-2">•</span><p>{pt}</p></div>
+                            <div key={pIdx} className="flex items-start text-sm text-gray-600"><span className="text-[#C1121C] mr-2">•</span><p>{pt}</p></div>
                           ))}
                         </div>
                       )}
@@ -309,12 +309,12 @@ export default function CourseDetailPage({ params }: { params: any }) {
 
             {/* Outcomes Block Section */}
             <div className="space-y-4 bg-gray-950 text-white p-8 rounded-3xl relative overflow-hidden shadow-xl">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#EE1C25]/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#C1121C]/10 rounded-full blur-2xl pointer-events-none" />
               <h3 className="text-xl font-black tracking-tight font-heading">Key Outcomes</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 {course.outcomes.map((out: string, idx: number) => (
                   <div key={idx} className="flex items-center space-x-2.5 text-sm font-medium text-neutral-300">
-                    <CheckCircle className="w-4 h-4 text-[#EE1C25] shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-[#C1121C] shrink-0" />
                     <span>{out}</span>
                   </div>
                 ))}
@@ -334,7 +334,7 @@ export default function CourseDetailPage({ params }: { params: any }) {
                         className="w-full p-5 text-left flex items-center justify-between font-bold text-gray-900"
                       >
                         <span className="text-sm md:text-base font-bold">{faq.q}</span>
-                        {isOpen ? <ChevronUp className="w-4 h-4 text-[#EE1C25]" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+                        {isOpen ? <ChevronUp className="w-4 h-4 text-[#C1121C]" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
                       </button>
                       {isOpen && <p className="p-5 text-sm text-gray-600 bg-gray-50 border-t border-gray-100 leading-relaxed">{faq.a}</p>}
                     </div>
@@ -347,8 +347,8 @@ export default function CourseDetailPage({ params }: { params: any }) {
 
           {/* RIGHT SIDEBAR ACTION CTA BOX (5 Columns wide - LOCKED STICKY CONTRAINT) */}
           <div className="lg:col-span-5 lg:sticky lg:top-24 space-y-6 z-20">
-            <div className="bg-white border-2 border-gray-900 rounded-3xl p-6 md:p-8 shadow-2xl relative">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-[#EE1C25] rounded-t-3xl" />
+            <div className="bg-white border-2 border-gray-900 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-[#C1121C]" />
               
               <h3 className="text-xl font-black text-gray-900 mb-4 font-heading">Start learning today!</h3>
               <p className="text-xs font-semibold text-gray-400 mb-6">Maximize your productivity and apply it in your work to get best results</p>
@@ -356,7 +356,7 @@ export default function CourseDetailPage({ params }: { params: any }) {
               <div className="space-y-3.5 mb-6 pb-6 border-b border-gray-100">
                 {course.inclusions.map((inc: string, idx: number) => (
                   <div key={idx} className="flex items-center space-x-2.5 text-xs font-bold text-gray-700">
-                    <ShieldCheck className="w-4 h-4 text-[#EE1C25] shrink-0" />
+                    <ShieldCheck className="w-4 h-4 text-[#C1121C] shrink-0" />
                     <span>{inc}</span>
                   </div>
                 ))}
@@ -365,12 +365,12 @@ export default function CourseDetailPage({ params }: { params: any }) {
               <div className="flex items-baseline space-x-3 mb-6">
                 <span className="text-3xl font-black text-gray-900 font-mono">₹{course.price}</span>
                 <span className="text-sm font-semibold text-gray-400 line-through font-mono">₹{course.originalPrice}</span>
-                <span className="text-xs font-black uppercase tracking-wider bg-red-100 text-[#EE1C25] px-2 py-0.5 rounded-md">
+                <span className="text-xs font-black uppercase tracking-wider bg-red-100 text-[#C1121C] px-2 py-0.5 rounded-md">
                   {course.discount} OFF
                 </span>
               </div>
 
-              <button className="w-full bg-[#EE1C25] hover:bg-gray-900 text-white font-black py-4 px-6 rounded-xl transition-colors duration-300 shadow-md transform active:scale-[0.99] flex items-center justify-center space-x-2">
+              <button className="w-full bg-[#C1121C] hover:bg-gray-900 text-white font-black py-4 px-6 rounded-xl transition-colors duration-300 shadow-md transform active:scale-[0.99] flex items-center justify-center space-x-2">
                 <span>Enroll Now</span>
               </button>
             </div>
