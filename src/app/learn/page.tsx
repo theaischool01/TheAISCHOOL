@@ -91,27 +91,28 @@ const CATEGORIES: Category[] = [
     id: "data-science",
     name: "Data Science and Analytics",
     courses: [
-      { name: "Data Science Boot Camp", url: "/courses/data-science-boot-camp", description: "Full-scale training on statistics, data manipulation, cleaning, and model deployments.", audience: "For Coders", duration: "12 Weeks" },
-      { name: "Machine Learning Pipelines", url: "/courses/machine-learning-pipelines", description: "Implement, evaluate, and productionize supervised and unsupervised machine learning models.", audience: "For Coders", duration: "8 Weeks" },
-      { name: "Statistical Modeling & Inference", url: "/courses/statistical-modeling-and-inference", description: "Analyze variance, construct hypothesis models, and run reliable experiments to back data insights.", audience: "For Coders", duration: "6 Weeks" },
+      { name: "Power BI and AI Integration for Building Intelligent Dashboards", url: "/courses/power-bi-and-ai-integration", description: "Learn to build automated, highly intelligent dashboards by connecting Power BI with modern generative AI features.", audience: "For All", duration: "6 Weeks" },
+      { name: "Applied Statistics Real World Problem Solving", url: "/courses/applied-statistics-real-world-problem-solving", description: "Master hypothesis testing, regression models, and exploratory stats to solve critical business problems.", audience: "For Coders", duration: "6 Weeks" },
+      { name: "SQL for Data Engineers Designing and Building Data Pipelines", url: "/courses/sql-for-data-engineers", description: "Learn advanced SQL queries, window functions, and database optimizations for building scalable ETL pipelines.", audience: "For Coders", duration: "8 Weeks" },
+      { name: "UCI Data Preprocessing and Exploratory Data Analysis", url: "/courses/uci-data-preprocessing-and-eda", description: "Master data cleaning, scaling, outliers detection, and visualization workflows using standard datasets.", audience: "For Coders", duration: "4 Weeks" },
     ],
   },
   {
     id: "tools-tech",
     name: "Tools & Technologies",
     courses: [
-      { name: "Git & Version Control", url: "/courses/git-and-version-control", description: "Learn repository setups, branching strategies, conflicts resolution, and collaboration in Teams.", audience: "For All", duration: "2 Weeks" },
-      { name: "Docker & Containerization for AI", url: "/courses/docker-and-containerization-for-ai", description: "Package AI environments and database systems into lightweight, production-ready Docker containers.", audience: "For Coders", duration: "4 Weeks" },
-      { name: "Vector Databases (Pinecone, Chroma)", url: "/courses/vector-databases", description: "Deploy vector schemas, semantic query routing, and secure vector embeddings setups.", audience: "For Coders", duration: "4 Weeks" },
+      { name: "Docker", url: "/courses/docker", description: "Learn containerization concepts, write Dockerfiles, and package AI/backend services for clean deployment.", audience: "For Coders", duration: "4 Weeks" },
+      { name: "AWS-Security", url: "/courses/aws-security", description: "Secure cloud resources, configure IAM policies, inspect network traffic, and manage credentials on AWS.", audience: "For Coders", duration: "6 Weeks" },
+      { name: "Unit Testing", url: "/courses/unit-testing", description: "Write testable code, configure mocks, and use PyTest or Jest to build solid CI/CD pipelines.", audience: "For Coders", duration: "3 Weeks" },
     ],
   },
   {
     id: "business-prof",
     name: "Business & Professional",
     courses: [
-      { name: "AI Product Management", url: "/courses/ai-product-management", description: "Design requirements, orchestrate prompt loops, and guide models validation for software products.", audience: "For All", duration: "6 Weeks" },
-      { name: "AI Consulting Frameworks", url: "/courses/ai-consulting-frameworks", description: "Advise enterprise executives on identifying opportunities, ROI metrics, and safety boundaries for AI.", audience: "For All", duration: "6 Weeks" },
-      { name: "Fintech & AI Strategy", url: "/courses/fintech-and-ai-strategy", description: "Explore credit scoring systems, anomaly checks, and personalized finance pipelines powered by AI.", audience: "For All", duration: "6 Weeks" },
+      { name: "Advanced Excel Techniques for Professionals", url: "/courses/advanced-excel-techniques-for-professionals", description: "Master complex lookup functions, pivot tables, macros, and financial modeling tools in Microsoft Excel.", audience: "For All", duration: "4 Weeks" },
+      { name: "Mastering Aptitude: A Comprehensive Guide to Problem Solving", url: "/courses/mastering-aptitude-comprehensive-guide", description: "Build quantitative, logical, and verbal problem-solving skills for tech interviews and entrance exams.", audience: "For All", duration: "6 Weeks" },
+      { name: "Professional Business Strategy Managing Organisational Value", url: "/courses/professional-business-strategy", description: "Understand corporate finance, market positioning, risk management, and building high-growth business frameworks.", audience: "For All", duration: "6 Weeks" },
     ],
   },
 ];

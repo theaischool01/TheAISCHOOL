@@ -90,27 +90,28 @@ const CATEGORIES: Category[] = [
     id: "data-science",
     name: "Data Science and Analytics",
     courses: [
-      { name: "Data Science Boot Camp", url: "/courses/data-science-boot-camp" },
-      { name: "Machine Learning Pipelines", url: "/courses/machine-learning-pipelines" },
-      { name: "Statistical Modeling & Inference", url: "/courses/statistical-modeling-and-inference" },
+      { name: "Power BI and AI Integration for Building Intelligent Dashboards", url: "/courses/power-bi-and-ai-integration" },
+      { name: "Applied Statistics Real World Problem Solving", url: "/courses/applied-statistics-real-world-problem-solving" },
+      { name: "SQL for Data Engineers Designing and Building Data Pipelines", url: "/courses/sql-for-data-engineers" },
+      { name: "UCI Data Preprocessing and Exploratory Data Analysis", url: "/courses/uci-data-preprocessing-and-eda" },
     ],
   },
   {
     id: "tools-tech",
     name: "Tools & Technologies",
     courses: [
-      { name: "Git & Version Control", url: "/courses/git-and-version-control" },
-      { name: "Docker & Containerization for AI", url: "/courses/docker-and-containerization-for-ai" },
-      { name: "Vector Databases (Pinecone, Chroma)", url: "/courses/vector-databases" },
+      { name: "Docker", url: "/courses/docker" },
+      { name: "AWS-Security", url: "/courses/aws-security" },
+      { name: "Unit Testing", url: "/courses/unit-testing" },
     ],
   },
   {
     id: "business-prof",
     name: "Business & Professional",
     courses: [
-      { name: "AI Product Management", url: "/courses/ai-product-management" },
-      { name: "AI Consulting Frameworks", url: "/courses/ai-consulting-frameworks" },
-      { name: "Fintech & AI Strategy", url: "/courses/fintech-and-ai-strategy" },
+      { name: "Advanced Excel Techniques for Professionals", url: "/courses/advanced-excel-techniques-for-professionals" },
+      { name: "Mastering Aptitude: A Comprehensive Guide to Problem Solving", url: "/courses/mastering-aptitude-comprehensive-guide" },
+      { name: "Professional Business Strategy Managing Organisational Value", url: "/courses/professional-business-strategy" },
     ],
   },
 ];
