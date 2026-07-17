@@ -113,7 +113,7 @@ export default function AssessmentJourney() {
           <div className="relative space-y-16 max-w-5xl mx-auto">
             {steps.map((step, idx) => {
               const Icon = step.icon;
-              const bgClass = idx % 2 === 0 ? "bg-white" : "bg-slate-50";
+              const bgClass = idx % 2 === 0 ? "bg-white" : "bg-red-50/30";
               const isFinalStep = idx === steps.length - 1;
 
               return (
@@ -161,11 +161,11 @@ export default function AssessmentJourney() {
                   </div>
 
                   {/* Right Column: Visual Mockup Panel */}
-                  <div className="lg:w-1/2 w-full bg-red-50/40 border border-red-100 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[220px] transition-colors duration-300 hover:bg-red-50/60">
+                  <div className="lg:w-1/2 w-full bg-[#111111] border border-neutral-800 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[220px] transition-all duration-300 hover:bg-black">
                     <div className="space-y-4">
-                      <div className="flex items-center space-x-2 border-b border-red-100 pb-3">
-                        <MessageSquareCode className="w-4 h-4 text-[#EE1C25]/60" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#EE1C25]/80">
+                      <div className="flex items-center space-x-2 border-b border-neutral-800 pb-3">
+                        <MessageSquareCode className="w-4 h-4 text-[#EE1C25]" />
+                        <span className="text-[10px] font-black uppercase tracking-widest text-neutral-200">
                           {step.detailTitle}
                         </span>
                       </div>
@@ -174,7 +174,7 @@ export default function AssessmentJourney() {
                         {step.bullets.map((bullet) => (
                           <div key={bullet} className="flex items-center space-x-2.5">
                             <CheckCircle2 className="w-4 h-4 text-[#EE1C25] shrink-0" />
-                            <span className="text-xs font-bold text-gray-700 leading-tight">
+                            <span className="text-xs font-bold text-neutral-100 leading-tight">
                               {bullet}
                             </span>
                           </div>
@@ -182,7 +182,7 @@ export default function AssessmentJourney() {
                       </div>
                     </div>
 
-                    <div className="pt-6 border-t border-red-100/60 flex items-center justify-between text-[9px] font-bold text-[#EE1C25]/60 uppercase tracking-widest">
+                    <div className="pt-6 border-t border-neutral-800/80 flex items-center justify-between text-[9px] font-black text-neutral-500 uppercase tracking-widest">
                       <span>Live Production Env</span>
                       <span>Verified System</span>
                     </div>
