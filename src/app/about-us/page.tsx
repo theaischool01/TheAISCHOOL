@@ -447,7 +447,7 @@ export default function AboutUsPage() {
                 <span className="text-[#C1121C]">Who We</span> <span className="text-gray-950">Are</span>
               </h2>
               <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
-                The AI School was founded to break down the barrier between theoretical academic courses and actual startup production requirements. We operate out of T-Hub 2.0 in Hyderabad, providing students direct links to real startups, founders, and engineers.
+                At TheAISCHOOL, we are driven by a singular vision: to create a future where the youth are empowered, startups thrive, and innovation flourishes. Through our comprehensive approach to skill development, startup support, and academic collaboration, we are committed to making a lasting impact on the lives of individuals and the world around us.
               </p>
             </div>
             {/* Framed duotone group photo */}
