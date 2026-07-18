@@ -450,17 +450,15 @@ export default function AboutUsPage() {
                 At TheAISCHOOL, we are driven by a singular vision: to create a future where the youth are empowered, startups thrive, and innovation flourishes. Through our comprehensive approach to skill development, startup support, and academic collaboration, we are committed to making a lasting impact on the lives of individuals and the world around us.
               </p>
             </div>
-            {/* Framed duotone group photo */}
+            {/* Framed color group photo */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full aspect-[4/3] max-w-[480px] bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden p-2">
-                <div className="relative w-full h-full rounded-xl overflow-hidden filter grayscale-[40%]">
+              <div className="relative w-full aspect-[3/2] max-w-[480px] bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden p-2">
+                <div className="relative w-full h-full rounded-xl overflow-hidden">
                   <img 
-                    src="/images/hackathon_stage1.jpg" 
+                    src="/images/who_we_are_hero.jpg" 
                     alt="The AI School team group photo on stage" 
                     className="object-cover w-full h-full select-none"
                   />
-                  {/* Red multiply blend overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 to-transparent mix-blend-multiply pointer-events-none" />
                 </div>
               </div>
             </div>
