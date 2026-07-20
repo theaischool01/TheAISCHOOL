@@ -26,12 +26,12 @@ export default function Footer() {
           <div className="md:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left space-y-5">
             <div className="w-full space-y-1">
               <div className="flex items-center justify-center sm:justify-start w-full">
-                <Link href={regionConfig.path} className="relative w-[170px] h-[36px] block hover:opacity-90 transition-opacity">
+                <Link href={regionConfig.path} className="relative w-[280px] h-[68px] block hover:opacity-90 transition-opacity">
                   <Image
                     src="/images/logo-footer.png"
                     alt="The AI School Logo"
                     fill
-                    sizes="170px"
+                    sizes="280px"
                     className="object-contain object-left"
                     priority
                   />
@@ -88,9 +88,9 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-sm font-black tracking-wider uppercase text-white">Company</h4>
             <ul className="space-y-2.5 text-sm font-semibold text-neutral-400">
-              <li><Link href="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/career" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
+              <li><Link href="/in/about-us" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/in/career" className="hover:text-white transition-colors">Careers</Link></li>
+              <li><Link href="/in/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
               <li><a href="#register" className="hover:text-white transition-colors">Earn with us</a></li>
             </ul>
           </div>
@@ -101,7 +101,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm font-semibold text-neutral-300">
               {courses.map((course, idx) => (
                 <li key={idx}>
-                  <Link href={course.href} className="hover:text-white transition-colors">
+                  <Link href={`/in${course.href}`} className="hover:text-white transition-colors">
                     {course.label}
                   </Link>
                 </li>

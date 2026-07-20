@@ -34,7 +34,7 @@ export const REGIONS: Record<string, RegionConfig> = {
   in: {
     code: "in",
     name: "India",
-    path: "/",
+    path: "/in",
     currency: "INR",
     locale: "en-IN",
     country: "IN",
@@ -54,10 +54,10 @@ export const REGIONS: Record<string, RegionConfig> = {
       illustration: "/assets/hero_illustration.png",
     },
     navigation: [
-      { name: "Learn", url: "/learn" },
-      { name: "About Us", url: "/about-us" },
-      { name: "Blogs", url: "/blogs" },
-      { name: "Contact Us", url: "/contact-us" },
+      { name: "Learn", url: "/in/learn" },
+      { name: "About Us", url: "/in/about-us" },
+      { name: "Blogs", url: "/in/blogs" },
+      { name: "Contact Us", url: "/in/contact-us" },
     ],
     socialLinks: [
       { provider: "linkedin", url: "https://www.linkedin.com/company/theaischool/" },
@@ -67,9 +67,9 @@ export const REGIONS: Record<string, RegionConfig> = {
       { provider: "twitter", url: "https://x.com/TheAI_SCHOOL" },
     ],
     legalLinks: [
-      { name: "Privacy Policy", url: "/privacy-policies" },
-      { name: "Terms & Conditions", url: "/terms-conditions" },
-      { name: "Refund Policy", url: "/refund" },
+      { name: "Privacy Policy", url: "/in/privacy-policies" },
+      { name: "Terms & Conditions", url: "/in/terms-conditions" },
+      { name: "Refund Policy", url: "/in/refund" },
     ],
     metadata: {
       title: "The AI School - Learn AI Skills from Startup Leaders",

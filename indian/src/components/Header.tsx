@@ -198,13 +198,13 @@ export default function Header() {
             <ul className="flex items-center gap-6 list-none m-0 p-0">
               <li className="relative group/nav-item">
                 <a
-                  href="/learn"
+                  href="/in/learn"
                   className={`flex items-center gap-1 px-3 py-2 text-sm font-bold hover:text-[#C1121C] hover:bg-neutral-50 rounded-lg transition-all duration-200 relative ${
-                    pathname === "/learn" || pathname.startsWith("/courses/") ? "text-[#C1121C]" : "text-[#171717]"
+                    pathname.includes("/learn") || pathname.includes("/courses/") ? "text-[#C1121C]" : "text-[#171717]"
                   }`}
                 >
                   Learn <ChevronDown className="w-4 h-4 group-hover/nav-item:rotate-180 transition-transform duration-200" />
-                  {(pathname === "/learn" || pathname.startsWith("/courses/")) && (
+                  {(pathname.includes("/learn") || pathname.includes("/courses/")) && (
                     <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#C1121C] rounded-full" />
                   )}
                 </a>
@@ -236,7 +236,7 @@ export default function Header() {
                         {activeCourses.map((course, idx) => (
                           <a
                             key={idx}
-                            href={course.url}
+                            href={`/in${course.url}`}
                             className="p-4 rounded-lg bg-neutral-50 hover:bg-red-50/40 border-l-3 border-transparent hover:border-[#C1121C] text-sm font-medium text-[#171717] hover:text-[#C1121C] transition-all duration-200 shadow-sm"
                           >
                             {course.name}
@@ -248,8 +248,8 @@ export default function Header() {
                 </div>
               </li>
               {regionConfig.navigation.map((nav, idx) => {
-                if (nav.url === "/learn") return null; // Already rendered with mega menu
-                const isActive = pathname === nav.url || (nav.url !== "/" && pathname.startsWith(nav.url));
+                if (nav.url.endsWith("/learn")) return null; // Already rendered with mega menu
+                const isActive = pathname === nav.url || (nav.url !== "/" && nav.url !== "/in" && pathname.startsWith(nav.url));
                 return (
                   <li key={idx}>
                     <a 
