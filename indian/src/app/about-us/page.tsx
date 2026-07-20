@@ -420,19 +420,7 @@ export default function AboutUsPage() {
 
 
 
-      {/* ================= 2. IMPACT BY THE NUMBERS ================= */}
-      <SectionWrapper tone="tinted">
-        <div id="impact" ref={sectionsRef.impact} className="w-full bg-transparent border-b border-gray-100 py-14 px-6 md:px-12">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <AnimatedCount value={500} label="Students Trained" suffix="+" />
-              <AnimatedCount value={85} label="Outcome Rate" suffix="%" />
-              <AnimatedCount value={9} label="Industry Mentors" suffix="+" />
-              <AnimatedCount value={3} label="Hackathons Hosted" suffix="+" />
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
+
 
       {/* ================= 3. WHO WE ARE (team photo asset grayscale/duotone) ================= */}
       <SectionWrapper tone="white">

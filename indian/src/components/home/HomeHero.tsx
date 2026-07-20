@@ -89,13 +89,6 @@ export default function HomeHero() {
 
         {/* Left Side (48% on desktop) */}
         <div className="w-full lg:w-[48%] space-y-7 flex flex-col items-start text-left z-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 border border-red-100 rounded-full">
-            <span className="text-[10px] font-black uppercase tracking-wider text-[#EE1C25]">
-              {regionConfig.code === "in" 
-                ? "India's only school where startup Leaders teach AI skills."
-                : `${regionConfig.name}'s only school where startup Leaders teach AI skills.`}
-            </span>
-          </div>
 
           {/* Heading */}
           <div className="space-y-4">
