@@ -229,12 +229,12 @@ export default function LearningJourney() {
                 className="absolute group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none z-20"
                 style={{
                   left: "40px",
-                  top: "40px",
+                  top: "30px",
                   width: "220px",
-                  height: "160px",
+                  height: "190px",
                 }}
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-2">
                   <div className="p-2 bg-red-50 text-[#EE1C25] border border-red-100 rounded-lg">
                     <BookOpen className="w-4 h-4" />
                   </div>
@@ -260,12 +260,12 @@ export default function LearningJourney() {
                 className="absolute group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none z-20"
                 style={{
                   left: "40px",
-                  top: "300px",
+                  top: "280px",
                   width: "220px",
-                  height: "160px",
+                  height: "190px",
                 }}
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-2">
                   <div className="p-2 bg-red-50 text-[#EE1C25] border border-red-100 rounded-lg">
                     <BrainCircuit className="w-4 h-4" />
                   </div>
@@ -291,12 +291,12 @@ export default function LearningJourney() {
                 className="absolute group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none z-20"
                 style={{
                   left: "340px",
-                  top: "40px",
+                  top: "30px",
                   width: "220px",
-                  height: "160px",
+                  height: "190px",
                 }}
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-2">
                   <div className="p-2 bg-red-50 text-[#EE1C25] border border-red-100 rounded-lg">
                     <Sparkles className="w-4 h-4" />
                   </div>
@@ -322,12 +322,12 @@ export default function LearningJourney() {
                 className="absolute group bg-white border border-neutral-200/80 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-[#EE1C25] transition-all duration-300 cursor-pointer select-none z-20"
                 style={{
                   left: "340px",
-                  top: "300px",
+                  top: "280px",
                   width: "220px",
-                  height: "160px",
+                  height: "190px",
                 }}
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-2">
                   <div className="p-2 bg-red-50 text-[#EE1C25] border border-red-100 rounded-lg">
                     <Bot className="w-4 h-4" />
                   </div>
