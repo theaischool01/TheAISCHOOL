@@ -113,7 +113,7 @@ export default function EcosystemOrbit() {
   const outerPos = getPositions(outerRingCourses.length, 41);
 
   return (
-    <section className="w-full bg-transparent py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading overflow-hidden">
+    <section className="w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 relative z-10 font-heading overflow-hidden">
       
       <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-red-500/5 blur-[140px] pointer-events-none rounded-full" />
 

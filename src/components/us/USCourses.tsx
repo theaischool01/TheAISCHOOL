@@ -39,7 +39,7 @@ const courses = [
 
 export default function USCourses() {
   return (
-    <section className="w-full bg-transparent py-16 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
+    <section className="w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 border-t border-gray-100 relative z-10 font-heading">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-3">
           <h2 className="text-3xl md:text-4xl font-black text-gray-950 tracking-tight uppercase">

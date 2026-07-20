@@ -91,7 +91,7 @@ const steps = [
 
 export default function AssessmentJourney() {
   return (
-    <section className="w-full bg-transparent py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading">
+    <section className="w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 relative z-10 font-heading">
       <div className="max-w-6xl mx-auto">
 
         {/* ================= TRANSFORMATION PROCESS (STICKY STACK SCROLL) ================= */}
