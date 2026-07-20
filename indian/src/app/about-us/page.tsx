@@ -545,13 +545,13 @@ export default function AboutUsPage() {
 
             <div className="space-y-16">
               
-              {/* Leadership Section (size 140px, premium bg-white) */}
+              {/* Leadership Section (size 140px) */}
               <div className="space-y-6">
                 <h3 className="text-xs font-black uppercase tracking-widest text-[#EE1C25] border-b border-gray-100 pb-2">Leadership Team</h3>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                   {leadership.map((l, idx) => (
                     <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
-                      <TeamMemberCard member={l} size={140} isPremium={true} description={l.desc} />
+                      <TeamMemberCard member={l} size={140} isPremium={true} />
                     </RevealOnScroll>
                   ))}
                 </div>
@@ -563,7 +563,7 @@ export default function AboutUsPage() {
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                   {partners.map((p, idx) => (
                     <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
-                      <TeamMemberCard member={p} size={120} isPremium={false} description={p.desc} />
+                      <TeamMemberCard member={p} size={120} isPremium={false} />
                     </RevealOnScroll>
                   ))}
                 </div>
