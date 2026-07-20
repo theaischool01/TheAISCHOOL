@@ -12,9 +12,6 @@ export default function PrivacyPoliciesPage() {
       <section className="relative w-full py-16 bg-neutral-950 text-white overflow-hidden border-b border-white/5">
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-[#EE1C25]/10 via-transparent to-transparent blur-[100px] pointer-events-none rounded-full" />
         <div className="max-w-5xl mx-auto px-6 relative z-10 space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#EE1C25]/10 text-[#EE1C25] rounded-full text-xs font-bold border border-[#EE1C25]/20 uppercase tracking-widest">
-            Privacy Core
-          </span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight uppercase">
             Privacy Policy
           </h1>

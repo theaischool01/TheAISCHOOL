@@ -54,9 +54,6 @@ export default function ContactUsPage() {
         {/* ================= LEFT SIDE: CORPORATE INFO WORKSPACE ================= */}
         <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
           <div className="space-y-3">
-            <span className="text-xs font-black uppercase tracking-widest text-[#EE1C25] bg-red-50 px-3 py-1.5 rounded-md">
-              Direct Channels
-            </span>
             <h1 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight uppercase">
               Contact Us
             </h1>

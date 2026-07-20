@@ -108,11 +108,6 @@ export default function CourseSnapshot({
           <div className="lg:col-span-7 space-y-5 lg:space-y-6 order-2 lg:order-1">
             {/* Header Area */}
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-0.5 bg-red-50 border border-red-100 rounded-full">
-                <span className="text-[9px] font-black uppercase tracking-widest text-[#EE1C25]">
-                  {badgeText}
-                </span>
-              </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-950 tracking-tight leading-tight uppercase">
                 {headingText}
               </h2>

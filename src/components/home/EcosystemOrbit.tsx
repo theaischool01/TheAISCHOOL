@@ -123,9 +123,6 @@ export default function EcosystemOrbit() {
           
           <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
             <div className="space-y-1">
-              <span className="text-[10px] font-black tracking-widest text-[#EE1C25] uppercase bg-red-50 border border-red-100 px-3 py-1 rounded-full w-fit mx-auto lg:mx-0">
-                COURSE ECOSYSTEM
-              </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-950 tracking-tight leading-tight mt-3">
                 Explore. <span className="text-[#EE1C25]">Learn.</span> Transform.
               </h2>

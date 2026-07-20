@@ -152,9 +152,6 @@ export default function LearnPage() {
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-red-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto text-center relative z-10 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#C1121C] font-heading">
-            OUR CURRICULUM
-          </span>
           <h1 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tight font-heading max-w-4xl mx-auto leading-tight">
             Learn AI from Tech Startup Founders & Leaders
           </h1>

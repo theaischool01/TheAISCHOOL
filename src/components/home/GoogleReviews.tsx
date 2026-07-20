@@ -177,9 +177,6 @@ export default function GoogleReviews() {
         
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25] font-heading">
-            CAREER TRANSFORMATIONS
-          </span>
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight font-heading">
             Trusted by Thousands of Learners
           </h2>

@@ -97,9 +97,6 @@ export default function XRayTransform() {
 
         {/* ================= SECTION TITLE ================= */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">
-            THE PATHWAY
-          </span>
           <h2 className="text-3xl md:text-5xl font-black text-gray-950 tracking-tight leading-tight">
             Flagship Learning Frameworks
           </h2>

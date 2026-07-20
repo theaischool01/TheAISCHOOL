@@ -16,9 +16,6 @@ export default function FlagshipLearningFrameworks() {
 
         {/* ================= SECTION TITLE ================= */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">
-            THE PATHWAY
-          </span>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase">
             <span className="text-gray-950 block">FLAGSHIP</span>
             <span className="text-[#EE1C25] block mt-1">LEARNING FRAMEWORKS</span>

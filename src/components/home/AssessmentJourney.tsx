@@ -97,9 +97,6 @@ export default function AssessmentJourney() {
         {/* ================= TRANSFORMATION PROCESS (STICKY STACK SCROLL) ================= */}
         <div className="space-y-12 pt-8">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#EE1C25]">
-              THE AI SCHOOL
-            </span>
             <h3 className="text-3xl md:text-5xl font-black tracking-tight font-heading leading-[1.1] uppercase">
               <span className="text-gray-950 block">YOUR AI JOURNEY</span>
               <span className="text-[#EE1C25] block text-2xl md:text-4xl mt-2">FROM BEGINNER TO AI ENGINEER</span>

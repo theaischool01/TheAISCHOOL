@@ -399,10 +399,6 @@ export default function AboutUsPage() {
           <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full bg-red-500/[0.015] blur-[120px] pointer-events-none z-0" />
           
           <div className="max-w-6xl mx-auto px-6 text-center space-y-6 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-[#EE1C25]/10 border border-[#EE1C25]/20 rounded-full px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#EE1C25]">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Behind the Intelligence</span>
-            </div>
             <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-none uppercase max-w-4xl mx-auto">
               Practical AI Education <br />
               <span className="text-[#EE1C25]">Built For Careers.</span>

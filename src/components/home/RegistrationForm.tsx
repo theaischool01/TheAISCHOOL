@@ -83,9 +83,6 @@ export default function UnifiedRegistrationForm() {
         
         {/* ================= DYNAMIC SECTION HEADER ================= */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25] bg-red-50 px-3 py-1.5 rounded-full">
-            Ecosystem Registry
-          </span>
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight transition-all">
             {intent === 'student' ? 'Secure Your Learning Seat' : 'Join the Core Tech Team'}
           </h2>

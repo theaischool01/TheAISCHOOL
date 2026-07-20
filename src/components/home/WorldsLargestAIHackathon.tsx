@@ -213,13 +213,6 @@ export default function WorldsLargestAIHackathon() {
         
         {/* ================= SECTION 1: ONE CONSOLIDATED HERO ================= */}
         <div className="text-center space-y-5 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-red-50 border border-red-100 rounded-full">
-            <span className="w-2 h-2 rounded-full bg-[#EE1C25] animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#EE1C25]">
-              National Hackathon Platform
-            </span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-950 tracking-tight leading-tight uppercase">
             World&#39;s Largest <span className="text-[#EE1C25]">AI Hackathon</span>
           </h2>
@@ -286,9 +279,6 @@ export default function WorldsLargestAIHackathon() {
         {/* ================= SECTION 3: TIGHT GALLERY GRID ================= */}
         <div className="space-y-8">
           <div className="text-center space-y-2">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#EE1C25]">
-              Innovation in Action
-            </span>
             <h3 className="text-2xl font-black text-gray-950 uppercase tracking-tight">
               Hackathon Gallery
             </h3>

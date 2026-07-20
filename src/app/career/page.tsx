@@ -45,11 +45,6 @@ export default function CareerPage() {
         <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-gradient-to-br from-white/[0.02] to-transparent blur-[80px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto space-y-6 relative z-10">
-          <div className="inline-flex items-center space-x-2 bg-[#EE1C25]/10 border border-[#EE1C25]/30 rounded-full px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#EE1C25]">
-            <Sparkles className="w-3.5 h-3.5 virtual-glow" />
-            <span>Join the AI School Core</span>
-          </div>
-          
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none uppercase max-w-4xl">
             Build The School Of <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EE1C25] via-red-500 to-white">

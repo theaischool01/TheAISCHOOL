@@ -246,9 +246,6 @@ export default function BlogsPage() {
       {/* Hero Header Block */}
       <section className="w-full py-16 bg-gradient-to-b from-neutral-50/50 to-white border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 text-[#EE1C25] rounded-full text-xs font-bold uppercase tracking-wide mb-4">
-            <Sparkles className="w-3.5 h-3.5" /> THE AI SCHOOL INSIGHTS
-          </div>
           <h1 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tight leading-none mb-4 font-heading">
             The Knowledge Hub
           </h1>

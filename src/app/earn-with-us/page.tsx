@@ -25,9 +25,6 @@ export default function EarnWithUsPage() {
       
       {/* ================= HEADER STRIP ================= */}
       <section className="max-w-4xl mx-auto px-6 pt-20 text-center space-y-4">
-        <span className="text-xs font-black uppercase tracking-widest text-[#EE1C25] bg-red-50 px-3 py-1.5 rounded-full">
-          Remote Optimization Track
-        </span>
         <h1 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight uppercase">
           Freelance & Remote Opportunities
         </h1>
