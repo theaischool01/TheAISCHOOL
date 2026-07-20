@@ -92,7 +92,7 @@ export default function HomeHero() {
 
           {/* Heading */}
           <div className="space-y-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-[38px] xl:text-[42px] font-black font-heading text-[#171717] tracking-tight leading-[1.12]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-black font-heading text-[#171717] tracking-tight leading-[1.08]">
               {regionConfig.code === "in" ? (
                 <>
                   India's Only School to Learn AI Skills from Tech Startup{" "}
