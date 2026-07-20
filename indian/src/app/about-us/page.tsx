@@ -539,7 +539,6 @@ export default function AboutUsPage() {
         <div id="people" ref={sectionsRef.people} className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE ECOSYSTEM DIRECTORS</span>
               <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Core Team</h2>
             </div>
 
@@ -591,7 +590,6 @@ export default function AboutUsPage() {
         <div className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">FOUNDATIONAL ETHOS</span>
               <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Core Values</h2>
             </div>
 
@@ -632,7 +630,6 @@ export default function AboutUsPage() {
           <div className="max-w-4xl mx-auto space-y-10">
             
             <div className="text-center space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE TRANSFORMATION</span>
               <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">The AI School vs. Typical Bootcamp</h2>
             </div>
 
@@ -731,48 +728,11 @@ export default function AboutUsPage() {
         </div>
       </SectionWrapper>
 
-      {/* ================= 9. ALUMNI SPOTLIGHT ================= */}
+      {/* ================= 9. JOURNEY / MILESTONES (Redesigned Connected timeline cards) ================= */}
       <SectionWrapper tone="white">
-        <div className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">CAREER PATHWAYS</span>
-              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Alumni Outcome Spotlight</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { name: "Priya S.", before: "Marketing Executive", after: "AI Product Analyst at ResHue", initials: "PS", story: "Leveraged LLM workflows to automate strategic marketing analysis." },
-                { name: "Rahul K.", before: "Junior Software Engineer", after: "Lead Agent Developer at rava.ai", initials: "RK", story: "Transitioned from legacy web structures to custom agent orchestration." },
-                { name: "Suresh P.", before: "College Graduate", after: "Generative AI Architect at DotCheckout", initials: "SP", story: "Graduated with 3 live startup deployment projects directly in his CV." }
-              ].map((alumni, idx) => (
-                <RevealOnScroll key={idx} className="bg-white border border-gray-200 p-6 rounded-2xl space-y-4 shadow-xs" delay={idx * 100}>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-9 h-9 rounded-full bg-red-50 text-[#EE1C25] font-extrabold text-[10px] uppercase flex items-center justify-center">
-                      {alumni.initials}
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-gray-900 text-sm">{alumni.name}</h4>
-                    </div>
-                  </div>
-                  <div className="space-y-1 border-t border-b border-gray-100 py-3 text-xs font-bold text-gray-700">
-                    <div>Before: <span className="text-gray-400">{alumni.before}</span></div>
-                    <div className="text-emerald-600 font-extrabold">After: {alumni.after}</div>
-                  </div>
-                  <p className="text-xs text-slate-500 leading-relaxed font-semibold">{alumni.story}</p>
-                </RevealOnScroll>
-              ))}
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* ================= 10. JOURNEY / MILESTONES (Redesigned Connected timeline cards) ================= */}
-      <SectionWrapper tone="tinted">
         <div id="journey" ref={sectionsRef.journey} className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE EVOLUTION</span>
               <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Timeline Milestones</h2>
             </div>
 
@@ -838,12 +798,11 @@ export default function AboutUsPage() {
         </div>
       </SectionWrapper>
 
-      {/* ================= 11. GLOBAL REACH ================= */}
-      <SectionWrapper tone="white">
+      {/* ================= 10. GLOBAL REACH ================= */}
+      <SectionWrapper tone="tinted">
         <div className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">ACTIVE REGIONS</span>
               <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Global Operations</h2>
             </div>
 
