@@ -13,42 +13,72 @@ const reviews: Review[] = [
   {
     name: "Abinesh D",
     rating: 5,
-    text: "I've had a genuinely positive experience with The AI School. The team teaches cutting-edge AI topics effectively with kindness, clarity and practical learning.",
+    text: "I've had a genuinely positive experience with The AI School. The team not only teaches cutting-edge topics effectively but does so with a remarkable sense of kindness and inclusivity. Empowering tech education where curiosity is guided with care!",
   },
   {
     name: "Sannidhan Katta",
     rating: 5,
-    text: "Exceptional place to dive deep into AI and Machine Learning. The instructors are highly knowledgeable and make complex concepts easy to understand.",
+    text: "Exceptional place to dive deep into AI and Machine Learning. The instructors are highly knowledgeable, passionate, and create an inspiring environment for building a career in AI.",
+  },
+  {
+    name: "Kruthika Mohanraj",
+    rating: 5,
+    text: "The teaching is awesome! Rahul Sir and Atif Sir guide us daily with real-world examples, cyber concepts, and hacking tools that make complex ideas clear and easy to understand.",
   },
   {
     name: "Alakesh Hazarika",
     rating: 5,
-    text: "My internship at The AI School was an excellent learning experience. Practical guidance helped me grow professionally.",
+    text: "I had a great experience during my Web Development internship at The AI School. The guidance was excellent, and learning through practical work really helped me grow in my software journey.",
   },
   {
-    name: "Sufian Mohammed",
+    name: "Mutharasi",
     rating: 5,
-    text: "No fluff. No fake promises. The AI School helped me start getting freelance projects in Data Analytics.",
+    text: "As a Chemical Engineering student, taking Prompt Engineering showed me how tools like ChatGPT can be integrated into technical problem-solving and academic work. It expanded my view on how AI supports all domains.",
   },
   {
     name: "Thilagan M",
     rating: 5,
-    text: "Prompt Engineering sessions covered LLMs, Generative AI and modern AI tools through practical demonstrations.",
+    text: "Valuable Prompt Engineering training! The sessions covered foundational concepts and practical techniques for designing effective prompts when working with LLMs like ChatGPT and Claude.",
   },
   {
-    name: "Kundini Tadepalli",
+    name: "Prem Kumar",
     rating: 5,
-    text: "Wonderful sessions with an engaging teaching style. The interactive approach made learning enjoyable.",
+    text: "The Prompt Engineering session was really insightful. Concepts like LLMs, Generative AI, and tools like Lovable AI and Gamma were explained clearly through practical examples.",
   },
   {
     name: "Princedaniel Yovan",
     rating: 5,
-    text: "Eye-opening AI sessions that introduced me to many modern AI tools.",
+    text: "A mind-opening session! As an AI and ML student, I didn't have exposure to so many AI tools previously. I learned about cutting-edge tools and workflows that expanded my technical horizons.",
+  },
+  {
+    name: "Nathi Joshitha",
+    rating: 5,
+    text: "The freelance initiative by The AI School is a great way for learners to gain real-world project experience, build a strong portfolio, and earn while learning.",
+  },
+  {
+    name: "Kundini Tadepalli",
+    rating: 5,
+    text: "Thank you for conducting such wonderful sessions! Invaluable guidance that helped us learn and grow. The interactive approach made learning complex AI tools engaging and enjoyable.",
+  },
+  {
+    name: "Thanushka Murugan",
+    rating: 5,
+    text: "The overall internship program is very good and I learned a lot through practical sessions. I gained great hands-on experience throughout the entire track.",
+  },
+  {
+    name: "Rishi Rich Deb",
+    rating: 5,
+    text: "Thank you for always taking the time to explain things in a way we can understand. Your patience, dedication, and interactive lessons make learning AI engaging and fun!",
   },
   {
     name: "Shruthi",
     rating: 5,
-    text: "Prompt Engineering was explained in a simple and practical way that helped me understand AI better.",
+    text: "The Prompt Engineering course teaches how to give clear, smart instructions to AI. It drastically improves AI responses by using the right words, structure, and prompt design.",
+  },
+  {
+    name: "RELO FF",
+    rating: 5,
+    text: "Srinath Sir and Praneeth Sir make learning AI concepts so easy! Their dedicated guidance and doubt-solving made our learning experience seamless and practical.",
   },
 ];
 
