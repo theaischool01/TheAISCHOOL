@@ -23,24 +23,26 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 pb-4">
           
           {/* Column 1: Brand Info & Social Network Array */}
-          <div className="md:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
-            <div className="flex items-center justify-center sm:justify-start w-full sm:-ml-4">
-              <Link href={regionConfig.path} className="relative w-[230px] h-[92px] block hover:opacity-90 transition-opacity">
-                <Image
-                  src="/images/logo-footer.png"
-                  alt="The AI School Logo"
-                  fill
-                  sizes="230px"
-                  className="object-contain"
-                  priority
-                />
-              </Link>
+          <div className="md:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left space-y-5">
+            <div className="w-full space-y-1">
+              <div className="flex items-center justify-center sm:justify-start w-full">
+                <Link href={regionConfig.path} className="relative w-[180px] h-[55px] block hover:opacity-90 transition-opacity">
+                  <Image
+                    src="/images/logo-footer.png"
+                    alt="The AI School Logo"
+                    fill
+                    sizes="180px"
+                    className="object-contain object-left"
+                    priority
+                  />
+                </Link>
+              </div>
+              <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-xs sm:pl-0.5">
+                {regionConfig.code === "in" 
+                  ? "India’s only school where startup Leaders teach AI skills."
+                  : `${regionConfig.name}'s only school where startup Leaders teach AI skills.`}
+              </p>
             </div>
-            <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-xs sm:pl-0.5">
-              {regionConfig.code === "in" 
-                ? "India’s only school where startup Leaders teach AI skills."
-                : `${regionConfig.name}'s only school where startup Leaders teach AI skills.`}
-            </p>
             
             <div className="flex items-center justify-center sm:justify-start space-x-4 pt-1 w-full sm:pl-0.5">
               {regionConfig.socialLinks.map((social, idx) => (
