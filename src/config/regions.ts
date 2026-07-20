@@ -80,7 +80,7 @@ export const REGIONS: Record<string, RegionConfig> = {
   us: {
     code: "us",
     name: "United States",
-    path: "/us",
+    path: "https://theaischool.co/us/",
     currency: "USD",
     locale: "en-US",
     country: "US",
@@ -121,7 +121,7 @@ export const REGIONS: Record<string, RegionConfig> = {
   ph: {
     code: "ph",
     name: "Philippines",
-    path: "/ph",
+    path: "https://theaischool.co/ph/",
     currency: "PHP",
     locale: "en-PH",
     country: "PH",

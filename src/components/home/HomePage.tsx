@@ -7,20 +7,15 @@ import Footer from "@/components/Footer";
 // Section Components
 import HomeHero from "@/components/home/HomeHero";
 import PartnersSectionIN from "@/components/home/PartnersSection";
-import PartnersSectionUS from "@/components/us/PartnersSection";
 import LearningJourney from "@/components/home/LearningJourney";
 import FlagshipLearningFrameworks from "@/components/home/FlagshipLearningFrameworks";
 import EcosystemOrbit from "@/components/home/EcosystemOrbit";
 import AssessmentJourney from "@/components/home/AssessmentJourney";
 import CourseSnapshotIN from "@/components/home/CourseSnapshot";
-import CourseSnapshotUS from "@/components/us/CourseSnapshotUS";
 import WorldsLargestAIHackathon from "@/components/home/WorldsLargestAIHackathon";
 import TeamPreview from "@/components/home/TeamPreview";
 import GoogleReviews from "@/components/home/GoogleReviews";
 import RegistrationForm from "@/components/home/RegistrationForm";
-import USCourses from "@/components/us/USCourses";
-import USMission from "@/components/us/USMission";
-import USStatement from "@/components/us/USStatement";
 
 import { RegionProvider, useRegion } from "@/context/RegionContext";
 import { HOME_LAYOUTS } from "@/config/homeLayouts";
@@ -34,11 +29,7 @@ function MainLayout() {
       case "hero":
         return <HomeHero key="hero" />;
       case "partners":
-        return currentRegion === "in" ? (
-          <PartnersSectionIN key="partners" />
-        ) : (
-          <PartnersSectionUS key="partners" />
-        );
+        return <PartnersSectionIN key="partners" />;
       case "learning-journey":
         return <LearningJourney key="learning-journey" />;
       case "frameworks":
@@ -48,11 +39,7 @@ function MainLayout() {
       case "assessment":
         return <AssessmentJourney key="assessment" />;
       case "snapshot":
-        return currentRegion === "in" ? (
-          <CourseSnapshotIN key="snapshot" />
-        ) : (
-          <CourseSnapshotUS key="snapshot" />
-        );
+        return <CourseSnapshotIN key="snapshot" />;
       case "hackathon":
         return <WorldsLargestAIHackathon key="hackathon" />;
       case "team":
@@ -61,12 +48,6 @@ function MainLayout() {
         return <GoogleReviews key="reviews" />;
       case "registration":
         return <RegistrationForm key="registration" />;
-      case "courses":
-        return <USCourses key="courses" />;
-      case "mission":
-        return <USMission key="mission" />;
-      case "statement":
-        return <USStatement key="statement" />;
       default:
         return null;
     }

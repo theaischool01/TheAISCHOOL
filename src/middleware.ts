@@ -10,11 +10,10 @@ export function middleware(request: NextRequest) {
   const supportedRegions = supportedEnv.split(",").map((s) => s.trim().toLowerCase());
   const defaultRegion = (process.env.NEXT_PUBLIC_DEFAULT_REGION || "in").toLowerCase();
 
-  // 1. Guard check: If a user tries to access a disabled region route, redirect to "/"
+  // 1. Guard check: Redirect us/ph routes to the absolute production sites
   const firstSegment = pathname.split("/")[1]?.toLowerCase();
-  if (["us", "ph"].includes(firstSegment) && !supportedRegions.includes(firstSegment)) {
-    url.pathname = "/";
-    return NextResponse.redirect(url);
+  if (["us", "ph"].includes(firstSegment)) {
+    return NextResponse.redirect(`https://theaischool.co/${firstSegment}/`);
   }
 
   // 2. Only run geo-redirect logic for the root path exactly
@@ -60,8 +59,7 @@ export function middleware(request: NextRequest) {
 
   // 4. Perform redirect if the detected region is supported and not India (served at "/")
   if (detectedRegion !== "in" && supportedRegions.includes(detectedRegion)) {
-    url.pathname = `/${detectedRegion}`;
-    return NextResponse.redirect(url);
+    return NextResponse.redirect(`https://theaischool.co/${detectedRegion}/`);
   }
 
   return NextResponse.next();
