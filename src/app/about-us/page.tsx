@@ -534,8 +534,60 @@ export default function AboutUsPage() {
         </div>
       </SectionWrapper>
 
-      {/* ================= 6. OUR VALUES (Enhanced 64px icon & hover state) ================= */}
+      {/* ================= 6. PEOPLE (Redesigned with hierarchy and description context) ================= */}
       <SectionWrapper tone="tinted">
+        <div id="people" ref={sectionsRef.people} className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
+          <div className="max-w-6xl mx-auto space-y-16">
+            <div className="text-center space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE ECOSYSTEM DIRECTORS</span>
+              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Core Team</h2>
+            </div>
+
+            <div className="space-y-16">
+              
+              {/* Leadership Section (size 140px, premium bg-white) */}
+              <div className="space-y-6">
+                <h3 className="text-xs font-black uppercase tracking-widest text-[#EE1C25] border-b border-gray-100 pb-2">Leadership Team</h3>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                  {leadership.map((l, idx) => (
+                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
+                      <TeamMemberCard member={l} size={140} isPremium={true} description={l.desc} />
+                    </RevealOnScroll>
+                  ))}
+                </div>
+              </div>
+
+              {/* Strategic Advisors / Partners Section (size 120px) */}
+              <div className="space-y-6">
+                <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Industry Partners & Advisors</h3>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                  {partners.map((p, idx) => (
+                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
+                      <TeamMemberCard member={p} size={120} isPremium={false} description={p.desc} />
+                    </RevealOnScroll>
+                  ))}
+                </div>
+              </div>
+
+              {/* Technical Mentors Section (size 120px) */}
+              <div className="space-y-6">
+                <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Technical Mentors</h3>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                  {mentors.map((m, idx) => (
+                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
+                      <TeamMemberCard member={m} size={120} isPremium={false} />
+                    </RevealOnScroll>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* ================= 7. OUR VALUES (Enhanced 64px icon & hover state) ================= */}
+      <SectionWrapper tone="white">
         <div className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-2">
@@ -574,8 +626,8 @@ export default function AboutUsPage() {
         </div>
       </SectionWrapper>
 
-      {/* ================= 7. WHY US (Redesigned Toggle Comparison layout) ================= */}
-      <SectionWrapper tone="white">
+      {/* ================= 8. WHY US (Redesigned Toggle Comparison layout) ================= */}
+      <SectionWrapper tone="tinted">
         <div id="whyUs" ref={sectionsRef.whyUs} className="w-full bg-transparent py-12 px-6 md:px-12 border-b border-gray-100">
           <div className="max-w-4xl mx-auto space-y-10">
             
@@ -675,58 +727,6 @@ export default function AboutUsPage() {
                 </div>
               </div>
             </RevealOnScroll>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* ================= 8. PEOPLE (Redesigned with hierarchy and description context) ================= */}
-      <SectionWrapper tone="tinted">
-        <div id="people" ref={sectionsRef.people} className="w-full bg-transparent py-14 px-6 md:px-12 border-b border-gray-100">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <div className="text-center space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#EE1C25]">THE ECOSYSTEM DIRECTORS</span>
-              <h2 className="text-2xl md:text-4xl font-black text-gray-950 uppercase tracking-tight">Our Core Team</h2>
-            </div>
-
-            <div className="space-y-16">
-              
-              {/* Leadership Section (size 140px, premium bg-white) */}
-              <div className="space-y-6">
-                <h3 className="text-xs font-black uppercase tracking-widest text-[#EE1C25] border-b border-gray-100 pb-2">Leadership Team</h3>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                  {leadership.map((l, idx) => (
-                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
-                      <TeamMemberCard member={l} size={140} isPremium={true} description={l.desc} />
-                    </RevealOnScroll>
-                  ))}
-                </div>
-              </div>
-
-              {/* Strategic Advisors / Partners Section (size 120px) */}
-              <div className="space-y-6">
-                <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Industry Partners & Advisors</h3>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                  {partners.map((p, idx) => (
-                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
-                      <TeamMemberCard member={p} size={120} isPremium={false} description={p.desc} />
-                    </RevealOnScroll>
-                  ))}
-                </div>
-              </div>
-
-              {/* Technical Mentors Section (size 120px) */}
-              <div className="space-y-6">
-                <h3 className="text-xs font-black uppercase tracking-widest text-neutral-500 border-b border-gray-100 pb-2">Technical Mentors</h3>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                  {mentors.map((m, idx) => (
-                    <RevealOnScroll key={idx} delay={idx * 80} className="h-full flex flex-col">
-                      <TeamMemberCard member={m} size={120} isPremium={false} />
-                    </RevealOnScroll>
-                  ))}
-                </div>
-              </div>
-
-            </div>
           </div>
         </div>
       </SectionWrapper>
