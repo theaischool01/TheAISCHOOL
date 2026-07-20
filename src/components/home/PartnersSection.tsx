@@ -113,7 +113,7 @@ export default function PartnersSection({
       <div className="max-w-7xl mx-auto space-y-16">
 
         {/* ================= SECTION 1: PROGRAM PARTNERS ================= */}
-        <div className="border-t border-neutral-200/80 pt-16 pb-16 border-b border-neutral-200/80">
+        <div className="border-t border-neutral-200/80 border-b border-neutral-200/80">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Column: Text & CTA */}

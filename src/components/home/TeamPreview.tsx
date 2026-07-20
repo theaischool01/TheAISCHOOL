@@ -39,7 +39,7 @@ export default function TeamPreview() {
   ];
 
   return (
-    <section className="w-full bg-transparent py-14 lg:py-16 px-6 md:px-12 relative z-10 font-heading select-none">
+    <section className="w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 relative z-10 font-heading select-none">
       <div className="max-w-6xl mx-auto space-y-12">
         
         {/* Header Title */}

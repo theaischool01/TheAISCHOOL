@@ -394,7 +394,7 @@ export default function AboutUsPage() {
 
       {/* ================= 1. CINEMATIC HERO ================= */}
       <SectionWrapper tone="white">
-        <div ref={heroRef} className="relative w-full bg-transparent text-slate-900 flex items-center justify-center pt-12 pb-20 border-b border-[#ECECEC]">
+        <div ref={heroRef} className="relative w-full bg-transparent text-slate-900 flex items-center justify-center pt-20 pb-20 lg:pt-24 lg:pb-20 border-b border-[#ECECEC]">
           <div className="absolute inset-0 pointer-events-none opacity-[0.04] z-0" style={{ backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`, backgroundSize: "30px 30px" }} />
           <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full bg-red-500/[0.015] blur-[120px] pointer-events-none z-0" />
           
