@@ -5,6 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "The AI School - Learn AI Skills from Startup Leaders",
   description: "India's only school where startup leaders teach AI skills directly. Get hands-on internships, prompt engineering, and agent building courses.",
+  icons: {
+    icon: "/vercel.svg",
+    shortcut: "/vercel.svg",
+    apple: "/vercel.svg",
+  },
 };
 
 export default function RootLayout({
