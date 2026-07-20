@@ -115,7 +115,18 @@ export default function Footer() {
             <ul className="space-y-3.5 text-sm font-semibold text-neutral-400">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-[#EE1C25] shrink-0 mt-0.5" />
-                <span className="leading-relaxed">{regionConfig.address}</span>
+                {regionConfig.code === "in" ? (
+                  <a 
+                    href="https://maps.app.goo.gl/hUTVFof9FUgFx1uz8" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="leading-relaxed hover:text-white transition-colors hover:underline"
+                  >
+                    {regionConfig.address}
+                  </a>
+                ) : (
+                  <span className="leading-relaxed">{regionConfig.address}</span>
+                )}
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#EE1C25] shrink-0" />
