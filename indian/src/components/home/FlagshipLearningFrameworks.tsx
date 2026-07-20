@@ -34,7 +34,7 @@ export default function FlagshipLearningFrameworks() {
             className="group relative bg-[#FFF5F5] border border-red-100 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-7 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-red-300 hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.12)] cursor-pointer"
           >
             {/* Background 01 */}
-            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-[#C1121C] opacity-[0.03] select-none pointer-events-none font-sans">
+            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-black opacity-[0.04] select-none pointer-events-none font-sans">
               01
             </span>
             <div className="flex justify-between items-start">
@@ -89,7 +89,7 @@ export default function FlagshipLearningFrameworks() {
             className="group relative bg-white border border-neutral-200/80 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-5 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-[#EE1C25]/40 hover:shadow-[0_20px_50px_-20px_rgba(238,28,37,0.12)] cursor-pointer"
           >
             {/* Background 02 */}
-            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-[#EE1C25] opacity-[0.015] select-none pointer-events-none font-sans">
+            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-black opacity-[0.04] select-none pointer-events-none font-sans">
               02
             </span>
             <div className="flex justify-between items-start">
@@ -146,7 +146,7 @@ export default function FlagshipLearningFrameworks() {
             className="group relative bg-white border border-neutral-200/80 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-8 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-purple-500/40 hover:shadow-[0_20px_50px_-20px_rgba(139,92,246,0.12)] cursor-pointer"
           >
             {/* Background 03 */}
-            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-purple-500 opacity-[0.015] select-none pointer-events-none font-sans">
+            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-black opacity-[0.04] select-none pointer-events-none font-sans">
               03
             </span>
             <div className="flex justify-between items-start">
@@ -203,7 +203,7 @@ export default function FlagshipLearningFrameworks() {
             className="group relative bg-[#FFF5F5] border border-red-100 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-4 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-red-300 hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.12)] cursor-pointer"
           >
             {/* Background 04 */}
-            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-[#C1121C] opacity-[0.03] select-none pointer-events-none font-sans">
+            <span className="absolute -right-4 -bottom-6 text-[110px] font-black text-black opacity-[0.04] select-none pointer-events-none font-sans">
               04
             </span>
             <div className="flex justify-between items-start">
