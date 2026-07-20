@@ -18,13 +18,13 @@ export const HOME_LAYOUTS: Record<string, HomeSection[]> = {
   in: [
     "hero",
     "partners",
+    "team",
     "learning-journey",
     "frameworks",
     "orbit",
     "assessment",
     "snapshot",
     "hackathon",
-    "team",
     "reviews",
     "registration"
   ],
