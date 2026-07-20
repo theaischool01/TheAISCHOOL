@@ -26,18 +26,18 @@ export default function Footer() {
           <div className="md:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left space-y-5">
             <div className="w-full space-y-1">
               <div className="flex items-center justify-center sm:justify-start w-full">
-                <Link href={regionConfig.path} className="relative w-[180px] h-[55px] block hover:opacity-90 transition-opacity">
+                <Link href={regionConfig.path} className="relative w-[170px] h-[36px] block hover:opacity-90 transition-opacity">
                   <Image
                     src="/images/logo-footer.png"
                     alt="The AI School Logo"
                     fill
-                    sizes="180px"
+                    sizes="170px"
                     className="object-contain object-left"
                     priority
                   />
                 </Link>
               </div>
-              <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-xs sm:pl-0.5">
+              <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-xs sm:pl-0.5 mt-1">
                 {regionConfig.code === "in" 
                   ? "India’s only school where startup Leaders teach AI skills."
                   : `${regionConfig.name}'s only school where startup Leaders teach AI skills.`}
