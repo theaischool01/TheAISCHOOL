@@ -125,13 +125,6 @@ export default function PartnersSection({
               <p className="text-sm font-semibold text-slate-600 max-w-sm leading-relaxed">
                 Strategic organizations driving innovation, AI education and research initiatives across India.
               </p>
-              <a 
-                href="/partners" 
-                className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#EF232A] hover:underline pt-2 group"
-              >
-                <span>View All Partners</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-              </a>
             </div>
 
             {/* Right Column: Grid of Cards */}
