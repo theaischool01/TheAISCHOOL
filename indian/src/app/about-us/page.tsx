@@ -814,10 +814,10 @@ export default function AboutUsPage() {
       </SectionWrapper>
 
       {/* ================= 12. CLOSING CTA BANNER ================= */}
-      <div className="w-full bg-[#EE1C25] text-white py-16 px-8 relative overflow-hidden">
+      <div className="w-full bg-[#EE1C25] text-white py-20 lg:py-24 px-8 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-white/[0.015] blur-[140px] pointer-events-none rounded-full" />
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight pt-2">
             Ready to Build Real AI Applications?
           </h2>
           <p className="text-white/80 text-sm md:text-base max-w-xl mx-auto font-medium leading-relaxed">
