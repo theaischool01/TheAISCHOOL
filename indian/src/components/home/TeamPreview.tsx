@@ -45,7 +45,7 @@ export default function TeamPreview() {
         {/* Header Title */}
         <div className="text-center space-y-2">
           <h3 className="text-2xl md:text-3xl font-black text-gray-950 uppercase tracking-tight">
-            Meet the Builders
+            Our Leadership Members
           </h3>
         </div>
 
