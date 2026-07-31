@@ -35,6 +35,7 @@ export default function TeamPreview() {
     { initials: "AV", image: "/images/mentor_akhil_v2.png",  name: "Akhil Vydyula", role: "Agent Specialist" },
     { initials: "AP", image: "/images/mentor_anshu_v2.png",  name: "Anshu Pandey",  role: "NLP Researcher" },
     { initials: "HK", image: "/images/mentor_harish_v2.png", name: "Harish Kumar",  role: "RAG Architect" },
+    { initials: "MB", image: "/images/mentor_mohit.png",     name: "Mohit Bhatia",  role: "AI Mentor" },
   ];
 
   /* Reusable small person card (partner/mentor rows) */
@@ -154,7 +155,7 @@ export default function TeamPreview() {
           </div>
         </div>
 
-        {/* ================= SECTION 3: EXPERT NETWORK (ZIGZAG) ================= */}
+        {/* ================= SECTION 3: EXPERT NETWORK (ZIGZAG 6 CARDS) ================= */}
         <div className="w-full pt-4">
           <hr className="border-gray-200/60 mb-12" />
           
@@ -176,7 +177,7 @@ export default function TeamPreview() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 items-start pb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-start pb-8">
             {mentorAvatars.map((mentor, idx) => (
               <SmallPersonCard key={idx} person={mentor} isOffset={idx % 2 === 1} />
             ))}
