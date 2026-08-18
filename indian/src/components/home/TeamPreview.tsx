@@ -429,13 +429,6 @@ export default function TeamPreview() {
                 Backed by Tech Founders
               </h4>
             </div>
-            <Link 
-              href="/about-us" 
-              className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-[#EE1C25] hover:text-[#d61920] group"
-            >
-              <span>MEET OUR PARTNERS</span> 
-              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </Link>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-start justify-items-center">
@@ -458,13 +451,6 @@ export default function TeamPreview() {
                 Learn Live with ML Architects
               </h4>
             </div>
-            <Link 
-              href="/about-us" 
-              className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-[#EE1C25] hover:text-[#d61920] group"
-            >
-              <span>VIEW ALL MENTORS</span> 
-              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </Link>
           </div>
 
           {/* Continuous Auto-Scrolling Marquee Track with Duplicated List for Seamless Loop */}
