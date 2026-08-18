@@ -3,21 +3,104 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Linkedin, Twitter } from "lucide-react";
+
+export interface Leader {
+  name: string;
+  role: string;
+  image: string;
+  initials?: string;
+  bio?: string;
+  linkedin?: string;
+  twitter?: string;
+}
+
+export function LeaderCard({ leader }: { leader: Leader }) {
+  return (
+    <div className="flex flex-col items-center text-center space-y-6 w-full max-w-md mx-auto group">
+      {/* Large Circular Image (220px-240px diameter) */}
+      <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl overflow-hidden bg-slate-100 shrink-0 transition-transform duration-300 group-hover:scale-[1.02] ring-1 ring-slate-200/80">
+        {leader.image ? (
+          <Image
+            src={leader.image}
+            alt={leader.name}
+            fill
+            sizes="(max-width: 640px) 192px, 240px"
+            className="object-cover object-top"
+          />
+        ) : (
+          <span className="flex items-center justify-center w-full h-full text-3xl font-extrabold text-slate-500">
+            {leader.initials}
+          </span>
+        )}
+      </div>
+
+      {/* Rectangular Info Box */}
+      <div className="w-full bg-white border border-slate-200/80 rounded-2xl p-6 md:p-7 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center text-center space-y-3">
+        {/* Name */}
+        <h4 className="text-base sm:text-lg font-black text-gray-950 uppercase tracking-tight leading-snug">
+          {leader.name}
+        </h4>
+
+        {/* Title / Role in Accent Red */}
+        <p className="text-xs sm:text-sm font-extrabold text-[#EE1C25] uppercase tracking-wider">
+          {leader.role}
+        </p>
+
+        {/* Short Bio / Tagline */}
+        <p className="text-xs font-semibold text-slate-600 leading-relaxed max-w-sm">
+          {leader.bio || "Pioneering AI education & building production-ready LLM systems."}
+        </p>
+
+        {/* Social / Link Icons */}
+        <div className="flex items-center justify-center gap-3 pt-2">
+          {leader.linkedin && (
+            <a
+              href={leader.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              aria-label={`${leader.name} LinkedIn`}
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+          )}
+          {leader.twitter && (
+            <a
+              href={leader.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              aria-label={`${leader.name} Twitter`}
+            >
+              <Twitter className="w-4 h-4" />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function TeamPreview() {
-  const founders = [
+  const founders: Leader[] = [
     {
       name: "Ganta Srinath Reddy",
       role: "Founder/CEO",
       initials: "SR",
       image: "/mentors/srinath.webp",
+      bio: "Startup founder and veteran AI solutions architect leading LLM pipelines, agent orchestration frameworks, and production-ready machine learning architectures.",
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
     },
     {
       name: "K. Spandana",
       role: "Co-Founder",
       initials: "KS",
       image: "/mentors/spandana.webp",
+      bio: "Deep-learning operations specialist and educator driving curriculum design, student mentorship tracks, and strategic placement partnerships.",
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
     },
   ];
 
@@ -87,41 +170,11 @@ export default function TeamPreview() {
           </h3>
         </div>
 
-        {/* ================= SECTION 1: FOUNDERS (2 equal cards, same size as others) ================= */}
+        {/* ================= SECTION 1: FOUNDERS (REUSABLE LEADERCARDS) ================= */}
         <div className="w-full">
-          <div className="flex flex-row gap-5 justify-center items-start flex-wrap">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start justify-center">
             {founders.map((founder, idx) => (
-              <div
-                key={idx}
-                className="w-full max-w-[240px] border border-neutral-900 bg-black rounded-2xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col"
-                style={{ height: "320px" }}
-              >
-                {/* Image portion */}
-                <div className="relative w-full bg-black" style={{ height: "230px" }}>
-                  {founder.image ? (
-                    <Image
-                      src={founder.image}
-                      alt={founder.name}
-                      fill
-                      sizes="240px"
-                      className="object-cover object-top"
-                    />
-                  ) : (
-                    <span className="flex items-center justify-center w-full h-full text-2xl font-extrabold text-slate-400">
-                      {founder.initials}
-                    </span>
-                  )}
-                </div>
-                {/* Text portion */}
-                <div className="flex-1 flex flex-col items-center justify-center px-3 py-3 bg-black text-center border-t border-neutral-900">
-                  <h4 className="text-[11px] font-black text-white tracking-tight uppercase leading-snug">
-                    {founder.name}
-                  </h4>
-                  <p className="text-[9px] font-extrabold text-[#EE1C25] uppercase tracking-wider mt-1">
-                    {founder.role}
-                  </p>
-                </div>
-              </div>
+              <LeaderCard key={idx} leader={founder} />
             ))}
           </div>
         </div>
