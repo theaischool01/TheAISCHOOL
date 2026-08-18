@@ -67,8 +67,8 @@ export function LeaderRowCard({
         )}
       </div>
 
-      {/* Rectangular Info Box (Compact height, vertically centered) */}
-      <div className="flex-1 w-full bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-center space-y-3 min-h-[140px] md:min-h-[160px] text-center md:text-left">
+      {/* Rectangular Info Box (Compact height, vertically centered, light reddish background) */}
+      <div className="flex-1 w-full bg-[#FFF5F5] border border-red-100 rounded-2xl p-6 md:p-8 shadow-xs hover:shadow-md hover:border-red-200 transition-all duration-300 flex flex-col justify-center space-y-3 min-h-[140px] md:min-h-[160px] text-center md:text-left">
         {/* Name */}
         <h4 className="text-lg sm:text-xl font-black text-gray-950 uppercase tracking-tight leading-snug">
           {leader.name}
@@ -93,7 +93,7 @@ export function LeaderRowCard({
               href={leader.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              className="w-8 h-8 rounded-full bg-white border border-red-100 text-slate-600 hover:text-[#EE1C25] hover:bg-red-100/50 hover:border-red-200 flex items-center justify-center transition-all duration-200"
               aria-label={`${leader.name} LinkedIn`}
             >
               <LinkedInIcon />
@@ -104,7 +104,7 @@ export function LeaderRowCard({
               href={leader.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              className="w-8 h-8 rounded-full bg-white border border-red-100 text-slate-600 hover:text-[#EE1C25] hover:bg-red-100/50 hover:border-red-200 flex items-center justify-center transition-all duration-200"
               aria-label={`${leader.name} Twitter`}
             >
               <TwitterIcon />
