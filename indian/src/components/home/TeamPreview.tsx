@@ -117,7 +117,13 @@ export function LeaderRowCard({
 }
 
 /* Reusable Partner Card: Two separate, distinct rectangular boxes (sharp rounded-none corners, exact matching width) stacked vertically with gap */
-export function PartnerCard({ partner }: { partner: Partner }) {
+export function PartnerCard({
+  partner,
+  isAlternate = false,
+}: {
+  partner: Partner;
+  isAlternate?: boolean;
+}) {
   return (
     <div className="flex flex-col space-y-4 w-full max-w-[200px] sm:max-w-[220px] mx-auto group">
       {/* Upper Box: Standalone Photo Box (sharp corners - rounded-none) */}
@@ -137,8 +143,14 @@ export function PartnerCard({ partner }: { partner: Partner }) {
         )}
       </div>
 
-      {/* Lower Box: Standalone Info Box (sharp corners - rounded-none, strictly matching photo box width) */}
-      <div className="w-full bg-white border border-slate-200/80 rounded-none p-3.5 sm:p-4 shadow-xs group-hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center space-y-1.5 min-h-[90px] sm:min-h-[100px]">
+      {/* Lower Box: Standalone Info Box (Alternating Reddish bg-[#FFF5F5] vs White bg-white) */}
+      <div
+        className={`w-full border rounded-none p-3.5 sm:p-4 shadow-xs group-hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center space-y-1.5 min-h-[90px] sm:min-h-[100px] ${
+          isAlternate
+            ? "bg-[#FFF5F5] border-red-100 group-hover:border-red-200"
+            : "bg-white border-slate-200/80 group-hover:border-slate-300"
+        }`}
+      >
         {/* Name */}
         <h5 className="text-[10px] sm:text-[11px] font-black text-gray-950 uppercase tracking-tight leading-tight max-w-full text-center">
           {partner.name}
@@ -156,7 +168,11 @@ export function PartnerCard({ partner }: { partner: Partner }) {
               href={partner.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-6 h-6 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              className={`w-6 h-6 rounded-full border text-slate-600 hover:text-[#EE1C25] flex items-center justify-center transition-all duration-200 ${
+                isAlternate
+                  ? "bg-white border-red-100 hover:bg-red-100/50 hover:border-red-200"
+                  : "bg-slate-50 border-slate-200 hover:bg-red-50 hover:border-red-100"
+              }`}
               aria-label={`${partner.name} LinkedIn`}
             >
               <LinkedInIcon className="w-3 h-3" />
@@ -167,7 +183,11 @@ export function PartnerCard({ partner }: { partner: Partner }) {
               href={partner.twitterUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-6 h-6 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              className={`w-6 h-6 rounded-full border text-slate-600 hover:text-[#EE1C25] flex items-center justify-center transition-all duration-200 ${
+                isAlternate
+                  ? "bg-white border-red-100 hover:bg-red-100/50 hover:border-red-200"
+                  : "bg-slate-50 border-slate-200 hover:bg-red-50 hover:border-red-100"
+              }`}
               aria-label={`${partner.name} Twitter`}
             >
               <TwitterIcon className="w-3 h-3" />
@@ -420,7 +440,7 @@ export default function TeamPreview() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-start justify-items-center">
             {partnerAvatars.map((partner, idx) => (
-              <PartnerCard key={idx} partner={partner} />
+              <PartnerCard key={idx} partner={partner} isAlternate={idx % 2 === 0} />
             ))}
           </div>
         </div>
