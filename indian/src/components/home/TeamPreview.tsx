@@ -68,7 +68,7 @@ export function LeaderRowCard({
       </div>
 
       {/* Rectangular Info Box (Compact height, vertically centered, light reddish background) */}
-      <div className="flex-1 w-full bg-[#FFF5F5] border border-red-100 rounded-2xl p-6 md:p-8 shadow-xs hover:shadow-md hover:border-red-200 transition-all duration-300 flex flex-col justify-center space-y-3 min-h-[140px] md:min-h-[160px] text-center md:text-left">
+      <div className="flex-1 w-full bg-[#FEEBEB] border border-red-200 rounded-2xl p-6 md:p-8 shadow-xs hover:shadow-md hover:border-red-300 transition-all duration-300 flex flex-col justify-center space-y-3 min-h-[140px] md:min-h-[160px] text-center md:text-left">
         {/* Name */}
         <h4 className="text-lg sm:text-xl font-black text-gray-950 uppercase tracking-tight leading-snug">
           {leader.name}
@@ -93,7 +93,7 @@ export function LeaderRowCard({
               href={leader.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-white border border-red-100 text-slate-600 hover:text-[#EE1C25] hover:bg-red-100/50 hover:border-red-200 flex items-center justify-center transition-all duration-200"
+              className="w-8 h-8 rounded-full bg-white border border-red-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-100 hover:border-red-300 flex items-center justify-center transition-all duration-200"
               aria-label={`${leader.name} LinkedIn`}
             >
               <LinkedInIcon />
@@ -104,7 +104,7 @@ export function LeaderRowCard({
               href={leader.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-white border border-red-100 text-slate-600 hover:text-[#EE1C25] hover:bg-red-100/50 hover:border-red-200 flex items-center justify-center transition-all duration-200"
+              className="w-8 h-8 rounded-full bg-white border border-red-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-100 hover:border-red-300 flex items-center justify-center transition-all duration-200"
               aria-label={`${leader.name} Twitter`}
             >
               <TwitterIcon />
@@ -143,11 +143,11 @@ export function PartnerCard({
         )}
       </div>
 
-      {/* Lower Box: Standalone Info Box (Alternating Reddish bg-[#FFF5F5] vs White bg-white) */}
+      {/* Lower Box: Standalone Info Box (Fixed equal height h-[115px], alternating richer reddish bg-[#FEEBEB] vs white bg-white) */}
       <div
-        className={`w-full border rounded-none p-3.5 sm:p-4 shadow-xs group-hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center space-y-1.5 min-h-[90px] sm:min-h-[100px] ${
+        className={`w-full border rounded-none p-3 sm:p-3.5 shadow-xs group-hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center space-y-1.5 h-[110px] sm:h-[115px] shrink-0 ${
           isAlternate
-            ? "bg-[#FFF5F5] border-red-100 group-hover:border-red-200"
+            ? "bg-[#FEEBEB] border-red-200 group-hover:border-red-300"
             : "bg-white border-slate-200/80 group-hover:border-slate-300"
         }`}
       >
@@ -157,12 +157,12 @@ export function PartnerCard({
         </h5>
 
         {/* Designation/Title in Accent Red */}
-        <p className="text-[8.5px] sm:text-[9px] font-extrabold text-[#EE1C25] uppercase tracking-wider leading-snug max-w-full text-center">
+        <p className="text-[8px] sm:text-[8.5px] font-extrabold text-[#EE1C25] uppercase tracking-wider leading-tight max-w-full text-center line-clamp-2">
           {partner.title}
         </p>
 
         {/* Social Link Icons Row */}
-        <div className="flex items-center justify-center gap-2 pt-1">
+        <div className="flex items-center justify-center gap-2 pt-0.5">
           {partner.linkedinUrl && (
             <a
               href={partner.linkedinUrl}
@@ -170,7 +170,7 @@ export function PartnerCard({
               rel="noopener noreferrer"
               className={`w-6 h-6 rounded-full border text-slate-600 hover:text-[#EE1C25] flex items-center justify-center transition-all duration-200 ${
                 isAlternate
-                  ? "bg-white border-red-100 hover:bg-red-100/50 hover:border-red-200"
+                  ? "bg-white border-red-200 hover:bg-red-100 hover:border-red-300"
                   : "bg-slate-50 border-slate-200 hover:bg-red-50 hover:border-red-100"
               }`}
               aria-label={`${partner.name} LinkedIn`}
@@ -185,7 +185,7 @@ export function PartnerCard({
               rel="noopener noreferrer"
               className={`w-6 h-6 rounded-full border text-slate-600 hover:text-[#EE1C25] flex items-center justify-center transition-all duration-200 ${
                 isAlternate
-                  ? "bg-white border-red-100 hover:bg-red-100/50 hover:border-red-200"
+                  ? "bg-white border-red-200 hover:bg-red-100 hover:border-red-300"
                   : "bg-slate-50 border-slate-200 hover:bg-red-50 hover:border-red-100"
               }`}
               aria-label={`${partner.name} Twitter`}
