@@ -179,6 +179,69 @@ export function PartnerCard({ partner }: { partner: Partner }) {
   );
 }
 
+/* Reusable MentorAvatar Component (Clean, borderless unit with small circular image + text + icons) */
+export function MentorAvatar({ mentor }: { mentor: Partner }) {
+  return (
+    <div className="flex flex-col items-center text-center space-y-2.5 w-[130px] sm:w-[150px] shrink-0 snap-start group select-none">
+      {/* Small Circular Avatar Image (90-110px desktop, 75-80px mobile) */}
+      <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-white shadow-md overflow-hidden bg-slate-100 shrink-0 ring-1 ring-slate-200/80 transition-transform duration-300 group-hover:scale-105">
+        {mentor.image ? (
+          <Image
+            src={mentor.image}
+            alt={mentor.name}
+            fill
+            sizes="112px"
+            className="object-cover object-top"
+          />
+        ) : (
+          <span className="flex items-center justify-center w-full h-full text-lg font-extrabold text-slate-500">
+            {mentor.initials}
+          </span>
+        )}
+      </div>
+
+      {/* Centered Name, Title & Social Links */}
+      <div className="flex flex-col items-center text-center space-y-1 w-full px-1">
+        {/* Name */}
+        <h5 className="text-[11px] sm:text-xs font-black text-gray-950 uppercase tracking-tight leading-snug line-clamp-1">
+          {mentor.name}
+        </h5>
+
+        {/* Title / Role in Accent Red */}
+        <p className="text-[8.5px] sm:text-[9px] font-extrabold text-[#EE1C25] uppercase tracking-wider leading-tight line-clamp-1">
+          {mentor.title}
+        </p>
+
+        {/* Social Link Icons Row */}
+        <div className="flex items-center justify-center gap-1.5 pt-1">
+          {mentor.linkedinUrl && (
+            <a
+              href={mentor.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-6 h-6 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              aria-label={`${mentor.name} LinkedIn`}
+            >
+              <LinkedInIcon className="w-3 h-3" />
+            </a>
+          )}
+          {mentor.twitterUrl && (
+            <a
+              href={mentor.twitterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-6 h-6 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              aria-label={`${mentor.name} Twitter`}
+            >
+              <TwitterIcon className="w-3 h-3" />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function TeamPreview() {
   const founders: Leader[] = [
     {
@@ -346,7 +409,7 @@ export default function TeamPreview() {
           </div>
         </div>
 
-        {/* ================= SECTION 3: EXPERT NETWORK (TWO SHARP MATCHING BOXES PER PERSON) ================= */}
+        {/* ================= SECTION 3: EXPERT NETWORK (HORIZONTAL SCROLL STRIP OF MENTOR AVATARS) ================= */}
         <div className="w-full pt-4">
           <hr className="border-gray-200/60 mb-12" />
           
@@ -368,10 +431,18 @@ export default function TeamPreview() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 items-start justify-items-center">
-            {mentorAvatars.map((mentor, idx) => (
-              <PartnerCard key={idx} partner={mentor} />
-            ))}
+          {/* Horizontally Scrollable Single Row Strip */}
+          <div className="relative w-full overflow-hidden">
+            {/* Left Edge Gradient Fade */}
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            {/* Right Edge Gradient Fade */}
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+            <div className="flex items-start gap-8 sm:gap-10 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory py-4 px-3">
+              {mentorAvatars.map((mentor, idx) => (
+                <MentorAvatar key={idx} mentor={mentor} />
+              ))}
+            </div>
           </div>
         </div>
 
