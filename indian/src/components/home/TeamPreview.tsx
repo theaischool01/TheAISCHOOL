@@ -182,9 +182,9 @@ export function PartnerCard({ partner }: { partner: Partner }) {
 /* Reusable MentorAvatar Component (Clean, borderless unit with small circular image + text + icons) */
 export function MentorAvatar({ mentor }: { mentor: Partner }) {
   return (
-    <div className="flex flex-col items-center text-center space-y-2.5 w-[130px] sm:w-[150px] shrink-0 snap-start group select-none">
+    <div className="flex flex-col items-center text-center space-y-2.5 w-[130px] sm:w-[150px] shrink-0 snap-start group/mentor select-none">
       {/* Small Circular Avatar Image (90-110px desktop, 75-80px mobile) */}
-      <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-white shadow-md overflow-hidden bg-slate-100 shrink-0 ring-1 ring-slate-200/80 transition-transform duration-300 group-hover:scale-105">
+      <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-white shadow-md overflow-hidden bg-slate-100 shrink-0 ring-1 ring-slate-200/80 transition-transform duration-300 group-hover/mentor:scale-105">
         {mentor.image ? (
           <Image
             src={mentor.image}
@@ -307,6 +307,7 @@ export default function TeamPreview() {
     },
   ];
 
+  /* Complete 6-mentor list for Expert Network */
   const mentorAvatars: Partner[] = [
     {
       initials: "VP",
@@ -360,6 +361,21 @@ export default function TeamPreview() {
 
   return (
     <section className="w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 relative z-10 font-heading select-none">
+      {/* Global Style for Smooth Continuous Marquee Animation */}
+      <style jsx global>{`
+        @keyframes mentorMarquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-mentor-marquee {
+          animation: mentorMarquee 32s linear infinite;
+        }
+      `}</style>
+
       <div className="max-w-6xl mx-auto space-y-16">
         
         {/* Header Title */}
@@ -409,7 +425,7 @@ export default function TeamPreview() {
           </div>
         </div>
 
-        {/* ================= SECTION 3: EXPERT NETWORK (HORIZONTAL SCROLL STRIP OF MENTOR AVATARS) ================= */}
+        {/* ================= SECTION 3: EXPERT NETWORK (CONTINUOUS AUTO-SCROLLING MARQUEE) ================= */}
         <div className="w-full pt-4">
           <hr className="border-gray-200/60 mb-12" />
           
@@ -431,15 +447,16 @@ export default function TeamPreview() {
             </Link>
           </div>
 
-          {/* Horizontally Scrollable Single Row Strip */}
-          <div className="relative w-full overflow-hidden">
+          {/* Continuous Auto-Scrolling Marquee Track with Duplicated List for Seamless Loop */}
+          <div className="relative w-full overflow-hidden group">
             {/* Left Edge Gradient Fade */}
-            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
             {/* Right Edge Gradient Fade */}
-            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-            <div className="flex items-start gap-8 sm:gap-10 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory py-4 px-3">
-              {mentorAvatars.map((mentor, idx) => (
+            {/* Marquee Track: duplicated list renders 12 items (2 x 6 mentors) moving continuously */}
+            <div className="flex items-start gap-8 sm:gap-10 w-max animate-mentor-marquee hover:[animation-play-state:paused] py-4 px-3">
+              {[...mentorAvatars, ...mentorAvatars].map((mentor, idx) => (
                 <MentorAvatar key={idx} mentor={mentor} />
               ))}
             </div>
