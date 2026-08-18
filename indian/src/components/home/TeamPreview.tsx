@@ -3,7 +3,19 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg className={`${className} fill-current`} viewBox="0 0 24 24">
+    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+  </svg>
+);
+
+const TwitterIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg className={`${className} fill-current`} viewBox="0 0 24 24">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 export interface Leader {
   name: string;
@@ -15,17 +27,37 @@ export interface Leader {
   twitter?: string;
 }
 
-export function LeaderCard({ leader }: { leader: Leader }) {
+export interface Partner {
+  name: string;
+  title: string;
+  image: string;
+  initials?: string;
+  linkedinUrl?: string;
+  twitterUrl?: string;
+}
+
+/* Reusable Leader row card (Circle + Box side-by-side, mirrored Co-Founder layout) */
+export function LeaderRowCard({
+  leader,
+  reversed = false,
+}: {
+  leader: Leader;
+  reversed?: boolean;
+}) {
   return (
-    <div className="flex flex-col items-center text-center space-y-6 w-full max-w-md mx-auto group">
-      {/* Large Circular Image (220px-240px diameter) */}
-      <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl overflow-hidden bg-slate-100 shrink-0 transition-transform duration-300 group-hover:scale-[1.02] ring-1 ring-slate-200/80">
+    <div
+      className={`flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 w-full max-w-4xl mx-auto ${
+        reversed ? "md:flex-row-reverse" : ""
+      }`}
+    >
+      {/* Large Circle Photo (220-260px desktop) */}
+      <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-4 border-white shadow-xl overflow-hidden bg-slate-100 shrink-0 ring-1 ring-slate-200/80 group transition-transform duration-300 hover:scale-[1.02]">
         {leader.image ? (
           <Image
             src={leader.image}
             alt={leader.name}
             fill
-            sizes="(max-width: 640px) 192px, 240px"
+            sizes="(max-width: 640px) 192px, 256px"
             className="object-cover object-top"
           />
         ) : (
@@ -35,10 +67,10 @@ export function LeaderCard({ leader }: { leader: Leader }) {
         )}
       </div>
 
-      {/* Rectangular Info Box */}
-      <div className="w-full bg-white border border-slate-200/80 rounded-2xl p-6 md:p-7 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center text-center space-y-3">
+      {/* Rectangular Info Box (Compact height, vertically centered) */}
+      <div className="flex-1 w-full bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-center space-y-3 min-h-[140px] md:min-h-[160px] text-center md:text-left">
         {/* Name */}
-        <h4 className="text-base sm:text-lg font-black text-gray-950 uppercase tracking-tight leading-snug">
+        <h4 className="text-lg sm:text-xl font-black text-gray-950 uppercase tracking-tight leading-snug">
           {leader.name}
         </h4>
 
@@ -48,12 +80,14 @@ export function LeaderCard({ leader }: { leader: Leader }) {
         </p>
 
         {/* Short Bio / Tagline */}
-        <p className="text-xs font-semibold text-slate-600 leading-relaxed max-w-sm">
-          {leader.bio || "Pioneering AI education & building production-ready LLM systems."}
-        </p>
+        {leader.bio && (
+          <p className="text-xs font-semibold text-slate-600 leading-relaxed">
+            {leader.bio}
+          </p>
+        )}
 
         {/* Social / Link Icons */}
-        <div className="flex items-center justify-center gap-3 pt-2">
+        <div className="flex items-center justify-center md:justify-start gap-3 pt-1">
           {leader.linkedin && (
             <a
               href={leader.linkedin}
@@ -62,7 +96,7 @@ export function LeaderCard({ leader }: { leader: Leader }) {
               className="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
               aria-label={`${leader.name} LinkedIn`}
             >
-              <Linkedin className="w-4 h-4" />
+              <LinkedInIcon />
             </a>
           )}
           {leader.twitter && (
@@ -73,7 +107,70 @@ export function LeaderCard({ leader }: { leader: Leader }) {
               className="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
               aria-label={`${leader.name} Twitter`}
             >
-              <Twitter className="w-4 h-4" />
+              <TwitterIcon />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* Reusable Partner Card: Two separate, distinct rectangular boxes (sharp rounded-none corners, exact matching width) stacked vertically with gap */
+export function PartnerCard({ partner }: { partner: Partner }) {
+  return (
+    <div className="flex flex-col space-y-4 w-full max-w-[200px] sm:max-w-[220px] mx-auto group">
+      {/* Upper Box: Standalone Photo Box (sharp corners - rounded-none) */}
+      <div className="relative w-full h-[200px] sm:h-[220px] rounded-none overflow-hidden border border-slate-200/80 bg-black shadow-xs group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-300 shrink-0">
+        {partner.image ? (
+          <Image
+            src={partner.image}
+            alt={partner.name}
+            fill
+            sizes="220px"
+            className="object-cover object-top"
+          />
+        ) : (
+          <span className="flex items-center justify-center w-full h-full text-xl font-extrabold text-slate-400">
+            {partner.initials}
+          </span>
+        )}
+      </div>
+
+      {/* Lower Box: Standalone Info Box (sharp corners - rounded-none, strictly matching photo box width) */}
+      <div className="w-full bg-white border border-slate-200/80 rounded-none p-3.5 sm:p-4 shadow-xs group-hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center space-y-1.5 min-h-[90px] sm:min-h-[100px]">
+        {/* Name */}
+        <h5 className="text-[10px] sm:text-[11px] font-black text-gray-950 uppercase tracking-tight leading-tight max-w-full text-center">
+          {partner.name}
+        </h5>
+
+        {/* Designation/Title in Accent Red */}
+        <p className="text-[8.5px] sm:text-[9px] font-extrabold text-[#EE1C25] uppercase tracking-wider leading-snug max-w-full text-center">
+          {partner.title}
+        </p>
+
+        {/* Social Link Icons Row */}
+        <div className="flex items-center justify-center gap-2 pt-1">
+          {partner.linkedinUrl && (
+            <a
+              href={partner.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-6 h-6 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              aria-label={`${partner.name} LinkedIn`}
+            >
+              <LinkedInIcon className="w-3 h-3" />
+            </a>
+          )}
+          {partner.twitterUrl && (
+            <a
+              href={partner.twitterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-6 h-6 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
+              aria-label={`${partner.name} Twitter`}
+            >
+              <TwitterIcon className="w-3 h-3" />
             </a>
           )}
         </div>
@@ -104,60 +201,99 @@ export default function TeamPreview() {
     },
   ];
 
-  const partnerAvatars = [
-    { initials: "AC", image: "/mentors/arun.webp",   name: "Arun Chinnachamy", role: "CTO, Hyperleap.ai" },
-    { initials: "GK", image: "/mentors/gopi.webp",   name: "Gopi Krishna",     role: "CEO, Rava.ai" },
-    { initials: "KB", image: "/mentors/kiran.webp",  name: "Kiran Babu",       role: "Founder, DotCheckout" },
-    { initials: "RM", image: "/mentors/raja.webp",   name: "Raja Mamidi",      role: "Lead, AgentAnalytics" },
-    { initials: "RR", image: "/mentors/ranjan.webp", name: "Ranjan Relan",     role: "AI Consultant" },
+  const partnerAvatars: Partner[] = [
+    {
+      initials: "AC",
+      image: "/mentors/arun.webp",
+      name: "Arun Chinnachamy",
+      title: "Founder, ResidualHue",
+      linkedinUrl: "https://www.linkedin.com/in/arun-chinnachamy/",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "GK",
+      image: "/mentors/gopi.webp",
+      name: "Gopi Krishna",
+      title: "Founder & CEO, hyperleap.ai",
+      linkedinUrl: "https://www.linkedin.com/in/gopil/",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "KB",
+      image: "/mentors/kiran.webp",
+      name: "Kiran Babu",
+      title: "Co-Founder & CEO, rava.ai",
+      linkedinUrl: "https://www.linkedin.com/in/yerranagu/",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "RM",
+      image: "/mentors/raja.webp",
+      name: "Raja Mamidi",
+      title: "Co-Founder, DotCheckout",
+      linkedinUrl: "https://www.linkedin.com/in/tmpraneethnaidu/",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "RR",
+      image: "/mentors/ranjan.webp",
+      name: "Ranjan Relan",
+      title: "Founder & CEO, AgentAnalytics.AI",
+      linkedinUrl: "https://www.linkedin.com/in/ranjan-relan/",
+      twitterUrl: "https://twitter.com",
+    },
   ];
 
-  const mentorAvatars = [
-    { initials: "VP", image: "/images/mentor_vikas_v2.png",  name: "Vikas Patel",   role: "ML Consultant" },
-    { initials: "SP", image: "/images/mentor_sagnik_v2.png", name: "Sagnik Pal",    role: "Senior AI Architect" },
-    { initials: "AV", image: "/images/mentor_akhil_v2.png",  name: "Akhil Vydyula", role: "Agent Specialist" },
-    { initials: "AP", image: "/images/mentor_anshu_v2.png",  name: "Anshu Pandey",  role: "NLP Researcher" },
-    { initials: "HK", image: "/images/mentor_harish_v2.png", name: "Harish Kumar",  role: "RAG Architect" },
-    { initials: "MB", image: "/images/mentor_mohit.png",     name: "Mohit Bhatia",  role: "AI Mentor" },
+  const mentorAvatars: Partner[] = [
+    {
+      initials: "VP",
+      image: "/images/mentor_vikas_v2.png",
+      name: "Vikas Patel",
+      title: "ML Consultant",
+      linkedinUrl: "https://linkedin.com",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "SP",
+      image: "/images/mentor_sagnik_v2.png",
+      name: "Sagnik Pal",
+      title: "Senior AI Architect",
+      linkedinUrl: "https://linkedin.com",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "AV",
+      image: "/images/mentor_akhil_v2.png",
+      name: "Akhil Vydyula",
+      title: "Agent Specialist",
+      linkedinUrl: "https://linkedin.com",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "AP",
+      image: "/images/mentor_anshu_v2.png",
+      name: "Anshu Pandey",
+      title: "NLP Researcher",
+      linkedinUrl: "https://linkedin.com",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "HK",
+      image: "/images/mentor_harish_v2.png",
+      name: "Harish Kumar",
+      title: "RAG Architect",
+      linkedinUrl: "https://linkedin.com",
+      twitterUrl: "https://twitter.com",
+    },
+    {
+      initials: "MB",
+      image: "/images/mentor_mohit.png",
+      name: "Mohit Bhatia",
+      title: "AI Mentor",
+      linkedinUrl: "https://linkedin.com",
+      twitterUrl: "https://twitter.com",
+    },
   ];
-
-  /* Reusable small person card (partner/mentor rows) */
-  function SmallPersonCard({ person, isOffset }: { person: typeof partnerAvatars[0]; isOffset: boolean }) {
-    return (
-      <div
-        className={`w-full max-w-[240px] mx-auto border border-neutral-900 bg-black rounded-2xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col ${
-          isOffset ? "lg:translate-y-8" : ""
-        }`}
-        style={{ height: "320px" }}
-      >
-        {/* Image portion: fills most of the card */}
-        <div className="relative w-full bg-black" style={{ height: "230px" }}>
-          {person.image ? (
-            <Image
-              src={person.image}
-              alt={person.name}
-              fill
-              sizes="240px"
-              className="object-cover object-top"
-            />
-          ) : (
-            <span className="flex items-center justify-center w-full h-full text-xl font-extrabold text-slate-400">
-              {person.initials}
-            </span>
-          )}
-        </div>
-        {/* Text portion */}
-        <div className="flex-1 flex flex-col items-center justify-center px-3 py-3 bg-black text-center border-t border-neutral-900">
-          <h5 className="text-[11px] font-black text-white uppercase tracking-tight leading-snug">
-            {person.name}
-          </h5>
-          <p className="text-[9px] font-extrabold text-[#EE1C25] uppercase tracking-wider mt-1">
-            {person.role}
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <section className="w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 relative z-10 font-heading select-none">
@@ -170,16 +306,18 @@ export default function TeamPreview() {
           </h3>
         </div>
 
-        {/* ================= SECTION 1: FOUNDERS (REUSABLE LEADERCARDS) ================= */}
-        <div className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start justify-center">
-            {founders.map((founder, idx) => (
-              <LeaderCard key={idx} leader={founder} />
-            ))}
-          </div>
+        {/* ================= SECTION 1: FOUNDERS (MIRRORED HORIZONTAL PAIRS) ================= */}
+        <div className="w-full space-y-16 md:space-y-20">
+          {founders.map((founder, idx) => (
+            <LeaderRowCard
+              key={idx}
+              leader={founder}
+              reversed={idx % 2 === 1} // Row 1: circle-left/box-right, Row 2: box-left/circle-right
+            />
+          ))}
         </div>
 
-        {/* ================= SECTION 2: INDUSTRY PARTNERS (ZIGZAG) ================= */}
+        {/* ================= SECTION 2: INDUSTRY PARTNERS (TWO SHARP MATCHING BOXES PER PERSON) ================= */}
         <div className="w-full pt-4">
           <hr className="border-gray-200/60 mb-12" />
           
@@ -201,14 +339,14 @@ export default function TeamPreview() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 items-start pb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-start justify-items-center">
             {partnerAvatars.map((partner, idx) => (
-              <SmallPersonCard key={idx} person={partner} isOffset={idx % 2 === 1} />
+              <PartnerCard key={idx} partner={partner} />
             ))}
           </div>
         </div>
 
-        {/* ================= SECTION 3: EXPERT NETWORK (ZIGZAG 6 CARDS) ================= */}
+        {/* ================= SECTION 3: EXPERT NETWORK (TWO SHARP MATCHING BOXES PER PERSON) ================= */}
         <div className="w-full pt-4">
           <hr className="border-gray-200/60 mb-12" />
           
@@ -230,9 +368,9 @@ export default function TeamPreview() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-start pb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 items-start justify-items-center">
             {mentorAvatars.map((mentor, idx) => (
-              <SmallPersonCard key={idx} person={mentor} isOffset={idx % 2 === 1} />
+              <PartnerCard key={idx} partner={mentor} />
             ))}
           </div>
         </div>
