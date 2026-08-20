@@ -6,42 +6,42 @@ const programPartners = [
   {
     name: "T-Hub",
     desc: "India's pioneering innovation ecosystem, driving startup growth and technology integration.",
-    logo: "/assets/t-hub.png"
+    logo: "/in/assets/t-hub.png"
   },
   {
     name: "MATH",
     desc: "Machine Learning and Artificial Intelligence Technology Hub, fostering deep-tech excellence.",
-    logo: "/assets/math.png"
+    logo: "/in/assets/math.png"
   },
   {
     name: "Department of Science & Technology",
     desc: "DST, Government of India, promoting scientific research and technological initiatives.",
-    logo: "/assets/dst.png"
+    logo: "/in/assets/dst.png"
   }
 ];
 
 const ecosystemPartners = [
-  { name: "Uber", logo: "/assets/uber.png" },
-  { name: "TASK Telangana", logo: "/assets/task.png" },
-  { name: "Bharat Dynamics Limited", logo: "/assets/bdl.png" },
-  { name: "AI Alliance Network", logo: "/assets/ai_alliance.png" },
-  { name: "SRM University AP", logo: "/assets/srm.png" },
-  { name: "ICT Academy", logo: "/assets/ict.png" },
-  { name: "BSNL Academy", logo: "/assets/bsnl.png" },
-  { name: "Rava AI", logo: "/assets/rava.png" },
-  { name: "HyperLeap", logo: "/assets/hyperleap.png" },
-  { name: "AgentAnalytics AI", logo: "/assets/agent_analytics.png" },
-  { name: "Jaipuria Group", logo: "/assets/jaipuria.png" },
-  { name: "TCOE", logo: "/assets/tcoe.png" },
-  { name: "AVPL", logo: "/assets/avpl.png" },
-  { name: "Mapua University", logo: "/assets/mapua.png" },
-  { name: "DOT India", logo: "/assets/dot.png" },
-  { name: "ITU WTSA", logo: "/assets/itu.png" },
-  { name: "STAR Academy", logo: "/assets/star.png" },
-  { name: "Computer Society of India", logo: "/assets/csi.png" },
-  { name: "Area 51", logo: "/assets/area51.png" },
-  { name: "RFgen", logo: "/assets/rfgen.png" },
-  { name: "Acharya Nagarjuna University", logo: "/assets/anu.png" }
+  { name: "Uber", logo: "/in/assets/uber.png" },
+  { name: "TASK Telangana", logo: "/in/assets/task.png" },
+  { name: "Bharat Dynamics Limited", logo: "/in/assets/bdl.png" },
+  { name: "AI Alliance Network", logo: "/in/assets/ai_alliance.png" },
+  { name: "SRM University AP", logo: "/in/assets/srm.png" },
+  { name: "ICT Academy", logo: "/in/assets/ict.png" },
+  { name: "BSNL Academy", logo: "/in/assets/bsnl.png" },
+  { name: "Rava AI", logo: "/in/assets/rava.png" },
+  { name: "HyperLeap", logo: "/in/assets/hyperleap.png" },
+  { name: "AgentAnalytics AI", logo: "/in/assets/agent_analytics.png" },
+  { name: "Jaipuria Group", logo: "/in/assets/jaipuria.png" },
+  { name: "TCOE", logo: "/in/assets/tcoe.png" },
+  { name: "AVPL", logo: "/in/assets/avpl.png" },
+  { name: "Mapua University", logo: "/in/assets/mapua.png" },
+  { name: "DOT India", logo: "/in/assets/dot.png" },
+  { name: "ITU WTSA", logo: "/in/assets/itu.png" },
+  { name: "STAR Academy", logo: "/in/assets/star.png" },
+  { name: "Computer Society of India", logo: "/in/assets/csi.png" },
+  { name: "Area 51", logo: "/in/assets/area51.png" },
+  { name: "RFgen", logo: "/in/assets/rfgen.png" },
+  { name: "Acharya Nagarjuna University", logo: "/in/assets/anu.png" }
 ];
 
 // Split ecosystem partners into 3 columns

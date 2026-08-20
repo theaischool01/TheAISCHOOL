@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from "react";
 
 interface SectionWrapperProps extends React.HTMLAttributes<HTMLElement> {
   tone: 'white' | 'tinted';

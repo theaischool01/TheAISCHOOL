@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Search, Download, ArrowLeft, Users, Calendar, Award, User, Phone, Mail, GraduationCap, Lightbulb } from 'lucide-react';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { Search, Download, ArrowLeft, Users, Calendar, Award, User, Phone, Mail, GraduationCap, Lightbulb } from "lucide-react";
+import Link from "next/link";
 
 interface HackathonRegistration {
   id: string;

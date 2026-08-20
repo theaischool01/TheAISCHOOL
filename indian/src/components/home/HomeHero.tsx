@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { useRegion } from "@/context/RegionContext";
+import { useRegion } from "@in/context/RegionContext";
 
 export default function HomeHero() {
   const { regionConfig } = useRegion();

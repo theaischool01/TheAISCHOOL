@@ -1,35 +1,35 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 
 const row1Partners = [
-  { name: 'Jaipuria Group', logo: '/assets/jaipuria.png' },
-  { name: 'TCOE India', logo: '/assets/tcoe.png' },
-  { name: 'AVPL International', logo: '/assets/avpl.png' },
-  { name: 'Mapúa University', logo: '/assets/mapua.png' },
-  { name: 'Rava.ai', logo: '/assets/rava.png' },
-  { name: 'Bharat Dynamics', logo: '/assets/bdl.png' },
-  { name: 'TASK Telangana', logo: '/assets/task.png' },
-  { name: 'T-Hub', logo: '/assets/t-hub.png' },
-  { name: 'MATH', logo: '/assets/math.png' },
-  { name: 'DST', logo: '/assets/dst.png' },
-  { name: 'DOT India', logo: '/assets/dot.png' },
-  { name: 'ITU WTSA', logo: '/assets/itu.png' },
+  { name: 'Jaipuria Group', logo: '/in/assets/jaipuria.png' },
+  { name: 'TCOE India', logo: '/in/assets/tcoe.png' },
+  { name: 'AVPL International', logo: '/in/assets/avpl.png' },
+  { name: 'Mapúa University', logo: '/in/assets/mapua.png' },
+  { name: 'Rava.ai', logo: '/in/assets/rava.png' },
+  { name: 'Bharat Dynamics', logo: '/in/assets/bdl.png' },
+  { name: 'TASK Telangana', logo: '/in/assets/task.png' },
+  { name: 'T-Hub', logo: '/in/assets/t-hub.png' },
+  { name: 'MATH', logo: '/in/assets/math.png' },
+  { name: 'DST', logo: '/in/assets/dst.png' },
+  { name: 'DOT India', logo: '/in/assets/dot.png' },
+  { name: 'ITU WTSA', logo: '/in/assets/itu.png' },
 ];
 
 const row2Partners = [
-  { name: 'Computer Society of India', logo: '/assets/csi.png' },
-  { name: 'Area 51', logo: '/assets/area51.png' },
-  { name: 'RFgen', logo: '/assets/rfgen.png' },
-  { name: 'Hyperleap', logo: '/assets/hyperleap.png' },
-  { name: 'AgentAnalytics.ai', logo: '/assets/agentanalytics.png' },
-  { name: 'Acharya Narendra Dev College', logo: '/assets/andc.png' },
-  { name: 'BSNL Academy', logo: '/assets/bsnl.png' },
-  { name: 'STAR Academy', logo: '/assets/star.png' },
-  { name: 'Uber', logo: '/assets/uber.png' },
-  { name: 'AI Alliance Network', logo: '/assets/ai_alliance.png' },
-  { name: 'SRM University AP', logo: '/assets/srm.png' },
-  { name: 'ICT Academy', logo: '/assets/ict.png' },
+  { name: 'Computer Society of India', logo: '/in/assets/csi.png' },
+  { name: 'Area 51', logo: '/in/assets/area51.png' },
+  { name: 'RFgen', logo: '/in/assets/rfgen.png' },
+  { name: 'Hyperleap', logo: '/in/assets/hyperleap.png' },
+  { name: 'AgentAnalytics.ai', logo: '/in/assets/agentanalytics.png' },
+  { name: 'Acharya Narendra Dev College', logo: '/in/assets/andc.png' },
+  { name: 'BSNL Academy', logo: '/in/assets/bsnl.png' },
+  { name: 'STAR Academy', logo: '/in/assets/star.png' },
+  { name: 'Uber', logo: '/in/assets/uber.png' },
+  { name: 'AI Alliance Network', logo: '/in/assets/ai_alliance.png' },
+  { name: 'SRM University AP', logo: '/in/assets/srm.png' },
+  { name: 'ICT Academy', logo: '/in/assets/ict.png' },
 ];
 
 export default function PartnerMarquee() {

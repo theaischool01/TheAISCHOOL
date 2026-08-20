@@ -1,9 +1,9 @@
 'use client';
-import React from 'react';
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Sparkles, Clock, ArrowRight, User } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
+import { Sparkles, Clock, ArrowRight, User } from "lucide-react";
+import { motion } from "framer-motion";
 
 export interface BlogPost {
   slug: string;

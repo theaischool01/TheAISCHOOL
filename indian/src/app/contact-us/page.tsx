@@ -1,9 +1,9 @@
 'use client';
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Clock, ShieldCheck } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { useRegion } from '@/context/RegionContext';
+import React, { useState } from "react";
+import { Mail, Phone, MapPin, Send, Clock, ShieldCheck } from "lucide-react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
+import { useRegion } from "@in/context/RegionContext";
 
 export const dynamic = 'force-dynamic';
 

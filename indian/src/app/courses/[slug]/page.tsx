@@ -1,9 +1,9 @@
 'use client';
 export const dynamic = 'force-dynamic';
-import React, { useState, use } from 'react';
-import { Clock, Award, ShieldCheck, CheckCircle, ChevronDown, ChevronUp, Users, Smartphone, BarChart, Sparkles, ArrowLeft } from 'lucide-react';
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import React, { useState, use } from "react";
+import { Clock, Award, ShieldCheck, CheckCircle, ChevronDown, ChevronUp, Users, Smartphone, BarChart, Sparkles, ArrowLeft } from "lucide-react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
 
 // 1. Centralized Data Architecture to support every course automatically
 const coursesData: Record<string, any> = {

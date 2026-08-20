@@ -1,9 +1,9 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { MapPin, Mail, Phone } from 'lucide-react';
-import { useRegion } from '@/context/RegionContext';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { MapPin, Mail, Phone } from "lucide-react";
+import { useRegion } from "@in/context/RegionContext";
 
 export default function Footer() {
   const { regionConfig } = useRegion();
@@ -88,9 +88,9 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-sm font-black tracking-wider uppercase text-white">Company</h4>
             <ul className="space-y-2.5 text-sm font-semibold text-neutral-400">
-              <li><Link href="/in/about-us" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/in/career" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/in/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
+              <li><Link href="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/career" className="hover:text-white transition-colors">Careers</Link></li>
+              <li><Link href="/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
               <li><a href="#register" className="hover:text-white transition-colors">Earn with us</a></li>
             </ul>
           </div>
@@ -101,7 +101,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm font-semibold text-neutral-300">
               {courses.map((course, idx) => (
                 <li key={idx}>
-                  <Link href={`/in${course.href}`} className="hover:text-white transition-colors">
+                  <Link href={course.href} className="hover:text-white transition-colors">
                     {course.label}
                   </Link>
                 </li>

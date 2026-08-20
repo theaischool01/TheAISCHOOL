@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import HomePage from "@/components/home/HomePage";
-import { getSupportedRegions } from "@/lib/region";
+import HomePage from "@in/components/home/HomePage";
+import { getSupportedRegions } from "@in/lib/region";
 
 export async function generateMetadata(): Promise<Metadata> {
   const supported = getSupportedRegions();

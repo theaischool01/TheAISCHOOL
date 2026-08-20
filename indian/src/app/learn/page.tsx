@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
 import { BookOpen, GraduationCap, ArrowRight, Code, Users } from "lucide-react";
 
 interface Course {

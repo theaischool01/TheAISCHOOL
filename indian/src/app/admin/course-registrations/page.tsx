@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Search, Download, Eye, ArrowLeft, Users } from 'lucide-react';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { Search, Download, Eye, ArrowLeft, Users } from "lucide-react";
+import Link from "next/link";
 
 interface Course {
   id: string;

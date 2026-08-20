@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import { 
   ArrowRight, UploadCloud, FileText, Sparkles, Brain, Cpu, 
   BarChart3, GraduationCap, CheckCircle2, 
   XCircle, Loader2, Globe, Mail, Award, Zap, TrendingUp,
   Star, ChevronRight, Info
-} from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+} from "lucide-react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
 
 // ─── STATIC DATA ──────────────────────────────────────────────────────────────
 

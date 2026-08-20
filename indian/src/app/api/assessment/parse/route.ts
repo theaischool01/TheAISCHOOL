@@ -1,8 +1,8 @@
 
-import { NextResponse } from 'next/server';
-import mammoth from 'mammoth';
-import { rateLimit } from '@/lib/rateLimit';
-import { z } from 'zod';
+import { NextResponse } from "next/server";
+import mammoth from "mammoth";
+import { rateLimit } from "@in/lib/rateLimit";
+import { z } from "zod";
 const pdf = require('pdf-parse');
 
 const parseUrlSchema = z.object({

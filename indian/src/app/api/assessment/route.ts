@@ -1,9 +1,9 @@
-import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import { getAdminSession } from '@/lib/auth';
-import { rateLimit } from '@/lib/rateLimit';
-import { z } from 'zod';
-import { sendAssessmentEmail } from '@/lib/email';
+import { NextResponse } from "next/server";
+import { prisma } from "@in/lib/prisma";
+import { getAdminSession } from "@in/lib/auth";
+import { rateLimit } from "@in/lib/rateLimit";
+import { z } from "zod";
+import { sendAssessmentEmail } from "@in/lib/email";
 
 export const dynamic = 'force-dynamic';
 
@@ -73,7 +73,7 @@ export async function GET(req: Request) {
     let enrolledLeadsCount = 0;
     const courseCounts: Record<string, number> = {};
 
-    leads.forEach((l) => {
+    leads.forEach((l: any) => {
       if (l.leadScore && l.leadScore >= 90) hotLeadsCount++;
       if (l.status === 'ENROLLED') enrolledLeadsCount++;
 
@@ -84,7 +84,7 @@ export async function GET(req: Request) {
         }
         const result = session.results[0];
         if (result && result.recommendations) {
-          const primary = result.recommendations.find((r) => r.type === 'PRIMARY');
+          const primary = result.recommendations.find((r: any) => r.type === 'PRIMARY');
           if (primary && primary.course) {
             courseCounts[primary.course.title] = (courseCounts[primary.course.title] || 0) + 1;
           }
@@ -214,16 +214,16 @@ export async function POST(req: Request) {
       'Business & Growth': (interestMap.Business || 0) * 0.7,
     };
 
-    const sortedCategories = Object.entries(categoryScores).sort((a, b) => b[1] - a[1]);
+    const sortedCategories = Object.entries(categoryScores).sort((a: any, b: any) => b[1] - a[1]);
     const topCategory = sortedCategories[0][0];
 
-    const matchedCourses = activeCourses.filter((c) => c.category === topCategory);
+    const matchedCourses = activeCourses.filter((c: any) => c.category === topCategory);
     const primaryCourse = matchedCourses[0] || activeCourses[0];
-    const secondaryCourses = activeCourses.filter((c) => c.id !== primaryCourse.id).slice(0, 3);
+    const secondaryCourses = activeCourses.filter((c: any) => c.id !== primaryCourse.id).slice(0, 3);
 
     // Database transaction block
     console.log('[AssessmentPipeline] Executing database transaction...');
-    const txResult = await prisma.$transaction(async (tx) => {
+    const txResult = await prisma.$transaction(async (tx: any) => {
       // Upsert Lead
       const lead = await tx.assessmentLead.upsert({
         where: { email },

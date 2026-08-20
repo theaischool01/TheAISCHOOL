@@ -1,25 +1,25 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
 
 // Section Components
-import HomeHero from "@/components/home/HomeHero";
-import PartnersSectionIN from "@/components/home/PartnersSection";
-import LearningJourney from "@/components/home/LearningJourney";
-import FlagshipLearningFrameworks from "@/components/home/FlagshipLearningFrameworks";
-import EcosystemOrbit from "@/components/home/EcosystemOrbit";
-import AssessmentJourney from "@/components/home/AssessmentJourney";
-import CourseSnapshotIN from "@/components/home/CourseSnapshot";
-import WorldsLargestAIHackathon from "@/components/home/WorldsLargestAIHackathon";
-import TeamPreview from "@/components/home/TeamPreview";
-import GoogleReviews from "@/components/home/GoogleReviews";
-import RegistrationForm from "@/components/home/RegistrationForm";
+import HomeHero from "@in/components/home/HomeHero";
+import PartnersSectionIN from "@in/components/home/PartnersSection";
+import LearningJourney from "@in/components/home/LearningJourney";
+import FlagshipLearningFrameworks from "@in/components/home/FlagshipLearningFrameworks";
+import EcosystemOrbit from "@in/components/home/EcosystemOrbit";
+import AssessmentJourney from "@in/components/home/AssessmentJourney";
+import CourseSnapshotIN from "@in/components/home/CourseSnapshot";
+import WorldsLargestAIHackathon from "@in/components/home/WorldsLargestAIHackathon";
+import TeamPreview from "@in/components/home/TeamPreview";
+import GoogleReviews from "@in/components/home/GoogleReviews";
+import RegistrationForm from "@in/components/home/RegistrationForm";
 
-import { RegionProvider, useRegion } from "@/context/RegionContext";
-import { HOME_LAYOUTS } from "@/config/homeLayouts";
-import { SectionWrapper } from "@/components/shared/SectionWrapper";
+import { RegionProvider, useRegion } from "@in/context/RegionContext";
+import { HOME_LAYOUTS } from "@in/config/homeLayouts";
+import { SectionWrapper } from "@in/components/shared/SectionWrapper";
 
 function MainLayout() {
   const { currentRegion, layoutConfig, regionConfig } = useRegion();

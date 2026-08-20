@@ -1,5 +1,5 @@
-import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
-import { prisma } from '@/lib/prisma';
+import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { prisma } from "@in/lib/prisma";
 
 // Setup AWS SES Client
 const sesClient = new SESClient({

@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
-import { useRegion } from "@/context/RegionContext";
-import { REGIONS } from "@/config/regions";
-import { getSupportedRegions } from "@/lib/region";
+import { ChevronDown, ChevronRight, Menu, X, ArrowUpRight } from "lucide-react";
+import RegionFlagSwitcher from "@in/components/RegionFlagSwitcher";
+import { useRegion } from "@in/context/RegionContext";
+import { REGIONS } from "@in/config/regions";
+import { getSupportedRegions } from "@in/lib/region";
 
 interface Course {
   name: string;
@@ -198,7 +199,7 @@ export default function Header() {
             <ul className="flex items-center gap-6 list-none m-0 p-0">
               <li className="relative group/nav-item">
                 <a
-                  href="/in/learn"
+                  href="/learn"
                   className={`flex items-center gap-1 px-3 py-2 text-sm font-bold hover:text-[#C1121C] hover:bg-neutral-50 rounded-lg transition-all duration-200 relative ${
                     pathname.includes("/learn") || pathname.includes("/courses/") ? "text-[#C1121C]" : "text-[#171717]"
                   }`}
@@ -236,7 +237,7 @@ export default function Header() {
                         {activeCourses.map((course, idx) => (
                           <a
                             key={idx}
-                            href={`/in${course.url}`}
+                            href={course.url}
                             className="p-4 rounded-lg bg-neutral-50 hover:bg-red-50/40 border-l-3 border-transparent hover:border-[#C1121C] text-sm font-medium text-[#171717] hover:text-[#C1121C] transition-all duration-200 shadow-sm"
                           >
                             {course.name}
@@ -249,7 +250,7 @@ export default function Header() {
               </li>
               {regionConfig.navigation.map((nav, idx) => {
                 if (nav.url.endsWith("/learn")) return null; // Already rendered with mega menu
-                const isActive = pathname === nav.url || (nav.url !== "/" && nav.url !== "/in" && pathname.startsWith(nav.url));
+                const isActive = pathname === nav.url || (nav.url !== "/" && pathname.startsWith(nav.url));
                 return (
                   <li key={idx}>
                     <a 
@@ -273,35 +274,7 @@ export default function Header() {
           <div className="flex items-center gap-5">
             {/* Desktop Action Buttons */}
 
-            <div className="flex items-center gap-2">
-              {getSupportedRegions().includes("us") && currentRegion !== "us" && (
-                <img
-                  src="https://flagcdn.com/w40/us.png"
-                  alt="USA Flag"
-                  onClick={() => handleRegionChange("us")}
-                  className="w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform opacity-80 hover:opacity-100"
-                  title="United States"
-                />
-              )}
-              {getSupportedRegions().includes("ph") && currentRegion !== "ph" && (
-                <img
-                  src="https://flagcdn.com/w40/ph.png"
-                  alt="Philippines Flag"
-                  onClick={() => handleRegionChange("ph")}
-                  className="w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform opacity-80 hover:opacity-100"
-                  title="Philippines"
-                />
-              )}
-              {currentRegion !== "in" && (
-                <img
-                  src="https://flagcdn.com/w40/in.png"
-                  alt="India Flag"
-                  onClick={() => handleRegionChange("in")}
-                  className="w-7 rounded-sm shadow-sm hover:scale-105 cursor-pointer transition-transform opacity-80 hover:opacity-100"
-                  title="India"
-                />
-              )}
-            </div>
+            <RegionFlagSwitcher />
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

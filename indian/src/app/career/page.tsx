@@ -1,10 +1,10 @@
 'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Briefcase, MapPin, Clock, DollarSign, ArrowUpRight, Sparkles, Building2, Terminal, ShieldCheck } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import React, { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Briefcase, MapPin, Clock, DollarSign, ArrowUpRight, Sparkles, Building2, Terminal, ShieldCheck } from "lucide-react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
 
 export const dynamic = 'force-dynamic';
 

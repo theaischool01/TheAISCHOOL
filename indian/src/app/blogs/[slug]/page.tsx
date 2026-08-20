@@ -1,10 +1,10 @@
 'use client';
 export const dynamic = 'force-dynamic';
-import React, { use } from 'react';
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import React, { use } from "react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
 import { BLOGS_DATA } from "../page";
-import { Clock, ArrowLeft, Send, Link2 } from 'lucide-react';
+import { Clock, ArrowLeft, Send, Link2 } from "lucide-react";
 
 const articlesContent: Record<string, { subtitle: string; contentHtml: React.ReactNode }> = {
   "can-ai-generate-code-faster-than-humans": {

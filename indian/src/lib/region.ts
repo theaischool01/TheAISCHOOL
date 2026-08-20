@@ -1,4 +1,4 @@
-import { REGIONS, RegionConfig } from "@/config/regions";
+import { REGIONS, RegionConfig } from "@in/config/regions";
 
 const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || "in";
 

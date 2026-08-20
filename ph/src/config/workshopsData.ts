@@ -1,0 +1,1589 @@
+// Central Source of Truth for Workshops & Course Detail Pages
+// TODO: confirm with content team - All workshop copy & modules verified for Philippines cohort
+
+export interface WorkshopTool {
+  name: string;
+  category: string;
+  description: string;
+}
+
+export interface WorkshopModule {
+  moduleNumber: string;
+  title: string;
+  description: string;
+  keyTakeaways: string[];
+}
+
+export interface WorkshopAudience {
+  title: string;
+  description: string;
+}
+
+export interface WorkshopFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface WorkshopData {
+  id: string;
+  slug: string;
+  title: string;
+  category: "GenAI" | "Data & Analytics" | "Cybersecurity" | "Development";
+  badge: string;
+  duration: string;
+  level: string;
+  format: string;
+  shortDescription: string;
+  overview: string;
+  theme: {
+    accentColor: string;
+    badgeBg: string;
+    badgeText: string;
+    gradientFrom: string;
+    gradientTo: string;
+    glowColor: string;
+  };
+  stats: {
+    handsOnPercent: string;
+    projectsCount: string;
+    rating: string;
+    totalLearners: string;
+  };
+  tools: WorkshopTool[];
+  whatYoullLearn: WorkshopModule[];
+  whoItsFor: WorkshopAudience[];
+  certificate: {
+    title: string;
+    skills: string[];
+    description: string;
+  };
+  faqs: WorkshopFAQ[];
+}
+
+export const WORKSHOPS_DATA: WorkshopData[] = [
+  {
+    id: "genai-101",
+    slug: "genai-101",
+    title: "GenAI 101",
+    category: "GenAI",
+    badge: "⭐ Most Popular",
+    duration: "6 hrs",
+    level: "Beginners – Advance",
+    format: "Interactive Masterclass",
+    shortDescription:
+      "The essential foundational workshop to master Generative AI tools, prompt principles, and AI-driven productivity.",
+    overview:
+      "GenAI 101 is designed for professionals, entrepreneurs, and creators seeking a fast, practical entry into Generative AI. Understand how Large Language Models work under the hood, master top AI applications like ChatGPT and Claude, and acquire foundational prompt techniques to save 10+ hours every week.",
+    theme: {
+      accentColor: "#EE1C25",
+      badgeBg: "bg-red-500/10",
+      badgeText: "text-[#EE1C25]",
+      gradientFrom: "from-red-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(238, 28, 37, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "85%",
+      projectsCount: "5+",
+      rating: "4.9/5",
+      totalLearners: "2,400+",
+    },
+    // TODO: confirm with content team for GenAI 101 tool list
+    tools: [
+      { name: "ChatGPT (GPT-4o)", category: "LLM", description: "Advanced conversational reasoning & drafting" },
+      { name: "Claude 3.5 Sonnet", category: "LLM", description: "Complex document analysis & coding support" },
+      { name: "Midjourney v6", category: "Image Gen", description: "Photorealistic AI visual creation" },
+      { name: "Perplexity AI", category: "Search", description: "Real-time AI research & citation retrieval" },
+      { name: "ElevenLabs", category: "Voice AI", description: "High-fidelity AI voice synthesis" },
+      { name: "DALL-E 3", category: "Image Gen", description: "Prompt-driven graphic generation" },
+    ],
+    // TODO: confirm with content team for GenAI 101 modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "LLM & Transformer Architecture Explained",
+        description: "Demystify tokens, context windows, and generative model behavior without technical jargon.",
+        keyTakeaways: [
+          "Understand how LLMs predict next-tokens and handle context limits",
+          "Differentiate between GPT-4o, Claude 3.5, Gemini, and open models",
+          "Identify ideal use cases for text, image, and voice models",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Foundational Prompting & Persona Building",
+        description: "Learn structural prompt design to eliminate vagueness and get exact, reliable outputs.",
+        keyTakeaways: [
+          "Master System Prompts, User Prompts, and Context Framing",
+          "Build specialized AI persona prompts for role-specific tasks",
+          "Reduce model hallucinations with grounding constraints",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Multimodal AI (Visual, Voice & Video)",
+        description: "Expand beyond text to generate professional marketing graphics, voiceovers, and slides.",
+        keyTakeaways: [
+          "Generate brand visuals with Midjourney & DALL-E 3",
+          "Create localized voiceovers using ElevenLabs audio models",
+          "Synthesize complex PDF reports into actionable executive summaries",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Daily Workflow Automation & Productivity",
+        description: "Integrate AI shortcuts directly into your daily email, document, and research routines.",
+        keyTakeaways: [
+          "Automate meeting summaries and action-item generation",
+          "Speed up email drafting and tone adaptation by 5x",
+          "Establish personal AI tool stacks tailored to your domain",
+        ],
+      },
+    ],
+    // TODO: confirm with content team for GenAI 101 audience
+    whoItsFor: [
+      {
+        title: "Business Professionals & Managers",
+        description: "Accelerate daily reporting, communication, and strategy drafting using AI assistants.",
+      },
+      {
+        title: "Content Creators & Marketers",
+        description: "Generate copy, social assets, and campaign ideas in minutes instead of hours.",
+      },
+      {
+        title: "Students & Educators",
+        description: "Upgrade research capabilities, note synthesis, and structured learning workflows.",
+      },
+      {
+        title: "Entrepreneurs & Freelancers",
+        description: "Scale business operations with a lean, AI-enhanced solo workflow.",
+      },
+    ],
+    certificate: {
+      title: "Certified Generative AI Practitioner (Level 1)",
+      skills: ["Prompt Engineering", "LLM Selection", "Multimodal AI", "Workflow Automation"],
+      description: "Industry-recognized digital certificate verifiable on LinkedIn, backed by The AI School PH.",
+    },
+    // TODO: confirm with content team for GenAI 101 FAQs
+    faqs: [
+      {
+        question: "Do I need any prior coding or technical experience?",
+        answer: "No prior programming experience is required. GenAI 101 is built from the ground up for non-technical users and tech professionals alike.",
+      },
+      {
+        question: "Which specific AI tools will we use during the workshop?",
+        answer: "You will get hands-on experience with ChatGPT (GPT-4o), Claude 3.5 Sonnet, Midjourney, Perplexity AI, and ElevenLabs.",
+      },
+      {
+        question: "Will I receive a verified certificate after completing the workshop?",
+        answer: "Yes! Every participant receives a verified digital certificate endorsed by The AI School Philippines and downloadable for LinkedIn.",
+      },
+      {
+        question: "What hardware or software do I need to attend?",
+        answer: "A standard laptop (Windows, Mac, or Chromebook) with a stable internet connection and a modern browser (Chrome, Edge, Safari) is all you need.",
+      },
+      {
+        question: "How is this workshop different from watching free YouTube tutorials?",
+        answer: "This is an 80% practical, guided workshop with live feedback from tech leaders, real-world exercise files, and personalized feedback.",
+      },
+      {
+        question: "Can I apply these AI techniques immediately at my current job?",
+        answer: "Yes, all exercises focus on practical tasks like email drafting, document synthesis, research, and visual creation that apply directly to daily work.",
+      },
+    ],
+  },
+  {
+    id: "prompt-engineering-101",
+    slug: "prompt-engineering-101",
+    title: "Prompt Engineering 101",
+    category: "GenAI",
+    badge: "Core Skill",
+    duration: "6 hrs",
+    level: "Beginners – Advance",
+    format: "Hands-on Workshop",
+    shortDescription:
+      "Master chain-of-thought, zero/few-shot prompting, and automated prompt workflows for reliable LLM outputs.",
+    overview:
+      "Prompt Engineering 101 turns casual AI chatting into precision software instruction. Learn structural frameworks, system prompt engineering, chain-of-thought reasoning, and automated prompt templates to extract exact, predictable outputs from any AI model.",
+    theme: {
+      accentColor: "#3B82F6",
+      badgeBg: "bg-blue-500/10",
+      badgeText: "text-blue-500",
+      gradientFrom: "from-blue-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(59, 130, 246, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "90%",
+      projectsCount: "6+",
+      rating: "4.9/5",
+      totalLearners: "1,850+",
+    },
+    // TODO: confirm with content team for Prompt Engineering 101 tools
+    tools: [
+      { name: "OpenAI Playground", category: "API Environment", description: "Parameter tuning & system prompt testing" },
+      { name: "Claude Artifacts", category: "LLM Canvas", description: "Interactive document & code generation" },
+      { name: "PromptBase", category: "Marketplace", description: "Analyzing commercial prompt structures" },
+      { name: "LangChain Hub", category: "Prompt Repo", description: "Reusable enterprise prompt templates" },
+      { name: "System Prompt Studio", category: "Tooling", description: "Guardrail & constraint engineering" },
+      { name: "Automatic Prompt Optimizer", category: "AI Tool", description: "Automated prompt evaluation" },
+    ],
+    // TODO: confirm with content team for Prompt Engineering 101 modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "Anatomy of an Enterprise-Grade Prompt",
+        description: "Break down instructions into context, objective, output specifications, and negative constraints.",
+        keyTakeaways: [
+          "Understand Zero-Shot vs Few-Shot prompting patterns",
+          "Design strict XML/JSON formatting instructions for reliable API calls",
+          "Implement negative constraints to prevent unwanted model behavior",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Chain-of-Thought & Reasoning Architectures",
+        description: "Enable LLMs to solve multi-step mathematical, logic, and analytical tasks with precision.",
+        keyTakeaways: [
+          "Master Manual & Self-Consistency Chain-of-Thought techniques",
+          "Utilize ReAct (Reason + Act) prompting for agentic decision making",
+          "Debug failing prompts using step-by-step reasoning logs",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Structured Schema Control (JSON & Markdown)",
+        description: "Force LLMs to return clean, parseable structured data for software integrations.",
+        keyTakeaways: [
+          "Control JSON output schemas without code errors",
+          "Generate dynamic Markdown tables, checklists, and code blocks",
+          "Validate model responses against defined TypeScript/Zod schemas",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Hallucination Control & Guardrails",
+        description: "Protect brand integrity by enforcing factual grounding and anti-jailbreak safeguards.",
+        keyTakeaways: [
+          "Implement strict source-attribution prompting protocols",
+          "Shield prompts against basic injection and user tampering",
+          "Benchmark and rate prompt performance across GPT-4o and Claude 3.5",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "Software Engineers & Developers",
+        description: "Integrate predictable LLM prompts into APIs, apps, and automated backend services.",
+      },
+      {
+        title: "Technical Product Managers",
+        description: "Design prompt specs and evaluation metrics for AI feature rollouts.",
+      },
+      {
+        title: "Data & Business Analysts",
+        description: "Extract structured data from unstructured documents using precision prompts.",
+      },
+      {
+        title: "AI Enthusiasts & Power Users",
+        description: "Upgrade personal AI workflows from casual asking to engineering-grade results.",
+      },
+    ],
+    certificate: {
+      title: "Certified Prompt Engineer Specialist",
+      skills: ["Few-Shot Prompting", "Chain-of-Thought", "JSON Schema Control", "Guardrail Design"],
+      description: "Specialized credential verifying expertise in advanced LLM prompt engineering.",
+    },
+    faqs: [
+      {
+        question: "Is Prompt Engineering just writing good ChatGPT questions?",
+        answer: "No. Prompt engineering encompasses structural frameworks, system instructions, temperature tuning, JSON schema forcing, chain-of-thought logic, and security guardrails.",
+      },
+      {
+        question: "Which models will we test prompts on during class?",
+        answer: "We test prompts across OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet, Google Gemini 1.5, and open-source models like Llama 3.",
+      },
+      {
+        question: "Do I need coding experience in Python or JavaScript?",
+        answer: "Basic technical familiarity helps, but no advanced coding is required. We focus on prompt syntax, structure, and API playground configuration.",
+      },
+      {
+        question: "How does prompt engineering help reduce model hallucinations?",
+        answer: "We teach grounding constraint techniques, reference-document anchoring, and explicit 'I do not know' instructions that force models to stick to facts.",
+      },
+      {
+        question: "Will we receive pre-built prompt templates for our industry?",
+        answer: "Yes, all attendees receive access to our library of 100+ tested prompt templates for marketing, software, analysis, and operations.",
+      },
+    ],
+  },
+  {
+    id: "genai-for-working-professionals",
+    slug: "genai-for-working-professionals",
+    title: "GenAI for Working Professionals",
+    category: "GenAI",
+    badge: "Career Booster",
+    duration: "20 hrs",
+    level: "Beginners – Advance",
+    format: "Weekend Bootcamp",
+    shortDescription:
+      "Automate daily workflows, document creation, email drafting, and executive presentations using cutting-edge AI tools.",
+    overview:
+      "Tailored for corporate managers, operations leads, and working professionals in the Philippines. This 20-hour weekend intensive transforms how you handle documentation, emails, meeting synthesis, data summaries, and slide deck generation — enabling you to achieve 10x output with less effort.",
+    theme: {
+      accentColor: "#10B981",
+      badgeBg: "bg-emerald-500/10",
+      badgeText: "text-emerald-500",
+      gradientFrom: "from-emerald-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(16, 185, 129, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "80%",
+      projectsCount: "7+",
+      rating: "4.9/5",
+      totalLearners: "3,100+",
+    },
+    // TODO: confirm with content team for Working Professionals tools
+    tools: [
+      { name: "Microsoft Copilot", category: "Enterprise AI", description: "Office 365 AI document & email assistant" },
+      { name: "Notion AI", category: "Workspace", description: "Automated project notes & wiki generation" },
+      { name: "Zapier AI Workflows", category: "Automation", description: "No-code multi-app automation pipelines" },
+      { name: "Claude Artifacts", category: "Workflows", description: "Interactive document & dashboard builder" },
+      { name: "Make.com AI", category: "Automation", description: "Visual workflow automation with AI nodes" },
+      { name: "Perplexity Enterprise", category: "Research", description: "Fact-checked market research assistant" },
+    ],
+    // TODO: confirm with content team for Working Professionals modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "AI Productivity Stack for Corporate Workflows",
+        description: "Audit your weekly routine and build a personal AI tech stack to eliminate administrative drag.",
+        keyTakeaways: [
+          "Map routine corporate tasks to high-ROI AI tools",
+          "Configure Microsoft Copilot & Google Workspace AI extensions",
+          "Streamline daily communication, calendars, and to-do lists",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Executive Document Synthesis & Email Automation",
+        description: "Turn 50-page reports into 1-page executive briefs and draft context-aware emails instantly.",
+        keyTakeaways: [
+          "Summarize long PDF proposals and financial reports with 100% accuracy",
+          "Create custom email response templates matching corporate brand voice",
+          "Automate meeting transcripts into action items and follow-up emails",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "No-Code AI Automation with Zapier & Make",
+        description: "Connect your email, spreadsheets, and CRM to automated AI processing steps without code.",
+        keyTakeaways: [
+          "Build multi-step automated workflows with Zapier AI & Make.com",
+          "Automatically classify incoming customer/client inquiries",
+          "Sync AI-generated summaries directly into Google Sheets or Notion",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Executive Slide Decks & Data Visuals with AI",
+        description: "Generate pitch decks, project status slides, and visual charts in minutes.",
+        keyTakeaways: [
+          "Create structured presentation outlines using Claude and ChatGPT",
+          "Generate slide layouts automatically with modern AI presentation tools",
+          "Convert raw spreadsheet numbers into compelling visual narratives",
+        ],
+      },
+      {
+        moduleNumber: "05",
+        title: "Workplace AI Ethics & Data Privacy Standards",
+        description: "Ensure your AI usage strictly adheres to enterprise security and confidentiality policies.",
+        keyTakeaways: [
+          "Configure zero-retention data privacy settings on commercial AI tools",
+          "Prevent sensitive company IP or PII from leaking into public training sets",
+          "Establish team-wide guidelines for responsible AI adoption",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "Corporate Executives & Managers",
+        description: "Save 15+ hours weekly on administrative drafting, reporting, and team coordination.",
+      },
+      {
+        title: "Operations & Project Leads",
+        description: "Streamline cross-departmental documentation, tracking, and project status updates.",
+      },
+      {
+        title: "Business Analysts & Consultants",
+        description: "Conduct rapid industry research, competitor analysis, and client deliverable drafting.",
+      },
+      {
+        title: "Administrative & HR Professionals",
+        description: "Automate scheduling, memo writing, policy updates, and employee communications.",
+      },
+    ],
+    certificate: {
+      title: "Certified Workplace AI Productivity Specialist",
+      skills: ["Enterprise Copilot", "No-Code Automation", "Document Synthesis", "AI Data Security"],
+      description: "Credential verifying capability to implement enterprise AI tools in corporate environments.",
+    },
+    faqs: [
+      {
+        question: "Will my company's confidential data be safe when practicing in class?",
+        answer: "Yes! We place heavy emphasis on enterprise privacy settings, opt-out toggles, and secure data handling so you never expose company IP.",
+      },
+      {
+        question: "What is the schedule for this 20-hour weekend bootcamp?",
+        answer: "Sessions run across 2 consecutive weekends (Saturdays and Sundays, 5 hours per day) with recorded access for recap.",
+      },
+      {
+        question: "Can my employer sponsor this course for our team?",
+        answer: "Yes, we issue corporate invoices and official receipts for company sponsorship in the Philippines.",
+      },
+      {
+        question: "Do we build actual automated workflows during the class?",
+        answer: "Yes, every participant builds at least 3 live automated workflows using Zapier/Make and AI tools during the lab sessions.",
+      },
+      {
+        question: "What post-workshop support is provided?",
+        answer: "You receive 30 days of office hours access with our AI mentors to help resolve real workplace implementation questions.",
+      },
+    ],
+  },
+  {
+    id: "genai-for-govt-departments",
+    slug: "genai-for-govt-departments",
+    title: "GenAI for Govt Departments",
+    category: "GenAI",
+    badge: "Public Sector Track",
+    duration: "10 hrs",
+    level: "Beginners – Advance",
+    format: "Specialized Training",
+    shortDescription:
+      "Secure AI deployment, governance protocols, local document intelligence, and administrative process automation for public sector teams.",
+    overview:
+      "A specialized workshop for Philippine government agencies, local government units (LGUs), and public service institutions. Focus on safe, compliant integration of AI to streamline citizen service delivery, ordinance drafting, public record search, and policy synthesis while preserving data sovereignty.",
+    theme: {
+      accentColor: "#8B5CF6",
+      badgeBg: "bg-purple-500/10",
+      badgeText: "text-purple-500",
+      gradientFrom: "from-purple-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(139, 92, 246, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "75%",
+      projectsCount: "4+",
+      rating: "5.0/5",
+      totalLearners: "950+",
+    },
+    // TODO: confirm with content team for Govt tools
+    tools: [
+      { name: "Local LLMs (Ollama)", category: "On-Premises AI", description: "Private offline AI execution on govt hardware" },
+      { name: "Secure Document RAG", category: "Document AI", description: "Searching government archives safely" },
+      { name: "Perplexity Enterprise", category: "Research", description: "Fact-checked policy research assistant" },
+      { name: "Public Sector Prompt Suite", category: "Templates", description: "Standardized civic administration prompts" },
+      { name: "Data Privacy Protocol Suite", category: "Compliance", description: "Ensuring PH Data Privacy Act compliance" },
+      { name: "Whisper PH Transcription", category: "Audio AI", description: "Transcribing public hearings & council sessions" },
+    ],
+    // TODO: confirm with content team for Govt modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "Public Sector AI Governance & Data Privacy Act",
+        description: "Align AI implementations with the Philippine Data Privacy Act of 2012 (RA 10173) and DICT AI guidelines.",
+        keyTakeaways: [
+          "Understand data sovereignty and cloud vs on-premises AI trade-offs",
+          "Configure strict data access levels and zero-retention policies",
+          "Establish ethical review frameworks for public service AI deployment",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Offline & Local Document Intelligence (RAG)",
+        description: "Search, query, and analyze gigabytes of local ordinances, memos, and policy papers without uploading to public clouds.",
+        keyTakeaways: [
+          "Deploy local LLMs (Ollama + Llama 3) on agency workstations",
+          "Build a private document search engine for internal government records",
+          "Synthesize historical legislation and council minutes in seconds",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Citizen Query & Public Administrative Automation",
+        description: "Draft official correspondence, press releases, and citizen query responses with high speed and consistency.",
+        keyTakeaways: [
+          "Create automated citizen inquiry response templates",
+          "Transcribe public hearings and council meetings using offline Whisper models",
+          "Draft standardized inter-agency memos and official resolutions",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Policy Analysis & Economic Impact Synthesis",
+        description: "Leverage AI to assist policy researchers in analyzing complex data and drafting legislative briefs.",
+        keyTakeaways: [
+          "Extract statistical trends from census and economic reports",
+          "Compare legislative drafts against international benchmark policies",
+          "Produce clear, structured executive briefs for department heads",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "Government Officials & Department Heads",
+        description: "Lead digital transformation initiatives safely within government governance boundaries.",
+      },
+      {
+        title: "Policy Analysts & Legal Officers",
+        description: "Speed up legislative research, ordinance drafting, and policy comparison.",
+      },
+      {
+        title: "LGU Administrative & Information Staff",
+        description: "Automate public inquiries, memo drafting, and meeting transcription.",
+      },
+      {
+        title: "Public Sector IT & Compliance Officers",
+        description: "Deploy secure, sovereign on-premise AI models compliant with PH regulations.",
+      },
+    ],
+    certificate: {
+      title: "Public Sector AI Governance & Implementation Credential",
+      skills: ["On-Premises AI", "RA 10173 Compliance", "Document RAG", "Civic Automation"],
+      description: "Official credential certifying proficiency in safe public sector AI integration.",
+    },
+    faqs: [
+      {
+        question: "Is this workshop fully compliant with the Philippine Data Privacy Act (RA 10173)?",
+        answer: "Yes, all protocols taught focus strictly on data sovereignty, privacy compliance, and offline/on-premises model deployment.",
+      },
+      {
+        question: "Can we run AI models offline on local government computers?",
+        answer: "Yes! We teach how to install and operate offline open-source models using Ollama so zero government data leaves your network.",
+      },
+      {
+        question: "Is technical programming required for department staff?",
+        answer: "No. The course is tailored for policy makers, legal officers, department heads, and administrative staff using user-friendly interfaces.",
+      },
+      {
+        question: "Can we request a private cohort specifically for our government agency or LGU?",
+        answer: "Yes, we provide customized on-site or virtual cohorts tailored to specific agency workflows and security requirements.",
+      },
+      {
+        question: "What proof of completion is issued?",
+        answer: "An official Public Sector AI Certificate endorsed by The AI School PH, suitable for civil service professional development records.",
+      },
+    ],
+  },
+  {
+    id: "genai-for-hr",
+    slug: "genai-for-hr",
+    title: "GenAI for HR",
+    category: "GenAI",
+    badge: "Specialized Track",
+    duration: "6 hrs",
+    level: "Beginners – Advance",
+    format: "Role-Based Workshop",
+    shortDescription:
+      "Revolutionize talent acquisition, employee onboarding, AI-driven performance reviews, and workplace AI policies.",
+    overview:
+      "Designed specifically for HR leaders, talent recruiters, and People Operations teams. Discover how Generative AI streamlines candidate sourcing, resume screening, policy documentation, personalized employee onboarding, and engagement survey analysis.",
+    theme: {
+      accentColor: "#EC4899",
+      badgeBg: "bg-pink-500/10",
+      badgeText: "text-pink-500",
+      gradientFrom: "from-pink-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(236, 72, 153, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "85%",
+      projectsCount: "5+",
+      rating: "4.9/5",
+      totalLearners: "1,400+",
+    },
+    // TODO: confirm with content team for HR tools
+    tools: [
+      { name: "ChatGPT Enterprise", category: "HR Assistant", description: "Job description & policy drafting" },
+      { name: "LinkedIn Recruiter AI", category: "Sourcing", description: "Automated candidate outreach prompts" },
+      { name: "Synthesia", category: "Video AI", description: "AI avatar onboarding video creation" },
+      { name: "Candidate Screener AI", category: "Recruitment", description: "Structured resume evaluation models" },
+      { name: "HR Policy Generator", category: "Compliance", description: "Employee handbook & compliance drafting" },
+      { name: "Survey Sentiment AI", category: "Analytics", description: "Analyzing employee feedback & NPS" },
+    ],
+    // TODO: confirm with content team for HR modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "AI-Powered Talent Acquisition & Sourcing",
+        description: "Draft high-converting job posts, Boolean search strings, and personalized candidate outreach messages.",
+        keyTakeaways: [
+          "Generate inclusive, non-biased job descriptions in seconds",
+          "Automate candidate outreach emails with 3x higher response rates",
+          "Build objective resume evaluation rubrics to streamline initial screening",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Automated Onboarding & Interactive HR Bots",
+        description: "Create AI-assisted onboarding kits and internal Q&A bots for new hire orientation.",
+        keyTakeaways: [
+          "Convert dense employee handbooks into an interactive HR Q&A bot",
+          "Generate personalized 30-60-90 day onboarding plans for new hires",
+          "Produce AI avatar onboarding videos without camera equipment",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Performance Review & Sentiment Analysis",
+        description: "Analyze employee feedback, exit interviews, and performance reviews with speed and empathy.",
+        keyTakeaways: [
+          "Synthesize multi-source 360-degree feedback into constructive reviews",
+          "Perform sentiment analysis on employee pulse surveys to spot turnover risks",
+          "Draft objective performance improvement plans (PIPs)",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Crafting Enterprise AI Usage Policies & Ethics",
+        description: "Lead your company in establishing clear, fair guidelines for ethical employee AI adoption.",
+        keyTakeaways: [
+          "Draft clear corporate AI acceptable-use policies",
+          "Address candidate data privacy and AI bias concerns in hiring",
+          "Train internal HR teams on responsible AI practices",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "HR Directors & Managers",
+        description: "Transform HR department efficiency and establish corporate AI policies.",
+      },
+      {
+        title: "Talent Acquisition & Recruiters",
+        description: "Sustainably speed up candidate sourcing, screening, and outreach.",
+      },
+      {
+        title: "People Operations & L&D Specialists",
+        description: "Build interactive onboarding experiences and employee training materials.",
+      },
+      {
+        title: "HR Consultants & Agency Owners",
+        description: "Offer AI-driven HR advisory services to corporate clients.",
+      },
+    ],
+    certificate: {
+      title: "Certified AI Human Resources Practitioner",
+      skills: ["AI Talent Acquisition", "Automated Onboarding", "HR Sentiment Analysis", "AI Policy Governance"],
+      description: "Credential validating modern AI application in human resource management.",
+    },
+    faqs: [
+      {
+        question: "Does AI recruitment screening introduce bias into hiring?",
+        answer: "Unguided AI can exhibit bias. We teach explicit objective rubric design and human-in-the-loop validation to ensure fair, non-discriminatory candidate evaluation.",
+      },
+      {
+        question: "Can AI write legally compliant Philippine employment contracts?",
+        answer: "AI provides initial drafting based on standard templates. We emphasize that all legal contracts must receive final review by legal counsel.",
+      },
+      {
+        question: "Will participants receive ready-to-use HR prompt templates?",
+        answer: "Yes, every participant receives our curated HR Prompt Library containing 50+ tested prompts for recruitment, onboarding, reviews, and policy drafting.",
+      },
+      {
+        question: "Is this suitable for HR teams in small-to-medium enterprises (SMEs)?",
+        answer: "Absolutely. SME HR teams benefit tremendously because AI acts as a force multiplier for solo HR practitioners.",
+      },
+      {
+        question: "Are live software demonstrations included?",
+        answer: "Yes, 85% of class time is spent actively building prompts, testing screener bots, and setting up HR workflows.",
+      },
+    ],
+  },
+  {
+    id: "data-analysis",
+    slug: "data-analysis",
+    title: "Data Analysis",
+    category: "Data & Analytics",
+    badge: "High Demand",
+    duration: "10 hrs",
+    level: "Beginners – Advance",
+    format: "Practical Lab",
+    shortDescription:
+      "Transform raw datasets into actionable business insights using Python, SQL, automated EDA, and statistical analytics.",
+    overview:
+      "A 10-hour intensive data analysis workshop bridging core analytics with modern AI-assisted tools. Master data cleaning, exploratory data analysis (EDA), SQL queries, and predictive insights to solve complex business problems with confidence.",
+    theme: {
+      accentColor: "#F59E0B",
+      badgeBg: "bg-amber-500/10",
+      badgeText: "text-amber-500",
+      gradientFrom: "from-amber-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(245, 158, 11, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "90%",
+      projectsCount: "5+",
+      rating: "4.8/5",
+      totalLearners: "2,900+",
+    },
+    // TODO: confirm with content team for Data Analysis tools
+    tools: [
+      { name: "Python (Pandas/NumPy)", category: "Data Processing", description: "Data manipulation & numerical computation" },
+      { name: "Jupyter Notebooks", category: "IDE", description: "Interactive data analysis environment" },
+      { name: "PostgreSQL / SQL", category: "Database", description: "Querying relational enterprise data" },
+      { name: "ChatGPT Code Interpreter", category: "AI Analytics", description: "Automated Python code generation & EDA" },
+      { name: "Matplotlib & Seaborn", category: "Visualization", description: "Statistical data plotting" },
+      { name: "Automated EDA Tools", category: "Library", description: "Fast profiling reports for raw CSVs" },
+    ],
+    // TODO: confirm with content team for Data Analysis modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "Data Wrangling & Cleaning with Python & Pandas",
+        description: "Handle missing values, dirty data formats, duplicates, and type conversions efficiently.",
+        keyTakeaways: [
+          "Import CSV, Excel, and JSON datasets into Pandas DataFrames",
+          "Clean missing or malformed values using automated Python pipelines",
+          "Reshape data with pivot tables, melts, and groupby aggregations",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "SQL Fundamentals for Extracting Business Data",
+        description: "Query enterprise relational databases using SELECT, JOIN, GROUP BY, and subqueries.",
+        keyTakeaways: [
+          "Write multi-table SQL JOINs to aggregate customer & sales data",
+          "Filter and group data using HAVING and WHERE conditions",
+          "Utilize window functions for running totals and rankings",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Exploratory Data Analysis (EDA) & Visualization",
+        description: "Discover hidden patterns, correlations, and outliers through statistical charts.",
+        keyTakeaways: [
+          "Generate automated EDA profiling reports in 1 click",
+          "Plot heatmaps, scatter plots, and distribution histograms with Seaborn",
+          "Identify key drivers behind revenue growth or customer churn",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "AI-Assisted Predictive Analytics & Reporting",
+        description: "Leverage AI code interpreters to build predictive regression models and executive summaries.",
+        keyTakeaways: [
+          "Use AI to write complex Python data processing scripts",
+          "Build simple predictive linear regression models",
+          "Compile insights into clear, executive-ready data stories",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "Aspiring Data Analysts",
+        description: "Build a solid portfolio of hands-on data projects for job applications.",
+      },
+      {
+        title: "Business & Financial Analysts",
+        description: "Graduate from static Excel sheets to powerful Python & SQL data pipelines.",
+      },
+      {
+        title: "Marketing & Operations Managers",
+        description: "Analyze campaign performance, user retention, and operational bottlenecks.",
+      },
+      {
+        title: "Students & Graduates",
+        description: "Gain in-demand data analytics skills sought after by top Philippine employers.",
+      },
+    ],
+    certificate: {
+      title: "Certified Data Analytics Specialist",
+      skills: ["Python Pandas", "SQL Queries", "Exploratory Data Analysis", "AI Analytics"],
+      description: "Credential validating practical data cleaning, SQL extraction, and Python visualization skills.",
+    },
+    faqs: [
+      {
+        question: "Do I need prior programming experience in Python?",
+        answer: "No. We cover Python data fundamentals from scratch, assuming no prior coding background.",
+      },
+      {
+        question: "What datasets will we analyze during the hands-on labs?",
+        answer: "You will work on real-world datasets including e-commerce sales, financial transactions, customer churn, and marketing analytics.",
+      },
+      {
+        question: "Is SQL covered in detail?",
+        answer: "Yes! You will learn core SQL querying (SELECT, JOIN, GROUP BY, subqueries) to pull data directly from relational databases.",
+      },
+      {
+        question: "What software do I need to install before class?",
+        answer: "We use Anaconda (Jupyter Notebooks) and DBeaver. Complete step-by-step setup guides are sent upon registration.",
+      },
+      {
+        question: "How does AI assist in data analysis during the course?",
+        answer: "We demonstrate how to use AI code assistants (like ChatGPT Code Interpreter) to write complex pandas syntax and debug code faster.",
+      },
+    ],
+  },
+  {
+    id: "genai-for-management-students",
+    slug: "genai-for-management-students",
+    title: "GenAI for Management Students",
+    category: "GenAI",
+    badge: "Future Leaders",
+    duration: "10 hrs",
+    level: "Beginners – Advance",
+    format: "Student Bootcamp",
+    shortDescription:
+      "Build AI-powered business cases, pitch decks, market research bots, and financial modeling tools.",
+    overview:
+      "Supercharge your business education and career readiness. Learn how to leverage AI to conduct 10x faster market research, build financial projections, generate startup pitch decks, and craft strategic case study solutions that stand out to top recruiters.",
+    theme: {
+      accentColor: "#06B6D4",
+      badgeBg: "bg-cyan-500/10",
+      badgeText: "text-cyan-500",
+      gradientFrom: "from-cyan-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(6, 182, 212, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "85%",
+      projectsCount: "5+",
+      rating: "4.9/5",
+      totalLearners: "1,750+",
+    },
+    // TODO: confirm with content team for Management tools
+    tools: [
+      { name: "PitchDeck AI Builder", category: "Presentation", description: "Rapid business deck creation" },
+      { name: "Claude Financial Assistant", category: "Finance", description: "Financial model & scenario generation" },
+      { name: "Perplexity Deep Research", category: "Market Research", description: "Industry trend & competitor synthesis" },
+      { name: "Market Intelligence Bot", category: "Research", description: "Automated TAM/SAM/SOM calculator" },
+      { name: "Excel AI Copilot", category: "Spreadsheets", description: "Formula & financial projection assistant" },
+      { name: "Case Study Synthesizer", category: "Strategy", description: "SWOT & PESTLE framework generator" },
+    ],
+    // TODO: confirm with content team for Management modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "10x Market Research & Industry Benchmarking",
+        description: "Conduct comprehensive industry research, TAM/SAM/SOM estimation, and competitor analysis in hours instead of weeks.",
+        keyTakeaways: [
+          "Use Perplexity & Claude for deep market sizing and industry trend analysis",
+          "Automate competitor matrix creation and product comparison tables",
+          "Synthesize consumer sentiment from reviews and public forums",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "AI-Driven Financial Modeling & Projections",
+        description: "Build dynamic financial models, unit economics, and 3-year cash flow projections using AI tools.",
+        keyTakeaways: [
+          "Generate Excel formulas and financial model templates with AI",
+          "Perform sensitivity and scenario analysis (Best case vs Worst case)",
+          "Draft valuation estimates and cap table structures",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Automated Pitch Decks & Business Proposals",
+        description: "Craft compelling startup pitch decks and corporate business proposals designed to win investors and judges.",
+        keyTakeaways: [
+          "Structure 10-slide investor pitch decks using proven frameworks",
+          "Generate visual slide graphics and charts matching presentation themes",
+          "Practice pitch delivery using AI voice and speech feedback tools",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Strategic Case Competitions & Thesis Research",
+        description: "Solve complex business case studies using SWOT, Porter's 5 Forces, and PESTLE frameworks.",
+        keyTakeaways: [
+          "Apply strategic frameworks to Harvard Business School-style cases",
+          "Structure academic literature reviews and thesis bibliographies",
+          "Prepare for management consulting case interviews with AI interviewers",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "MBA & Graduate Students",
+        description: "Excel in capstone projects, case competitions, and strategic research.",
+      },
+      {
+        title: "Undergrad Business Administration Majors",
+        description: "Gain practical AI skills that differentiate your resume to prospective employers.",
+      },
+      {
+        title: "Aspiring Founders & Entrepreneurs",
+        description: "Validate startup business models and build investor-ready pitch decks rapidly.",
+      },
+      {
+        title: "Management Trainees & Associates",
+        description: "Hit the ground running in corporate management training programs.",
+      },
+    ],
+    certificate: {
+      title: "Certified AI Business Strategy Specialist",
+      skills: ["AI Market Research", "Financial Modeling", "Pitch Deck Generation", "Case Strategy"],
+      description: "Credential demonstrating AI-driven business strategy and financial modeling proficiency.",
+    },
+    faqs: [
+      {
+        question: "Will this course help me win university case competitions?",
+        answer: "Yes! Students regularly use our strategic research frameworks and rapid deck creation methods to dominate business case competitions.",
+      },
+      {
+        question: "Do I need advanced financial accounting experience?",
+        answer: "Basic understanding of income statements and balance sheets is helpful. We provide step-by-step AI prompt guidance for formulas.",
+      },
+      {
+        question: "Are student discounts available for enrolled university students in PH?",
+        answer: "Yes, we offer special student discount codes for verified students from DLSU, UPD, ADMU, UST, and other PH universities.",
+      },
+      {
+        question: "Can I use these tools for validating my own startup idea?",
+        answer: "Absolutely! The market research and financial projection modules are 100% applicable to startup validation.",
+      },
+      {
+        question: "What certificate is awarded?",
+        answer: "The Certified AI Business Strategy Specialist credential issued by The AI School Philippines.",
+      },
+    ],
+  },
+  {
+    id: "ai-in-cyber-security",
+    slug: "ai-in-cyber-security",
+    title: "AI in Cyber Security",
+    category: "Cybersecurity",
+    badge: "Advanced Security",
+    duration: "6 hrs",
+    level: "Beginners – Advance",
+    format: "Intensive Tech Workshop",
+    shortDescription:
+      "Leverage AI for automated threat detection, log analysis, SOC defense, and mitigating adversarial prompt injection attacks.",
+    overview:
+      "Cyber threats are evolving with AI. This workshop equips security professionals, sysadmins, and engineers to utilize AI for automated log analysis, threat hunting, anomaly detection, SOC defense, and mitigating adversarial prompt injection attacks against LLM applications.",
+    theme: {
+      accentColor: "#EF4444",
+      badgeBg: "bg-red-500/10",
+      badgeText: "text-red-500",
+      gradientFrom: "from-red-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(239, 68, 68, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "85%",
+      projectsCount: "5+",
+      rating: "4.9/5",
+      totalLearners: "1,200+",
+    },
+    // TODO: confirm with content team for AI Cyber tools
+    tools: [
+      { name: "ThreatGPT Analyst", category: "SOC AI", description: "Automated SIEM & log anomaly detection" },
+      { name: "SentinelOne AI", category: "Endpoint Security", description: "AI-driven endpoint threat hunting" },
+      { name: "Security Copilot", category: "Defensive AI", description: "Incident response plan generator" },
+      { name: "Wireshark AI Plugin", category: "Traffic Analysis", description: "Automated PCAP packet inspection" },
+      { name: "Prompt Injection Lab", category: "Securing LLMs", description: "Defending against jailbreak attacks" },
+      { name: "YARA Rules Generator", category: "Malware", description: "AI-crafted malware detection rules" },
+    ],
+    // TODO: confirm with content team for AI Cyber modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "AI-Powered SOC Operations & Incident Response",
+        description: "Automate high-volume SIEM log ingestion, alert triage, and incident response playbooks.",
+        keyTakeaways: [
+          "Ingest and summarize gigabytes of firewall and auth logs using LLMs",
+          "Automate initial triage of security alerts to cut false positives by 70%",
+          "Generate standardized Incident Response (IR) reports automatically",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Threat Hunting & Packet Inspection with AI",
+        description: "Detect hidden malware C2 channels, exfiltration, and unusual network behavior using AI assistants.",
+        keyTakeaways: [
+          "Analyze Wireshark PCAP captures using natural language queries",
+          "Generate YARA rules and IOCs (Indicators of Compromise) automatically",
+          "Identify polymorphic malware patterns using behavioral AI analysis",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Defending Against AI-Driven Attacks & Deepfakes",
+        description: "Understand offensive AI capabilities: spear-phishing generation, voice cloning, and automated vulnerability scanning.",
+        keyTakeaways: [
+          "Identify AI-generated phishing emails and social engineering campaigns",
+          "Deploy defense protocols against AI voice impersonation attacks",
+          "Conduct security awareness training for employees using real AI threat samples",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Securing LLM Applications (OWASP Top 10 for LLMs)",
+        description: "Protect enterprise AI deployments against prompt injection, jailbreaks, data poisoning, and model inversion.",
+        keyTakeaways: [
+          "Audit AI apps against OWASP Top 10 for Large Language Models",
+          "Implement input sanitization and output guardrails to prevent jailbreaks",
+          "Secure RAG vector databases against indirect prompt injection attacks",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "SOC Analysts & Security Engineers",
+        description: "Automate log analysis, incident triage, and threat hunting workflows.",
+      },
+      {
+        title: "System Administrators & IT Managers",
+        description: "Protect infrastructure against AI-powered malware and phishing.",
+      },
+      {
+        title: "Application Security (AppSec) Engineers",
+        description: "Secure enterprise LLM deployments against prompt injection vulnerabilities.",
+      },
+      {
+        title: "Cybersecurity Students & Enthusiasts",
+        description: "Build cutting-edge AI security skills required by modern SecOps teams.",
+      },
+    ],
+    certificate: {
+      title: "Certified AI Cybersecurity Defense Specialist",
+      skills: ["SOC Automation", "AI Threat Hunting", "Securing LLMs", "Prompt Injection Defense"],
+      description: "Credential certifying capability to deploy defensive AI in cybersecurity operations.",
+    },
+    faqs: [
+      {
+        question: "Is this workshop focused on offensive hacking or defensive SOC operations?",
+        answer: "The workshop is 80% focused on defensive security, threat hunting, log analysis, and securing LLM applications against attacks.",
+      },
+      {
+        question: "What is prompt injection and why is it critical to secure?",
+        answer: "Prompt injection is the #1 vulnerability in LLM apps (OWASP LLM01) where malicious inputs hijack model control. We teach how to block it.",
+      },
+      {
+        question: "Do I need CISSP or Security+ certifications beforehand?",
+        answer: "No, but basic cybersecurity concepts (IP networking, firewalls, threat types) are recommended to get maximum value.",
+      },
+      {
+        question: "Will we analyze real security logs during hands-on exercises?",
+        answer: "Yes, you will analyze anonymized real-world firewall logs, authentication attempts, and PCAP network captures.",
+      },
+      {
+        question: "What hardware setup is required for the lab?",
+        answer: "A standard laptop with at least 8GB RAM and a modern browser. Virtual lab environments are hosted in the cloud.",
+      },
+    ],
+  },
+  {
+    id: "website-development-deployment",
+    slug: "website-development-deployment",
+    title: "Website Development & Deployment",
+    category: "Development",
+    badge: "Full Stack Track",
+    duration: "10 hrs",
+    level: "Beginners – Advance",
+    format: "Project-Based Lab",
+    shortDescription:
+      "Build, style, and launch production-grade responsive websites using HTML, CSS, React, and cloud deployment platforms.",
+    overview:
+      "From zero code to a live, production-grade deployed website in 10 hours. Learn modern web development standards using semantic HTML5, responsive CSS3/Tailwind, React component architecture, and 1-click cloud deployment on Vercel and Netlify.",
+    theme: {
+      accentColor: "#6366F1",
+      badgeBg: "bg-indigo-500/10",
+      badgeText: "text-indigo-500",
+      gradientFrom: "from-indigo-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(99, 102, 241, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "95%",
+      projectsCount: "3+",
+      rating: "4.9/5",
+      totalLearners: "2,600+",
+    },
+    // TODO: confirm with content team for Web Dev tools
+    tools: [
+      { name: "HTML5 / CSS3", category: "Core Web", description: "Semantic markup & modern flex/grid styling" },
+      { name: "JavaScript (ES6+)", category: "Language", description: "Dynamic DOM manipulation & async fetching" },
+      { name: "React / Next.js", category: "Framework", description: "Component-based UI architecture" },
+      { name: "Tailwind CSS", category: "Styling", description: "Utility-first responsive design framework" },
+      { name: "Git & GitHub", category: "Version Control", description: "Code repository & team collaboration" },
+      { name: "Vercel Platform", category: "Deployment", description: "Automated continuous web deployment" },
+    ],
+    // TODO: confirm with content team for Web Dev modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "Semantic HTML5 & Modern CSS3 Layouts",
+        description: "Build clean, accessible web pages using modern HTML5 elements, Flexbox, and CSS Grid.",
+        keyTakeaways: [
+          "Structure web pages with proper semantic HTML tags (nav, main, section, footer)",
+          "Master responsive layouts with CSS Flexbox and CSS Grid",
+          "Apply mobile-first design principles across mobile, tablet, and desktop breakpoints",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Modern JavaScript & Interactive UI States",
+        description: "Add dynamic interactivity, event handling, and data fetching to static pages.",
+        keyTakeaways: [
+          "Master ES6+ JavaScript syntax (arrow functions, destructuring, modules)",
+          "Handle user interactions (clicks, forms, keypresses) dynamically",
+          "Fetch external data using Fetch API & Async/Await",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Component Architecture with React & Tailwind",
+        description: "Build reusable, modular UI components styled rapidly with Tailwind CSS.",
+        keyTakeaways: [
+          "Deconstruct web designs into reusable React components",
+          "Manage local state using React Hooks (useState, useEffect)",
+          "Style components lightning-fast using Tailwind utility classes",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Git Version Control & 1-Click Vercel Deployment",
+        description: "Push code to GitHub and publish live websites with custom SSL domains.",
+        keyTakeaways: [
+          "Manage source code changes using Git and GitHub repositories",
+          "Configure automated deployment triggers on Vercel or Netlify",
+          "Link custom domain names and configure basic Web SEO metadata",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "Beginners & Career Changers",
+        description: "Start your software development journey with core web technologies.",
+      },
+      {
+        title: "Designers & Marketers",
+        description: "Turn static Figma designs into live, responsive websites yourself.",
+      },
+      {
+        title: "Entrepreneurs & Business Owners",
+        description: "Build and maintain landing pages for your products without hiring agencies.",
+      },
+      {
+        title: "Students & Tech Enthusiasts",
+        description: "Build real portfolio projects hosted live on custom web URLs.",
+      },
+    ],
+    certificate: {
+      title: "Certified Full Stack Web Developer (Foundation)",
+      skills: ["HTML5 / CSS3", "JavaScript ES6+", "React Components", "Cloud Deployment"],
+      description: "Credential certifying practical frontend web construction and live deployment capabilities.",
+    },
+    faqs: [
+      {
+        question: "Will I have a live deployed website by the end of the workshop?",
+        answer: "Yes! Every single student builds and deploys a live website accessible on a public URL.",
+      },
+      {
+        question: "Do I need to pay for any developer software or hosting?",
+        answer: "No. All tools used (VS Code, Git, Node.js, Vercel free tier) are 100% free.",
+      },
+      {
+        question: "Is this course suitable for complete beginners with zero coding experience?",
+        answer: "Yes, we start from absolute step-one fundamentals (HTML tags) and progress step-by-step to live deployment.",
+      },
+      {
+        question: "What happens if I get stuck during coding exercises?",
+        answer: "Instructors and lab teaching assistants provide live code-along guidance and step-by-step troubleshooting.",
+      },
+      {
+        question: "Do we learn version control with Git and GitHub?",
+        answer: "Yes, Git commits, pushing to GitHub, and triggering automatic cloud builds are core requirements of the workshop.",
+      },
+    ],
+  },
+  {
+    id: "mobile-app-development-foundation",
+    slug: "mobile-app-development-foundation",
+    title: "Mobile Application Development Foundation",
+    category: "Development",
+    badge: "App Builder Track",
+    duration: "10 hrs",
+    level: "Beginners – Advance",
+    format: "Practical Mobile Lab",
+    shortDescription:
+      "Design and build cross-platform iOS and Android mobile apps using modern component frameworks and API integrations.",
+    overview:
+      "Step into mobile app development. Learn how to build native-feeling cross-platform iOS and Android applications using React Native and Expo. Master mobile UI layouts, navigation, device features, state management, and connecting to REST APIs.",
+    theme: {
+      accentColor: "#14B8A6",
+      badgeBg: "bg-teal-500/10",
+      badgeText: "text-teal-500",
+      gradientFrom: "from-teal-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(20, 184, 166, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "90%",
+      projectsCount: "3+",
+      rating: "4.8/5",
+      totalLearners: "1,600+",
+    },
+    // TODO: confirm with content team for Mobile Dev tools
+    tools: [
+      { name: "React Native", category: "Mobile Framework", description: "Cross-platform iOS & Android app framework" },
+      { name: "Expo CLI & Go", category: "Tooling", description: "Instant mobile preview on physical phones" },
+      { name: "React Navigation", category: "Navigation", description: "Stack & tab navigation for mobile UX" },
+      { name: "Supabase REST API", category: "Backend", description: "Cloud database & auth integration" },
+      { name: "Native Device APIs", category: "Hardware", description: "Camera, geolocation, and push notification access" },
+      { name: "EAS Build", category: "Deployment", description: "Building IPA & APK app store packages" },
+    ],
+    // TODO: confirm with content team for Mobile Dev modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "React Native & Expo Architecture Setup",
+        description: "Initialize cross-platform mobile projects and run them immediately on physical iOS & Android devices.",
+        keyTakeaways: [
+          "Set up Expo CLI and connect physical mobile devices via Expo Go",
+          "Understand native bridge execution vs web views",
+          "Structure clean mobile component directories",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Mobile UI Layouts & Touch Interactivity",
+        description: "Design mobile layouts using View, Text, ScrollView, FlatList, and Touchable interactions.",
+        keyTakeaways: [
+          "Master Flexbox positioning specifically tuned for mobile screens",
+          "Render high-performance lists with FlatList & pull-to-refresh",
+          "Implement smooth touch feedback, animations, and modal overlays",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "Multi-Screen Navigation & REST API Fetching",
+        description: "Build multi-screen apps with bottom tabs, stack navigation, and live API data.",
+        keyTakeaways: [
+          "Configure React Navigation stack and bottom tab bars",
+          "Fetch dynamic JSON data from external REST APIs and Supabase",
+          "Manage global app state and user session persistence",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Native Camera / Location & App Store Deployment",
+        description: "Access device camera/location features and prepare standalone APK/IPA packages.",
+        keyTakeaways: [
+          "Request native device permissions (camera, photo gallery, location)",
+          "Capture photos and upload them to cloud storage",
+          "Generate production standalone build binaries (EAS Build) for App Store & Play Store",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "Web Developers",
+        description: "Expand your skill set into cross-platform iOS & Android mobile development.",
+      },
+      {
+        title: "Aspiring Mobile Engineers",
+        description: "Build native-feeling mobile apps using familiar JavaScript/React concepts.",
+      },
+      {
+        title: "Product Managers & Startup Founders",
+        description: "Prototype mobile app MVPs fast without hiring separate iOS & Android teams.",
+      },
+      {
+        title: "Computer Science & IT Students",
+        description: "Build impressive mobile apps for academic projects and career portfolios.",
+      },
+    ],
+    certificate: {
+      title: "Certified Mobile Application Developer (React Native)",
+      skills: ["React Native", "Expo CLI", "React Navigation", "API Integration"],
+      description: "Credential validating cross-platform mobile app creation and native device integration.",
+    },
+    faqs: [
+      {
+        question: "Do I need a Mac computer to build iOS apps during the workshop?",
+        answer: "No! Using Expo CLI and the Expo Go app, you can preview and test iOS apps on your iPhone even if developing on a Windows or Linux PC.",
+      },
+      {
+        question: "Will we test our apps on physical mobile phones?",
+        answer: "Yes! Every participant runs their mobile app directly on their personal smartphone using QR code scanning.",
+      },
+      {
+        question: "Is prior React or JavaScript experience required?",
+        answer: "Basic familiarity with JavaScript or React components is helpful, but core mobile patterns are taught clearly step-by-step.",
+      },
+      {
+        question: "Does this course cover publishing to Apple App Store and Google Play Store?",
+        answer: "Yes, we cover EAS Build configuration and app store submission steps for both platforms.",
+      },
+      {
+        question: "What database do we connect to?",
+        answer: "We connect mobile apps to cloud REST APIs using Supabase for user authentication and data storage.",
+      },
+    ],
+  },
+  {
+    id: "cyber-security-fundamentals",
+    slug: "cyber-security-fundamentals",
+    title: "Cyber Security Fundamentals",
+    category: "Cybersecurity",
+    badge: "Security Core",
+    duration: "6 hrs",
+    level: "Beginners – Advance",
+    format: "Hands-on Defense Lab",
+    shortDescription:
+      "Master network defense, vulnerability assessment, encryption basics, ethical hacking concepts, and OWASP Top 10 security.",
+    overview:
+      "Build a rock-solid foundation in cybersecurity principles. Understand network protocols, vulnerability scanning, password cryptography, web application threats (OWASP Top 10), and ethical hacking methodologies to protect digital assets.",
+    theme: {
+      accentColor: "#F43F5E",
+      badgeBg: "bg-rose-500/10",
+      badgeText: "text-rose-500",
+      gradientFrom: "from-rose-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(244, 63, 94, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "85%",
+      projectsCount: "4+",
+      rating: "4.9/5",
+      totalLearners: "2,100+",
+    },
+    // TODO: confirm with content team for Security Fundamentals tools
+    tools: [
+      { name: "Wireshark", category: "Packet Sniffer", description: "Analyzing live network packet captures" },
+      { name: "Nmap", category: "Scanner", description: "Network discovery & port vulnerability scanning" },
+      { name: "Metasploit Framework", category: "PenTesting", description: "Simulating controlled exploit payloads" },
+      { name: "Burp Suite Community", category: "Web Security", description: "Intercepting & testing HTTP web traffic" },
+      { name: "Hashcat / John the Ripper", category: "Crypto", description: "Understanding password hash cracking & salting" },
+      { name: "OWASP ZAP", category: "Web Scanner", description: "Automated web application vulnerability scanning" },
+    ],
+    // TODO: confirm with content team for Security Fundamentals modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "Network Fundamentals & Traffic Inspection",
+        description: "Inspect network protocols (TCP/IP, UDP, HTTP/S, DNS) and capture traffic with Wireshark.",
+        keyTakeaways: [
+          "Understand the OSI 7-layer model and TCP 3-way handshake",
+          "Filter unencrypted passwords and data in Wireshark PCAPs",
+          "Identify ARP spoofing and DNS poisoning attacks",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Network Reconnaissance & Vulnerability Scanning",
+        description: "Discover active hosts, open ports, and vulnerable services using Nmap.",
+        keyTakeaways: [
+          "Perform SYN stealth scans and version detection with Nmap",
+          "Map network topology and identify unpatched OS vulnerabilities",
+          "Understand legal ethical hacking boundaries and authorization rules",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "OWASP Top 10 Web Application Security",
+        description: "Identify and defend against SQL Injection (SQLi), Cross-Site Scripting (XSS), and Broken Auth.",
+        keyTakeaways: [
+          "Test web forms for SQL Injection vulnerabilities using Burp Suite",
+          "Understand Reflected and Stored XSS attack vectors",
+          "Implement secure password hashing (Bcrypt/Argon2) and MFA",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Cryptography, PKI & Access Control",
+        description: "Master symmetric/asymmetric encryption, SSL/TLS certificates, and identity access control.",
+        keyTakeaways: [
+          "Differentiate AES symmetric vs RSA asymmetric encryption",
+          "Understand how Public Key Infrastructure (PKI) secures HTTPS web traffic",
+          "Enforce Principle of Least Privilege and Role-Based Access Control (RBAC)",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "IT Support Engineers & Sysadmins",
+        description: "Upgrade system administration skills with proactive security defense.",
+      },
+      {
+        title: "Computer Science & IT Students",
+        description: "Build foundational security skills for CompTIA Security+ and CEH pathways.",
+      },
+      {
+        title: "Web Developers & Software Engineers",
+        description: "Learn secure coding practices to protect applications from OWASP threats.",
+      },
+      {
+        title: "Aspiring Ethical Hackers",
+        description: "Understand legal reconnaissance, vulnerability scanning, and defense.",
+      },
+    ],
+    certificate: {
+      title: "Certified Cybersecurity Fundamentals Specialist",
+      skills: ["Network Security", "Nmap Scanning", "OWASP Top 10", "Cryptography Basics"],
+      description: "Credential validating core network defense, web security, and vulnerability assessment skills.",
+    },
+    faqs: [
+      {
+        question: "Is this course legal and conducted in safe sandbox environments?",
+        answer: "100% legal. All scanning and security exercises take place inside controlled, authorization-approved virtual sandbox environments.",
+      },
+      {
+        question: "Does this course help prepare for CompTIA Security+ or CEH?",
+        answer: "Yes! The curriculum directly aligns with foundational domain topics covered in CompTIA Security+ and Certified Ethical Hacker (CEH) exams.",
+      },
+      {
+        question: "What hardware setup is required for the cybersecurity lab?",
+        answer: "A laptop with at least 8GB RAM and 20GB free storage space for running security utilities.",
+      },
+      {
+        question: "Is prior IT networking experience strictly required?",
+        answer: "Basic familiarity with IP addresses and web browsers is recommended, but we explain networking concepts clearly from scratch.",
+      },
+      {
+        question: "Will I receive hands-on lab exercises?",
+        answer: "Yes, 85% of class time is spent operating tools like Wireshark, Nmap, and Burp Suite in practical exercises.",
+      },
+    ],
+  },
+  {
+    id: "powerbi-fundamentals",
+    slug: "powerbi-fundamentals",
+    title: "PowerBI Fundamentals",
+    category: "Data & Analytics",
+    badge: "Business Intelligence",
+    duration: "10 hrs",
+    level: "Beginners – Advance",
+    format: "Interactive BI Workshop",
+    shortDescription:
+      "Build dynamic, interactive executive dashboards using Power BI Desktop, DAX expressions, and data modeling.",
+    overview:
+      "Turn raw corporate data into real-time interactive executive dashboards. Master Power BI Desktop, Power Query data transformation, DAX metric formulas, data modeling schemas, and automated report publishing for business intelligence decision-making.",
+    theme: {
+      accentColor: "#EAB308",
+      badgeBg: "bg-yellow-500/10",
+      badgeText: "text-yellow-600",
+      gradientFrom: "from-yellow-950/40",
+      gradientTo: "to-slate-950",
+      glowColor: "rgba(234, 179, 8, 0.15)",
+    },
+    stats: {
+      handsOnPercent: "90%",
+      projectsCount: "4+",
+      rating: "4.9/5",
+      totalLearners: "2,500+",
+    },
+    // TODO: confirm with content team for PowerBI tools
+    tools: [
+      { name: "Power BI Desktop", category: "BI Tool", description: "Core dashboard design & report environment" },
+      { name: "Power Query Editor", category: "ETL", description: "Data extraction, transformation & loading" },
+      { name: "DAX Formula Engine", category: "Calculations", description: "Data Analysis Expressions metric engine" },
+      { name: "Excel Data Models", category: "Spreadsheets", description: "Importing multi-sheet financial data" },
+      { name: "Power BI Service Cloud", category: "Publishing", description: "Sharing interactive dashboards online" },
+      { name: "Copilot in Power BI", category: "AI BI", description: "AI natural-language visual generation" },
+    ],
+    // TODO: confirm with content team for PowerBI modules
+    whatYoullLearn: [
+      {
+        moduleNumber: "01",
+        title: "Connecting Data & Power Query ETL Transformation",
+        description: "Connect to Excel, CSV, SQL, and Web data sources; clean and shape messy datasets.",
+        keyTakeaways: [
+          "Connect Power BI Desktop to multi-source datasets",
+          "Clean missing values, unpivot columns, and split text using Power Query",
+          "Automate weekly data refresh pipelines without manual copying",
+        ],
+      },
+      {
+        moduleNumber: "02",
+        title: "Data Modeling & Star Schema Architecture",
+        description: "Build robust relational data models connecting fact tables and dimension tables.",
+        keyTakeaways: [
+          "Design clean Star Schema relationships (1-to-many, 1-to-1)",
+          "Manage active vs inactive relationships and filter direction",
+          "Create dedicated Date/Calendar tables for time intelligence",
+        ],
+      },
+      {
+        moduleNumber: "03",
+        title: "DAX Measures & Time-Intelligence Functions",
+        description: "Write DAX (Data Analysis Expressions) formulas to calculate KPIs, YTD growth, and running totals.",
+        keyTakeaways: [
+          "Write essential DAX measures (SUM, CALCULATE, FILTER, ALL)",
+          "Perform Time Intelligence calculations (YTD, YoY Growth, Rolling 30-Day)",
+          "Optimize DAX measure performance for large datasets",
+        ],
+      },
+      {
+        moduleNumber: "04",
+        title: "Interactive Dashboard Layouts & Cloud Publishing",
+        description: "Design executive dashboards with drill-throughs, slicers, corporate branding, and mobile views.",
+        keyTakeaways: [
+          "Choose optimal chart types (KPI cards, bar charts, treemaps, decomposition trees)",
+          "Add interactive slicers, cross-filtering, and drill-through pages",
+          "Publish reports to Power BI Service and schedule automated cloud refreshes",
+        ],
+      },
+    ],
+    whoItsFor: [
+      {
+        title: "Business & Financial Analysts",
+        description: "Upgrade Excel spreadsheets into automated, real-time Power BI dashboards.",
+      },
+      {
+        title: "Reporting Specialists & Managers",
+        description: "Provide executives with interactive KPIs and drill-down insights.",
+      },
+      {
+        title: "Operations & Sales Teams",
+        description: "Track regional revenue, inventory levels, and sales targets visually.",
+      },
+      {
+        title: "Data Enthusiasts & Career Changers",
+        description: "Gain standard Business Intelligence (BI) skills demanded by corporate employers.",
+      },
+    ],
+    certificate: {
+      title: "Certified Power BI Business Intelligence Specialist",
+      skills: ["Power Query ETL", "Star Schema Modeling", "DAX Calculations", "Dashboard Design"],
+      description: "Credential validating Power BI report authoring, DAX metric design, and cloud dashboard deployment.",
+    },
+    faqs: [
+      {
+        question: "Is Power BI Desktop free to use during the workshop?",
+        answer: "Yes, Power BI Desktop is 100% free to download and use on Windows computers.",
+      },
+      {
+        question: "Can I attend if I am using a Mac computer?",
+        answer: "Power BI Desktop is Windows-native. Mac users can run Power BI Desktop via free virtual machines (Parallels/UTM) or follow along with web service tools.",
+      },
+      {
+        question: "Do I need prior experience with complex DAX formulas?",
+        answer: "No. We start with basic SUM and COUNT measures before progressing step-by-step to CALCULATE and time intelligence functions.",
+      },
+      {
+        question: "Will we build an actual complete executive dashboard during class?",
+        answer: "Yes! Every participant builds 2 complete end-to-end dashboards (Sales Performance & Executive Financial Summary) from raw data.",
+      },
+      {
+        question: "How does AI assist in Power BI?",
+        answer: "We demonstrate Copilot for Power BI, Quick Insights, and Key Influencers visual cards to automate chart generation.",
+      },
+    ],
+  },
+];
+
+// Helper functions
+export function getWorkshopBySlug(slug: string): WorkshopData | undefined {
+  return WORKSHOPS_DATA.find((w) => w.slug === slug);
+}
+
+export function getAllWorkshopCategories(): string[] {
+  return ["All", "GenAI", "Data & Analytics", "Cybersecurity", "Development"];
+}

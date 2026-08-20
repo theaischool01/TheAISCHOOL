@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import { rateLimit } from '@/lib/rateLimit';
+import { NextResponse } from "next/server";
+import { prisma } from "@in/lib/prisma";
+import { rateLimit } from "@in/lib/rateLimit";
 
 export const dynamic = 'force-dynamic';
 
@@ -55,7 +55,7 @@ export async function GET(req: Request) {
       difficulty: q.difficulty,
       question: q.question,
       explanation: q.explanation,
-      options: q.options.map((o) => ({
+      options: q.options.map((o: any) => ({
         id: o.id,
         text: o.text,
       })),

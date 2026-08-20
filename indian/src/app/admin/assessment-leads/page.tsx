@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { 
   Search, Download, Sparkles, Loader2, RefreshCw, BarChart2, ShieldAlert, 
   TrendingUp, Award, Layers, ArrowUpDown
-} from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+} from "lucide-react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
 
 interface Lead {
   id: string;

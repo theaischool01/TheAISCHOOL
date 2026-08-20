@@ -1,7 +1,7 @@
 'use client';
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { User, Mail, Phone, MapPin, Building2, Send, Briefcase, Sparkles, GraduationCap, ArrowRight } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { User, Mail, Phone, MapPin, Building2, Send, Briefcase, Sparkles, GraduationCap, ArrowRight } from "lucide-react";
 
 export default function UnifiedRegistrationForm() {
   // 'student' = wants to buy a course | 'candidate' = wants to apply for a job

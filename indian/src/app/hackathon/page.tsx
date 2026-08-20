@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import HackathonFeatures from "@/components/hackathon/HackathonFeatures";
-import HackathonTimeline from "@/components/hackathon/HackathonTimeline";
-import HackathonFuture from "@/components/hackathon/HackathonFuture";
-import RegistrationForm from "@/components/home/RegistrationForm";
-import { SectionWrapper } from "@/components/shared/SectionWrapper";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
+import HackathonFeatures from "@in/components/hackathon/HackathonFeatures";
+import HackathonTimeline from "@in/components/hackathon/HackathonTimeline";
+import HackathonFuture from "@in/components/hackathon/HackathonFuture";
+import RegistrationForm from "@in/components/home/RegistrationForm";
+import { SectionWrapper } from "@in/components/shared/SectionWrapper";
 import { 
   Trophy, 
   Users, 

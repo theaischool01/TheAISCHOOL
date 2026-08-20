@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-primary: #EE1C25;
+  --color-primary-hover: #D3131B;
+  --color-text-dark: #0F172A;
+  --color-text-muted: #64748B;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  background-color: #FFFFFF;
+  color: #0F172A;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Glassmorphism & Special Gradients */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark-glass-card {
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-33.33%); }
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-33.33%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scroll-up {
+  animation: scrollUp linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scrollDown linear infinite;
+}
+
+@keyframes orbitClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbitCounterClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.animate-orbit-clockwise {
+  animation: orbitClockwise 45s linear infinite;
+}
+
+.animate-orbit-counterclockwise {
+  animation: orbitCounterClockwise 55s linear infinite;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 400ms ease-out forwards;
+}
+
+/* Marquee Keyframes for Ecosystem Partners */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 45s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 42s linear infinite;
+}
+
+/* Orbit & Counter-Orbit Keyframes for Ecosystem Orbit */
+@keyframes orbitClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterOrbitClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes orbitCounterClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes counterOrbitCounterClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes centerGlowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.55;
+  }
+}
+
+.animate-orbit-cw {
+  animation: orbitClockwise 100s linear infinite;
+}
+
+.animate-counter-orbit-cw {
+  animation: counterOrbitClockwise 100s linear infinite;
+}
+
+.animate-orbit-ccw {
+  animation: orbitCounterClockwise 150s linear infinite;
+}
+
+.animate-counter-orbit-ccw {
+  animation: counterOrbitCounterClockwise 150s linear infinite;
+}
+
+.animate-glow-pulse {
+  animation: centerGlowPulse 3.5s ease-in-out infinite;
+}
+
+/* Card Light Sweep and Accent Dot Orbit for CourseSnapshotSection */
+@keyframes cardShineSweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-15deg);
+  }
+}
+
+@keyframes ambientDotOrbit1 {
+  0%, 100% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(10px, -8px);
+  }
+  50% {
+    transform: translate(16px, 8px);
+  }
+  75% {
+    transform: translate(-6px, 12px);
+  }
+}
+
+@keyframes ambientDotOrbit2 {
+  0%, 100% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-12px, 8px);
+  }
+  50% {
+    transform: translate(-16px, -6px);
+  }
+  75% {
+    transform: translate(6px, -12px);
+  }
+}
+
+.animate-card-shine {
+  animation: cardShineSweep 650ms ease-out forwards;
+}
+
+.animate-dot-orbit-1 {
+  animation: ambientDotOrbit1 16s ease-in-out infinite;
+}
+
+.animate-dot-orbit-2 {
+  animation: ambientDotOrbit2 18s ease-in-out infinite;
+}
+

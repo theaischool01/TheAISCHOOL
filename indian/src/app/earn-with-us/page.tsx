@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
-import { DollarSign, Shield, ClipboardCheck, Sparkles } from 'lucide-react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import React, { useState } from "react";
+import { DollarSign, Shield, ClipboardCheck, Sparkles } from "lucide-react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
 
 export const dynamic = 'force-dynamic';
 

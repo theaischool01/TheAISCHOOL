@@ -1,7 +1,7 @@
 'use client';
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Lock, Mail, ArrowRight, ShieldCheck, Terminal, Server, Globe } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Lock, Mail, ArrowRight, ShieldCheck, Terminal, Server, Globe } from "lucide-react";
 
 export default function EyeCatchingLoginPage() {
   const [email, setEmail] = useState('');

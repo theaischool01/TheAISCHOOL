@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import { getAdminSession } from '@/lib/auth';
-import { z } from 'zod';
+import { NextResponse } from "next/server";
+import { prisma } from "@in/lib/prisma";
+import { getAdminSession } from "@in/lib/auth";
+import { z } from "zod";
 
 const patchStatusSchema = z.object({
   id: z.string().min(1, 'Lead ID is required'),

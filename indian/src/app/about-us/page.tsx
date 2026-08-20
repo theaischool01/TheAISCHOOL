@@ -2,16 +2,17 @@
 
 export const dynamic = 'force-dynamic';
 
-import React, { useState, useEffect, useRef } from 'react';
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { SectionWrapper } from "@/components/shared/SectionWrapper";
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import Header from "@in/components/Header";
+import Footer from "@in/components/Footer";
+import { SectionWrapper } from "@in/components/shared/SectionWrapper";
+import IndiaQuoteBanner from "@in/components/home/IndiaQuoteBanner";
+import { motion } from "framer-motion";
 import { 
   Sparkles, Target, Compass, Award, ShieldCheck, Zap, 
   ArrowRight, ArrowUpRight, HelpCircle, CheckCircle2, XCircle,
   Rocket, Users, Trophy, Globe, MinusCircle
-} from 'lucide-react';
+} from "lucide-react";
 
 // ================= HOOKS & UTILS =================
 
@@ -124,6 +125,8 @@ function TeamMemberCard({ member, size = 120, isPremium = false, description = "
           <img 
             src={member.image} 
             alt={member.name} 
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
             onError={() => setImgFailed(true)} 
           />
@@ -611,6 +614,9 @@ export default function AboutUsPage() {
           </div>
         </div>
       </SectionWrapper>
+
+      {/* ================= QUOTE BANNER ================= */}
+      <IndiaQuoteBanner />
 
       {/* ================= 8. WHY US (Redesigned Toggle Comparison layout) ================= */}
       <SectionWrapper tone="tinted">

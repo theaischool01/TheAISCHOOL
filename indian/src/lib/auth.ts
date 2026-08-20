@@ -1,5 +1,5 @@
-import { cookies } from 'next/headers';
-import { prisma } from '@/lib/prisma';
+import { cookies } from "next/headers";
+import { prisma } from "@in/lib/prisma";
 
 export async function getAdminSession() {
   try {

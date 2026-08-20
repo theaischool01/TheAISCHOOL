@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { User, Mail, Phone, MapPin, Building2, Send, Briefcase, Sparkles, GraduationCap, ArrowRight } from 'lucide-react';
-import { useRegion } from '@/context/RegionContext';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { User, Mail, Phone, MapPin, Building2, Send, Briefcase, Sparkles, GraduationCap, ArrowRight } from "lucide-react";
+import { useRegion } from "@in/context/RegionContext";
 
 export default function UnifiedRegistrationForm() {
   const { regionConfig } = useRegion();

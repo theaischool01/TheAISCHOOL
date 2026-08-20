@@ -1,8 +1,8 @@
-import { redirect } from 'next/navigation';
-import { getAdminSession } from '@/lib/auth';
-import { prisma } from '@/lib/prisma';
-import { Users, FileText, ArrowRight, Mail, Send, Award } from 'lucide-react';
-import Link from 'next/link';
+import { redirect } from "next/navigation";
+import { getAdminSession } from "@in/lib/auth";
+import { prisma } from "@in/lib/prisma";
+import { Users, FileText, ArrowRight, Mail, Send, Award } from "lucide-react";
+import Link from "next/link";
 
 export const dynamic = 'force-dynamic';
 

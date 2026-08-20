@@ -1,9 +1,9 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { RegionConfig } from "@/config/regions";
-import { HomeSection, HOME_LAYOUTS } from "@/config/homeLayouts";
-import { getRegionConfig } from "@/lib/region";
+import { RegionConfig } from "@in/config/regions";
+import { HomeSection, HOME_LAYOUTS } from "@in/config/homeLayouts";
+import { getRegionConfig } from "@in/lib/region";
 
 interface RegionContextType {
   currentRegion: string;
