@@ -382,7 +382,7 @@ export default function TeamPreview() {
   return (
     <section className="w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 relative z-10 font-heading select-none">
       {/* Global Style for Smooth Continuous Marquee Animation */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes mentorMarquee {
           0% {
             transform: translateX(0%);
@@ -394,7 +394,7 @@ export default function TeamPreview() {
         .animate-mentor-marquee {
           animation: mentorMarquee 32s linear infinite;
         }
-      `}</style>
+      ` }} />
 
       <div className="max-w-6xl mx-auto space-y-16">
         

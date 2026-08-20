@@ -338,7 +338,7 @@ export default function EcosystemOrbit() {
       </div>
 
       {/* Global CSS rules for rotations */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes orbitCw {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
@@ -379,7 +379,7 @@ export default function EcosystemOrbit() {
             transform: none !important;
           }
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }
