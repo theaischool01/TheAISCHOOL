@@ -52,29 +52,15 @@ export default function USBlogPostPage({ params }: { params: Promise<{ slug: str
             {articleData.subtitle}
           </p>
 
-          <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-500">
-            <div className="flex items-center gap-3">
-              <img
-                src={post.author.avatar}
-                alt={post.author.name}
-                className="w-10 h-10 rounded-full border border-slate-200 object-cover"
-              />
-              <div>
-                <p className="font-bold text-slate-900">{post.author.name}</p>
-                <p className="text-[11px] text-slate-500">{post.author.role}</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-slate-400" />
-                <span>{post.date}</span>
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-slate-400" />
-                <span>{post.readTime}</span>
-              </span>
-            </div>
+          <div className="pt-4 border-t border-slate-100 flex items-center gap-4 text-xs font-mono text-slate-500">
+            <span className="flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-slate-400" />
+              <span>{post.date}</span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-slate-400" />
+              <span>{post.readTime}</span>
+            </span>
           </div>
         </div>
 

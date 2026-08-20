@@ -52,19 +52,7 @@ export default function USBlogsPage() {
                 {featuredPost.excerpt}
               </p>
 
-              <div className="pt-4 border-t border-neutral-800 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={featuredPost.author.avatar}
-                    alt={featuredPost.author.name}
-                    className="w-10 h-10 rounded-full border border-neutral-700 object-cover"
-                  />
-                  <div>
-                    <p className="text-xs font-bold text-white">{featuredPost.author.name}</p>
-                    <p className="text-[11px] text-slate-400 font-mono">{featuredPost.author.role}</p>
-                  </div>
-                </div>
-
+              <div className="pt-4 border-t border-neutral-800 flex items-center justify-end">
                 <Link
                   href={`/us/blogs/${featuredPost.slug}`}
                   className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#EE1C25] hover:text-white transition-colors"
@@ -129,16 +117,7 @@ export default function USBlogsPage() {
                 </div>
               </div>
 
-              <div className="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-                <div className="flex items-center gap-2">
-                  <img
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    className="w-7 h-7 rounded-full border border-slate-200 object-cover"
-                  />
-                  <span className="font-bold text-slate-800 text-xs">{post.author.name}</span>
-                </div>
-
+              <div className="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-end text-xs">
                 <Link
                   href={`/us/blogs/${post.slug}`}
                   className="font-bold text-[#EE1C25] hover:text-slate-900 transition-colors flex items-center gap-1"
