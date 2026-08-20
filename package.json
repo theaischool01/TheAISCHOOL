@@ -4,10 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate --schema=./indian/prisma/schema.prisma && next build",
+    "postinstall": "prisma generate --schema=./indian/prisma/schema.prisma",
     "start": "next start",
     "lint": "eslint"
   },
+  "onlyBuiltDependencies": [
+    "prisma",
+    "@prisma/engines",
+    "@prisma/client",
+    "sharp",
+    "msgpackr-extract",
+    "unrs-resolver"
+  ],
   "dependencies": {
     "@aws-sdk/client-ses": "^3.1075.0",
     "@prisma/adapter-pg": "^7.8.0",
