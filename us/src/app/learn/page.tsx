@@ -266,7 +266,7 @@ export default function LearnPage() {
 
                 <div className="space-y-3 pt-2">
                   <Link
-                    href="/courses/aim-it"
+                    href="/us/courses/aim-it"
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
                   >
                     <span>EXPLORE MASTERCLASS</span>

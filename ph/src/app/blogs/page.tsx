@@ -43,7 +43,7 @@ export default function PhBlogsPage() {
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight text-white group-hover:text-red-400 transition-colors font-heading">
-                <Link href={`/blogs/${featuredPost.slug}`}>
+                <Link href={`/ph/blogs/${featuredPost.slug}`}>
                   {featuredPost.title}
                 </Link>
               </h2>
@@ -66,7 +66,7 @@ export default function PhBlogsPage() {
                 </div>
 
                 <Link
-                  href={`/blogs/${featuredPost.slug}`}
+                  href={`/ph/blogs/${featuredPost.slug}`}
                   className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#EE1C25] hover:text-white transition-colors"
                 >
                   <span>Read Post</span>
@@ -118,7 +118,7 @@ export default function PhBlogsPage() {
                   </div>
 
                   <h3 className="text-lg font-bold text-slate-900 tracking-tight leading-snug group-hover:text-[#EE1C25] transition-colors font-heading">
-                    <Link href={`/blogs/${post.slug}`}>
+                    <Link href={`/ph/blogs/${post.slug}`}>
                       {post.title}
                     </Link>
                   </h3>
@@ -140,7 +140,7 @@ export default function PhBlogsPage() {
                 </div>
 
                 <Link
-                  href={`/blogs/${post.slug}`}
+                  href={`/ph/blogs/${post.slug}`}
                   className="font-bold text-[#EE1C25] hover:text-slate-900 transition-colors flex items-center gap-1"
                 >
                   <span>Read</span>

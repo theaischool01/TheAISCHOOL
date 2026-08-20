@@ -17,7 +17,7 @@ export default function PhAboutGrowthCTA() {
 
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/workshops"
+            href="/ph/workshops"
             className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-full shadow-lg shadow-red-500/20 transition-all duration-200 hover:scale-105"
           >
             <span>Explore Workshops</span>
@@ -25,7 +25,7 @@ export default function PhAboutGrowthCTA() {
           </Link>
 
           <Link
-            href="/learn"
+            href="/ph/learn"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white text-xs font-black uppercase tracking-wider rounded-full border border-slate-800 transition-colors"
           >
             <span>View Learning Tracks</span>

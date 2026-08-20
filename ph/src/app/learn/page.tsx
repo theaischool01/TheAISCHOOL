@@ -139,7 +139,7 @@ export default function LearnLandingPage() {
 
               <div className="pt-2">
                 <Link
-                  href="/learn/gamer"
+                  href="/ph/gamer"
                   className="w-full py-3.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <span>Explore GAMER Track</span>
@@ -235,7 +235,7 @@ export default function LearnLandingPage() {
                   </div>
 
                   <Link
-                    href={`/learn/${activeCategory.slug}`}
+                    href={`/ph/learn/${activeCategory.slug}`}
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-colors shadow-sm shrink-0"
                   >
                     <span>Full Curriculum</span>
@@ -307,7 +307,7 @@ export default function LearnLandingPage() {
                 <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between">
                   <span className="text-xs text-slate-500 font-medium">Verifiable Digital Certificate Issued</span>
                   <Link
-                    href={`/learn/${activeCategory.slug}`}
+                    href={`/ph/learn/${activeCategory.slug}`}
                     className="text-xs font-black uppercase text-[#EE1C25] hover:underline flex items-center gap-1"
                   >
                     <span>Explore Full Page →</span>
@@ -331,7 +331,7 @@ export default function LearnLandingPage() {
 
           <div className="pt-4 flex items-center justify-center">
             <Link
-              href="/workshops"
+              href="/ph/workshops"
               className="inline-flex items-center gap-2.5 px-9 py-4 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-full shadow-lg shadow-red-500/20 transition-all duration-200 hover:scale-105"
             >
               <span>View Upcoming Cohorts</span>

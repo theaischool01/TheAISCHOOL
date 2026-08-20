@@ -82,13 +82,13 @@ export const LEARN_CATEGORIES_DATA: LearnCategoryData[] = [
     coursesCount: 7,
     // TODO: confirm with content team for GAMER courses
     courses: [
-      { name: "Essentials Generative AI, Prompt Engineering & ChatGPT", url: "/learn/gamer#module-1", duration: "3 Wks", summary: "LLMs, prompt patterns & multimodality" },
-      { name: "Programming Refreshers – Python", url: "/learn/gamer#module-2", duration: "2 Wks", summary: "Python 3 core syntax, OOP & data structures" },
-      { name: "Data Structure & Algorithms with Python", url: "/learn/gamer#module-3", duration: "4 Wks", summary: "Arrays, trees, graphs & algorithmic complexity" },
-      { name: "Applied Data Science with Python", url: "/learn/gamer#module-4", duration: "3 Wks", summary: "Pandas, NumPy, EDA & data visualization" },
-      { name: "Machine Learning", url: "/learn/gamer#module-5", duration: "4 Wks", summary: "Supervised, unsupervised & regression models" },
-      { name: "Deep Learning", url: "/learn/gamer#module-6", duration: "4 Wks", summary: "Neural networks, PyTorch & Transformers" },
-      { name: "Build Your Own Agent", url: "/learn/gamer#module-7", duration: "4 Wks", summary: "LangChain, RAG pipelines & autonomous agents" },
+      { name: "Essentials Generative AI, Prompt Engineering & ChatGPT", url: "/ph/learn/gamer#module-1", duration: "3 Wks", summary: "LLMs, prompt patterns & multimodality" },
+      { name: "Programming Refreshers – Python", url: "/ph/learn/gamer#module-2", duration: "2 Wks", summary: "Python 3 core syntax, OOP & data structures" },
+      { name: "Data Structure & Algorithms with Python", url: "/ph/learn/gamer#module-3", duration: "4 Wks", summary: "Arrays, trees, graphs & algorithmic complexity" },
+      { name: "Applied Data Science with Python", url: "/ph/learn/gamer#module-4", duration: "3 Wks", summary: "Pandas, NumPy, EDA & data visualization" },
+      { name: "Machine Learning", url: "/ph/learn/gamer#module-5", duration: "4 Wks", summary: "Supervised, unsupervised & regression models" },
+      { name: "Deep Learning", url: "/ph/learn/gamer#module-6", duration: "4 Wks", summary: "Neural networks, PyTorch & Transformers" },
+      { name: "Build Your Own Agent", url: "/ph/learn/gamer#module-7", duration: "4 Wks", summary: "LangChain, RAG pipelines & autonomous agents" },
     ],
     // TODO: confirm with content team for GAMER modules
     detailedModules: [
@@ -240,15 +240,15 @@ export const LEARN_CATEGORIES_DATA: LearnCategoryData[] = [
     coursesCount: 9,
     // TODO: confirm with content team for Agent courses
     courses: [
-      { name: "Foundations of LLMs", url: "/learn/build-your-own-agent#module-1", duration: "1 Wk", summary: "Transformer primitives & API calls" },
-      { name: "Setting Up Dev Environment", url: "/learn/build-your-own-agent#module-2", duration: "1 Wk", summary: "Python virtualenvs, API keys & VS Code" },
-      { name: "Core Concepts of LLM", url: "/learn/build-your-own-agent#module-3", duration: "1 Wk", summary: "Context windows, temperature & token limits" },
-      { name: "Intro to Intelligent Agents", url: "/learn/build-your-own-agent#module-4", duration: "2 Wks", summary: "ReAct loops & function calling mechanics" },
-      { name: "Building Basic LLM Agents", url: "/learn/build-your-own-agent#module-5", duration: "2 Wks", summary: "Stateful memory & single-tool execution" },
-      { name: "Advanced Agent Features", url: "/learn/build-your-own-agent#module-6", duration: "2 Wks", summary: "Sub-agents, planning & self-reflection" },
-      { name: "Integrating Agents with APIs", url: "/learn/build-your-own-agent#module-7", duration: "2 Wks", summary: "Connecting agents to external REST services" },
-      { name: "Reinforcement Learning for Agents", url: "/learn/build-your-own-agent#module-8", duration: "2 Wks", summary: "Agent alignment & policy evaluation" },
-      { name: "AI Agents Market", url: "/learn/build-your-own-agent#module-9", duration: "1 Wk", summary: "Deploying commercial agent microservices" },
+      { name: "Foundations of LLMs", url: "/ph/learn/build-your-own-agent#module-1", duration: "1 Wk", summary: "Transformer primitives & API calls" },
+      { name: "Setting Up Dev Environment", url: "/ph/learn/build-your-own-agent#module-2", duration: "1 Wk", summary: "Python virtualenvs, API keys & VS Code" },
+      { name: "Core Concepts of LLM", url: "/ph/learn/build-your-own-agent#module-3", duration: "1 Wk", summary: "Context windows, temperature & token limits" },
+      { name: "Intro to Intelligent Agents", url: "/ph/learn/build-your-own-agent#module-4", duration: "2 Wks", summary: "ReAct loops & function calling mechanics" },
+      { name: "Building Basic LLM Agents", url: "/ph/learn/build-your-own-agent#module-5", duration: "2 Wks", summary: "Stateful memory & single-tool execution" },
+      { name: "Advanced Agent Features", url: "/ph/learn/build-your-own-agent#module-6", duration: "2 Wks", summary: "Sub-agents, planning & self-reflection" },
+      { name: "Integrating Agents with APIs", url: "/ph/learn/build-your-own-agent#module-7", duration: "2 Wks", summary: "Connecting agents to external REST services" },
+      { name: "Reinforcement Learning for Agents", url: "/ph/learn/build-your-own-agent#module-8", duration: "2 Wks", summary: "Agent alignment & policy evaluation" },
+      { name: "AI Agents Market", url: "/ph/learn/build-your-own-agent#module-9", duration: "1 Wk", summary: "Deploying commercial agent microservices" },
     ],
     detailedModules: [
       {
@@ -360,10 +360,10 @@ export const LEARN_CATEGORIES_DATA: LearnCategoryData[] = [
     },
     coursesCount: 4,
     courses: [
-      { name: "Python Powerhouse Gen AI", url: "/learn/python-programming#module-1", duration: "2 Wks", summary: "Python 3 fundamentals & AI integration" },
-      { name: "Mastering Time Series Analysis", url: "/learn/python-programming#module-2", duration: "3 Wks", summary: "ARIMA, Prophet & trend forecasting" },
-      { name: "Data Diving (Databricks Beginner)", url: "/learn/python-programming#module-3", duration: "2 Wks", summary: "Databricks workspace & Spark basics" },
-      { name: "Advanced Databricks", url: "/learn/python-programming#module-4", duration: "3 Wks", summary: "Distributed Spark processing & Lakehouse" },
+      { name: "Python Powerhouse Gen AI", url: "/ph/learn/python-programming#module-1", duration: "2 Wks", summary: "Python 3 fundamentals & AI integration" },
+      { name: "Mastering Time Series Analysis", url: "/ph/learn/python-programming#module-2", duration: "3 Wks", summary: "ARIMA, Prophet & trend forecasting" },
+      { name: "Data Diving (Databricks Beginner)", url: "/ph/learn/python-programming#module-3", duration: "2 Wks", summary: "Databricks workspace & Spark basics" },
+      { name: "Advanced Databricks", url: "/ph/learn/python-programming#module-4", duration: "3 Wks", summary: "Distributed Spark processing & Lakehouse" },
     ],
     detailedModules: [
       {
@@ -464,10 +464,10 @@ export const LEARN_CATEGORIES_DATA: LearnCategoryData[] = [
     },
     coursesCount: 4,
     courses: [
-      { name: "Power BI + AI Integration", url: "/learn/data-science-analytics#module-1", duration: "3 Wks", summary: "DAX, Power Query & Copilot visuals" },
-      { name: "Applied Statistics", url: "/learn/data-science-analytics#module-2", duration: "2 Wks", summary: "Hypothesis testing & p-values" },
-      { name: "SQL for Data Engineers", url: "/learn/data-science-analytics#module-3", duration: "3 Wks", summary: "Multi-table JOINs, GROUP BY & CTEs" },
-      { name: "UCI Data Preprocessing & EDA", url: "/learn/data-science-analytics#module-4", duration: "2 Wks", summary: "Automated data profiling & cleaning" },
+      { name: "Power BI + AI Integration", url: "/ph/learn/data-science-analytics#module-1", duration: "3 Wks", summary: "DAX, Power Query & Copilot visuals" },
+      { name: "Applied Statistics", url: "/ph/learn/data-science-analytics#module-2", duration: "2 Wks", summary: "Hypothesis testing & p-values" },
+      { name: "SQL for Data Engineers", url: "/ph/learn/data-science-analytics#module-3", duration: "3 Wks", summary: "Multi-table JOINs, GROUP BY & CTEs" },
+      { name: "UCI Data Preprocessing & EDA", url: "/ph/learn/data-science-analytics#module-4", duration: "2 Wks", summary: "Automated data profiling & cleaning" },
     ],
     detailedModules: [
       {
@@ -567,9 +567,9 @@ export const LEARN_CATEGORIES_DATA: LearnCategoryData[] = [
     },
     coursesCount: 3,
     courses: [
-      { name: "Docker", url: "/learn/tools-technologies#module-1", duration: "2 Wks", summary: "Dockerfiles, images, containers & compose" },
-      { name: "AWS-Security", url: "/learn/tools-technologies#module-2", duration: "2 Wks", summary: "AWS IAM, security groups & cloud policies" },
-      { name: "Unit Testing", url: "/learn/tools-technologies#module-3", duration: "2 Wks", summary: "PyTest, mocks & CI/CD GitHub Actions" },
+      { name: "Docker", url: "/ph/learn/tools-technologies#module-1", duration: "2 Wks", summary: "Dockerfiles, images, containers & compose" },
+      { name: "AWS-Security", url: "/ph/learn/tools-technologies#module-2", duration: "2 Wks", summary: "AWS IAM, security groups & cloud policies" },
+      { name: "Unit Testing", url: "/ph/learn/tools-technologies#module-3", duration: "2 Wks", summary: "PyTest, mocks & CI/CD GitHub Actions" },
     ],
     detailedModules: [
       {
@@ -669,9 +669,9 @@ export const LEARN_CATEGORIES_DATA: LearnCategoryData[] = [
     },
     coursesCount: 3,
     courses: [
-      { name: "Advanced Excel Techniques", url: "/learn/business-professional#module-1", duration: "2 Wks", summary: "XLOOKUP, Power Pivot & financial models" },
-      { name: "Mastering Aptitude", url: "/learn/business-professional#module-2", duration: "2 Wks", summary: "Quantitative reasoning & logical problem-solving" },
-      { name: "Professional Business Strategy", url: "/learn/business-professional#module-3", duration: "2 Wks", summary: "AI corporate strategy & business cases" },
+      { name: "Advanced Excel Techniques", url: "/ph/learn/business-professional#module-1", duration: "2 Wks", summary: "XLOOKUP, Power Pivot & financial models" },
+      { name: "Mastering Aptitude", url: "/ph/learn/business-professional#module-2", duration: "2 Wks", summary: "Quantitative reasoning & logical problem-solving" },
+      { name: "Professional Business Strategy", url: "/ph/learn/business-professional#module-3", duration: "2 Wks", summary: "AI corporate strategy & business cases" },
     ],
     detailedModules: [
       {

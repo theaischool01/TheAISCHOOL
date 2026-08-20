@@ -14,11 +14,11 @@ export default function Footer() {
   ];
 
   const courseLinks = [
-    { name: "AIM-IT", url: "/courses/aim-it" },
-    { name: "AI Ready Developer", url: "/courses/ai-ready-developer" },
-    { name: "The Art & Science of Prompt Engineering", url: "/courses/prompt-engineering" },
-    { name: "Build Your Own AI Agent", url: "/courses/build-your-own-ai-agent" },
-    { name: "Gen AI-101", url: "/courses/genai101" },
+    { name: "AIM-IT", url: "/us/courses/aim-it" },
+    { name: "AI Ready Developer", url: "/us/courses/ai-ready-developer" },
+    { name: "The Art & Science of Prompt Engineering", url: "/us/courses/prompt-engineering" },
+    { name: "Build Your Own AI Agent", url: "/us/courses/build-your-own-ai-agent" },
+    { name: "Gen AI-101", url: "/us/courses/genai101" },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function Footer() {
           
           {/* Column 1: Left Brand Column (Spans 2 cols on lg) */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="inline-block">
+            <Link href="/us" className="inline-block">
               <Image
                 src="/us/assets/logo.png"
                 alt="The AI School USA Logo"
@@ -195,15 +195,15 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6B7280] font-medium">
           <p>© 2026 | All Rights Reserved</p>
           <div className="flex items-center gap-4">
-            <Link href="/terms-conditions" className="hover:text-[#EE1C25] transition-colors">
+            <Link href="/us/terms-conditions" className="hover:text-[#EE1C25] transition-colors">
               Terms &amp; Conditions
             </Link>
             <span className="text-neutral-300">|</span>
-            <Link href="/privacy-policies" className="hover:text-[#EE1C25] transition-colors">
+            <Link href="/us/privacy-policies" className="hover:text-[#EE1C25] transition-colors">
               Privacy Policy
             </Link>
             <span className="text-neutral-300">|</span>
-            <Link href="/refund-policy" className="hover:text-[#EE1C25] transition-colors">
+            <Link href="/us/refund" className="hover:text-[#EE1C25] transition-colors">
               Refund Policy
             </Link>
           </div>

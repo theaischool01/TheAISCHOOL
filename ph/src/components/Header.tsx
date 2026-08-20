@@ -80,7 +80,7 @@ export default function Header() {
       <header className="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-black/5 z-[999] font-heading">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/ph" className="flex items-center shrink-0">
             <img
               src="/ph/the-ai-school-ph-logo.png"
               alt="THE AI SCHOOL Philippines"
@@ -96,7 +96,7 @@ export default function Header() {
                   return (
                     <li key={idx} className="relative group/nav-item">
                       <Link
-                        href="/learn"
+                        href="/ph/learn"
                         className={`flex items-center gap-1 px-3 py-2 text-sm font-bold hover:text-[#C1121C] hover:bg-neutral-50 rounded-lg transition-all duration-200 relative ${
                           pathname.includes("/learn") || pathname.includes("/courses/") ? "text-[#C1121C]" : "text-[#171717]"
                         }`}
@@ -126,7 +126,7 @@ export default function Header() {
                               return (
                                 <Link
                                   key={cat.id}
-                                  href={`/learn/${categorySlug}`}
+                                  href={`/ph/learn/${categorySlug}`}
                                   onMouseEnter={() => setActiveCategory(cat.id)}
                                   className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-left text-xs font-bold transition-all duration-150 ${
                                     activeCategory === cat.id
@@ -154,7 +154,7 @@ export default function Header() {
                                   "business-prof": "business-professional",
                                 };
                                 const currentSlug = slugMap[activeCategory] || activeCategory;
-                                const courseUrl = `/learn/${currentSlug}#module-${cIdx + 1}`;
+                                const courseUrl = `/ph/learn/${currentSlug}#module-${cIdx + 1}`;
 
                                 return (
                                   <Link

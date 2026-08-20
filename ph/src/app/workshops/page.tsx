@@ -163,7 +163,7 @@ export default function WorkshopsPage() {
 
               <div className="pt-2">
                 <Link
-                  href="/workshops/genai-101"
+                  href="/ph/workshops/genai-101"
                   className="w-full py-3 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <span>View Full Curriculum</span>
@@ -253,7 +253,7 @@ export default function WorkshopsPage() {
                   </div>
 
                   <Link
-                    href={`/workshops/${featuredWorkshop.slug}`}
+                    href={`/ph/workshops/${featuredWorkshop.slug}`}
                     className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#EE1C25] hover:text-white transition-colors shrink-0"
                   >
                     <span>Explore Workshop</span>
@@ -301,7 +301,7 @@ export default function WorkshopsPage() {
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                   <span className="text-slate-400 font-mono text-[11px]">{ws.level}</span>
                   <Link
-                    href={`/workshops/${ws.slug}`}
+                    href={`/ph/workshops/${ws.slug}`}
                     className="inline-flex items-center gap-1.5 font-extrabold text-slate-900 group-hover:text-[#EE1C25] transition-colors"
                   >
                     <span>View Curriculum</span>

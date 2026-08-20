@@ -183,7 +183,7 @@ export default function CourseSnapshot({
             {/* CTA Button */}
             <div className="pt-2">
               <Link
-                href="/learn"
+                href="/in/learn"
                 className="group inline-flex items-center gap-2 bg-[#EE1C25] hover:bg-[#d61920] text-white font-bold text-xs uppercase tracking-widest px-7 py-3.5 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               >
                 {ctaText}

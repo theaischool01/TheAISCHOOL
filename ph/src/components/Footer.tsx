@@ -8,12 +8,12 @@ export default function Footer() {
   const { region, socialLinks, legalLinks } = PH_DATA;
 
   const courses = [
-    { label: "GAMER Program", href: "/learn" },
-    { label: "Build Your Own Agent", href: "/learn" },
-    { label: "Python & Programming", href: "/learn" },
-    { label: "Data Science and Analytics", href: "/learn" },
-    { label: "Tools & Technologies", href: "/learn" },
-    { label: "Business & Professional", href: "/learn" },
+    { label: "GAMER Program", href: "/ph/learn" },
+    { label: "Build Your Own Agent", href: "/ph/learn" },
+    { label: "Python & Programming", href: "/ph/learn" },
+    { label: "Data Science and Analytics", href: "/ph/learn" },
+    { label: "Tools & Technologies", href: "/ph/learn" },
+    { label: "Business & Professional", href: "/ph/learn" },
   ];
 
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 md:gap-12">
           {/* Column 1: Brand (~30%) */}
           <div className="md:col-span-4 flex flex-col items-start space-y-4">
-            <Link href="/" className="inline-block shrink-0">
+            <Link href="/ph" className="inline-block shrink-0">
               <img
                 src="/ph/the-ai-school-ph-logo.png"
                 alt="THE AI SCHOOL Philippines"
@@ -80,11 +80,11 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-sm font-bold tracking-wider uppercase text-[#101828]">Company</h4>
             <ul className="space-y-3 text-sm font-medium text-[#475467] list-none p-0 m-0">
-              <li><Link href="/about-us" className="hover:text-[#ED1C24] transition-colors duration-200">About Us</Link></li>
-              <li><Link href="/workshops" className="hover:text-[#ED1C24] transition-colors duration-200">Workshops</Link></li>
-              <li><Link href="/learn" className="hover:text-[#ED1C24] transition-colors duration-200">Learn</Link></li>
-              <li><Link href="/blogs" className="hover:text-[#ED1C24] transition-colors duration-200">Blogs</Link></li>
-              <li><Link href="/contact-us" className="hover:text-[#ED1C24] transition-colors duration-200">Contact Us</Link></li>
+              <li><Link href="/ph/about-us" className="hover:text-[#ED1C24] transition-colors duration-200">About Us</Link></li>
+              <li><Link href="/ph/workshops" className="hover:text-[#ED1C24] transition-colors duration-200">Workshops</Link></li>
+              <li><Link href="/ph/learn" className="hover:text-[#ED1C24] transition-colors duration-200">Learn</Link></li>
+              <li><Link href="/ph/blogs" className="hover:text-[#ED1C24] transition-colors duration-200">Blogs</Link></li>
+              <li><Link href="/ph/contact-us" className="hover:text-[#ED1C24] transition-colors duration-200">Contact Us</Link></li>
             </ul>
           </div>
 

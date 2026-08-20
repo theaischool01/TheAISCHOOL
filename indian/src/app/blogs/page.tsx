@@ -266,7 +266,7 @@ export default function BlogsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="group cursor-pointer rounded-[32px] overflow-hidden border-2 border-gray-900 shadow-2xl bg-white grid grid-cols-1 lg:grid-cols-12"
-              onClick={() => window.location.href = `/blogs/${featuredPost.slug}`}
+              onClick={() => window.location.href = `/in/blogs/${featuredPost.slug}`}
             >
               {/* Image Block */}
               <div className="lg:col-span-7 relative h-72 lg:h-[480px] overflow-hidden border-b-2 lg:border-b-0 lg:border-r-2 border-gray-900">
@@ -315,7 +315,7 @@ export default function BlogsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="group cursor-pointer bg-white border border-gray-100 rounded-[24px] overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
-                onClick={() => window.location.href = `/blogs/${post.slug}`}
+                onClick={() => window.location.href = `/in/blogs/${post.slug}`}
               >
                 <div>
                   <div className="relative h-56 overflow-hidden bg-neutral-100">

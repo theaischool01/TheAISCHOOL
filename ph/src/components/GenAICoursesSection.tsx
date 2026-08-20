@@ -204,7 +204,7 @@ export default function GenAICoursesSection() {
               {/* Bottom CTA Button - Fixed Alignment */}
               <div className="pt-6 border-t border-slate-100/80 mt-6">
                 <Link
-                  href="/learn"
+                  href="/ph/learn"
                   className="w-full py-3 px-4 bg-[#101828] group-hover:bg-[#EE1C25] text-white text-xs font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-sm group-hover:shadow-md group-hover:shadow-red-500/20"
                 >
                   <span>View Details</span>

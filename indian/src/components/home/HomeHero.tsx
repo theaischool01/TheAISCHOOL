@@ -117,7 +117,7 @@ export default function HomeHero() {
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a
-              href="/learn"
+              href="/in/learn"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-full transition-all duration-200 shadow-[0_4px_12px_rgba(238,28,37,0.15)] hover:shadow-[0_4px_20px_rgba(238,28,37,0.25)] active:scale-98"
             >
               <span>Explore Programs</span>
@@ -125,7 +125,7 @@ export default function HomeHero() {
             </a>
 
             <a
-              href="/assessment"
+              href="/in/assessment"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-neutral-200 bg-white hover:bg-neutral-50 text-[#171717] text-xs font-black uppercase tracking-wider rounded-full shadow-sm transition-all duration-200 active:scale-98"
             >
               <span>Take Assessment</span>

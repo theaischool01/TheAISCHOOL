@@ -76,13 +76,13 @@ export default function PhAboutHero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="pt-2 flex flex-wrap items-center gap-4"
           >
             <Link
-              href="/workshops"
+              href="/ph/workshops"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-full shadow-lg shadow-red-500/20 transition-all duration-200 hover:scale-[1.02]"
             >
               <span>Explore Workshops</span>
@@ -90,7 +90,7 @@ export default function PhAboutHero() {
             </Link>
 
             <Link
-              href="/learn"
+              href="/ph/learn"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-950 hover:bg-slate-900 text-white text-xs font-black uppercase tracking-wider rounded-full transition-all duration-200 shadow-sm"
             >
               <span>View Learning Pathways</span>
@@ -135,7 +135,7 @@ export default function PhAboutHero() {
 
             <div className="pt-2">
               <Link
-                href="/contact-us"
+                href="/ph/contact-us"
                 className="w-full py-3.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <span>Connect With Academic Team</span>

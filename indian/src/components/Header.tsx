@@ -24,95 +24,95 @@ const CATEGORIES: Category[] = [
     id: "ai-internship",
     name: "AI Virtual Internship",
     courses: [
-      { name: "Building Your AI Agent (For Coders)", url: "/courses/building-your-ai-agent-for-coders" },
-      { name: "Data Analysis with AI and PowerBI (For All)", url: "/courses/data-analysis-with-ai-and-powerbi" },
-      { name: "Building & Deploying AI Agents (No-Code – For All)", url: "/courses/building-and-deploying-ai-agents" },
-      { name: "No-Code AI Web Development (For All)", url: "/courses/no-code-ai-web-development" },
-      { name: "AI Cloud Engineer (For All)", url: "/courses/ai-cloud-engineer" },
-      { name: "AI Agent Chatbot Creation (For All)", url: "/courses/ai-agent-chatbot-creation" },
-      { name: "Python for Data Analytics (For Coders)", url: "/courses/python-for-data-analytics" },
-      { name: "Mobile App Development (For Coders)", url: "/courses/mobile-app-development" },
-      { name: "Digital Marketing & Lead Generation (For All)", url: "/courses/digital-marketing-and-lead-generation" },
-      { name: "Cyber Security with AI (For All)", url: "/courses/cyber-security-with-ai" },
+      { name: "Building Your AI Agent (For Coders)", url: "/in/courses/building-your-ai-agent-for-coders" },
+      { name: "Data Analysis with AI and PowerBI (For All)", url: "/in/courses/data-analysis-with-ai-and-powerbi" },
+      { name: "Building & Deploying AI Agents (No-Code – For All)", url: "/in/courses/building-and-deploying-ai-agents" },
+      { name: "No-Code AI Web Development (For All)", url: "/in/courses/no-code-ai-web-development" },
+      { name: "AI Cloud Engineer (For All)", url: "/in/courses/ai-cloud-engineer" },
+      { name: "AI Agent Chatbot Creation (For All)", url: "/in/courses/ai-agent-chatbot-creation" },
+      { name: "Python for Data Analytics (For Coders)", url: "/in/courses/python-for-data-analytics" },
+      { name: "Mobile App Development (For Coders)", url: "/in/courses/mobile-app-development" },
+      { name: "Digital Marketing & Lead Generation (For All)", url: "/in/courses/digital-marketing-and-lead-generation" },
+      { name: "Cyber Security with AI (For All)", url: "/in/courses/cyber-security-with-ai" },
     ],
   },
   {
     id: "prompt-eng",
     name: "Prompt engineering 101",
     courses: [
-      { name: "AI to GenAI", url: "/courses/ai-to-genai" },
-      { name: "Understanding Prompt Engineering", url: "/courses/understanding-prompt-engineering" },
-      { name: "Core Prompt Engineering Techniques", url: "/courses/core-prompt-engineering-techniques" },
-      { name: "Prompt Engineering for Academic Subjects", url: "/courses/prompt-engineering-for-academic-subjects" },
-      { name: "Various AI tool and Prompts", url: "/courses/various-ai-tool-and-prompts" },
-      { name: "Advanced Prompt Engineering Techniques", url: "/courses/advanced-prompt-engineering-techniques" },
-      { name: "Ethical Considerations and the Future of Prompt Engineer", url: "/courses/ethical-considerations-and-the-future-of-prompt-engineer" },
+      { name: "AI to GenAI", url: "/in/courses/ai-to-genai" },
+      { name: "Understanding Prompt Engineering", url: "/in/courses/understanding-prompt-engineering" },
+      { name: "Core Prompt Engineering Techniques", url: "/in/courses/core-prompt-engineering-techniques" },
+      { name: "Prompt Engineering for Academic Subjects", url: "/in/courses/prompt-engineering-for-academic-subjects" },
+      { name: "Various AI tool and Prompts", url: "/in/courses/various-ai-tool-and-prompts" },
+      { name: "Advanced Prompt Engineering Techniques", url: "/in/courses/advanced-prompt-engineering-techniques" },
+      { name: "Ethical Considerations and the Future of Prompt Engineer", url: "/in/courses/ethical-considerations-and-the-future-of-prompt-engineer" },
     ],
   },
   {
     id: "gamer",
     name: "GAMER",
     courses: [
-      { name: "Essentials: Generative AI, Prompt Engineering & ChatGPT", url: "/courses/essentials-generative-ai-prompt-engineering-and-chatgpt" },
-      { name: "Programming Refreshers – Python", url: "/courses/programming-refreshers-python" },
-      { name: "Data Structure and Algorithms with Python", url: "/courses/data-structure-and-algorithms-with-python" },
-      { name: "Applied Data Science with Python", url: "/courses/applied-data-science-with-python" },
-      { name: "Machine Learning", url: "/courses/machine-learning" },
-      { name: "Deep Learning", url: "/courses/deep-learning" },
-      { name: "Build Your Own Agent", url: "/courses/build-your-own-agent" },
+      { name: "Essentials: Generative AI, Prompt Engineering & ChatGPT", url: "/in/courses/essentials-generative-ai-prompt-engineering-and-chatgpt" },
+      { name: "Programming Refreshers – Python", url: "/in/courses/programming-refreshers-python" },
+      { name: "Data Structure and Algorithms with Python", url: "/in/courses/data-structure-and-algorithms-with-python" },
+      { name: "Applied Data Science with Python", url: "/in/courses/applied-data-science-with-python" },
+      { name: "Machine Learning", url: "/in/courses/machine-learning" },
+      { name: "Deep Learning", url: "/in/courses/deep-learning" },
+      { name: "Build Your Own Agent", url: "/in/courses/build-your-own-agent" },
     ],
   },
   {
     id: "build-agent",
     name: "Build Your Own Agent",
     courses: [
-      { name: "Foundations of Large Language Models (LLMs)", url: "/courses/foundations-of-large-language-models" },
-      { name: "Setting Up Your Development Environment", url: "/courses/setting-up-your-development-environment" },
-      { name: "Core Concepts of LLM", url: "/courses/core-concepts-of-llm" },
-      { name: "Introduction to Intelligent Agents", url: "/courses/introduction-to-intelligent-agents" },
-      { name: "Building Basic LLM Agents", url: "/courses/building-basic-llm-agents" },
-      { name: "Advanced Agent Features", url: "/courses/advanced-agent-features" },
-      { name: "Integrating Agents with APIs", url: "/courses/integrating-agents-with-apis" },
-      { name: "Reinforcement Learning for Agents", url: "/courses/reinforcement-learning-for-agents" },
-      { name: "AI Agents Market", url: "/courses/ai-agents-market" },
+      { name: "Foundations of Large Language Models (LLMs)", url: "/in/courses/foundations-of-large-language-models" },
+      { name: "Setting Up Your Development Environment", url: "/in/courses/setting-up-your-development-environment" },
+      { name: "Core Concepts of LLM", url: "/in/courses/core-concepts-of-llm" },
+      { name: "Introduction to Intelligent Agents", url: "/in/courses/introduction-to-intelligent-agents" },
+      { name: "Building Basic LLM Agents", url: "/in/courses/building-basic-llm-agents" },
+      { name: "Advanced Agent Features", url: "/in/courses/advanced-agent-features" },
+      { name: "Integrating Agents with APIs", url: "/in/courses/integrating-agents-with-apis" },
+      { name: "Reinforcement Learning for Agents", url: "/in/courses/reinforcement-learning-for-agents" },
+      { name: "AI Agents Market", url: "/in/courses/ai-agents-market" },
     ],
   },
   {
     id: "python-prog",
     name: "Python & Programming",
     courses: [
-      { name: "Python Powerhouse Gen AI From Basics to Advanced Programming", url: "/courses/python-powerhouse-gen-ai" },
-      { name: "Mastering Time Series Analysis and Forecasting with Python", url: "/courses/mastering-time-series-analysis-and-forecasting" },
-      { name: "Data Diving: A Beginner's Guide to Data bricks", url: "/courses/data-diving-beginners-guide-to-databricks" },
-      { name: "Advanced DataBricks – Data Warehouse Performance Optimization", url: "/courses/advanced-databricks-performance-optimization" },
+      { name: "Python Powerhouse Gen AI From Basics to Advanced Programming", url: "/in/courses/python-powerhouse-gen-ai" },
+      { name: "Mastering Time Series Analysis and Forecasting with Python", url: "/in/courses/mastering-time-series-analysis-and-forecasting" },
+      { name: "Data Diving: A Beginner's Guide to Data bricks", url: "/in/courses/data-diving-beginners-guide-to-databricks" },
+      { name: "Advanced DataBricks – Data Warehouse Performance Optimization", url: "/in/courses/advanced-databricks-performance-optimization" },
     ],
   },
   {
     id: "data-science",
     name: "Data Science and Analytics",
     courses: [
-      { name: "Power BI and AI Integration for Building Intelligent Dashboards", url: "/courses/power-bi-and-ai-integration" },
-      { name: "Applied Statistics Real World Problem Solving", url: "/courses/applied-statistics-real-world-problem-solving" },
-      { name: "SQL for Data Engineers Designing and Building Data Pipelines", url: "/courses/sql-for-data-engineers" },
-      { name: "UCI Data Preprocessing and Exploratory Data Analysis", url: "/courses/uci-data-preprocessing-and-eda" },
+      { name: "Power BI and AI Integration for Building Intelligent Dashboards", url: "/in/courses/power-bi-and-ai-integration" },
+      { name: "Applied Statistics Real World Problem Solving", url: "/in/courses/applied-statistics-real-world-problem-solving" },
+      { name: "SQL for Data Engineers Designing and Building Data Pipelines", url: "/in/courses/sql-for-data-engineers" },
+      { name: "UCI Data Preprocessing and Exploratory Data Analysis", url: "/in/courses/uci-data-preprocessing-and-eda" },
     ],
   },
   {
     id: "tools-tech",
     name: "Tools & Technologies",
     courses: [
-      { name: "Docker", url: "/courses/docker" },
-      { name: "AWS-Security", url: "/courses/aws-security" },
-      { name: "Unit Testing", url: "/courses/unit-testing" },
+      { name: "Docker", url: "/in/courses/docker" },
+      { name: "AWS-Security", url: "/in/courses/aws-security" },
+      { name: "Unit Testing", url: "/in/courses/unit-testing" },
     ],
   },
   {
     id: "business-prof",
     name: "Business & Professional",
     courses: [
-      { name: "Advanced Excel Techniques for Professionals", url: "/courses/advanced-excel-techniques-for-professionals" },
-      { name: "Mastering Aptitude: A Comprehensive Guide to Problem Solving", url: "/courses/mastering-aptitude-comprehensive-guide" },
-      { name: "Professional Business Strategy Managing Organisational Value", url: "/courses/professional-business-strategy" },
+      { name: "Advanced Excel Techniques for Professionals", url: "/in/courses/advanced-excel-techniques-for-professionals" },
+      { name: "Mastering Aptitude: A Comprehensive Guide to Problem Solving", url: "/in/courses/mastering-aptitude-comprehensive-guide" },
+      { name: "Professional Business Strategy Managing Organisational Value", url: "/in/courses/professional-business-strategy" },
     ],
   },
 ];
@@ -199,7 +199,7 @@ export default function Header() {
             <ul className="flex items-center gap-6 list-none m-0 p-0">
               <li className="relative group/nav-item">
                 <a
-                  href="/learn"
+                  href="/in/learn"
                   className={`flex items-center gap-1 px-3 py-2 text-sm font-bold hover:text-[#C1121C] hover:bg-neutral-50 rounded-lg transition-all duration-200 relative ${
                     pathname.includes("/learn") || pathname.includes("/courses/") ? "text-[#C1121C]" : "text-[#171717]"
                   }`}
@@ -333,7 +333,7 @@ export default function Header() {
               </li>
               <li>
                 <a 
-                  href="/about-us" 
+                  href="/in/about-us" 
                   onClick={() => setMobileMenuOpen(false)}
                   className="block font-bold text-[#171717] py-3 border-b border-neutral-100"
                 >
@@ -342,7 +342,7 @@ export default function Header() {
               </li>
               <li>
                 <a 
-                  href="/blogs" 
+                  href="/in/blogs" 
                   onClick={() => setMobileMenuOpen(false)}
                   className="block font-bold text-[#171717] py-3 border-b border-neutral-100"
                 >
@@ -351,7 +351,7 @@ export default function Header() {
               </li>
               <li>
                 <a 
-                  href="/contact-us" 
+                  href="/in/contact-us" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="block font-bold text-[#171717] py-3"
                 >

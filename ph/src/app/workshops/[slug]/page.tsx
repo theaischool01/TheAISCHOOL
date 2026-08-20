@@ -59,11 +59,11 @@ export default async function WorkshopDetailPage({ params }: PageProps) {
       {/* Breadcrumb Navigation */}
       <div className="bg-[#FAFBFD] border-b border-slate-200/80 py-3.5 px-6 md:px-12 text-xs font-semibold text-slate-500 font-heading">
         <div className="max-w-7xl mx-auto flex items-center gap-2 flex-wrap">
-          <Link href="/" className="hover:text-slate-900 transition-colors">
+          <Link href="/ph" className="hover:text-slate-900 transition-colors">
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-          <Link href="/workshops" className="hover:text-slate-900 transition-colors">
+          <Link href="/ph/workshops" className="hover:text-slate-900 transition-colors">
             Workshops
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-400" />

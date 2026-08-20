@@ -9,10 +9,10 @@ export default function Footer() {
   const { regionConfig } = useRegion();
 
   const courses = [
-    { label: "Build Your AI Agent", href: "/courses/building-your-ai-agent-for-coders" },
-    { label: "Data Analysis & PowerBI", href: "/courses/data-analysis-with-ai-and-powerbi" },
-    { label: "Prompt Engineering 101", href: "/courses/prompt-engineering-101" },
-    { label: "Advanced RAG Systems", href: "/courses/advanced-ai-architectures-rag" },
+    { label: "Build Your AI Agent", href: "/in/courses/building-your-ai-agent-for-coders" },
+    { label: "Data Analysis & PowerBI", href: "/in/courses/data-analysis-with-ai-and-powerbi" },
+    { label: "Prompt Engineering 101", href: "/in/courses/prompt-engineering-101" },
+    { label: "Advanced RAG Systems", href: "/in/courses/advanced-ai-architectures-rag" },
   ];
 
   return (
@@ -88,9 +88,9 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-sm font-black tracking-wider uppercase text-white">Company</h4>
             <ul className="space-y-2.5 text-sm font-semibold text-neutral-400">
-              <li><Link href="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/career" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
+              <li><Link href="/in/about-us" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/in/career" className="hover:text-white transition-colors">Careers</Link></li>
+              <li><Link href="/in/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
               <li><a href="#register" className="hover:text-white transition-colors">Earn with us</a></li>
             </ul>
           </div>

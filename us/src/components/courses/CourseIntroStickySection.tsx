@@ -155,7 +155,7 @@ export default function CourseIntroStickySection({ course }: Props) {
             </div>
 
             <a
-              href="/contact-us"
+              href="/us/contact-us"
               className="w-full inline-flex items-center justify-center gap-2 bg-[#C1121C] hover:bg-[#a00e17] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl py-3.5 px-6 shadow-md hover:shadow-lg transition-all duration-200"
             >
               <span>{course.stickyCard.buttonText}</span>

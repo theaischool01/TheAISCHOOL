@@ -29,7 +29,7 @@ export default function USCoursesSection() {
           {courses.map((course) => (
             <Link
               key={course.id}
-              href={`/courses/${course.slug}`}
+              href={`/us/courses/${course.slug}`}
               className={`group relative bg-white rounded-3xl p-6 sm:p-7 border transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-2xl hover:-translate-y-1 ${
                 course.featured
                   ? "border-red-500 ring-2 ring-red-500/20"
@@ -104,7 +104,7 @@ export default function USCoursesSection() {
         {/* "Explore All Courses" CTA Button below grid */}
         <div className="flex justify-center pt-4">
           <Link
-            href="/learn"
+            href="/us/learn"
             className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#171717] hover:bg-[#EE1C25] text-white text-xs font-black uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
           >
             <span>EXPLORE ALL COURSES</span>

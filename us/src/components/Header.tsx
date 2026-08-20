@@ -126,7 +126,7 @@ export default function Header() {
       <header className="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-neutral-200/80 shadow-2xs z-[999] font-sans transition-all duration-200">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-8 py-4 relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Link href="/us" className="flex items-center gap-3 shrink-0">
             <Image
               src="/us/assets/logo.png"
               alt="The AI School USA Logo"
@@ -144,9 +144,9 @@ export default function Header() {
               {/* "Learn" Interactive Two-Panel Flyout Dropdown */}
               <li className="relative group/nav-item">
                 <Link
-                  href="/learn"
+                  href="/us/learn"
                   className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-bold transition-colors rounded-lg cursor-pointer ${
-                    pathname === "/learn"
+                    pathname === "/us/learn" || pathname.startsWith("/us/learn")
                       ? "text-[#C1121C] font-black"
                       : "text-[#171717] hover:text-[#C1121C]"
                   }`}
@@ -210,12 +210,12 @@ export default function Header() {
                         return (
                           <Link
                             key={course.id}
-                            href={`/courses/${course.slug}`}
+                            href={`/us/courses/${course.slug}`}
                             onMouseEnter={() => setActiveCourseId(course.id)}
                             className={`flex items-center justify-between w-full px-4 py-3 rounded-xl text-left text-xs sm:text-sm transition-all duration-150 group/row relative overflow-hidden ${
                               isActive
                                 ? "bg-[#C1121C] text-white font-extrabold shadow-sm border-l-4 border-red-900/90"
-                                : "text-[#C1121C] font-bold hover:bg-red-50/60"
+                                : "text-[#C1121C]"
                             }`}
                           >
                             <span className="leading-snug pr-2">{course.name}</span>
@@ -255,7 +255,7 @@ export default function Header() {
                             {currentCourse.modules.map((module) => (
                               <motion.div variants={moduleItemVariants} key={module.id}>
                                 <Link
-                                  href={`/courses/${currentCourse.slug}`}
+                                  href={`/us/courses/${currentCourse.slug}`}
                                   className="relative inline-block text-xs sm:text-sm font-semibold text-[#C1121C] leading-snug transition-colors py-0.5 group/mod"
                                 >
                                   <span>{module.title}</span>
@@ -294,9 +294,9 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="/about-us"
+                  href="/us/about-us"
                   className={`relative px-3 py-2 text-sm font-bold transition-colors ${
-                    pathname === "/about-us"
+                    pathname === "/us/about-us"
                       ? "text-[#C1121C] font-black after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2.5px] after:bg-[#C1121C] after:rounded-full"
                       : "text-[#171717] hover:text-[#C1121C]"
                   }`}
@@ -307,9 +307,9 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="/blogs"
+                  href="/us/blogs"
                   className={`relative px-3 py-2 text-sm font-bold transition-colors ${
-                    pathname === "/blogs"
+                    pathname === "/us/blogs"
                       ? "text-[#C1121C] font-black after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2.5px] after:bg-[#C1121C] after:rounded-full"
                       : "text-[#171717] hover:text-[#C1121C]"
                   }`}
@@ -320,9 +320,9 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="/contact-us"
+                  href="/us/contact-us"
                   className={`relative px-3 py-2 text-sm font-bold transition-colors ${
-                    pathname === "/contact-us"
+                    pathname === "/us/contact-us"
                       ? "text-[#C1121C] font-black after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2.5px] after:bg-[#C1121C] after:rounded-full"
                       : "text-[#171717] hover:text-[#C1121C]"
                   }`}
@@ -391,7 +391,7 @@ export default function Header() {
                               {course.modules.map((mod) => (
                                 <Link
                                   key={mod.id}
-                                  href={`/courses/${course.slug}`}
+                                  href={`/us/courses/${course.slug}`}
                                   onClick={() => setMobileMenuOpen(false)}
                                   className="text-xs text-[#C1121C] hover:underline py-0.5 block leading-relaxed"
                                 >
@@ -409,10 +409,10 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="/about-us"
+                  href="/us/about-us"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block font-bold py-3 border-b border-neutral-100 ${
-                    pathname === "/about-us" ? "text-[#C1121C] font-black" : "text-[#171717]"
+                    pathname === "/us/about-us" ? "text-[#C1121C] font-black" : "text-[#171717]"
                   }`}
                 >
                   About Us
@@ -421,10 +421,10 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="/blogs"
+                  href="/us/blogs"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block font-bold py-3 border-b border-neutral-100 ${
-                    pathname === "/blogs" ? "text-[#C1121C] font-black" : "text-[#171717]"
+                    pathname === "/us/blogs" ? "text-[#C1121C] font-black" : "text-[#171717]"
                   }`}
                 >
                   Blogs
@@ -433,10 +433,10 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="/contact-us"
+                  href="/us/contact-us"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block font-bold py-3 ${
-                    pathname === "/contact-us" ? "text-[#C1121C] font-black" : "text-[#171717]"
+                    pathname === "/us/contact-us" ? "text-[#C1121C] font-black" : "text-[#171717]"
                   }`}
                 >
                   Contact Us

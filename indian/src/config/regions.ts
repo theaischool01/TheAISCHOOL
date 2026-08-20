@@ -34,7 +34,7 @@ export const REGIONS: Record<string, RegionConfig> = {
   in: {
     code: "in",
     name: "India",
-    path: "/",
+    path: "/in",
     currency: "INR",
     locale: "en-IN",
     country: "IN",
@@ -54,10 +54,10 @@ export const REGIONS: Record<string, RegionConfig> = {
       illustration: "/in/assets/hero_illustration.png",
     },
     navigation: [
-      { name: "Learn", url: "/learn" },
-      { name: "About Us", url: "/about-us" },
-      { name: "Blogs", url: "/blogs" },
-      { name: "Contact Us", url: "/contact-us" },
+      { name: "Learn", url: "/in/learn" },
+      { name: "About Us", url: "/in/about-us" },
+      { name: "Blogs", url: "/in/blogs" },
+      { name: "Contact Us", url: "/in/contact-us" },
     ],
     socialLinks: [
       { provider: "linkedin", url: "https://www.linkedin.com/company/theaischool/" },
@@ -67,9 +67,9 @@ export const REGIONS: Record<string, RegionConfig> = {
       { provider: "twitter", url: "https://x.com/TheAI_SCHOOL" },
     ],
     legalLinks: [
-      { name: "Privacy Policy", url: "/privacy-policies" },
-      { name: "Terms & Conditions", url: "/terms-conditions" },
-      { name: "Refund Policy", url: "/refund" },
+      { name: "Privacy Policy", url: "/in/privacy-policies" },
+      { name: "Terms & Conditions", url: "/in/terms-conditions" },
+      { name: "Refund Policy", url: "/in/refund" },
     ],
     metadata: {
       title: "The AI School - Learn AI Skills from Startup Leaders",
@@ -80,7 +80,7 @@ export const REGIONS: Record<string, RegionConfig> = {
   us: {
     code: "us",
     name: "United States",
-    path: "https://theaischool.co/us/",
+    path: "/us",
     currency: "USD",
     locale: "en-US",
     country: "US",
@@ -100,17 +100,17 @@ export const REGIONS: Record<string, RegionConfig> = {
       illustration: "/us/assets/hero_illustration.png",
     },
     navigation: [
-      { name: "Learn", url: "/learn" },
-      { name: "About Us", url: "/about-us" },
-      { name: "Blogs", url: "/blogs" },
-      { name: "Contact Us", url: "/contact-us" },
+      { name: "Learn", url: "/us/learn" },
+      { name: "About Us", url: "/us/about-us" },
+      { name: "Blogs", url: "/us/blogs" },
+      { name: "Contact Us", url: "/us/contact-us" },
     ],
     socialLinks: [
       { provider: "linkedin", url: "https://www.linkedin.com/company/theaischool/" },
     ],
     legalLinks: [
-      { name: "Privacy Policy", url: "/privacy-policies" },
-      { name: "Terms & Conditions", url: "/terms-conditions" },
+      { name: "Privacy Policy", url: "/us/privacy-policies" },
+      { name: "Terms & Conditions", url: "/us/terms-conditions" },
     ],
     metadata: {
       title: "The AI School USA - Learn AI Skills from Tech Leaders",
@@ -121,7 +121,7 @@ export const REGIONS: Record<string, RegionConfig> = {
   ph: {
     code: "ph",
     name: "Philippines",
-    path: "https://theaischool.co/ph/",
+    path: "/ph",
     currency: "PHP",
     locale: "en-PH",
     country: "PH",
@@ -141,17 +141,17 @@ export const REGIONS: Record<string, RegionConfig> = {
       illustration: "/ph/assets/hero_illustration.png",
     },
     navigation: [
-      { name: "Learn", url: "/learn" },
-      { name: "About Us", url: "/about-us" },
-      { name: "Blogs", url: "/blogs" },
-      { name: "Contact Us", url: "/contact-us" },
+      { name: "Learn", url: "/ph/learn" },
+      { name: "About Us", url: "/ph/about-us" },
+      { name: "Blogs", url: "/ph/blogs" },
+      { name: "Contact Us", url: "/ph/contact-us" },
     ],
     socialLinks: [
       { provider: "linkedin", url: "https://www.linkedin.com/company/theaischool/" },
     ],
     legalLinks: [
-      { name: "Privacy Policy", url: "/privacy-policies" },
-      { name: "Terms & Conditions", url: "/terms-conditions" },
+      { name: "Privacy Policy", url: "/ph/privacy-policies" },
+      { name: "Terms & Conditions", url: "/ph/terms-conditions" },
     ],
     metadata: {
       title: "The AI School Philippines - Master AI Engineering",
