@@ -185,7 +185,7 @@ export default function PartnersSection({
       </div>
 
       {/* Global CSS animations for HackCulture scrolling columns */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes scrollUp {
           0% {
             transform: translateY(0);
@@ -220,7 +220,7 @@ export default function PartnersSection({
             transform: none !important;
           }
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }

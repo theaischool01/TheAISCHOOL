@@ -280,7 +280,7 @@ export default function LearningJourney() {
       </div>
 
       {/* Subtle floating animations global styles */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes subtleFloat {
           0%, 100% {
             transform: translate(-50%, -50%) translateY(-3px);
@@ -330,7 +330,7 @@ export default function LearningJourney() {
             transform: none !important;
           }
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }

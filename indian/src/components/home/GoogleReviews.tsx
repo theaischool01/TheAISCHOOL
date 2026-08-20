@@ -237,7 +237,7 @@ export default function GoogleReviews() {
 
       </div>
 
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes marqueeLeft {
           0% {
             transform: translate3d(0, 0, 0);
@@ -264,7 +264,7 @@ export default function GoogleReviews() {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }
