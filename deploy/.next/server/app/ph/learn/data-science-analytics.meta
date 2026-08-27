@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ph/layout,_N_T_/ph/learn/layout,_N_T_/ph/learn/[slug]/layout,_N_T_/ph/learn/[slug]/page,_N_T_/ph/learn/data-science-analytics"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ph/learn/$d$slug/__PAGE__",
+    "/ph/learn/$d$slug",
+    "/ph/learn",
+    "/ph",
+    "/_index",
+    "/_head"
+  ]
+}

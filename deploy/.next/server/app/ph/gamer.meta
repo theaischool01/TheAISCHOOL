@@ -1,0 +1,18 @@
+{
+  "status": 307,
+  "headers": {
+    "location": "/ph/learn/gamer",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ph/layout,_N_T_/ph/gamer/layout,_N_T_/ph/gamer/page,_N_T_/ph/gamer"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ph/gamer/__PAGE__",
+    "/ph/gamer",
+    "/ph",
+    "/_index",
+    "/_head"
+  ]
+}

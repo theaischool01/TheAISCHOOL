@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/us/layout,_N_T_/us/build-your-own-ai-agent/layout,_N_T_/us/build-your-own-ai-agent/page,_N_T_/us/build-your-own-ai-agent"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/us/build-your-own-ai-agent/__PAGE__",
+    "/us/build-your-own-ai-agent",
+    "/us",
+    "/_index",
+    "/_head"
+  ]
+}

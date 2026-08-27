@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ph/layout,_N_T_/ph/workshops/layout,_N_T_/ph/workshops/[slug]/layout,_N_T_/ph/workshops/[slug]/page,_N_T_/ph/workshops/powerbi-fundamentals"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ph/workshops/$d$slug/__PAGE__",
+    "/ph/workshops/$d$slug",
+    "/ph/workshops",
+    "/ph",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/us/layout,_N_T_/us/courses/layout,_N_T_/us/courses/[slug]/layout,_N_T_/us/courses/[slug]/page,_N_T_/us/courses/gen-ai-101"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/us/courses/$d$slug/__PAGE__",
+    "/us/courses/$d$slug",
+    "/us/courses",
+    "/us",
+    "/_index",
+    "/_head"
+  ]
+}
