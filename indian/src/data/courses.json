@@ -1,0 +1,123 @@
+[
+  {
+    "id": "cmqrpt9bh000868taq1fqp81g",
+    "slug": "mobile-app-development",
+    "title": "Mobile App Development (For Coders)",
+    "category": "Programming",
+    "description": "Build stunning cross-platform mobile apps using React Native and Expo.",
+    "difficulty": "Intermediate",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:33.101Z",
+    "updatedAt": "2026-07-13T04:28:06.525Z"
+  },
+  {
+    "id": "cmqrpt9ib000968tadk0326y1",
+    "slug": "no-code-ai-web-development",
+    "title": "No-Code AI Web Development (For All)",
+    "category": "Programming",
+    "description": "Create and launch beautiful, interactive web apps using modern AI builders like Webflow and Framer.",
+    "difficulty": "Beginner",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:33.347Z",
+    "updatedAt": "2026-07-13T04:28:06.740Z"
+  },
+  {
+    "id": "cmqrpt9rg000a68tams0f3gy1",
+    "slug": "digital-marketing-and-lead-generation",
+    "title": "Digital Marketing & Lead Gen (For All)",
+    "category": "Business & Growth",
+    "description": "Scale customer acquisition with AI-driven marketing campaigns, SEO copies, and CRM pipelines.",
+    "difficulty": "Beginner",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:33.676Z",
+    "updatedAt": "2026-07-13T04:28:07.028Z"
+  },
+  {
+    "id": "cmqrpt6bv000068tall1qunc4",
+    "slug": "building-your-ai-agent-for-coders",
+    "title": "Building Your AI Agent (For Coders)",
+    "category": "AI Agents & GenAI",
+    "description": "Transform your skills into building next-generation AI systems with Python and LLM integrations.",
+    "difficulty": "Intermediate",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:29.227Z",
+    "updatedAt": "2026-07-13T04:28:03.302Z"
+  },
+  {
+    "id": "cmqrpt7vc000168ta7sgzduyu",
+    "slug": "building-and-deploying-ai-agents",
+    "title": "Building & Deploying AI Agents (No-Code)",
+    "category": "AI Agents & GenAI",
+    "description": "Build autonomous software agents without writing a single line of code using Flowise and n8n.",
+    "difficulty": "Beginner",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:31.224Z",
+    "updatedAt": "2026-07-13T04:28:04.987Z"
+  },
+  {
+    "id": "cmqrpt83s000268takjk4uc3v",
+    "slug": "ai-agent-chatbot-creation",
+    "title": "AI Agent Chatbot Creation (For All)",
+    "category": "AI Agents & GenAI",
+    "description": "Design, build, and deploy conversational customer service agents on WhatsApp and Telegram.",
+    "difficulty": "Beginner",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:31.528Z",
+    "updatedAt": "2026-07-13T04:28:05.240Z"
+  },
+  {
+    "id": "cmqrpt8am000368tax89kr1xd",
+    "slug": "prompt-engineering-101",
+    "title": "Prompt Engineering 101",
+    "category": "AI Agents & GenAI",
+    "description": "Master prompting methodologies, prompt chaining, and embedding retrievals.",
+    "difficulty": "Beginner",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:31.774Z",
+    "updatedAt": "2026-07-13T04:28:05.454Z"
+  },
+  {
+    "id": "cmqrpt8hf000468tam3x3dwbx",
+    "slug": "data-analysis-with-ai-and-powerbi",
+    "title": "Data Analysis with AI and PowerBI (For All)",
+    "category": "Data Analytics",
+    "description": "Uncover insights and drive business growth using AI-powered analytics and PowerBI dashboards.",
+    "difficulty": "Beginner",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:32.019Z",
+    "updatedAt": "2026-07-13T04:28:05.669Z"
+  },
+  {
+    "id": "cmqrpt8o5000568taduwokatw",
+    "slug": "python-for-data-analytics",
+    "title": "Python for Data Analytics (For Coders)",
+    "category": "Data Analytics",
+    "description": "Unlock insights from complex datasets with pandas, numpy, and Jupyter notebooks.",
+    "difficulty": "Intermediate",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:32.261Z",
+    "updatedAt": "2026-07-13T04:28:05.884Z"
+  },
+  {
+    "id": "cmqrpt8w5000668tacirke9oj",
+    "slug": "ai-cloud-engineer",
+    "title": "AI Cloud Engineer (For All)",
+    "category": "Cloud & Security",
+    "description": "Deploy and optimize machine learning models at scale in AWS and GCP.",
+    "difficulty": "Intermediate",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:32.549Z",
+    "updatedAt": "2026-07-13T04:28:06.097Z"
+  },
+  {
+    "id": "cmqrpt94o000768ta80b6jqtr",
+    "slug": "cyber-security-with-ai",
+    "title": "Cyber Security with AI (For All)",
+    "category": "Cloud & Security",
+    "description": "Protect modern digital networks using AI-driven threat intelligence and vulnerability scanning.",
+    "difficulty": "Beginner",
+    "isActive": true,
+    "createdAt": "2026-06-24T01:21:32.856Z",
+    "updatedAt": "2026-07-13T04:28:06.311Z"
+  }
+]

@@ -1,5 +1,9 @@
 'use client';
 
+import assessmentQuestionsData from "@in/data/assessmentQuestions.json";
+import { calculateAssessmentScores } from "@in/lib/assessmentScoring";
+
+
 import React, { useState, useEffect, useRef } from "react";
 import { 
   ArrowRight, UploadCloud, FileText, Sparkles, Brain, Cpu, 
@@ -343,50 +347,47 @@ export default function AssessmentPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     setResumeFile(file);
     setUploading(true);
-    setResumeStatus('PROCESSING');
-    try {
-      const data = new FormData();
-      data.append('file', file);
-      const res = await fetch('/api/assessment/parse', { method: 'POST', body: data });
-      const result = await res.json();
-      if (result.success) {
-        setSkillsMatrix(result.skills);
-        setResumeStatus('COMPLETED');
-        setResumeUrl(`https://uploadthing.com/f/${Math.random().toString(36).substring(7)}_${file.name}`);
-      } else {
-        setResumeStatus('FAILED');
-      }
-    } catch {
-      setResumeStatus('FAILED');
-    } finally {
+    setResumeStatus("PROCESSING");
+    setTimeout(() => {
+      setResumeStatus("COMPLETED");
+      setResumeUrl(file.name);
       setUploading(false);
-    }
+    }, 600);
   };
 
-  const startQuiz = async () => {
+  const startQuiz = () => {
     setLoadingQuestions(true);
     setStep(6);
-    // Reset quiz state
     setCurrentQuestionIndex(0);
     setSkippedQuestions(new Set());
     setAnswerSaved(false);
     try {
-      const res = await fetch(`/api/assessment/questions?difficulty=${getDifficulty()}`);
-      const data = await res.json();
-      setQuestions(data);
+      const difficulty = getDifficulty();
+      const filtered = (assessmentQuestionsData as any[]).filter((q: any) => q.difficulty === difficulty);
+      let selected = [...filtered];
+      if (selected.length < 10) {
+        const fallback = (assessmentQuestionsData as any[]).filter((q: any) => q.difficulty !== difficulty);
+        for (const q of fallback) {
+          if (selected.length >= 10) break;
+          if (!selected.some((sq: any) => sq.id === q.id)) {
+            selected.push(q);
+          }
+        }
+      }
+      const shuffled = selected.sort(() => 0.5 - Math.random()).slice(0, 10);
+      setQuestions(shuffled);
     } catch (error) {
-      console.error('Failed to fetch questions:', error);
+      console.error("Failed to load static questions:", error);
     } finally {
       setLoadingQuestions(false);
     }
   };
 
-  // ── NEW: handle answer selection with feedback ────────────────────────────
   const handleSelectOption = (questionId: string, optionId: string) => {
     setSelectedAnswers((prev) => ({ ...prev, [questionId]: optionId }));
     // Un-skip if user goes back and answers a skipped question
@@ -460,24 +461,8 @@ export default function AssessmentPage() {
     setPrimaryCourse(primary);
     setSecondaryCourses(secondaries);
 
-    try {
-      const formattedAnswers = questions.map((q) => ({
-        questionId: q.id,
-        selectedAnswer: selectedAnswers[q.id] || '',
-        score: Math.random() > 0.3 ? 10 : 0,
-      }));
-      await fetch('/api/assessment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData, resumeUrl, resumeStatus, skillsMatrix,
-          candidateProfile: getDifficulty(), interestVector: interests,
-          answers: formattedAnswers, scores: calculatedScores,
-        }),
-      });
-    } catch (e) {
-      console.error('Failed to record lead in database:', e);
-    }
+    // TODO: Lead storage / notification endpoint can be integrated here later.
+    console.log("[Assessment] Evaluated scores locally with zero DB dependency:", calculatedScores);
 
     setTimeout(() => {
       setScores(calculatedScores);

@@ -6,17 +6,10 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
-  outputFileTracingRoot: path.resolve(__dirname, "."),
-  turbopack: {
-    root: path.resolve(__dirname, "."),
-    resolveAlias: {
-      "@in": "./indian/src",
-      "@us": "./us/src",
-      "@ph": "./ph/src",
-    },
-  },
+  output: "export",
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -31,6 +24,14 @@ const nextConfig = {
         hostname: "utfs.io",
       },
     ],
+  },
+  turbopack: {
+    root: path.resolve(__dirname, "."),
+    resolveAlias: {
+      "@ph": "./ph/src",
+      "@us": "./us/src",
+      "@in": "./indian/src",
+    },
   },
   webpack: (config) => {
     config.resolve.alias = {

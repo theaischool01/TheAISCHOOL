@@ -1,29 +1,20 @@
-import { redirect } from "next/navigation";
-import { cookies, headers } from "next/headers";
-import {
-  DEFAULT_REGION,
-  COOKIE_NAME,
-  SUPPORTED_REGIONS,
-  COUNTRY_MAP,
-} from "@/config/siteConfig";
+"use client";
 
-export default async function RootPage() {
-  const cookieStore = await cookies();
-  const savedRegion = cookieStore.get(COOKIE_NAME)?.value;
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-  if (savedRegion && (SUPPORTED_REGIONS as readonly string[]).includes(savedRegion)) {
-    redirect(`/${savedRegion}`);
-  }
+export default function RootPage() {
+  const router = useRouter();
 
-  const reqHeaders = await headers();
-  const countryHeader = (
-    reqHeaders.get("x-vercel-ip-country") ||
-    reqHeaders.get("cf-ipcountry") ||
-    reqHeaders.get("x-country-code") ||
-    reqHeaders.get("x-geo-country") ||
-    ""
-  ).toUpperCase();
+  useEffect(() => {
+    const match = document.cookie.match(/theaischool_region=([^;]+)/);
+    const region = match ? match[1] : "in";
+    router.replace(`/${region}/`);
+  }, [router]);
 
-  const targetRegion = COUNTRY_MAP[countryHeader] || DEFAULT_REGION;
-  redirect(`/${targetRegion}`);
+  return (
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "sans-serif" }}>
+      <p>Redirecting to The AI School...</p>
+    </div>
+  );
 }

@@ -1,0 +1,626 @@
+[
+  {
+    "id": "cmqrptah1000b68tam3lbfrcy",
+    "category": "Python",
+    "difficulty": "Beginner",
+    "question": "Which of the following is the correct syntax to create a list in Python?",
+    "explanation": "Python lists are created by placing elements inside square brackets `[]`.",
+    "createdAt": "2026-06-24T01:21:34.597Z",
+    "options": [
+      {
+        "id": "cmqrptapk000c68takyximajr",
+        "text": "my_list = [1, 2, 3]"
+      },
+      {
+        "id": "cmqrptapk000d68tae5k17px6",
+        "text": "my_list = (1, 2, 3)"
+      },
+      {
+        "id": "cmqrptapk000e68tam706nufg",
+        "text": "my_list = {1, 2, 3}"
+      },
+      {
+        "id": "cmqrptapk000f68taogsbboq0",
+        "text": "my_list = <1, 2, 3>"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptbpn000g68tai335pcl3",
+    "category": "SQL",
+    "difficulty": "Beginner",
+    "question": "Which SQL statement is used to retrieve data from a database?",
+    "explanation": "The SELECT statement is used to select data from a database.",
+    "createdAt": "2026-06-24T01:21:36.203Z",
+    "options": [
+      {
+        "id": "cmqrptbwb000h68taoiy3ernv",
+        "text": "SELECT"
+      },
+      {
+        "id": "cmqrptbwb000i68taxtvpixoy",
+        "text": "GET"
+      },
+      {
+        "id": "cmqrptbwb000j68taf60qu313",
+        "text": "EXTRACT"
+      },
+      {
+        "id": "cmqrptbwb000k68taeemfthb3",
+        "text": "OPEN"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptcx6000l68ta97lkj46g",
+    "category": "AI Fundamentals",
+    "difficulty": "Beginner",
+    "question": "What is supervised learning?",
+    "explanation": "Supervised learning is where the model is trained on labeled training data containing both inputs and target outputs.",
+    "createdAt": "2026-06-24T01:21:37.770Z",
+    "options": [
+      {
+        "id": "cmqrptd3t000m68taab962mrn",
+        "text": "Training a model with labeled data containing inputs and targets"
+      },
+      {
+        "id": "cmqrptd3t000n68taxnsgy30g",
+        "text": "Training a model without any human intervention or targets"
+      },
+      {
+        "id": "cmqrptd3t000o68ta3n8ldi73",
+        "text": "Running an algorithm purely in the cloud without internet"
+      },
+      {
+        "id": "cmqrptd3t000p68ta2j7rp71r",
+        "text": "A process of writing code templates using visual drag-and-drop tools"
+      }
+    ]
+  },
+  {
+    "id": "cmqrpte1v000q68taibu8uqav",
+    "category": "Machine Learning",
+    "difficulty": "Beginner",
+    "question": "What type of machine learning problem is predicting a housing price based on square footage?",
+    "explanation": "Predicting continuous numerical values is a Regression problem.",
+    "createdAt": "2026-06-24T01:21:39.235Z",
+    "options": [
+      {
+        "id": "cmqrpte8j000r68tagxh9unpr",
+        "text": "Regression"
+      },
+      {
+        "id": "cmqrpte8k000s68tahgj4285o",
+        "text": "Classification"
+      },
+      {
+        "id": "cmqrpte8k000t68taozmql4i2",
+        "text": "Clustering"
+      },
+      {
+        "id": "cmqrpte8k000u68tan1vl3bur",
+        "text": "Dimensionality Reduction"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptfec000v68takvs5e8q2",
+    "category": "Generative AI",
+    "difficulty": "Beginner",
+    "question": "What does LLM stand for in the context of Generative AI?",
+    "explanation": "LLM stands for Large Language Model.",
+    "createdAt": "2026-06-24T01:21:40.980Z",
+    "options": [
+      {
+        "id": "cmqrptfl0000w68taxfdw8ert",
+        "text": "Large Language Model"
+      },
+      {
+        "id": "cmqrptfl0000x68tatawzm66e",
+        "text": "Logical Learning Machine"
+      },
+      {
+        "id": "cmqrptfl0000y68taycdo4csi",
+        "text": "Linear Logic Method"
+      },
+      {
+        "id": "cmqrptfl0000z68tam6lfpi3i",
+        "text": "Language Layout Map"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptgk8001068tad36knvxr",
+    "category": "Data Analytics",
+    "difficulty": "Beginner",
+    "question": "Which tool is most commonly used by non-coders for interactive business dashboards and reporting?",
+    "explanation": "PowerBI is a leading visual business intelligence dashboarding tool.",
+    "createdAt": "2026-06-24T01:21:42.488Z",
+    "options": [
+      {
+        "id": "cmqrptgqx001168taj2zq1g36",
+        "text": "PowerBI"
+      },
+      {
+        "id": "cmqrptgqx001268ta081eo0sy",
+        "text": "Pandas"
+      },
+      {
+        "id": "cmqrptgqx001368tah8vfyue7",
+        "text": "Kubernetes"
+      },
+      {
+        "id": "cmqrptgqx001468tat77n3kdp",
+        "text": "Wireshark"
+      }
+    ]
+  },
+  {
+    "id": "cmqrpthtj001568tafa355f7u",
+    "category": "Cloud",
+    "difficulty": "Beginner",
+    "question": "What does GCP stand for?",
+    "explanation": "GCP stands for Google Cloud Platform.",
+    "createdAt": "2026-06-24T01:21:44.119Z",
+    "options": [
+      {
+        "id": "cmqrpti07001668takxr1a0bf",
+        "text": "Google Cloud Platform"
+      },
+      {
+        "id": "cmqrpti07001768tah2bx68kr",
+        "text": "General Computing Process"
+      },
+      {
+        "id": "cmqrpti07001868ta29nunbjo",
+        "text": "Global Cloud Partition"
+      },
+      {
+        "id": "cmqrpti07001968tawpggulim",
+        "text": "Graphical Container Protocol"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptj16001a68taeznfewap",
+    "category": "Problem Solving",
+    "difficulty": "Beginner",
+    "question": "If a sequence goes: 2, 4, 8, 16, ... what is the next number?",
+    "explanation": "Each number is multiplied by 2. 16 * 2 = 32.",
+    "createdAt": "2026-06-24T01:21:45.690Z",
+    "options": [
+      {
+        "id": "cmqrptj8s001b68tawk74ncb4",
+        "text": "32"
+      },
+      {
+        "id": "cmqrptj8s001c68tat9ihyy8r",
+        "text": "24"
+      },
+      {
+        "id": "cmqrptj8s001d68ta2sa8n8ty",
+        "text": "20"
+      },
+      {
+        "id": "cmqrptj8s001e68taoplj15vc",
+        "text": "64"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptk7w001f68ta0wr2egu8",
+    "category": "Python",
+    "difficulty": "Intermediate",
+    "question": "What is a list comprehension in Python?",
+    "explanation": "List comprehension offers a shorter syntax to create a new list based on values of an existing list.",
+    "createdAt": "2026-06-24T01:21:47.228Z",
+    "options": [
+      {
+        "id": "cmqrptkej001g68tay3iw04ud",
+        "text": "A concise way to create lists using a single line loop"
+      },
+      {
+        "id": "cmqrptkej001h68taz9iq7ns4",
+        "text": "A debugging tool to check list elements in memory"
+      },
+      {
+        "id": "cmqrptkej001i68ta7s9yj8f7",
+        "text": "A library for parsing JSON objects"
+      },
+      {
+        "id": "cmqrptkej001j68ta871fzp1g",
+        "text": "A method to compress lists to gzip format"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptld7001k68tau067cl6m",
+    "category": "SQL",
+    "difficulty": "Intermediate",
+    "question": "Which clause is used to filter group results after grouping with GROUP BY?",
+    "explanation": "HAVING is used to filter groups, whereas WHERE filters individual rows before grouping.",
+    "createdAt": "2026-06-24T01:21:48.715Z",
+    "options": [
+      {
+        "id": "cmqrptljv001l68talwvvnqkc",
+        "text": "HAVING"
+      },
+      {
+        "id": "cmqrptljv001m68ta1v63vjj9",
+        "text": "WHERE"
+      },
+      {
+        "id": "cmqrptljv001n68tag57jm5pb",
+        "text": "FILTER"
+      },
+      {
+        "id": "cmqrptljv001o68tat3y210mp",
+        "text": "SELECT"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptml7001p68ta1it7zvws",
+    "category": "AI Fundamentals",
+    "difficulty": "Intermediate",
+    "question": "What is a neural network \"activation function\" used for?",
+    "explanation": "Activation functions introduce non-linearity into the network, allowing it to learn complex patterns.",
+    "createdAt": "2026-06-24T01:21:50.299Z",
+    "options": [
+      {
+        "id": "cmqrptmsp001q68ta99qbr8cf",
+        "text": "To introduce non-linearity into the network"
+      },
+      {
+        "id": "cmqrptmsp001r68tamomqxijg",
+        "text": "To save the network parameters to disk"
+      },
+      {
+        "id": "cmqrptmsq001s68tam2m1h9xz",
+        "text": "To adjust the learning rate during backpropagation"
+      },
+      {
+        "id": "cmqrptmsq001t68tahms8ps0l",
+        "text": "To connect the network to a GPU compiler"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptnr0001u68tacfe2l1ht",
+    "category": "Machine Learning",
+    "difficulty": "Intermediate",
+    "question": "Which of the following is commonly used to prevent model overfitting?",
+    "explanation": "Regularization (like L1/L2) adds a penalty parameter to discourage complex models, reducing overfitting.",
+    "createdAt": "2026-06-24T01:21:51.804Z",
+    "options": [
+      {
+        "id": "cmqrptnze001v68tacuvlv177",
+        "text": "Regularization"
+      },
+      {
+        "id": "cmqrptnze001w68taoidv1g5c",
+        "text": "Increasing model layers indefinitely"
+      },
+      {
+        "id": "cmqrptnze001x68taz901ksoo",
+        "text": "Using unlabelled validation data"
+      },
+      {
+        "id": "cmqrptnze001y68ta8ti61515",
+        "text": "Removing all bias nodes"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptoxn001z68tajcrunhe2",
+    "category": "Generative AI",
+    "difficulty": "Intermediate",
+    "question": "What is the role of Temperature in LLM generation?",
+    "explanation": "Temperature controls the randomness/creativity of generations. Lower values are deterministic; higher values are more creative.",
+    "createdAt": "2026-06-24T01:21:53.340Z",
+    "options": [
+      {
+        "id": "cmqrptp63002068ta6cpe1ses",
+        "text": "It controls the randomness and creativity of the output text"
+      },
+      {
+        "id": "cmqrptp63002168tahdpqa94e",
+        "text": "It measures the physical heat of the server GPU runs"
+      },
+      {
+        "id": "cmqrptp63002268tas1pkd75c",
+        "text": "It sets the context window limit in bytes"
+      },
+      {
+        "id": "cmqrptp63002368ta9m4np1n4",
+        "text": "It limits the api tokens allowed per minute"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptq3g002468taq1txpzb3",
+    "category": "Data Analytics",
+    "difficulty": "Intermediate",
+    "question": "In Pandas, which function is used to load a CSV file into a DataFrame?",
+    "explanation": "`read_csv()` is used to read CSV files into Pandas DataFrames.",
+    "createdAt": "2026-06-24T01:21:54.844Z",
+    "options": [
+      {
+        "id": "cmqrptqa4002568taqgi2phed",
+        "text": "read_csv()"
+      },
+      {
+        "id": "cmqrptqa4002668tahmd1asm6",
+        "text": "load_csv()"
+      },
+      {
+        "id": "cmqrptqa4002768ta9ju55y3x",
+        "text": "get_csv()"
+      },
+      {
+        "id": "cmqrptqa4002868taxbelkq8g",
+        "text": "import_csv()"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptrbv002968tay7ovf6ke",
+    "category": "Cloud",
+    "difficulty": "Intermediate",
+    "question": "What does Docker do?",
+    "explanation": "Docker packages an application and its dependencies into virtual containers that can run on any server.",
+    "createdAt": "2026-06-24T01:21:56.443Z",
+    "options": [
+      {
+        "id": "cmqrptrii002a68taegtf9bdu",
+        "text": "Packages applications into self-contained runtime containers"
+      },
+      {
+        "id": "cmqrptrii002b68taubux50fz",
+        "text": "Compiles C++ files to binary formats"
+      },
+      {
+        "id": "cmqrptrii002c68taz26yrc2s",
+        "text": "Provides automated DNS route resolving features"
+      },
+      {
+        "id": "cmqrptrii002d68tav0lphgwl",
+        "text": "Encrypts database fields using KMS key blocks"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptsij002e68ta6f11ae79",
+    "category": "Problem Solving",
+    "difficulty": "Intermediate",
+    "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "explanation": "Let ball = x. Bat = x + 1. Total = 2x + 1 = 1.10 => 2x = 0.10 => x = 0.05 (5 cents).",
+    "createdAt": "2026-06-24T01:21:57.979Z",
+    "options": [
+      {
+        "id": "cmqrptspl002f68tamp5os5kf",
+        "text": "5 cents"
+      },
+      {
+        "id": "cmqrptspl002g68tam2scie77",
+        "text": "10 cents"
+      },
+      {
+        "id": "cmqrptspl002h68ta74p0dgvg",
+        "text": "1 cent"
+      },
+      {
+        "id": "cmqrptspl002i68tap0ub7el8",
+        "text": "15 cents"
+      }
+    ]
+  },
+  {
+    "id": "cmqrpttri002j68ta4odfvker",
+    "category": "Python",
+    "difficulty": "Advanced",
+    "question": "What is a decorator in Python?",
+    "explanation": "A decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure.",
+    "createdAt": "2026-06-24T01:21:59.598Z",
+    "options": [
+      {
+        "id": "cmqrpttzk002k68tarti9q97j",
+        "text": "A function that takes another function and extends its behavior without modifying it"
+      },
+      {
+        "id": "cmqrpttzk002l68tahzw7epdu",
+        "text": "A CSS class mapping pattern used inside visual widgets"
+      },
+      {
+        "id": "cmqrpttzk002m68taw27hi9mp",
+        "text": "A formatting function that structures printing lists"
+      },
+      {
+        "id": "cmqrpttzk002n68tas55fo84t",
+        "text": "A memory clean utility running in garbage collectors"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptuyq002o68taf0hb37bv",
+    "category": "SQL",
+    "difficulty": "Advanced",
+    "question": "What is the purpose of a database Index?",
+    "explanation": "Indexes speed up data retrieval operations at the cost of additional storage and write speed.",
+    "createdAt": "2026-06-24T01:22:01.154Z",
+    "options": [
+      {
+        "id": "cmqrptv5g002p68tardnt4mvp",
+        "text": "To speed up query data retrieval operations"
+      },
+      {
+        "id": "cmqrptv5g002q68ta2l4l8mw2",
+        "text": "To guarantee data normalization rules are followed"
+      },
+      {
+        "id": "cmqrptv5g002r68ta21468qu2",
+        "text": "To link tables in a schema model automatically"
+      },
+      {
+        "id": "cmqrptv5g002s68tast1b7j0a",
+        "text": "To prevent duplicate key injections"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptw77002t68taiugnk198",
+    "category": "AI Fundamentals",
+    "difficulty": "Advanced",
+    "question": "What is the \"vanishing gradient problem\" in deep learning?",
+    "explanation": "In deep networks, gradients can shrink exponentially during backpropagation, making training very slow or ineffective.",
+    "createdAt": "2026-06-24T01:22:02.755Z",
+    "options": [
+      {
+        "id": "cmqrptwfr002u68tallm7i0xt",
+        "text": "Gradients shrinking exponentially during backpropagation in deep networks"
+      },
+      {
+        "id": "cmqrptwfr002v68tansnl5kxp",
+        "text": "Gradients becoming infinitely large, causing model overflows"
+      },
+      {
+        "id": "cmqrptwfr002w68taat00yn66",
+        "text": "A database connectivity timeout during training epochs"
+      },
+      {
+        "id": "cmqrptwfr002x68tahndxdcsm",
+        "text": "The failure of loss parameters to update due to incorrect activation"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptxgq002y68taqvk46g31",
+    "category": "Machine Learning",
+    "difficulty": "Advanced",
+    "question": "Which of the following describes the difference between Bagging and Boosting?",
+    "explanation": "Bagging trains models in parallel (e.g. Random Forest), whereas Boosting trains models sequentially (e.g. XGBoost).",
+    "createdAt": "2026-06-24T01:22:04.394Z",
+    "options": [
+      {
+        "id": "cmqrptxpa002z68tabv70w9n8",
+        "text": "Bagging runs estimators in parallel; Boosting runs estimators sequentially"
+      },
+      {
+        "id": "cmqrptxpa003068tahye55m75",
+        "text": "Bagging reduces bias; Boosting reduces variance"
+      },
+      {
+        "id": "cmqrptxpa003168tafd3is0p6",
+        "text": "Bagging uses deep trees; Boosting uses wide neural clusters"
+      },
+      {
+        "id": "cmqrptxpa003268tada694q3f",
+        "text": "Bagging only works on text; Boosting only works on images"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptyq9003368ta7v7xt0jx",
+    "category": "Generative AI",
+    "difficulty": "Advanced",
+    "question": "What is Retrieval-Augmented Generation (RAG)?",
+    "explanation": "RAG retrieves relevant external documents matching a query and passes them to the LLM as context for generation.",
+    "createdAt": "2026-06-24T01:22:06.033Z",
+    "options": [
+      {
+        "id": "cmqrptyww003468taxcian0lr",
+        "text": "Augmenting LLMs with external query-retrieved document contexts"
+      },
+      {
+        "id": "cmqrptyww003568taucjmtie7",
+        "text": "Running fine-tuning pipelines over large CSV datasets"
+      },
+      {
+        "id": "cmqrptyww003668ta256eqt8r",
+        "text": "A parsing mechanism to clean PDF resume documents"
+      },
+      {
+        "id": "cmqrptywx003768ta4h8jofsd",
+        "text": "A technique to compile Python model checkpoints to cloud buckets"
+      }
+    ]
+  },
+  {
+    "id": "cmqrptzvp003868taq2rr83yi",
+    "category": "Data Analytics",
+    "difficulty": "Advanced",
+    "question": "What does a high p-value (typically > 0.05) indicate in statistical hypothesis testing?",
+    "explanation": "A high p-value indicates that you fail to reject the null hypothesis.",
+    "createdAt": "2026-06-24T01:22:07.525Z",
+    "options": [
+      {
+        "id": "cmqrpu02d003968taaxhm8vfx",
+        "text": "You fail to reject the null hypothesis"
+      },
+      {
+        "id": "cmqrpu02d003a68tawoi8lxas",
+        "text": "You reject the null hypothesis in favor of the alternative"
+      },
+      {
+        "id": "cmqrpu02d003b68tam2n9ffz1",
+        "text": "The sample size is too small for accurate findings"
+      },
+      {
+        "id": "cmqrpu02d003c68ta73at234h",
+        "text": "The correlation coefficient is exactly equal to zero"
+      }
+    ]
+  },
+  {
+    "id": "cmqrpu13l003d68tajcehig9z",
+    "category": "Cloud",
+    "difficulty": "Advanced",
+    "question": "What is the primary benefit of Kubernetes in microservices architectures?",
+    "explanation": "Kubernetes provides automated container deployment, scaling, healing, and management.",
+    "createdAt": "2026-06-24T01:22:09.105Z",
+    "options": [
+      {
+        "id": "cmqrpu1ae003e68ta1v010rif",
+        "text": "Automated container deployment, scaling, and orchestration management"
+      },
+      {
+        "id": "cmqrpu1af003f68tadi7vjod8",
+        "text": "Visual database diagram creation templates"
+      },
+      {
+        "id": "cmqrpu1af003g68ta1299tjar",
+        "text": "Hosting git version control structures in local environments"
+      },
+      {
+        "id": "cmqrpu1af003h68ta4wx8pp77",
+        "text": "Speeding up JavaScript builds during client bundler compilation"
+      }
+    ]
+  },
+  {
+    "id": "cmqrpu2fx003i68tamp0mdfxs",
+    "category": "Problem Solving",
+    "difficulty": "Advanced",
+    "question": "In a room of 30 people, what is the approximate probability that at least two share the same birthday?",
+    "explanation": "By the Birthday Paradox formula, for 30 people, the probability is approximately 70%.",
+    "createdAt": "2026-06-24T01:22:10.845Z",
+    "options": [
+      {
+        "id": "cmqrpu2og003j68tayo2dx3pd",
+        "text": "Approximately 70%"
+      },
+      {
+        "id": "cmqrpu2og003k68taq6nox2yr",
+        "text": "Approximately 10%"
+      },
+      {
+        "id": "cmqrpu2og003l68tat514uvzh",
+        "text": "Approximately 50%"
+      },
+      {
+        "id": "cmqrpu2og003m68taes0wi4yx",
+        "text": "Approximately 3%"
+      }
+    ]
+  }
+]

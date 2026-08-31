@@ -1,5 +1,5 @@
 'use client';
-export const dynamic = 'force-dynamic';
+
 import React, { useState, use } from "react";
 import { Clock, Award, ShieldCheck, CheckCircle, ChevronDown, ChevronUp, Users, Smartphone, BarChart, Sparkles, ArrowLeft } from "lucide-react";
 import Header from "@in/components/Header";

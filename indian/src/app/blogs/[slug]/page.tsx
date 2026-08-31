@@ -1,5 +1,5 @@
 'use client';
-export const dynamic = 'force-dynamic';
+
 import React, { use } from "react";
 import Header from "@in/components/Header";
 import Footer from "@in/components/Footer";

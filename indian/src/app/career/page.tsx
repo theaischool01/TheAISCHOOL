@@ -6,7 +6,7 @@ import { Briefcase, MapPin, Clock, DollarSign, ArrowUpRight, Sparkles, Building2
 import Header from "@in/components/Header";
 import Footer from "@in/components/Footer";
 
-export const dynamic = 'force-dynamic';
+
 
 const activeJobs = [
   {

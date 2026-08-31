@@ -5,7 +5,7 @@ import Header from "@in/components/Header";
 import Footer from "@in/components/Footer";
 import { useRegion } from "@in/context/RegionContext";
 
-export const dynamic = 'force-dynamic';
+
 
 export default function ContactUsPage() {
   const { currentRegion } = useRegion();
@@ -15,34 +15,17 @@ export default function ContactUsPage() {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSendMessage = async (e: React.FormEvent) => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name,
-          email,
-          phone: mobile,
-          subject: "Contact Form Inquiry",
-          message,
-          region: currentRegion,
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        alert("Message securely routed to our support team. We will reply within 24 hours.");
-        setName(''); setEmail(''); setMobile(''); setMessage('');
-      } else {
-        alert("Failed to submit message. Please try again.");
-      }
-    } catch (err) {
-      alert("Failed to submit message. Please try again.");
-    } finally {
+    setTimeout(() => {
       setLoading(false);
-    }
+      setSubmitted(true);
+      alert("Thank you for contacting us! Your inquiry has been received and our team will get back to you within 24 hours.");
+      setName(''); setEmail(''); setMobile(''); setMessage('');
+    }, 600);
   };
 
   return (

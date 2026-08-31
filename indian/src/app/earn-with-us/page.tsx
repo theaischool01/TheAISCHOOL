@@ -4,7 +4,7 @@ import { DollarSign, Shield, ClipboardCheck, Sparkles } from "lucide-react";
 import Header from "@in/components/Header";
 import Footer from "@in/components/Footer";
 
-export const dynamic = 'force-dynamic';
+
 
 export default function EarnWithUsPage() {
   const [formData, setFormData] = useState({
