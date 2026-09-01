@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[45355,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/1cftjyz08ulck.js","/_next/static/chunks/1gn7-tkdxv-12.js","/_next/static/chunks/0bg82x8552mir.js","/_next/static/chunks/2hdu2jqetpe5n.js","/_next/static/chunks/0p9wov55muu2w.js"],"default"]
+4:I[97367,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"params":"$@3"}],[["$","script","script-0",{"src":"/_next/static/chunks/1gn7-tkdxv-12.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/0bg82x8552mir.js","async":true}],["$","script","script-2",{"src":"/_next/static/chunks/2hdu2jqetpe5n.js","async":true}],["$","script","script-3",{"src":"/_next/static/chunks/0p9wov55muu2w.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"9Xk7KB3abVsv4xOYNVgGa"}
+3:{"slug":"prompt-engineering-tips"}
+6:null
