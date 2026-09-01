@@ -1,0 +1,86 @@
+DirectoryIndex out/in/index.html out/index.html index.html index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ----------------------------------------------------------------------
+  # 1. WordPress Admin & Core (Never touch or reroute)
+  # ----------------------------------------------------------------------
+  RewriteRule ^(.*)wp-admin - [L]
+  RewriteRule ^(.*)wp-login\.php - [L]
+  RewriteRule ^(.*)wp-content - [L]
+  RewriteRule ^(.*)wp-includes - [L]
+
+  # ----------------------------------------------------------------------
+  # 2. Prevent loops if already pointing into out/
+  # ----------------------------------------------------------------------
+  RewriteRule ^out/ - [L]
+
+  # ----------------------------------------------------------------------
+  # 3. Next.js Static JS/CSS Chunks & Assets
+  # ----------------------------------------------------------------------
+  RewriteRule ^_next/(.*)$ out/_next/$1 [L]
+  RewriteRule ^assets/(.*)$ out/assets/$1 [L]
+  RewriteRule ^images/(.*)$ out/images/$1 [L]
+
+  # Regional Assets & Media
+  RewriteRule ^in/assets/(.*)$ out/in/assets/$1 [L]
+  RewriteRule ^in/images/(.*)$ out/in/images/$1 [L]
+  RewriteRule ^in/mentors/(.*)$ out/in/mentors/$1 [L]
+  RewriteRule ^us/assets/(.*)$ out/us/assets/$1 [L]
+  RewriteRule ^ph/assets/(.*)$ out/ph/assets/$1 [L]
+
+  # ----------------------------------------------------------------------
+  # 4. Direct Pass for Any Static Extension (.txt, .json, .ico, .png, etc.)
+  # ----------------------------------------------------------------------
+  RewriteRule ^(.*)\.(txt|json|ico|png|svg|css|js|webmanifest|webp|jpg|jpeg|woff|woff2|ttf|eot)$ out/$1.$2 [L]
+
+  # ----------------------------------------------------------------------
+  # 5. Bare Root (theaischool.co /) -> Serve India React App
+  # ----------------------------------------------------------------------
+  RewriteRule ^$ out/in/index.html [L]
+  RewriteRule ^in/?$ out/in/index.html [L]
+  RewriteRule ^us/?$ out/us/index.html [L]
+  RewriteRule ^ph/?$ out/ph/index.html [L]
+
+  # ----------------------------------------------------------------------
+  # 6. Regional Multi-level HTML Sub-pages
+  # ----------------------------------------------------------------------
+  RewriteRule ^in/courses/([^/]+)/?$ out/in/courses/$1/index.html [L]
+  RewriteRule ^in/blogs/([^/]+)/?$ out/in/blogs/$1/index.html [L]
+  RewriteRule ^us/courses/([^/]+)/?$ out/us/courses/$1/index.html [L]
+  RewriteRule ^us/blogs/([^/]+)/?$ out/us/blogs/$1/index.html [L]
+  RewriteRule ^ph/learn/([^/]+)/?$ out/ph/learn/$1/index.html [L]
+  RewriteRule ^ph/workshops/([^/]+)/?$ out/ph/workshops/$1/index.html [L]
+  RewriteRule ^ph/blogs/([^/]+)/?$ out/ph/blogs/$1/index.html [L]
+
+  # Regional Single-level Pages (e.g. /in/about-us -> out/in/about-us/index.html)
+  RewriteRule ^in/([^/]+)/?$ out/in/$1/index.html [L]
+  RewriteRule ^us/([^/]+)/?$ out/us/$1/index.html [L]
+  RewriteRule ^ph/([^/]+)/?$ out/ph/$1/index.html [L]
+
+  # ----------------------------------------------------------------------
+  # 7. Global SPA Fallback (Client-side routers)
+  # ----------------------------------------------------------------------
+  RewriteRule ^in(/.*)?$ out/in/index.html [L]
+  RewriteRule ^us(/.*)?$ out/us/index.html [L]
+  RewriteRule ^ph(/.*)?$ out/ph/index.html [L]
+
+  # ----------------------------------------------------------------------
+  # 8. WordPress Fallback of last resort
+  # ----------------------------------------------------------------------
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>

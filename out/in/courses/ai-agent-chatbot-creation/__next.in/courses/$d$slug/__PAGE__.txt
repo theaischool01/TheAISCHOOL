@@ -2,6 +2,6 @@
 2:I[62117,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/1cftjyz08ulck.js","/_next/static/chunks/367hndbxopc8b.js","/_next/static/chunks/0bg82x8552mir.js"],"default"]
 4:I[97367,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"params":"$@3"}],[["$","script","script-0",{"src":"/_next/static/chunks/367hndbxopc8b.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/0bg82x8552mir.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"0TA28AwQu0w9wW5BAcZ-q"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"params":"$@3"}],[["$","script","script-0",{"src":"/_next/static/chunks/367hndbxopc8b.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/0bg82x8552mir.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"9Xk7KB3abVsv4xOYNVgGa"}
 3:{"slug":"ai-agent-chatbot-creation"}
 6:null
