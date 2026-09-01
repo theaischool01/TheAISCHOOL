@@ -10,7 +10,7 @@ export default function IndustryPartnersGrid() {
       title: "Founder",
       company: "ResidualHue",
       initials: "AC",
-      image: "/mentors/arun.webp",
+      image: "/in/mentors/arun.webp",
       linkedin: "https://www.linkedin.com/in/arun-chinnachamy/",
     },
     {
@@ -18,7 +18,7 @@ export default function IndustryPartnersGrid() {
       title: "Founder & CEO",
       company: "hyperleap.ai",
       initials: "GK",
-      image: "/mentors/gopi.webp",
+      image: "/in/mentors/gopi.webp",
       linkedin: "https://www.linkedin.com/in/gopil/",
     },
     {
@@ -26,7 +26,7 @@ export default function IndustryPartnersGrid() {
       title: "Co-Founder and CEO",
       company: "rava.ai",
       initials: "KB",
-      image: "/mentors/kiran.webp",
+      image: "/in/mentors/kiran.webp",
       linkedin: "https://www.linkedin.com/in/yerranagu/",
     },
     {
@@ -34,7 +34,7 @@ export default function IndustryPartnersGrid() {
       title: "Co-Founder",
       company: "DotCheckout",
       initials: "RM",
-      image: "/mentors/raja.webp",
+      image: "/in/mentors/raja.webp",
       linkedin: "https://www.linkedin.com/in/tmpraneethnaidu/",
     },
     {
@@ -42,7 +42,7 @@ export default function IndustryPartnersGrid() {
       title: "Founder/CEO",
       company: "AgentAnalytics.AI",
       initials: "RR",
-      image: "/mentors/ranjan.webp",
+      image: "/in/mentors/ranjan.webp",
       linkedin: "https://www.linkedin.com/in/ranjan-relan/",
     },
   ];

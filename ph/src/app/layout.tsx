@@ -32,7 +32,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/ph/favicon.ico",
+    shortcut: "/ph/favicon.ico",
+    apple: "/ph/icon.png",
   },
   openGraph: {
     title: "The AI School Philippines - Master AI Engineering & Agent Building",

@@ -32,9 +32,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Ganta Srinath",
       role: "Lead Tech Architect",
-      avatar: "/assets/srinath.png"
+      avatar: "/in/assets/srinath.png"
     },
-    image: "/assets/blog_code_faster.png",
+    image: "/in/assets/blog_code_faster.png",
     featured: true
   },
   {
@@ -47,9 +47,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Arun Chinnachamy",
       role: "Design Advisor",
-      avatar: "/assets/arun.png"
+      avatar: "/in/assets/arun.png"
     },
-    image: "/assets/blog_midjourney.png"
+    image: "/in/assets/blog_midjourney.png"
   },
   {
     slug: "autonomous-ai-agents-the-future-of-saas",
@@ -61,9 +61,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Ranjan Relan",
       role: "AI Scientist",
-      avatar: "/assets/ranjan.png"
+      avatar: "/in/assets/ranjan.png"
     },
-    image: "/assets/autonomous_agents_saas_hero.png"
+    image: "/in/assets/autonomous_agents_saas_hero.png"
   },
   {
     slug: "mastering-prompt-engineering-for-business",
@@ -75,9 +75,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Ganta Srinath",
       role: "Lead Tech Architect",
-      avatar: "/assets/srinath.png"
+      avatar: "/in/assets/srinath.png"
     },
-    image: "/assets/prompt_engineering_business_hero.png"
+    image: "/in/assets/prompt_engineering_business_hero.png"
   },
 {
     slug: "what-is-generative-ai-a-beginners-guide",
@@ -89,9 +89,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/gen_ai_guide_premium_hero.png"
+    image: "/in/assets/gen_ai_guide_premium_hero.png"
   },
   {
     slug: "the-evolution-of-generative-ai-from-gans-to-gpt-4",
@@ -103,9 +103,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/ai_evolution_classic.png"
+    image: "/in/assets/ai_evolution_classic.png"
   },
   {
     slug: "top-5-uses-of-generative-ai-youre-already-using-every-day-without-realizing-it",
@@ -117,9 +117,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/everyday_ai_tech_elegant.png"
+    image: "/in/assets/everyday_ai_tech_elegant.png"
   },
   {
     slug: "how-transformer-models-transformed-generative-ai",
@@ -131,9 +131,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/transformers_premium_hero.png"
+    image: "/in/assets/transformers_premium_hero.png"
   },
   {
     slug: "gans-vs-diffusion-models-what-drives-todays-ai-art",
@@ -145,9 +145,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/gans_vs_diffusion_premium_hero.png"
+    image: "/in/assets/gans_vs_diffusion_premium_hero.png"
   },
   {
     slug: "behind-the-magic-the-math-behind-generative-ai",
@@ -159,9 +159,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/math_behind_ai_premium_hero.png"
+    image: "/in/assets/math_behind_ai_premium_hero.png"
   },
   {
     slug: "generative-ai-in-healthcare-from-drug-discovery-to-diagnosis",
@@ -173,9 +173,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/healthcare_ai_premium_hero.png"
+    image: "/in/assets/healthcare_ai_premium_hero.png"
   },
   {
     slug: "how-generative-ai-is-revolutionizing-the-game-in-content-creation",
@@ -187,9 +187,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/content_creation_premium_hero.png"
+    image: "/in/assets/content_creation_premium_hero.png"
   },
   {
     slug: "getting-started-with-midjourney-how-to-make-ai-art",
@@ -201,9 +201,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/midjourney_guide_premium_hero.png"
+    image: "/in/assets/midjourney_guide_premium_hero.png"
   },
   {
     slug: "building-a-simple-text-generator-with-gpt-3-api",
@@ -215,9 +215,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/blog_18.png"
+    image: "/in/assets/blog_18.png"
   },
   {
     slug: "top-10-generative-ai-tools-for-creatives-in-2025",
@@ -229,9 +229,9 @@ export const BLOGS_DATA: BlogPost[] = [
     author: {
       name: "Deepak Yadav",
       role: "AI Educator",
-      avatar: "/assets/student_1.png"
+      avatar: "/in/assets/student_1.png"
     },
-    image: "/assets/creative_ai_tools_premium_hero.png"
+    image: "/in/assets/creative_ai_tools_premium_hero.png"
   },
 ];
 

@@ -11,12 +11,6 @@ const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
-const TwitterIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg className={`${className} fill-current`} viewBox="0 0 24 24">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
-
 export interface Leader {
   name: string;
   role: string;
@@ -24,7 +18,6 @@ export interface Leader {
   initials?: string;
   bio?: string;
   linkedin?: string;
-  twitter?: string;
 }
 
 export interface Partner {
@@ -33,7 +26,6 @@ export interface Partner {
   image: string;
   initials?: string;
   linkedinUrl?: string;
-  twitterUrl?: string;
 }
 
 /* Reusable Leader row card (Circle + Box side-by-side, mirrored Co-Founder layout) */
@@ -97,17 +89,6 @@ export function LeaderRowCard({
               aria-label={`${leader.name} LinkedIn`}
             >
               <LinkedInIcon />
-            </a>
-          )}
-          {leader.twitter && (
-            <a
-              href={leader.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full bg-white border border-red-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-100 hover:border-red-300 flex items-center justify-center transition-all duration-200"
-              aria-label={`${leader.name} Twitter`}
-            >
-              <TwitterIcon />
             </a>
           )}
         </div>
@@ -178,21 +159,6 @@ export function PartnerCard({
               <LinkedInIcon className="w-3 h-3" />
             </a>
           )}
-          {partner.twitterUrl && (
-            <a
-              href={partner.twitterUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`w-6 h-6 rounded-full border text-slate-600 hover:text-[#EE1C25] flex items-center justify-center transition-all duration-200 ${
-                isAlternate
-                  ? "bg-white border-red-200 hover:bg-red-100 hover:border-red-300"
-                  : "bg-slate-50 border-slate-200 hover:bg-red-50 hover:border-red-100"
-              }`}
-              aria-label={`${partner.name} Twitter`}
-            >
-              <TwitterIcon className="w-3 h-3" />
-            </a>
-          )}
         </div>
       </div>
     </div>
@@ -245,17 +211,6 @@ export function MentorAvatar({ mentor }: { mentor: Partner }) {
               <LinkedInIcon className="w-3 h-3" />
             </a>
           )}
-          {mentor.twitterUrl && (
-            <a
-              href={mentor.twitterUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-6 h-6 rounded-full bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#EE1C25] hover:bg-red-50 hover:border-red-100 flex items-center justify-center transition-all duration-200"
-              aria-label={`${mentor.name} Twitter`}
-            >
-              <TwitterIcon className="w-3 h-3" />
-            </a>
-          )}
         </div>
       </div>
     </div>
@@ -268,62 +223,55 @@ export default function TeamPreview() {
       name: "Ganta Srinath Reddy",
       role: "Founder/CEO",
       initials: "SR",
-      image: "/mentors/srinath.webp",
+      image: "/in/mentors/srinath.webp",
       bio: "Startup founder and veteran AI solutions architect leading LLM pipelines, agent orchestration frameworks, and production-ready machine learning architectures.",
       linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
     },
     {
       name: "K. Spandana",
       role: "Co-Founder",
       initials: "KS",
-      image: "/mentors/spandana.webp",
+      image: "/in/mentors/spandana.webp",
       bio: "Deep-learning operations specialist and educator driving curriculum design, student mentorship tracks, and strategic placement partnerships.",
       linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
     },
   ];
 
   const partnerAvatars: Partner[] = [
     {
       initials: "AC",
-      image: "/mentors/arun.webp",
+      image: "/in/mentors/arun.webp",
       name: "Arun Chinnachamy",
       title: "Founder, ResidualHue",
       linkedinUrl: "https://www.linkedin.com/in/arun-chinnachamy/",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "GK",
-      image: "/mentors/gopi.webp",
+      image: "/in/mentors/gopi.webp",
       name: "Gopi Krishna",
       title: "Founder & CEO, hyperleap.ai",
       linkedinUrl: "https://www.linkedin.com/in/gopil/",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "KB",
-      image: "/mentors/kiran.webp",
+      image: "/in/mentors/kiran.webp",
       name: "Kiran Babu",
       title: "Co-Founder & CEO, rava.ai",
       linkedinUrl: "https://www.linkedin.com/in/yerranagu/",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "RM",
-      image: "/mentors/raja.webp",
+      image: "/in/mentors/raja.webp",
       name: "Raja Mamidi",
       title: "Co-Founder, DotCheckout",
       linkedinUrl: "https://www.linkedin.com/in/tmpraneethnaidu/",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "RR",
-      image: "/mentors/ranjan.webp",
+      image: "/in/mentors/ranjan.webp",
       name: "Ranjan Relan",
       title: "Founder & CEO, AgentAnalytics.AI",
       linkedinUrl: "https://www.linkedin.com/in/ranjan-relan/",
-      twitterUrl: "https://twitter.com",
     },
   ];
 
@@ -331,51 +279,45 @@ export default function TeamPreview() {
   const mentorAvatars: Partner[] = [
     {
       initials: "VP",
-      image: "/images/mentor_vikas_v2.png",
+      image: "/in/images/mentor_vikas_v2.png",
       name: "Vikas Patel",
       title: "ML Consultant",
       linkedinUrl: "https://linkedin.com",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "SP",
-      image: "/images/mentor_sagnik_v2.png",
+      image: "/in/images/mentor_sagnik_v2.png",
       name: "Sagnik Pal",
       title: "Senior AI Architect",
       linkedinUrl: "https://linkedin.com",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "AV",
-      image: "/images/mentor_akhil_v2.png",
+      image: "/in/images/mentor_akhil_v2.png",
       name: "Akhil Vydyula",
       title: "Agent Specialist",
       linkedinUrl: "https://linkedin.com",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "AP",
-      image: "/images/mentor_anshu_v2.png",
+      image: "/in/images/mentor_anshu_v2.png",
       name: "Anshu Pandey",
       title: "NLP Researcher",
       linkedinUrl: "https://linkedin.com",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "HK",
-      image: "/images/mentor_harish_v2.png",
+      image: "/in/images/mentor_harish_v2.png",
       name: "Harish Kumar",
       title: "RAG Architect",
       linkedinUrl: "https://linkedin.com",
-      twitterUrl: "https://twitter.com",
     },
     {
       initials: "MB",
-      image: "/images/mentor_mohit.png",
+      image: "/in/images/mentor_mohit.png",
       name: "Mohit Bhatia",
       title: "AI Mentor",
       linkedinUrl: "https://linkedin.com",
-      twitterUrl: "https://twitter.com",
     },
   ];
 

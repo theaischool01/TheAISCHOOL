@@ -171,7 +171,7 @@ export default function EcosystemOrbit() {
 
             <div className="pt-4 flex justify-center lg:justify-start">
               <a 
-                href="/learn" 
+                href="/in/learn" 
                 className="group inline-flex items-center gap-2.5 bg-[#EE1C25] hover:bg-[#d61920] text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               >
                 Explore All Courses
@@ -206,7 +206,7 @@ export default function EcosystemOrbit() {
 
               {/* STATIONARY CENTER BRAND NODE */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none z-20 flex items-center justify-center">
-                <img src="/assets/logo.png" alt="The AI School Logo" className="w-36 h-auto object-contain relative z-10" />
+                <img src="/in/assets/logo.png" alt="The AI School Logo" className="w-36 h-auto object-contain relative z-10" />
               </div>
 
               {/* INNER RING: Clockwise rotation (80s) */}

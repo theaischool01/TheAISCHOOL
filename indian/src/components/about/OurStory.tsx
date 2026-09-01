@@ -60,7 +60,7 @@ export default function OurStory() {
         >
           <div className="relative w-full aspect-[4/3] max-w-[480px] bg-neutral-50 border border-neutral-100 rounded-3xl overflow-hidden p-3 shadow-lg">
             <Image 
-              src="/assets/about_hero.png" 
+              src="/in/assets/about_hero.png" 
               alt="Cybernetic network representation of The AI School" 
               fill
               sizes="480px"

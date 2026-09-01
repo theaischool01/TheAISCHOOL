@@ -203,7 +203,7 @@ export default function UnifiedRegistrationForm() {
                   <span className="text-xs text-neutral-400 font-bold">Unsure which track fits you?</span>
                   <br />
                   <a
-                    href="/assessment"
+                    href="/in/assessment"
                     className="inline-flex items-center gap-2 mt-2 text-xs font-black uppercase tracking-wider text-[#EE1C25] hover:text-[#d61920] transition-colors"
                   >
                     <span>Find Your AI Career Path</span>

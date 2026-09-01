@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "The AI School USA" }],
   icons: {
-    icon: "/us/assets/logo.png",
-    shortcut: "/us/assets/logo.png",
-    apple: "/us/assets/logo.png",
+    icon: "/us/favicon.ico",
+    shortcut: "/us/favicon.ico",
+    apple: "/us/icon.png",
   },
   openGraph: {
     title: "The AI School US - Step into the Top 1% of the AI-Ready Workforce",

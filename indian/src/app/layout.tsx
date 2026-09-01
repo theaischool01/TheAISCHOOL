@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: "/in/favicon.ico",
+    shortcut: "/in/favicon.ico",
+    apple: "/in/icon.png",
   },
   openGraph: {
     title: "The AI School India - Learn AI Skills from Startup Leaders",

@@ -16,7 +16,7 @@ const founders: TeamMember[] = [
     name: "Ganta Srinath Reddy",
     role: "Founder & CEO",
     subRole: "The AI School",
-    image: "/assets/srinath.png",
+    image: "/in/assets/srinath.png",
     chips: ["10+ Yrs Exp", "Startups", "Tech Architect"],
     linkedin: "#"
   },
@@ -24,7 +24,7 @@ const founders: TeamMember[] = [
     name: "K. Spandana",
     role: "Co-Founder",
     subRole: "The AI School",
-    image: "/assets/manaswini.png", // Kept mapping as per original code
+    image: "/in/assets/manaswini.png", // Kept mapping as per original code
     chips: ["8+ Yrs Exp", "Operations", "Incubation"],
     linkedin: "#"
   }
@@ -35,7 +35,7 @@ const mentors: TeamMember[] = [
     name: "Ranjan Relan",
     role: "Founding Mentor & AI Scientist",
     subRole: "Tech Architecture Expert",
-    image: "/assets/ranjan.png",
+    image: "/in/assets/ranjan.png",
     chips: ["Ex-Data Lead", "AI Architect"],
     linkedin: "#"
   },
@@ -43,7 +43,7 @@ const mentors: TeamMember[] = [
     name: "Arun Chinnachamy",
     role: "Curriculum Advisor & Tech Leader",
     subRole: "Ecosystem Innovator",
-    image: "/assets/arun.png",
+    image: "/in/assets/arun.png",
     chips: ["Startup Advisor", "Ex-CTO"],
     linkedin: "#"
   },
@@ -51,7 +51,7 @@ const mentors: TeamMember[] = [
     name: "Gopi Krishna Lakkepuram",
     role: "Founding Mentor & Principal Architect",
     subRole: "Industry Practitioner",
-    image: "/assets/gopi.png",
+    image: "/in/assets/gopi.png",
     chips: ["Principal Architect", "Cloud Expert"],
     linkedin: "#"
   },
@@ -59,7 +59,7 @@ const mentors: TeamMember[] = [
     name: "Kiran Babu",
     role: "Founding Mentor & Platform Engineer",
     subRole: "Ecosystem Leader",
-    image: "/assets/kiran.png",
+    image: "/in/assets/kiran.png",
     chips: ["Platform Engineer", "Infra Lead"],
     linkedin: "#"
   },
@@ -67,7 +67,7 @@ const mentors: TeamMember[] = [
     name: "Raja Mamidi",
     role: "Mentor",
     subRole: "Tech Innovator",
-    image: "/assets/raja.png",
+    image: "/in/assets/raja.png",
     chips: ["Tech Innovator", "Product Lead"],
     linkedin: "#"
   }
@@ -78,7 +78,7 @@ const leadership: TeamMember[] = [
     name: "ReddyReddy Manaswini",
     role: "Head of Strategic Alliances",
     subRole: "Enterprise Partnerships",
-    image: "/assets/spandana.png", // Kept mapping as per original code
+    image: "/in/assets/spandana.png", // Kept mapping as per original code
     chips: ["Strategic Alliances", "Partnerships"],
     linkedin: "#"
   },
@@ -86,7 +86,7 @@ const leadership: TeamMember[] = [
     name: "Rupak Thummalaeddy",
     role: "Strategic Advisor",
     subRole: "Product & Integration",
-    image: "/assets/rupak.png",
+    image: "/in/assets/rupak.png",
     chips: ["Strategic Advisor", "Product Strategy"],
     linkedin: "#"
   }

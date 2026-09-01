@@ -229,7 +229,7 @@ export default function AboutHero() {
 
               {/* Hero Image */}
               <Image
-                src="/assets/image2.png"
+                src="/in/assets/image2.png"
                 alt="The AI School Infinity Logo"
                 fill
                 priority

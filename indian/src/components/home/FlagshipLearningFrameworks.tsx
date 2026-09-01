@@ -30,7 +30,7 @@ export default function FlagshipLearningFrameworks() {
 
           {/* Card1: AI Agent Development (col-span-7) — swapped to first */}
           <div
-            onClick={() => window.location.href = "/learn"}
+            onClick={() => window.location.href="/in/learn"}
             className="group relative bg-[#FFF5F5] border border-red-100 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-7 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-red-300 hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.12)] cursor-pointer"
           >
             {/* Background 01 */}
@@ -85,7 +85,7 @@ export default function FlagshipLearningFrameworks() {
 
           {/* Card 2: Generative AI Engineering (col-span-5) — swapped to second */}
           <div
-            onClick={() => window.location.href = "/learn"}
+            onClick={() => window.location.href="/in/learn"}
             className="group relative bg-white border border-neutral-200/80 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-5 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-[#EE1C25]/40 hover:shadow-[0_20px_50px_-20px_rgba(238,28,37,0.12)] cursor-pointer"
           >
             {/* Background 02 */}
@@ -142,7 +142,7 @@ export default function FlagshipLearningFrameworks() {
 
           {/* Card 3: Full Stack AI Engineering (col-span-8) */}
           <div
-            onClick={() => window.location.href = "/learn"}
+            onClick={() => window.location.href="/in/learn"}
             className="group relative bg-white border border-neutral-200/80 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-8 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-purple-500/40 hover:shadow-[0_20px_50px_-20px_rgba(139,92,246,0.12)] cursor-pointer"
           >
             {/* Background 03 */}
@@ -199,7 +199,7 @@ export default function FlagshipLearningFrameworks() {
 
           {/* Card 4: AI for Business & Analytics (col-span-4) */}
           <div
-            onClick={() => window.location.href = "/learn"}
+            onClick={() => window.location.href="/in/learn"}
             className="group relative bg-[#FFF5F5] border border-red-100 rounded-[2rem] p-8 min-h-[300px] lg:min-h-[320px] col-span-12 lg:col-span-4 flex flex-col justify-between overflow-hidden transition-all duration-350 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-red-300 hover:shadow-[0_20px_50px_-20px_rgba(193,18,28,0.12)] cursor-pointer"
           >
             {/* Background 04 */}

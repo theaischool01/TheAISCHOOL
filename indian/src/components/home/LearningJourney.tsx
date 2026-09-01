@@ -160,7 +160,7 @@ export default function LearningJourney() {
 
             <div className="pt-4 flex justify-center lg:justify-start">
               <a
-                href="/learn"
+                href="/in/learn"
                 className="group inline-flex items-center gap-2.5 bg-[#EE1C25] hover:bg-[#d61920] text-white font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               >
                 Explore Programs
@@ -211,7 +211,7 @@ export default function LearningJourney() {
                 <div className="absolute inset-1.5 border border-dashed border-red-200/50 rounded-full" />
                 <div className="relative w-[65%] h-[65%]">
                   <Image
-                    src="/images/logo.png"
+                    src="/in/images/logo.png"
                     alt="The AI School Logo"
                     fill
                     sizes="80px"

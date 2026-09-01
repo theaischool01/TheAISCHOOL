@@ -213,7 +213,7 @@ export default function CourseSnapshot({
 
           {/* Link element imports for dynamic typing correctness */}
           <span className="hidden">
-            <Link href="/" />
+            <Link href="/in" />
           </span>
 
         </div>

@@ -57,37 +57,37 @@ const statsData = [
 
 const galleryImages = [
   {
-    src: "/images/hackathon_stage1.jpg",
+    src: "/in/images/hackathon_stage1.jpg",
     alt: "Main presentation stage at T-Hub 2.0 Hyderabad",
     className: "md:col-span-2 md:row-span-2",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_team1.png",
+    src: "/in/images/hackathon_team1.png",
     alt: "Teams brainstorming solution architectures",
     className: "md:col-span-2 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_working1.png",
+    src: "/in/images/hackathon_working1.png",
     alt: "Jury evaluating prompt engineering prototypes",
     className: "md:col-span-1 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_pitch1.png",
+    src: "/in/images/hackathon_pitch1.png",
     alt: "Finalist presenting to telecom board directors",
     className: "md:col-span-1 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_group1.jpg",
+    src: "/in/images/hackathon_group1.jpg",
     alt: "Winning teams with TCOE grand prizes",
     className: "md:col-span-1 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_working2.png",
+    src: "/in/images/hackathon_working2.png",
     alt: "Mentors guiding teams on network protocols",
     className: "md:col-span-1 md:row-span-1",
     objectPosition: "object-center"

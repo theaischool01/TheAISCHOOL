@@ -16,14 +16,14 @@ const featuredLeaders: LeaderData[] = [
     name: "Ganta Srinath Reddy", 
     role: "Founder / CEO", 
     bio: "Visionary technical architect anchoring elite generative AI skilling paths for corporate ecosystems and technical workforces internationally. Ex-Tech Lead & Startup Architect with a decade of deploying high-scale AI systems.",
-    image: "/assets/srinath.png",
+    image: "/in/assets/srinath.png",
     linkedin: "#"
   },
   { 
     name: "K. Spandana", 
     role: "Co-Founder", 
     bio: "Leading operational scale and foundational incubation paths across academic institutions and startup frameworks. Manages university alignments and student success programs.",
-    image: "/assets/manaswini.png", // Kept mapping as per original code
+    image: "/in/assets/manaswini.png", // Kept mapping as per original code
     linkedin: "#"
   }
 ];
@@ -33,14 +33,14 @@ const leadershipTeam: LeaderData[] = [
     name: "ReddyReddy Manaswini", 
     role: "Head of Strategic Alliances", 
     bio: "Skilled professional with extensive experience in client relationships, stakeholder management, and establishing cross-functional enterprise bridges to connect students with corporate internships.",
-    image: "/assets/spandana.png", // Kept mapping as per original code
+    image: "/in/assets/spandana.png", // Kept mapping as per original code
     linkedin: "#"
   },
   { 
     name: "Rupak Thummalaeddy", 
     role: "Strategic Advisor", 
     bio: "Guiding product expansion and high-level industrial integration roadmaps for our emerging technical cohorts, ensuring curricula align with active hiring goals.",
-    image: "/assets/rupak.png",
+    image: "/in/assets/rupak.png",
     linkedin: "#"
   }
 ];
@@ -50,35 +50,35 @@ const industryMentors: LeaderData[] = [
     name: "Ranjan Relan", 
     role: "Founding Mentor & AI Scientist", 
     bio: "Consultant for global startups and data engineering leader. Focuses on designing deep learning models, vector databases pipelines, and custom agentic frameworks.",
-    image: "/assets/ranjan.png",
+    image: "/in/assets/ranjan.png",
     linkedin: "#"
   },
   { 
     name: "Arun Chinnachamy", 
     role: "Curriculum Advisor & Tech Leader", 
     bio: "Startup CTO and advisor specializing in mobile scaling, distributed systems, and modern AI course syllabus frameworks that teach production-grade engineering.",
-    image: "/assets/arun.png",
+    image: "/in/assets/arun.png",
     linkedin: "#"
   },
   { 
     name: "Gopi Krishna Lakkepuram", 
     role: "Founding Mentor & Principal Architect", 
     bio: "Lead system architect with expert knowledge in cloud orchestration, GPU clustering, and hosting LLM runtimes under tight execution latency budgets.",
-    image: "/assets/gopi.png",
+    image: "/in/assets/gopi.png",
     linkedin: "#"
   },
   { 
     name: "Kiran Babu", 
     role: "Founding Mentor & Platform Engineer", 
     bio: "Senior platform infrastructure engineer leading Docker containerizations, CI/CD pipeline automations, and secure vector database deployments.",
-    image: "/assets/kiran.png",
+    image: "/in/assets/kiran.png",
     linkedin: "#"
   },
   { 
     name: "Executive Mentors", 
     role: "Strategic Enterprise Advisors", 
     bio: "A collective of active technology founders and VP level architects from top product firms directing curriculum updates based on modern industry requirements.",
-    image: "/assets/logo.png",
+    image: "/in/assets/logo.png",
     linkedin: "#"
   }
 ];

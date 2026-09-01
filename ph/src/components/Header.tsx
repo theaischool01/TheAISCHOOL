@@ -63,16 +63,6 @@ export default function Header() {
 
           {/* Announcement text */}
           <span className="text-center flex-1">{region.announcement}</span>
-
-          {/* Login Link */}
-          <a
-            href="https://learn.theaischool.co/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline font-bold text-xs"
-          >
-            Login
-          </a>
         </div>
       </div>
 

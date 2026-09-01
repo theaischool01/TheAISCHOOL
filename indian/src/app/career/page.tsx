@@ -130,7 +130,7 @@ export default function CareerPage() {
 
                 {/* Interactive Action Transition Switch */}
                 <div className="shrink-0 self-start lg:self-center pl-2 lg:pl-0">
-                  <Link href="/register" className="flex items-center space-x-2 bg-gray-900 hover:bg-[#EE1C25] text-white text-xs font-black uppercase tracking-wider py-4 px-6 rounded-xl transition-all duration-300 shadow-md transform active:scale-[0.98]">
+                  <Link href="/in/contact-us" className="flex items-center space-x-2 bg-gray-900 hover:bg-[#EE1C25] text-white text-xs font-black uppercase tracking-wider py-4 px-6 rounded-xl transition-all duration-300 shadow-md transform active:scale-[0.98]">
                     <span>Apply Now</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>

@@ -147,7 +147,7 @@ export default function AssessmentJourney() {
                     {isFinalStep && (
                       <div className="flex flex-wrap gap-2.5 pt-2">
                         <a
-                          href="/learn"
+                          href="/in/learn"
                           className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#EE1C25] hover:text-[#d61920] transition-colors"
                         >
                           Start Your Journey

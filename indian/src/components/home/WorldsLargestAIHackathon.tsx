@@ -104,49 +104,49 @@ const bentoStats = [
 // Curated 8 Images for a Seamless Premium Gallery Grid (2 Large, 2 Medium, 4 Small)
 const galleryImages = [
   {
-    src: "/images/hackathon_group1.jpg",
+    src: "/in/images/hackathon_group1.jpg",
     alt: "5G & 6G Hackathon Participants Group Photo",
     className: "md:col-span-2 md:row-span-2",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_stage1.jpg",
+    src: "/in/images/hackathon_stage1.jpg",
     alt: "Hackathon Stage Winners & VIP Ceremony",
     className: "md:col-span-2 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_working1.png",
+    src: "/in/images/hackathon_working1.png",
     alt: "Participants building AI prototypes",
     className: "md:col-span-1 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_pitch1.png",
+    src: "/in/images/hackathon_pitch1.png",
     alt: "AI project pitch to judges panel",
     className: "md:col-span-1 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_felicitation1.png",
+    src: "/in/images/hackathon_felicitation1.png",
     alt: "Founder Receiving Recognition Award",
     className: "md:col-span-2 md:row-span-2",
     objectPosition: "object-[center_20%]"
   },
   {
-    src: "/images/hackathon_group3.png",
+    src: "/in/images/hackathon_group3.png",
     alt: "Delegates and organizers group photo at hackathon summit",
     className: "md:col-span-2 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_team1.png",
+    src: "/in/images/hackathon_team1.png",
     alt: "Hackathon team working space session",
     className: "md:col-span-1 md:row-span-1",
     objectPosition: "object-center"
   },
   {
-    src: "/images/hackathon_working2.png",
+    src: "/in/images/hackathon_working2.png",
     alt: "Mentors guiding teams on network protocols",
     className: "md:col-span-1 md:row-span-1",
     objectPosition: "object-center"
@@ -285,7 +285,7 @@ export default function WorldsLargestAIHackathon() {
           </div>
 
           <div className="relative group/gallery max-w-5xl mx-auto">
-            <Link href="/hackathon#gallery">
+            <Link href="/in/hackathon#gallery">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-3 auto-rows-[160px] cursor-pointer">
                 {galleryImages.map((img, idx) => (
                   <div 
@@ -315,7 +315,7 @@ export default function WorldsLargestAIHackathon() {
         {/* ================= SECTION 4: ONE CLEAR CTA ================= */}
         <div className="text-center pt-4 flex flex-col items-center gap-3">
           <Link
-            href="/hackathon"
+            href="/in/hackathon"
             className="group inline-flex items-center justify-center gap-3 bg-[#EE1C25] hover:bg-[#d61920] text-white font-bold text-xs uppercase tracking-widest px-10 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
           >
             Explore Full Hackathon Experience

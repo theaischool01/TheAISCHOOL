@@ -247,7 +247,7 @@ export default function AboutUsPage() {
       name: "Ganta Srinath Reddy",
       title: "Founder/CEO",
       initials: "SR",
-      image: "/mentors/srinath.webp",
+      image: "/in/mentors/srinath.webp",
       linkedin: "https://www.linkedin.com/in/srinathreddy-g/",
       desc: "Spearheading curriculum engineering and strategic partnerships globally."
     },
@@ -255,7 +255,7 @@ export default function AboutUsPage() {
       name: "K. Spandana",
       title: "Co-Founder",
       initials: "KS",
-      image: "/mentors/spandana.webp",
+      image: "/in/mentors/spandana.webp",
       linkedin: "https://www.linkedin.com/company/theaischool/",
       desc: "Managing academic operations, mentor frameworks, and student success pipelines."
     },
@@ -263,7 +263,7 @@ export default function AboutUsPage() {
       name: "Manaswini Reddy",
       title: "Head of Strategic Alliances",
       initials: "MR",
-      image: "/mentors/manaswini.webp",
+      image: "/in/mentors/manaswini.webp",
       linkedin: "https://www.linkedin.com/in/reddyreddy-manaswini-181581135/",
       desc: "Forging enterprise ties and university collaborations across active hubs."
     },
@@ -271,7 +271,7 @@ export default function AboutUsPage() {
       name: "Rupak Thummalaeddy",
       title: "Strategic Advisor",
       initials: "RT",
-      image: "/mentors/rupak.webp",
+      image: "/in/mentors/rupak.webp",
       linkedin: "https://www.linkedin.com/company/theaischool/",
       desc: "Advising on company growth strategy, startup scaling, and long-term milestones."
     },
@@ -283,7 +283,7 @@ export default function AboutUsPage() {
       title: "Founder",
       company: "ResidualHue",
       initials: "AC",
-      image: "/mentors/arun.webp",
+      image: "/in/mentors/arun.webp",
       linkedin: "https://www.linkedin.com/in/arun-chinnachamy/",
       desc: "Founder of ResidualHue, aligning AI talent with production demands."
     },
@@ -292,7 +292,7 @@ export default function AboutUsPage() {
       title: "Founder & CEO",
       company: "hyperleap.ai",
       initials: "GK",
-      image: "/mentors/gopi.webp",
+      image: "/in/mentors/gopi.webp",
       linkedin: "https://www.linkedin.com/in/gopil/",
       desc: "Founder & CEO of hyperleap.ai, advising on custom LLM application layers."
     },
@@ -301,7 +301,7 @@ export default function AboutUsPage() {
       title: "Co-Founder and CEO",
       company: "rava.ai",
       initials: "KB",
-      image: "/mentors/kiran.webp",
+      image: "/in/mentors/kiran.webp",
       linkedin: "https://www.linkedin.com/in/yerranagu/",
       desc: "Co-Founder and CEO of rava.ai, advising on autonomous agent design."
     },
@@ -310,7 +310,7 @@ export default function AboutUsPage() {
       title: "Co-Founder",
       company: "DotCheckout",
       initials: "RM",
-      image: "/mentors/raja.webp",
+      image: "/in/mentors/raja.webp",
       linkedin: "https://www.linkedin.com/in/tmpraneethnaidu/",
       desc: "Co-Founder of DotCheckout, linking payment stack deployments."
     },
@@ -319,7 +319,7 @@ export default function AboutUsPage() {
       title: "Founder/CEO",
       company: "AgentAnalytics.AI",
       initials: "RR",
-      image: "/mentors/ranjan.webp",
+      image: "/in/mentors/ranjan.webp",
       linkedin: "https://www.linkedin.com/in/ranjan-relan/",
       desc: "Founder of AgentAnalytics.AI, shaping analytics pipelines curricula."
     },
@@ -330,63 +330,63 @@ export default function AboutUsPage() {
       name: "Vikas Patel",
       title: "ML Scientist @ Nykaa",
       initials: "VP",
-      image: "/images/mentor_vikas_v2.png",
+      image: "/in/images/mentor_vikas_v2.png",
       linkedin: "https://www.linkedin.com/in/vikaspatel79/",
     },
     {
       name: "Sagnik Pal",
       title: "Generative AI Consultant & Trainer",
       initials: "SP",
-      image: "/images/mentor_sagnik_v2.png",
+      image: "/in/images/mentor_sagnik_v2.png",
       linkedin: "https://www.linkedin.com/in/sagnikpal/",
     },
     {
       name: "Akhil Vydyula",
       title: "Senior Data Scientist @ PwC",
       initials: "AV",
-      image: "/images/mentor_akhil_v2.png",
+      image: "/in/images/mentor_akhil_v2.png",
       linkedin: "https://www.linkedin.com/in/akhilvydyula/",
     },
     {
       name: "Anshu Pandey",
       title: "Head of Technology @ Blue Data",
       initials: "AP",
-      image: "/images/mentor_anshu_v2.png",
+      image: "/in/images/mentor_anshu_v2.png",
       linkedin: "https://www.linkedin.com/in/anshupandey/",
     },
     {
       name: "Harish Kumar",
       title: "Lead Data Scientist",
       initials: "HK",
-      image: "/images/mentor_harish_v2.png",
+      image: "/in/images/mentor_harish_v2.png",
       linkedin: "https://www.linkedin.com/in/harishkumar1111/",
     },
     {
       name: "Mohit Bhatia",
       title: "Staff Program Manager",
       initials: "MB",
-      image: "/images/mentor_mohit.png",
+      image: "/in/images/mentor_mohit.png",
       linkedin: "https://www.linkedin.com/in/mohit-bhatia-6a165324/",
     },
     {
       name: "T M Praneeth Naidu",
       title: "CTO @ Cognisys AI",
       initials: "PN",
-      image: "/images/mentor_praneeth.png",
+      image: "/in/images/mentor_praneeth.png",
       linkedin: "https://www.linkedin.com/company/theaischool/",
     },
     {
       name: "Dr. Pradeep Kumar Boya",
       title: "Co-Founder & CEO, CognisysAI",
       initials: "PB",
-      image: "/images/mentor_pradeep.png",
+      image: "/in/images/mentor_pradeep.png",
       linkedin: "https://www.linkedin.com/in/drpradeepkumarboya8888/",
     },
     {
       name: "Anjaneyalu T",
       title: "Manager, AI and Data Science",
       initials: "AT",
-      image: "/images/mentor_anjaneyulu.png",
+      image: "/in/images/mentor_anjaneyulu.png",
       linkedin: "https://www.linkedin.com/in/anjaneyalu-t-83615661/",
     },
   ];
@@ -442,7 +442,7 @@ export default function AboutUsPage() {
               <div className="relative w-full aspect-[3/2] max-w-[480px] bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden p-2">
                 <div className="relative w-full h-full rounded-xl overflow-hidden">
                   <img 
-                    src="/images/who_we_are_hero.jpg" 
+                    src="/in/images/who_we_are_hero.jpg" 
                     alt="The AI School team group photo on stage" 
                     className="object-cover w-full h-full select-none"
                   />
@@ -460,7 +460,7 @@ export default function AboutUsPage() {
             {/* Circular Photo (Zero overlap fallback) */}
             <div className="w-28 h-28 rounded-full border-4 border-white shadow-md overflow-hidden shrink-0 bg-red-50 flex items-center justify-center relative">
               <img 
-                src="/mentors/srinath.webp" 
+                src="/in/mentors/srinath.webp" 
                 alt="Ganta Srinath Reddy" 
                 className="w-full h-full object-cover"
               />
@@ -830,7 +830,7 @@ export default function AboutUsPage() {
             Stop waiting for theoretical certifications. Join The AI School ecosystem today and learn how to build practical projects directly from industry engineers.
           </p>
           <div className="pt-4">
-            <a href="/learn" className="inline-flex items-center gap-2.5 bg-white text-[#EE1C25] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg hover:bg-gray-50 transition-all duration-300">
+            <a href="/in/learn" className="inline-flex items-center gap-2.5 bg-white text-[#EE1C25] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg hover:bg-gray-50 transition-all duration-300">
               Apply For Next Cohort
               <ArrowRight className="w-4 h-4" />
             </a>

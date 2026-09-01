@@ -28,7 +28,7 @@ export default function Footer() {
               <div className="flex items-center justify-center sm:justify-start w-full">
                 <Link href={regionConfig.path} className="relative w-[280px] h-[68px] block hover:opacity-90 transition-opacity">
                   <Image
-                    src="/images/logo-footer.png"
+                    src="/in/images/logo-footer.png"
                     alt="The AI School Logo"
                     fill
                     sizes="280px"
