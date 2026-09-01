@@ -5,61 +5,69 @@ DirectoryIndex out/in/index.html out/index.html index.html index.php
   RewriteBase /
 
   # ----------------------------------------------------------------------
-  # 1. PASSTHROUGH: WordPress Admin & Real Root Files (Do NOT Touch)
+  # 1. WordPress Admin & Core (Never touch or reroute)
   # ----------------------------------------------------------------------
   RewriteRule ^(.*)wp-admin - [L]
   RewriteRule ^(.*)wp-login\.php - [L]
   RewriteRule ^(.*)wp-content - [L]
   RewriteRule ^(.*)wp-includes - [L]
 
-  # If a real physical file exists at root, serve it directly
-  RewriteCond %{REQUEST_FILENAME} -f
-  RewriteRule ^ - [L]
+  # ----------------------------------------------------------------------
+  # 2. Prevent loops if already pointing into out/
+  # ----------------------------------------------------------------------
+  RewriteRule ^out/ - [L]
 
   # ----------------------------------------------------------------------
-  # 2. BARE ROOT (theaischool.co /) -> Serve India React App
+  # 3. Bare Root (theaischool.co/) -> Serve India React App Directly
   # ----------------------------------------------------------------------
   RewriteRule ^$ out/in/index.html [L]
 
   # ----------------------------------------------------------------------
-  # 3. ROUTE TO COMPILED OUT/ DIRECTORY (Hostinger Git Deployment)
+  # 4. Next.js Static JS/CSS Chunks & Assets (Direct Unconditional Rewrite)
   # ----------------------------------------------------------------------
-  # Static JS/CSS chunks
-  RewriteCond %{DOCUMENT_ROOT}/out/_next/$1 -f
   RewriteRule ^_next/(.*)$ out/_next/$1 [L]
-
-  # Root Assets & Images
-  RewriteCond %{DOCUMENT_ROOT}/out/assets/$1 -f
   RewriteRule ^assets/(.*)$ out/assets/$1 [L]
-
-  RewriteCond %{DOCUMENT_ROOT}/out/images/$1 -f
   RewriteRule ^images/(.*)$ out/images/$1 [L]
 
-  # Regional Static Files (e.g. /in/assets/logo.png -> /out/in/assets/logo.png)
+  # ----------------------------------------------------------------------
+  # 5. Regional Media & Assets
+  # ----------------------------------------------------------------------
+  RewriteRule ^in/assets/(.*)$ out/in/assets/$1 [L]
+  RewriteRule ^in/images/(.*)$ out/in/images/$1 [L]
+  RewriteRule ^in/mentors/(.*)$ out/in/mentors/$1 [L]
+  RewriteRule ^us/assets/(.*)$ out/us/assets/$1 [L]
+  RewriteRule ^ph/assets/(.*)$ out/ph/assets/$1 [L]
+
+  # ----------------------------------------------------------------------
+  # 6. Favicons
+  # ----------------------------------------------------------------------
+  RewriteRule ^favicon\.ico$ out/favicon.ico [L]
+  RewriteRule ^icon\.png$ out/icon.png [L]
+  RewriteRule ^in/favicon\.ico$ out/in/favicon.ico [L]
+  RewriteRule ^us/favicon\.ico$ out/us/favicon.ico [L]
+  RewriteRule ^ph/favicon\.ico$ out/ph/favicon.ico [L]
+
+  # ----------------------------------------------------------------------
+  # 7. Static Prerendered Regional HTML Pages
+  # ----------------------------------------------------------------------
   RewriteCond %{DOCUMENT_ROOT}/out%{REQUEST_URI} -f
   RewriteRule ^(.*)$ out/$1 [L]
-
-  # Regional Directories (e.g. /in/about-us/ -> /out/in/about-us/index.html)
-  RewriteCond %{DOCUMENT_ROOT}/out%{REQUEST_URI}index.html -f
-  RewriteRule ^(.*)/$ out/$1/index.html [L]
 
   RewriteCond %{DOCUMENT_ROOT}/out%{REQUEST_URI}/index.html -f
   RewriteRule ^(.*)$ out/$1/index.html [L]
 
-  # ----------------------------------------------------------------------
-  # 4. REGIONAL SPA FALLBACKS
-  # ----------------------------------------------------------------------
-  RewriteCond %{REQUEST_URI} ^/in
-  RewriteRule ^.*$ out/in/index.html [L]
-
-  RewriteCond %{REQUEST_URI} ^/us
-  RewriteRule ^.*$ out/us/index.html [L]
-
-  RewriteCond %{REQUEST_URI} ^/ph
-  RewriteRule ^.*$ out/ph/index.html [L]
+  RewriteCond %{DOCUMENT_ROOT}/out%{REQUEST_URI}index.html -f
+  RewriteRule ^(.*)$ out/$1index.html [L]
 
   # ----------------------------------------------------------------------
-  # 5. GLOBAL FALLBACK: WordPress
+  # 8. Regional SPA Client-Side Routing Fallbacks
+  # ----------------------------------------------------------------------
+  RewriteRule ^in(/.*)?$ out/in/index.html [L]
+  RewriteRule ^us(/.*)?$ out/us/index.html [L]
+  RewriteRule ^ph(/.*)?$ out/ph/index.html [L]
+
+  # ----------------------------------------------------------------------
+  # 9. WordPress Fallback (for any other root URLs)
   # ----------------------------------------------------------------------
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
