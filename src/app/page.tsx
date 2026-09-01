@@ -8,6 +8,10 @@ export default function RootPage() {
 
   useEffect(() => {
     let redirected = false;
+    let primaryTimeout: ReturnType<typeof setTimeout> | undefined;
+    let fallbackTimeout: ReturnType<typeof setTimeout> | undefined;
+    const primaryController = new AbortController();
+    const fallbackController = new AbortController();
 
     const doRedirect = (target: string) => {
       if (!redirected) {
@@ -26,13 +30,12 @@ export default function RootPage() {
 
       // 1. Primary Geo API: ipapi.co
       try {
-        const controller = new AbortController();
-        const primaryTimeout = setTimeout(() => controller.abort(), 1500);
+        primaryTimeout = setTimeout(() => primaryController.abort(), 1500);
         const res = await fetch("https://ipapi.co/json/", {
-          signal: controller.signal,
+          signal: primaryController.signal,
           cache: "no-store",
         });
-        clearTimeout(primaryTimeout);
+        if (primaryTimeout) clearTimeout(primaryTimeout);
 
         if (res.ok) {
           const data = await res.json();
@@ -45,15 +48,14 @@ export default function RootPage() {
       }
 
       // 2. Fallback Geo API: db-ip.com
-      if (!countryCode) {
+      if (!countryCode && !redirected) {
         try {
-          const controller = new AbortController();
-          const fallbackTimeout = setTimeout(() => controller.abort(), 1000);
+          fallbackTimeout = setTimeout(() => fallbackController.abort(), 1000);
           const res2 = await fetch("https://api.db-ip.com/v2/free/self", {
-            signal: controller.signal,
+            signal: fallbackController.signal,
             cache: "no-store",
           });
-          clearTimeout(fallbackTimeout);
+          if (fallbackTimeout) clearTimeout(fallbackTimeout);
 
           if (res2.ok) {
             const data2 = await res2.json();
@@ -81,7 +83,12 @@ export default function RootPage() {
     detectAndRedirect();
 
     return () => {
+      redirected = true;
       clearTimeout(timeoutId);
+      if (primaryTimeout) clearTimeout(primaryTimeout);
+      if (fallbackTimeout) clearTimeout(fallbackTimeout);
+      primaryController.abort();
+      fallbackController.abort();
     };
   }, [router]);
 
@@ -99,4 +106,5 @@ export default function RootPage() {
     </div>
   );
 }
+
 
