@@ -1,20 +1,22 @@
+DirectoryIndex index.html index.php
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Optimized static routing for Next.js trailingSlash export
-  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
   RewriteCond %{REQUEST_FILENAME}/index.html -f
-  RewriteRule ^(.*)/$ $1/index.html [L]
+  RewriteRule ^(.+[^/])$ $1/index.html [L]
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}index.html -f
+  RewriteRule ^(.*/)$ $1index.html [L]
 
-
-  # Fallback unresolved requests to static 404.page
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^.*$ /404.html [L]
+  RewriteRule . /index.php [L]
 </IfModule>
 
-# Browser Caching Configuration
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/png "access plus 1 year"
