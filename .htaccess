@@ -18,20 +18,13 @@ DirectoryIndex out/in/index.html out/index.html index.html index.php
   RewriteRule ^out/ - [L]
 
   # ----------------------------------------------------------------------
-  # 3. Bare Root (theaischool.co/) -> Serve India React App Directly
-  # ----------------------------------------------------------------------
-  RewriteRule ^$ out/in/index.html [L]
-
-  # ----------------------------------------------------------------------
-  # 4. Next.js Static JS/CSS Chunks & Assets (Direct Unconditional Rewrite)
+  # 3. Next.js Static JS/CSS Chunks & Assets
   # ----------------------------------------------------------------------
   RewriteRule ^_next/(.*)$ out/_next/$1 [L]
   RewriteRule ^assets/(.*)$ out/assets/$1 [L]
   RewriteRule ^images/(.*)$ out/images/$1 [L]
 
-  # ----------------------------------------------------------------------
-  # 5. Regional Media & Assets
-  # ----------------------------------------------------------------------
+  # Regional Assets & Media
   RewriteRule ^in/assets/(.*)$ out/in/assets/$1 [L]
   RewriteRule ^in/images/(.*)$ out/in/images/$1 [L]
   RewriteRule ^in/mentors/(.*)$ out/in/mentors/$1 [L]
@@ -39,35 +32,43 @@ DirectoryIndex out/in/index.html out/index.html index.html index.php
   RewriteRule ^ph/assets/(.*)$ out/ph/assets/$1 [L]
 
   # ----------------------------------------------------------------------
-  # 6. Favicons
+  # 4. Direct Pass for Any Static Extension (.txt, .json, .ico, .png, etc.)
   # ----------------------------------------------------------------------
-  RewriteRule ^favicon\.ico$ out/favicon.ico [L]
-  RewriteRule ^icon\.png$ out/icon.png [L]
-  RewriteRule ^in/favicon\.ico$ out/in/favicon.ico [L]
-  RewriteRule ^us/favicon\.ico$ out/us/favicon.ico [L]
-  RewriteRule ^ph/favicon\.ico$ out/ph/favicon.ico [L]
+  RewriteRule ^(.*)\.(txt|json|ico|png|svg|css|js|webmanifest|webp|jpg|jpeg|woff|woff2|ttf|eot)$ out/$1.$2 [L]
 
   # ----------------------------------------------------------------------
-  # 7. Static Prerendered Regional HTML Pages
+  # 5. Bare Root (theaischool.co /) -> Serve India React App
   # ----------------------------------------------------------------------
-  RewriteCond %{DOCUMENT_ROOT}/out%{REQUEST_URI} -f
-  RewriteRule ^(.*)$ out/$1 [L]
-
-  RewriteCond %{DOCUMENT_ROOT}/out%{REQUEST_URI}/index.html -f
-  RewriteRule ^(.*)$ out/$1/index.html [L]
-
-  RewriteCond %{DOCUMENT_ROOT}/out%{REQUEST_URI}index.html -f
-  RewriteRule ^(.*)$ out/$1index.html [L]
+  RewriteRule ^$ out/in/index.html [L]
+  RewriteRule ^in/?$ out/in/index.html [L]
+  RewriteRule ^us/?$ out/us/index.html [L]
+  RewriteRule ^ph/?$ out/ph/index.html [L]
 
   # ----------------------------------------------------------------------
-  # 8. Regional SPA Client-Side Routing Fallbacks
+  # 6. Regional Multi-level HTML Sub-pages
+  # ----------------------------------------------------------------------
+  RewriteRule ^in/courses/([^/]+)/?$ out/in/courses/$1/index.html [L]
+  RewriteRule ^in/blogs/([^/]+)/?$ out/in/blogs/$1/index.html [L]
+  RewriteRule ^us/courses/([^/]+)/?$ out/us/courses/$1/index.html [L]
+  RewriteRule ^us/blogs/([^/]+)/?$ out/us/blogs/$1/index.html [L]
+  RewriteRule ^ph/learn/([^/]+)/?$ out/ph/learn/$1/index.html [L]
+  RewriteRule ^ph/workshops/([^/]+)/?$ out/ph/workshops/$1/index.html [L]
+  RewriteRule ^ph/blogs/([^/]+)/?$ out/ph/blogs/$1/index.html [L]
+
+  # Regional Single-level Pages (e.g. /in/about-us -> out/in/about-us/index.html)
+  RewriteRule ^in/([^/]+)/?$ out/in/$1/index.html [L]
+  RewriteRule ^us/([^/]+)/?$ out/us/$1/index.html [L]
+  RewriteRule ^ph/([^/]+)/?$ out/ph/$1/index.html [L]
+
+  # ----------------------------------------------------------------------
+  # 7. Global SPA Fallback (Client-side routers)
   # ----------------------------------------------------------------------
   RewriteRule ^in(/.*)?$ out/in/index.html [L]
   RewriteRule ^us(/.*)?$ out/us/index.html [L]
   RewriteRule ^ph(/.*)?$ out/ph/index.html [L]
 
   # ----------------------------------------------------------------------
-  # 9. WordPress Fallback (for any other root URLs)
+  # 8. WordPress Fallback of last resort
   # ----------------------------------------------------------------------
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
