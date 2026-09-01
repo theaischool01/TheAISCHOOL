@@ -88,11 +88,11 @@ export default function Header() {
                       <Link
                         href="/ph/learn"
                         className={`flex items-center gap-1 px-3 py-2 text-sm font-bold hover:text-[#C1121C] hover:bg-neutral-50 rounded-lg transition-all duration-200 relative ${
-                          pathname.includes("/learn") || pathname.includes("/courses/") ? "text-[#C1121C]" : "text-[#171717]"
+                          pathname.includes("/ph/learn") || pathname.includes("/courses/") ? "text-[#C1121C]" : "text-[#171717]"
                         }`}
                       >
                         Learn <ChevronDown className="w-4 h-4 group-hover/nav-item:rotate-180 transition-transform duration-200" />
-                        {(pathname.includes("/learn") || pathname.includes("/courses/")) && (
+                        {(pathname.includes("/ph/learn") || pathname.includes("/courses/")) && (
                           <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#C1121C] rounded-full" />
                         )}
                       </Link>

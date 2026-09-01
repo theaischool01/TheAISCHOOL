@@ -305,7 +305,7 @@ export default function LearnPage() {
               return (
                 <Link
                   key={course.id}
-                  href={`/courses/${course.slug}`}
+                  href={`/us/courses/${course.slug}`}
                   className={`group relative bg-white rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 overflow-hidden ${course.borderStyle}`}
                 >
                   {/* Ghost Number Watermark */}
