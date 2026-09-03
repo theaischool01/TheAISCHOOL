@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomePage from "@in/components/home/HomePage";
+import GeoRedirect from "@in/components/GeoRedirect";
 import { getSupportedRegions } from "@in/lib/region";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -29,5 +30,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home() {
-  return <HomePage region="in" />;
+  return (
+    <>
+      <GeoRedirect />
+      <HomePage region="in" />
+    </>
+  );
 }
