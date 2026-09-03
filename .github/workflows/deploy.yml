@@ -1,40 +1,48 @@
-name: Build and Deploy to Hostinger
+name: Build and Deploy Static Site to Deployment Branch
 
 on:
   push:
     branches:
-      - deployment
+      - main
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
-    name: Build & Deploy
+    name: Build Next.js and Publish out/ to deployment branch
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: ⚙️ Setup Node.js 20
+      - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      - name: 📦 Install Dependencies
-        run: npm ci
+      - name: Install Dependencies
+        run: npm install
 
-      - name: 🚀 Build Next.js Static Export
+      - name: Build Next.js Static Export
+        run: npm run build
+
+      - name: Ensure .htaccess is in out/
         run: |
-          npm run build
-          cp .htaccess out/.htaccess
+          if [ -f .htaccess ]; then
+            cp .htaccess out/.htaccess
+          fi
 
-      - name: 📤 Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Push out/ contents to deployment branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: ./public_html/
-          dangerous-clean-slate: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: deployment
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy: automated static export build (${{ github.sha }})'
