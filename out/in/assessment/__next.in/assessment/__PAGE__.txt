@@ -1,6 +1,9 @@
 1:"$Sreact.fragment"
-2:I[17562,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/1cftjyz08ulck.js","/_next/static/chunks/3mp8d3qgctlxw.js","/_next/static/chunks/28a9sjavqwcej.js","/_next/static/chunks/3ma41y8-t06ag.js"],"default"]
-3:I[97367,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/_next/static/chunks/3mp8d3qgctlxw.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/28a9sjavqwcej.js","async":true}],["$","script","script-2",{"src":"/_next/static/chunks/3ma41y8-t06ag.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"HGUTxl0O7SzgG20KCV_yo"}
-5:null
+2:I[47257,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/031d4hdncmqdj.js"],"ClientPageRoot"]
+3:I[76065,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/031d4hdncmqdj.js","/_next/static/chunks/1cftjyz08ulck.js","/_next/static/chunks/3utkw_nrjx_xg.js","/_next/static/chunks/2izy8ids77tg0.js","/_next/static/chunks/2pbyoi7d2m4q8.js"],"default"]
+6:I[97367,["/_next/static/chunks/05-c3ty_6dwfk.js","/_next/static/chunks/031d4hdncmqdj.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/3utkw_nrjx_xg.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/2izy8ids77tg0.js","async":true}],["$","script","script-2",{"src":"/_next/static/chunks/2pbyoi7d2m4q8.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Y9AQJQvrUG2YCDggQFeP-"}
+4:{}
+5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
+8:null
