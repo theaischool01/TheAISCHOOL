@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npx next dev",
     "api": "node backend/src/index.js",
-    "build": "next build",
+    "build": "next build --no-lint",
     "start": "npx next start",
     "lint": "eslint"
   },
