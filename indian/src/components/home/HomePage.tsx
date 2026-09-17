@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 import Header from "@in/components/Header";
 import Footer from "@in/components/Footer";
@@ -18,16 +19,22 @@ import GoogleReviews from "@in/components/home/GoogleReviews";
 import RegistrationForm from "@in/components/home/RegistrationForm";
 
 import { RegionProvider, useRegion } from "@in/context/RegionContext";
-import { HOME_LAYOUTS } from "@in/config/homeLayouts";
 import { SectionWrapper } from "@in/components/shared/SectionWrapper";
 
 function MainLayout() {
-  const { currentRegion, layoutConfig, regionConfig } = useRegion();
+  const { layoutConfig, regionConfig } = useRegion();
+  const [activeHeroSlide, setActiveHeroSlide] = useState<0 | 1>(0);
 
   const renderSection = (section: string) => {
     switch (section) {
       case "hero":
-        return <HomeHero key="hero" />;
+        return (
+          <HomeHero
+            key="hero"
+            activeSlide={activeHeroSlide}
+            onSlideChange={setActiveHeroSlide}
+          />
+        );
       case "partners":
         return <PartnersSectionIN key="partners" />;
       case "learning-journey":
@@ -58,8 +65,8 @@ function MainLayout() {
 
   return (
     <main className="relative min-h-screen bg-white">
-      {/* Dynamic Header */}
-      <Header />
+      {/* Dynamic Header with seamless dark theme when UpShift slide is active */}
+      <Header theme={activeHeroSlide === 1 ? "dark" : "light"} />
 
       {/* Dynamic Sections with alternating backgrounds */}
       {layoutConfig.map((section) => {
