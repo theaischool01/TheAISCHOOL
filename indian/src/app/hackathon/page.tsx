@@ -159,7 +159,7 @@ export default function DedicatedHackathonPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-gray-950 tracking-tight leading-tight uppercase">
-              World&#39;s Largest <span className="text-[#EE1C25]">AI Hackathon</span>
+              World&#39;s Largest <span className="text-[#EE1C25]">5G &amp; 6G Hackathon 2024</span>
             </h1>
 
             <p className="text-base md:text-lg font-semibold text-slate-600 max-w-2xl mx-auto leading-relaxed">

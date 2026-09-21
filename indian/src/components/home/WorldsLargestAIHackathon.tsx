@@ -214,7 +214,7 @@ export default function WorldsLargestAIHackathon() {
         {/* ================= SECTION 1: ONE CONSOLIDATED HERO ================= */}
         <div className="text-center space-y-5 max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-950 tracking-tight leading-tight uppercase">
-            World&#39;s Largest <span className="text-[#EE1C25]">AI Hackathon</span>
+            World&#39;s Largest <span className="text-[#EE1C25]">5G &amp; 6G Hackathon 2024</span>
           </h2>
 
           <p className="text-xs sm:text-sm font-semibold text-slate-600 max-w-xl mx-auto leading-relaxed">
