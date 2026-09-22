@@ -89,112 +89,106 @@ export default function UpshiftPrompt() {
       ref={containerRef}
       className="fixed bottom-[104px] right-8 z-[990] select-none pointer-events-auto max-sm:bottom-[98px] max-sm:right-5"
     >
-      {/* 2. Pure Spacious Cloud Thought Bubble */}
+      {/* 2. Pure Cloud Thought Bubble Container (Core + Outward Lobes Architecture) */}
       {isOpen && (
         <div
           role="dialog"
           aria-modal="false"
           aria-label="Upskill with UpShift"
-          className="absolute bottom-[72px] right-0 sm:right-1 w-[370px] sm:w-[415px] max-w-[calc(100vw-36px)] z-[995] animate-in fade-in zoom-in-95 slide-in-from-bottom-4 duration-350 ease-out"
+          className="absolute bottom-[68px] right-0 sm:right-1 w-[355px] sm:w-[395px] max-w-[calc(100vw-36px)] z-[995] animate-in fade-in zoom-in-95 slide-in-from-bottom-4 duration-350 ease-out"
         >
-          {/* Main Thought Bubble Body (Spacious Cloud Silhouette with ample padding) */}
-          <div className="relative w-full min-h-[245px] sm:min-h-[258px] flex flex-col justify-between px-8 pt-7 pb-6 sm:px-9 sm:pt-8 sm:pb-7">
-            {/* SVG Organic Cloud Silhouette Background */}
-            <svg
-              viewBox="0 0 420 260"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="absolute inset-0 w-full h-full -z-10 drop-shadow-[0_18px_40px_rgba(0,0,0,0.12)] drop-shadow-[0_0_26px_rgba(238,28,37,0.06)]"
-              preserveAspectRatio="none"
-            >
-              <defs>
-                <linearGradient id="spaciousThoughtCloudGrad" x1="210" y1="0" x2="210" y2="260" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#ffffff" />
-                  <stop offset="100%" stopColor="#fffdfd" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M 60 55 
-                   C 90 12, 125 15, 155 25 
-                   C 185 5, 255 5, 285 25 
-                   C 315 12, 355 20, 380 60 
-                   C 418 95, 418 125, 395 155 
-                   C 418 185, 410 220, 370 238 
-                   C 335 260, 300 252, 270 245 
-                   C 240 262, 180 262, 150 245 
-                   C 120 260, 80 255, 55 230 
-                   C 12 210, 10 170, 28 145 
-                   C 8 115, 12 80, 60 55 Z"
-                fill="url(#spaciousThoughtCloudGrad)"
-                stroke="#EDEDF0"
-                strokeWidth="1.5"
-              />
-            </svg>
+          {/* Main Bubble Shell: Unified drop shadow covering the solid core and all outer lobes */}
+          <div className="relative filter drop-shadow-[0_16px_36px_rgba(0,0,0,0.11)] drop-shadow-[0_0_20px_rgba(238,28,37,0.05)]">
+            
+            {/* Outward Expanding Organic Cloud Lobes (Rendered seamlessly around the core) */}
+            {/* Top-Left Lobe (Behind/Around the Mascot Pocket) */}
+            <div className="absolute -top-3.5 left-5 w-18 h-12 bg-white rounded-full border-t border-l border-[#EDEDF0]" />
+            {/* Top-Center Lobe */}
+            <div className="absolute -top-4 left-24 w-24 h-12 bg-white rounded-full border-t border-[#EDEDF0]" />
+            {/* Top-Right Lobe (Behind the Close Button) */}
+            <div className="absolute -top-3.5 right-6 w-20 h-12 bg-white rounded-full border-t border-r border-[#EDEDF0]" />
+            {/* Left Edge Upper Lobe */}
+            <div className="absolute -left-3.5 top-6 w-12 h-20 bg-white rounded-full border-l border-[#EDEDF0]" />
+            {/* Left Edge Lower Lobe */}
+            <div className="absolute -left-3 bottom-6 w-11 h-18 bg-white rounded-full border-l border-[#EDEDF0]" />
+            {/* Right Edge Upper Lobe */}
+            <div className="absolute -right-3 top-8 w-11 h-20 bg-white rounded-full border-r border-[#EDEDF0]" />
+            {/* Right Edge Lower Lobe */}
+            <div className="absolute -right-3.5 bottom-8 w-12 h-18 bg-white rounded-full border-r border-[#EDEDF0]" />
+            {/* Bottom-Left Lobe */}
+            <div className="absolute -bottom-3 left-8 w-20 h-10 bg-white rounded-full border-b border-l border-[#EDEDF0]" />
+            {/* Bottom-Center Lobe */}
+            <div className="absolute -bottom-3.5 left-32 w-22 h-11 bg-white rounded-full border-b border-[#EDEDF0]" />
+            {/* Bottom-Right Lobe (Connecting to Trail) */}
+            <div className="absolute -bottom-3 right-8 w-20 h-10 bg-white rounded-full border-b border-r border-[#EDEDF0]" />
 
-            {/* Close Button (×) positioned safely inside the upper right cloud lobe */}
-            <button
-              type="button"
-              onClick={handleClose}
-              aria-label="Close thought bubble"
-              className="absolute top-5 right-6 sm:top-6 sm:right-7 w-6 h-6 flex items-center justify-center rounded-full text-zinc-400 hover:text-zinc-800 hover:bg-zinc-100/80 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/40 z-20"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-
-            {/* Content Group Inside Cloud */}
-            <div>
-              {/* Header: Mascot + Eyebrow + Heading - ALL 100% inside */}
-              <div className="flex items-center gap-3.5 pr-6">
-                {/* 100% Inside Mascot Avatar */}
-                <div className="relative w-12 h-12 sm:w-13 sm:h-13 flex-shrink-0 bg-red-50/80 rounded-full overflow-hidden border border-red-100 p-1 flex items-center justify-center shadow-sm">
-                  <Image
-                    src="/mascot-hero.png"
-                    alt="UpShift Mascot"
-                    width={44}
-                    height={44}
-                    className="object-contain w-full h-full"
-                  />
-                </div>
-
-                {/* Eyebrow & Display Title */}
-                <div className="flex-1 min-w-0">
-                  <span className="block text-[10.5px] sm:text-[11px] font-black uppercase tracking-wider text-[#EE1C25]">
-                    READY TO LEVEL UP?
-                  </span>
-                  <h4 className="text-[15px] sm:text-[16.5px] font-black text-zinc-900 leading-tight mt-0.5 tracking-tight">
-                    Wanna upskill yourself?
-                  </h4>
-                </div>
-              </div>
-
-              {/* Body Text with generous breathing room and no edge collision */}
-              <p className="text-[12px] sm:text-[12.5px] text-zinc-600 leading-relaxed mt-3 max-w-[92%]">
-                Turn your AI knowledge into practical skills, real projects, and new opportunities with <span className="font-semibold text-zinc-900">UpShift</span>.
-              </p>
-            </div>
-
-            {/* Bottom CTA Action - safely inside cloud boundary */}
-            <div className="mt-3.5 pt-1.5 flex items-center justify-end pr-1 sm:pr-2">
+            {/* 1. Solid Interior Core: Guaranteed 100% white background behind ALL content */}
+            <div className="relative z-10 bg-white rounded-[28px] sm:rounded-[32px] border border-[#EDEDF0] p-6 sm:p-7 flex flex-col justify-between min-h-[225px] sm:min-h-[235px]">
+              
+              {/* Close Button (×) positioned safely in the top-right interior */}
               <button
                 type="button"
-                onClick={handleGetStarted}
-                className="inline-flex items-center justify-center gap-1.5 px-4.5 sm:px-5 py-2 sm:py-2.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider rounded-full shadow-[0_4px_14px_rgba(238,28,37,0.3)] hover:shadow-[0_6px_20px_rgba(238,28,37,0.45)] transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1"
+                onClick={handleClose}
+                aria-label="Close thought bubble"
+                className="absolute top-4 right-4 sm:top-5 sm:right-5 w-6 h-6 flex items-center justify-center rounded-full text-zinc-400 hover:text-zinc-800 hover:bg-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/40 z-20"
               >
-                <span>GET STARTED</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <X className="w-3.5 h-3.5" />
               </button>
+
+              {/* Top Section: Mascot + Heading Group */}
+              <div>
+                <div className="flex items-center gap-3.5 pr-6">
+                  {/* Dedicated Mascot Pocket (100% Inside with breathing room) */}
+                  <div className="relative w-12 h-12 sm:w-13 sm:h-13 flex-shrink-0 bg-red-50/80 rounded-full overflow-hidden border border-red-100/90 p-1 flex items-center justify-center shadow-sm">
+                    <Image
+                      src="/mascot-hero.png"
+                      alt="UpShift Mascot"
+                      width={44}
+                      height={44}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+
+                  {/* Eyebrow & Display Title */}
+                  <div className="flex-1 min-w-0">
+                    <span className="block text-[10.5px] sm:text-[11px] font-black uppercase tracking-wider text-[#EE1C25]">
+                      READY TO LEVEL UP?
+                    </span>
+                    <h4 className="text-[15px] sm:text-[16px] font-black text-zinc-900 leading-tight mt-0.5 tracking-tight">
+                      Wanna upskill yourself?
+                    </h4>
+                  </div>
+                </div>
+
+                {/* Body Paragraph (Centered comfortably inside safe zone) */}
+                <p className="text-[12px] sm:text-[12.5px] text-zinc-600 leading-relaxed mt-3 max-w-[96%]">
+                  Turn your AI knowledge into practical skills, real projects, and new opportunities with <span className="font-semibold text-zinc-900">UpShift</span>.
+                </p>
+              </div>
+
+              {/* Bottom CTA Action Button */}
+              <div className="mt-4 pt-1 flex items-center justify-end">
+                <button
+                  type="button"
+                  onClick={handleGetStarted}
+                  className="inline-flex items-center justify-center gap-1.5 px-4.5 sm:px-5 py-2 sm:py-2.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider rounded-full shadow-[0_4px_14px_rgba(238,28,37,0.3)] hover:shadow-[0_6px_20px_rgba(238,28,37,0.45)] transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1"
+                >
+                  <span>GET STARTED</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* 4 Descending Connected Thought Circles */}
+          {/* 6. Descending Connected Thought Trail (4 progressively smaller circular nodes) */}
           <div className="relative w-full h-10 pointer-events-none overflow-visible">
-            {/* Circle 1 (Top) */}
-            <span className="absolute right-14 top-0.5 w-[16px] h-[16px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_4px_8px_rgba(0,0,0,0.06)]" />
-            {/* Circle 2 */}
+            {/* Circle 1 (16px) */}
+            <span className="absolute right-14 top-1 w-[16px] h-[16px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_4px_8px_rgba(0,0,0,0.06)]" />
+            {/* Circle 2 (12px) */}
             <span className="absolute right-10 top-3.5 w-[12px] h-[12px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_3px_6px_rgba(0,0,0,0.05)]" />
-            {/* Circle 3 */}
+            {/* Circle 3 (8px) */}
             <span className="absolute right-6.5 top-6.5 w-[8px] h-[8px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_2px_4px_rgba(0,0,0,0.04)]" />
-            {/* Circle 4 (Bottom near launcher) */}
+            {/* Circle 4 (5px) */}
             <span className="absolute right-4 top-8.5 w-[5px] h-[5px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_1px_3px_rgba(0,0,0,0.03)]" />
           </div>
         </div>
