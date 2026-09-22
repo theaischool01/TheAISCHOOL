@@ -17,6 +17,7 @@ import WorldsLargestAIHackathon from "@in/components/home/WorldsLargestAIHackath
 import TeamPreview from "@in/components/home/TeamPreview";
 import GoogleReviews from "@in/components/home/GoogleReviews";
 import RegistrationForm from "@in/components/home/RegistrationForm";
+import UpshiftPrompt from "@in/components/home/UpshiftPrompt";
 
 import { RegionProvider, useRegion } from "@in/context/RegionContext";
 import { SectionWrapper } from "@in/components/shared/SectionWrapper";
@@ -90,6 +91,9 @@ function MainLayout() {
 
       {/* Dynamic Footer */}
       <Footer />
+
+      {/* UpShift Promotional Popup Launcher (AI School Hero state only) */}
+      {activeHeroSlide === 0 && <UpshiftPrompt />}
 
       {/* Localized WhatsApp Floating CTA */}
       <a

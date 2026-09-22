@@ -60,14 +60,14 @@ export default function HomeHero({
     };
   }, []);
 
-  // Automatic 5-second alternating timer (0-5s AI School, 5-10s UpShift, repeat)
+  // Automatic 15-second alternating timer (0-15s AI School, 15-30s UpShift, repeat)
   // When activeSlide changes (auto or manual click), interval cleanly resets.
   useEffect(() => {
     const interval = setInterval(() => {
       if (isDocumentVisibleRef.current && onSlideChange) {
         onSlideChange(activeSlide === 0 ? 1 : 0);
       }
-    }, 5000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, [activeSlide, onSlideChange]);
