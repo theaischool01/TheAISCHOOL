@@ -75,13 +75,13 @@ export default function UpshiftHeroSlide({ isActive }: UpshiftHeroSlideProps) {
           <div className="space-y-2">
             <h1 className="text-3xl sm:text-5xl lg:text-[46px] xl:text-[54px] font-black font-heading text-white tracking-tight leading-[1.08] uppercase">
               <span className="block text-white">
-                YOU KNOW <span className="text-[#EE1C25] text-[1.18em] inline-block align-baseline">AI.</span>
+                YOU KNOW <span className="text-[#EE1C25] text-[1.38em] inline-block align-baseline font-black tracking-normal">AI.</span>
               </span>
               <span className="block text-white">
                 NOW MAKE IT
               </span>
               <span className="block text-white">
-                EARN FOR <span className="text-[#EE1C25] text-[1.18em] inline-block align-baseline">YOU.</span>
+                EARN FOR <span className="text-[#EE1C25] text-[1.48em] inline-block align-baseline font-black tracking-normal">YOU.</span>
               </span>
             </h1>
           </div>
