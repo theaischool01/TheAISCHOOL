@@ -61,6 +61,7 @@ export default function HomeHero({
   }, []);
 
   // Automatic 5-second alternating timer (0-5s AI School, 5-10s UpShift, repeat)
+  // When activeSlide changes (auto or manual click), interval cleanly resets.
   useEffect(() => {
     const interval = setInterval(() => {
       if (isDocumentVisibleRef.current && onSlideChange) {
@@ -256,6 +257,52 @@ export default function HomeHero({
         </div>
 
       </div>
+
+      {/* ==================== COMPACT 2-ITEM PAGINATION CONTROL ==================== */}
+      <div 
+        className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center gap-1.5 pointer-events-auto"
+        role="tablist"
+        aria-label="Hero slide selection"
+      >
+        {/* Dot 1: AI School Hero */}
+        <button
+          type="button"
+          role="tab"
+          aria-selected={activeSlide === 0}
+          aria-label="Show AI School hero"
+          onClick={() => onSlideChange?.(0)}
+          className="group relative p-2 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E31B23] rounded-full transition-all"
+        >
+          <span
+            className={`h-2 rounded-full transition-all duration-300 ease-out block ${
+              activeSlide === 0
+                ? "w-7 bg-[#E31B23] shadow-[0_0_12px_rgba(227,27,35,0.45)]"
+                : activeSlide === 1
+                  ? "w-2 bg-white/30 hover:bg-white/50 border border-white/20"
+                  : "w-2 bg-neutral-300 hover:bg-neutral-400 border border-neutral-400/30"
+            }`}
+          />
+        </button>
+
+        {/* Dot 2: UpShift Hero */}
+        <button
+          type="button"
+          role="tab"
+          aria-selected={activeSlide === 1}
+          aria-label="Show UpShift hero"
+          onClick={() => onSlideChange?.(1)}
+          className="group relative p-2 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E31B23] rounded-full transition-all"
+        >
+          <span
+            className={`h-2 rounded-full transition-all duration-300 ease-out block ${
+              activeSlide === 1
+                ? "w-7 bg-[#E31B23] shadow-[0_0_12px_rgba(227,27,35,0.45)]"
+                : "w-2 bg-neutral-300 hover:bg-neutral-400 border border-neutral-400/30"
+            }`}
+          />
+        </button>
+      </div>
+
     </section>
   );
 }
