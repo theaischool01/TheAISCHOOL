@@ -20,6 +20,35 @@ export default function HomeHero({
   const shouldReduceMotion = useReducedMotion();
   const isDocumentVisibleRef = useRef(true);
 
+  // Touch Swipe Gesture State
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const diffX = touchStartX.current - e.changedTouches[0].clientX;
+    const diffY = touchStartY.current - e.changedTouches[0].clientY;
+
+    // Trigger slide transition on distinct horizontal swipe (> 40px)
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+      if (diffX > 0 && activeSlide === 0) {
+        // Swiped Left -> Move to UpShift Slide
+        onSlideChange?.(1);
+      } else if (diffX < 0 && activeSlide === 1) {
+        // Swiped Right -> Move back to AI School Slide
+        onSlideChange?.(0);
+      }
+    }
+
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
   // Page Visibility API handler (pause timer when tab is hidden)
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -53,8 +82,10 @@ export default function HomeHero({
   return (
     <section
       aria-label="Hero Highlights"
-      className="relative w-full overflow-hidden bg-white select-none z-10"
+      className="relative w-full overflow-hidden bg-white select-none z-10 touch-pan-y"
       style={{ minHeight: "calc(100vh - 76px)" }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* 2-Slide Horizontal Track (200% width, translates 0% <-> -50%) */}
       <div

@@ -225,7 +225,7 @@ export default function TeamPreview() {
       initials: "SR",
       image: "/in/mentors/srinath.webp",
       bio: "Startup founder and veteran AI solutions architect leading LLM pipelines, agent orchestration frameworks, and production-ready machine learning architectures.",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/srinathreddy-g/",
     },
     {
       name: "K. Spandana",
@@ -233,7 +233,7 @@ export default function TeamPreview() {
       initials: "KS",
       image: "/in/mentors/spandana.webp",
       bio: "Deep-learning operations specialist and educator driving curriculum design, student mentorship tracks, and strategic placement partnerships.",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/spandana-k-2b6a2713b/",
     },
   ];
 

@@ -18,15 +18,15 @@ const founders: TeamMember[] = [
     subRole: "The AI School",
     image: "/in/assets/srinath.png",
     chips: ["10+ Yrs Exp", "Startups", "Tech Architect"],
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/srinathreddy-g/"
   },
   {
     name: "K. Spandana",
     role: "Co-Founder",
     subRole: "The AI School",
-    image: "/in/assets/manaswini.png", // Kept mapping as per original code
+    image: "/in/assets/spandana.png",
     chips: ["8+ Yrs Exp", "Operations", "Incubation"],
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/spandana-k-2b6a2713b/"
   }
 ];
 

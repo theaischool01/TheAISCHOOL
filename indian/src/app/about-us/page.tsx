@@ -256,7 +256,7 @@ export default function AboutUsPage() {
       title: "Co-Founder",
       initials: "KS",
       image: "/in/mentors/spandana.webp",
-      linkedin: "https://www.linkedin.com/company/theaischool/",
+      linkedin: "https://www.linkedin.com/in/spandana-k-2b6a2713b/",
       desc: "Managing academic operations, mentor frameworks, and student success pipelines."
     },
     {

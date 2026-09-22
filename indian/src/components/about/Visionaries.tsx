@@ -17,14 +17,14 @@ const featuredLeaders: LeaderData[] = [
     role: "Founder / CEO", 
     bio: "Visionary technical architect anchoring elite generative AI skilling paths for corporate ecosystems and technical workforces internationally. Ex-Tech Lead & Startup Architect with a decade of deploying high-scale AI systems.",
     image: "/in/assets/srinath.png",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/srinathreddy-g/"
   },
   { 
     name: "K. Spandana", 
     role: "Co-Founder", 
     bio: "Leading operational scale and foundational incubation paths across academic institutions and startup frameworks. Manages university alignments and student success programs.",
-    image: "/in/assets/manaswini.png", // Kept mapping as per original code
-    linkedin: "#"
+    image: "/in/assets/spandana.png",
+    linkedin: "https://www.linkedin.com/in/spandana-k-2b6a2713b/"
   }
 ];
 
