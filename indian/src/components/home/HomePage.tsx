@@ -66,7 +66,7 @@ function MainLayout() {
   return (
     <main className="relative min-h-screen bg-white">
       {/* Dynamic Header with seamless dark theme when UpShift slide is active */}
-      <Header theme={activeHeroSlide === 1 ? "dark" : "light"} />
+      <Header theme="light" />
 
       {/* Dynamic Sections with alternating backgrounds */}
       {layoutConfig.map((section) => {
