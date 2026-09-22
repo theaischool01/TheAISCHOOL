@@ -89,7 +89,7 @@ export default function UpshiftPrompt() {
       ref={containerRef}
       className="fixed bottom-[104px] right-8 z-[990] select-none pointer-events-auto max-sm:bottom-[98px] max-sm:right-5"
     >
-      {/* 2. Pure Cloud Thought Bubble Container (Core + Outward Lobes Architecture) */}
+      {/* 2. Sleek Thought Popup Container */}
       {isOpen && (
         <div
           role="dialog"
@@ -97,90 +97,64 @@ export default function UpshiftPrompt() {
           aria-label="Upskill with UpShift"
           className="absolute bottom-[68px] right-0 sm:right-1 w-[355px] sm:w-[395px] max-w-[calc(100vw-36px)] z-[995] animate-in fade-in zoom-in-95 slide-in-from-bottom-4 duration-350 ease-out"
         >
-          {/* Main Bubble Shell: Unified drop shadow covering the solid core and all outer lobes */}
-          <div className="relative filter drop-shadow-[0_16px_36px_rgba(0,0,0,0.11)] drop-shadow-[0_0_20px_rgba(238,28,37,0.05)]">
+          {/* Main Card Shell with premium shadow & clean rounded corners */}
+          <div className="relative bg-white rounded-[28px] sm:rounded-[32px] border border-[#EDEDF0] shadow-[0_18px_45px_rgba(0,0,0,0.12)] p-6 sm:p-7 flex flex-col justify-between min-h-[225px] sm:min-h-[235px]">
             
-            {/* Outward Expanding Organic Cloud Lobes (Rendered seamlessly around the core) */}
-            {/* Top-Left Lobe (Behind/Around the Mascot Pocket) */}
-            <div className="absolute -top-3.5 left-5 w-18 h-12 bg-white rounded-full border-t border-l border-[#EDEDF0]" />
-            {/* Top-Center Lobe */}
-            <div className="absolute -top-4 left-24 w-24 h-12 bg-white rounded-full border-t border-[#EDEDF0]" />
-            {/* Top-Right Lobe (Behind the Close Button) */}
-            <div className="absolute -top-3.5 right-6 w-20 h-12 bg-white rounded-full border-t border-r border-[#EDEDF0]" />
-            {/* Left Edge Upper Lobe */}
-            <div className="absolute -left-3.5 top-6 w-12 h-20 bg-white rounded-full border-l border-[#EDEDF0]" />
-            {/* Left Edge Lower Lobe */}
-            <div className="absolute -left-3 bottom-6 w-11 h-18 bg-white rounded-full border-l border-[#EDEDF0]" />
-            {/* Right Edge Upper Lobe */}
-            <div className="absolute -right-3 top-8 w-11 h-20 bg-white rounded-full border-r border-[#EDEDF0]" />
-            {/* Right Edge Lower Lobe */}
-            <div className="absolute -right-3.5 bottom-8 w-12 h-18 bg-white rounded-full border-r border-[#EDEDF0]" />
-            {/* Bottom-Left Lobe */}
-            <div className="absolute -bottom-3 left-8 w-20 h-10 bg-white rounded-full border-b border-l border-[#EDEDF0]" />
-            {/* Bottom-Center Lobe */}
-            <div className="absolute -bottom-3.5 left-32 w-22 h-11 bg-white rounded-full border-b border-[#EDEDF0]" />
-            {/* Bottom-Right Lobe (Connecting to Trail) */}
-            <div className="absolute -bottom-3 right-8 w-20 h-10 bg-white rounded-full border-b border-r border-[#EDEDF0]" />
+            {/* Close Button (×) */}
+            <button
+              type="button"
+              onClick={handleClose}
+              aria-label="Close popup"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-6 h-6 flex items-center justify-center rounded-full text-zinc-400 hover:text-zinc-800 hover:bg-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/40 z-20"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
 
-            {/* 1. Solid Interior Core: Guaranteed 100% white background behind ALL content */}
-            <div className="relative z-10 bg-white rounded-[28px] sm:rounded-[32px] border border-[#EDEDF0] p-6 sm:p-7 flex flex-col justify-between min-h-[225px] sm:min-h-[235px]">
-              
-              {/* Close Button (×) positioned safely in the top-right interior */}
-              <button
-                type="button"
-                onClick={handleClose}
-                aria-label="Close thought bubble"
-                className="absolute top-4 right-4 sm:top-5 sm:right-5 w-6 h-6 flex items-center justify-center rounded-full text-zinc-400 hover:text-zinc-800 hover:bg-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/40 z-20"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-
-              {/* Top Section: Mascot + Heading Group */}
-              <div>
-                <div className="flex items-center gap-3.5 pr-6">
-                  {/* Dedicated Mascot Pocket (100% Inside with breathing room) */}
-                  <div className="relative w-12 h-12 sm:w-13 sm:h-13 flex-shrink-0 bg-red-50/80 rounded-full overflow-hidden border border-red-100/90 p-1 flex items-center justify-center shadow-sm">
-                    <Image
-                      src="/mascot-hero.png"
-                      alt="UpShift Mascot"
-                      width={44}
-                      height={44}
-                      className="object-contain w-full h-full"
-                    />
-                  </div>
-
-                  {/* Eyebrow & Display Title */}
-                  <div className="flex-1 min-w-0">
-                    <span className="block text-[10.5px] sm:text-[11px] font-black uppercase tracking-wider text-[#EE1C25]">
-                      READY TO LEVEL UP?
-                    </span>
-                    <h4 className="text-[15px] sm:text-[16px] font-black text-zinc-900 leading-tight mt-0.5 tracking-tight">
-                      Wanna upskill yourself?
-                    </h4>
-                  </div>
+            {/* Top Section: Mascot + Heading Group */}
+            <div>
+              <div className="flex items-center gap-3.5 pr-6">
+                {/* Mascot Avatar */}
+                <div className="relative w-12 h-12 sm:w-13 sm:h-13 flex-shrink-0 bg-red-50/80 rounded-full overflow-hidden border border-red-100/90 p-1 flex items-center justify-center shadow-sm">
+                  <Image
+                    src="/mascot-hero.png"
+                    alt="UpShift Mascot"
+                    width={44}
+                    height={44}
+                    className="object-contain w-full h-full"
+                  />
                 </div>
 
-                {/* Body Paragraph (Centered comfortably inside safe zone) */}
-                <p className="text-[12px] sm:text-[12.5px] text-zinc-600 leading-relaxed mt-3 max-w-[96%]">
-                  Turn your AI knowledge into practical skills, real projects, and new opportunities with <span className="font-semibold text-zinc-900">UpShift</span>.
-                </p>
+                {/* Eyebrow & Display Title */}
+                <div className="flex-1 min-w-0">
+                  <span className="block text-[10.5px] sm:text-[11px] font-black uppercase tracking-wider text-[#EE1C25]">
+                    READY TO LEVEL UP?
+                  </span>
+                  <h4 className="text-[15px] sm:text-[16px] font-black text-zinc-900 leading-tight mt-0.5 tracking-tight">
+                    Wanna upskill yourself?
+                  </h4>
+                </div>
               </div>
 
-              {/* Bottom CTA Action Button */}
-              <div className="mt-4 pt-1 flex items-center justify-end">
-                <button
-                  type="button"
-                  onClick={handleGetStarted}
-                  className="inline-flex items-center justify-center gap-1.5 px-4.5 sm:px-5 py-2 sm:py-2.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider rounded-full shadow-[0_4px_14px_rgba(238,28,37,0.3)] hover:shadow-[0_6px_20px_rgba(238,28,37,0.45)] transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1"
-                >
-                  <span>GET STARTED</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
+              {/* Body Paragraph */}
+              <p className="text-[12px] sm:text-[12.5px] text-zinc-600 leading-relaxed mt-3 max-w-[96%]">
+                Turn your AI knowledge into practical skills, real projects, and new opportunities with <span className="font-semibold text-zinc-900">UpShift</span>.
+              </p>
+            </div>
+
+            {/* Bottom CTA Action Button */}
+            <div className="mt-4 pt-1 flex items-center justify-end">
+              <button
+                type="button"
+                onClick={handleGetStarted}
+                className="inline-flex items-center justify-center gap-1.5 px-4.5 sm:px-5 py-2 sm:py-2.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider rounded-full shadow-[0_4px_14px_rgba(238,28,37,0.3)] hover:shadow-[0_6px_20px_rgba(238,28,37,0.45)] transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1"
+              >
+                <span>GET STARTED</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
 
-          {/* 6. Descending Connected Thought Trail (4 progressively smaller circular nodes) */}
+          {/* Descending Connected Thought Trail (Connecting card to launcher) */}
           <div className="relative w-full h-10 pointer-events-none overflow-visible">
             {/* Circle 1 (16px) */}
             <span className="absolute right-14 top-1 w-[16px] h-[16px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_4px_8px_rgba(0,0,0,0.06)]" />
