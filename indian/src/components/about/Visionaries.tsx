@@ -23,7 +23,7 @@ const featuredLeaders: LeaderData[] = [
     name: "K. Spandana", 
     role: "Co-Founder", 
     bio: "Leading operational scale and foundational incubation paths across academic institutions and startup frameworks. Manages university alignments and student success programs.",
-    image: "/in/assets/spandana.png",
+    image: "/in/assets/newcofounder.png",
     linkedin: "https://www.linkedin.com/in/spandana-k-2b6a2713b/"
   }
 ];
@@ -33,7 +33,7 @@ const leadershipTeam: LeaderData[] = [
     name: "ReddyReddy Manaswini", 
     role: "Head of Strategic Alliances", 
     bio: "Skilled professional with extensive experience in client relationships, stakeholder management, and establishing cross-functional enterprise bridges to connect students with corporate internships.",
-    image: "/in/assets/spandana.png", // Kept mapping as per original code
+    image: "/in/assets/newcofounder.png", // Kept mapping as per original code
     linkedin: "#"
   },
   { 

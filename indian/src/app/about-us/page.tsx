@@ -255,7 +255,7 @@ export default function AboutUsPage() {
       name: "K. Spandana",
       title: "Co-Founder",
       initials: "KS",
-      image: "/in/mentors/spandana.webp",
+      image: "/in/assets/newcofounder.png",
       linkedin: "https://www.linkedin.com/in/spandana-k-2b6a2713b/",
       desc: "Managing academic operations, mentor frameworks, and student success pipelines."
     },

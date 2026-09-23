@@ -231,7 +231,7 @@ export default function TeamPreview() {
       name: "K. Spandana",
       role: "Co-Founder",
       initials: "KS",
-      image: "/in/mentors/spandana.webp",
+      image: "/in/assets/newcofounder.png",
       bio: "Deep-learning operations specialist and educator driving curriculum design, student mentorship tracks, and strategic placement partnerships.",
       linkedin: "https://www.linkedin.com/in/spandana-k-2b6a2713b/",
     },

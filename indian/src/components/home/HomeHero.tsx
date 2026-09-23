@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -10,15 +10,36 @@ import UpshiftHeroSlide from "./UpshiftHeroSlide";
 interface HomeHeroProps {
   activeSlide?: 0 | 1;
   onSlideChange?: (slide: 0 | 1) => void;
+  isPaused?: boolean;
 }
 
 export default function HomeHero({
   activeSlide = 0,
   onSlideChange,
+  isPaused = false,
 }: HomeHeroProps) {
   const { regionConfig } = useRegion();
   const shouldReduceMotion = useReducedMotion();
   const isDocumentVisibleRef = useRef(true);
+  const [mounted, setMounted] = useState(false);
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Parallax on mouse move
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX / innerWidth - 0.5) * 20;
+      const y = (e.clientY / innerHeight - 0.5) * 20;
+      setCoords({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   // Touch Swipe Gesture State
   const touchStartX = useRef<number | null>(null);
@@ -61,8 +82,10 @@ export default function HomeHero({
   }, []);
 
   // Automatic 15-second alternating timer (0-15s AI School, 15-30s UpShift, repeat)
-  // When activeSlide changes (auto or manual click), interval cleanly resets.
+  // When isPaused is true (e.g. while popup is open), the timer does not run.
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       if (isDocumentVisibleRef.current && onSlideChange) {
         onSlideChange(activeSlide === 0 ? 1 : 0);
@@ -70,15 +93,7 @@ export default function HomeHero({
     }, 15000);
 
     return () => clearInterval(interval);
-  }, [activeSlide, onSlideChange]);
-
-  const particles = [
-    { top: "15%", left: "10%", size: 3 },
-    { top: "25%", left: "80%", size: 4 },
-    { top: "65%", left: "15%", size: 3 },
-    { top: "45%", left: "90%", size: 5 },
-    { top: "75%", left: "75%", size: 3 },
-  ];
+  }, [activeSlide, onSlideChange, isPaused]);
 
   return (
     <section
@@ -88,90 +103,46 @@ export default function HomeHero({
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* 2-Slide Horizontal Track (200% width, translates 0% <-> -50%) */}
-      <div
-        className="flex flex-row w-[200%] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
-        style={{
-          transform:
-            shouldReduceMotion || activeSlide === 0
-              ? "translate3d(0%, 0, 0)"
-              : "translate3d(-50%, 0, 0)",
-          minHeight: "calc(100vh - 76px)",
+      {/* Slide Carousel Track */}
+      <motion.div
+        className="flex w-[200%] h-full"
+        animate={{ x: activeSlide === 0 ? "0%" : "-50%" }}
+        transition={{
+          duration: shouldReduceMotion ? 0.2 : 0.7,
+          ease: [0.32, 0.72, 0, 1],
         }}
       >
-        {/* ==================== SLIDE 0: AI SCHOOL HERO ==================== */}
+        {/* ==================== SLIDE 0: Original Indian AI School Hero ==================== */}
         <div
-          aria-hidden={activeSlide !== 0}
-          className="w-1/2 flex-shrink-0 min-h-[calc(100vh-76px)] flex flex-col justify-center py-12 lg:py-20 relative overflow-hidden bg-[#fcfcfc] text-[#171717]"
+          className="relative w-1/2 flex-shrink-0 flex items-center justify-center min-h-[calc(100vh-76px)] overflow-hidden bg-white py-12 md:py-20"
+          style={{ willChange: "transform" }}
         >
-          {/* Engineering paper style background grid */}
+          {/* Subtle Grid Background */}
           <div
-            className="absolute inset-0 pointer-events-none opacity-[0.045] z-0"
+            className="absolute inset-0 z-0 pointer-events-none opacity-[0.35]"
             style={{
-              backgroundImage:
-                "linear-gradient(to right, rgba(0,0,0,0.5) 0.5px, transparent 0.5px), linear-gradient(to bottom, rgba(0,0,0,0.5) 0.5px, transparent 0.5px)",
-              backgroundSize: "30px 30px",
+              backgroundImage: `
+                linear-gradient(to right, #00000008 1px, transparent 1px),
+                linear-gradient(to bottom, #00000008 1px, transparent 1px)
+              `,
+              backgroundSize: "64px 64px",
             }}
           />
 
-          {/* Soft Red ambient radial glow centered behind content */}
-          <div className="absolute top-[50%] left-[75%] -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full bg-red-500/[0.025] blur-[150px] pointer-events-none z-0" />
-
-          {/* Floating red particles */}
-          {!shouldReduceMotion && (
-            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-              {particles.map((p, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute rounded-full bg-[#EE1C25]/20"
-                  style={{
-                    top: p.top,
-                    left: p.left,
-                    width: p.size,
-                    height: p.size,
-                  }}
-                  animate={{
-                    y: [0, -15, 0],
-                    opacity: [0.2, 0.6, 0.2],
-                  }}
-                  transition={{
-                    duration: 3 + i,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Hero Content Wrapper - 48% / 52% Composition on Desktop */}
+          {/* Hero Content Wrapper */}
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-            
             {/* Left Side (48% on desktop) */}
             <div className="w-full lg:w-[48%] space-y-7 flex flex-col items-start text-left z-20">
               {/* Heading */}
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-black font-heading text-[#171717] tracking-tight leading-[1.08]">
-                  {regionConfig.code === "in" ? (
-                    <>
-                      India's Only School to Learn AI Skills from Tech Startup{" "}
-                      <span className="text-[#EE1C25] relative inline-block">
-                        Founders & Leaders.
-                      </span>
-                    </>
-                  ) : (
-                    <>
-                      Step into the Top 1% of the{" "}
-                      <span className="text-[#EE1C25] relative inline-block">
-                        AI-Ready Workforce.
-                      </span>
-                    </>
-                  )}
+                  India&apos;s Only School to Learn AI Skills from Tech Startup{" "}
+                  <span className="text-[#EE1C25] relative inline-block">
+                    Founders & Leaders.
+                  </span>
                 </h1>
                 <p className="text-[#6B7280] font-heading font-extrabold text-xs sm:text-sm tracking-widest uppercase">
-                  {regionConfig.code === "in"
-                    ? "WHERE INTELLIGENCE MEETS INNOVATION."
-                    : "Upskill. Get Hired."}
+                  WHERE INTELLIGENCE MEETS INNOVATION.
                 </p>
               </div>
 
@@ -194,7 +165,7 @@ export default function HomeHero({
               </div>
             </div>
 
-            {/* Right Side (52% on desktop) */}
+            {/* Right Side: 3D Infinity Logo */}
             <div className="w-full lg:w-[52%] flex justify-center items-center relative overflow-visible select-none">
               <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] aspect-[4/3] flex items-center justify-center">
                 {/* Diffused shadow underneath */}
@@ -213,28 +184,19 @@ export default function HomeHero({
                 />
 
                 <motion.div
+                  style={{ x: coords.x, y: coords.y }}
                   animate={{
                     y: shouldReduceMotion ? 0 : [0, -8, 0],
                     scale: shouldReduceMotion ? 1 : [1, 1.02, 1],
                   }}
                   transition={{
-                    y: {
-                      duration: 5.0,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut",
-                    },
-                    scale: {
-                      duration: 7.0,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut",
-                    },
+                    y: { duration: 5.0, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
+                    scale: { duration: 7.0, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
                   }}
                   className="relative w-full h-full flex items-center justify-center z-20"
                 >
                   <Image
-                    src={regionConfig.assets.hero}
+                    src={regionConfig.assets.hero || "/images/in/hero-3d.png"}
                     alt="The AI School 3D Infinity Logo"
                     fill
                     priority
@@ -244,65 +206,41 @@ export default function HomeHero({
                 </motion.div>
               </div>
             </div>
-
           </div>
         </div>
 
-        {/* ==================== SLIDE 1: UPSHIFT HERO ==================== */}
+        {/* ==================== SLIDE 1: UpShift Hero Slide ==================== */}
         <div
-          aria-hidden={activeSlide !== 1}
-          className="w-1/2 flex-shrink-0 min-h-[calc(100vh-76px)] flex flex-col justify-center relative overflow-hidden bg-[#110204]"
+          className="relative w-1/2 flex-shrink-0 min-h-[calc(100vh-76px)] overflow-hidden"
+          style={{ willChange: "transform" }}
         >
-          <UpshiftHeroSlide isActive={activeSlide === 1} />
+          <UpshiftHeroSlide />
         </div>
+      </motion.div>
 
-      </div>
-
-      {/* ==================== COMPACT 2-ITEM PAGINATION CONTROL ==================== */}
-      <div 
-        className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center gap-1.5 pointer-events-auto"
-        role="tablist"
-        aria-label="Hero slide selection"
-      >
-        {/* Dot 1: AI School Hero */}
+      {/* Clickable Pagination Dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2.5 bg-black/10 backdrop-blur-sm px-3.5 py-2 rounded-full border border-black/5 shadow-xs">
         <button
           type="button"
-          role="tab"
-          aria-selected={activeSlide === 0}
-          aria-label="Show AI School hero"
           onClick={() => onSlideChange?.(0)}
-          className="group relative p-2 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E31B23] rounded-full transition-all"
-        >
-          <span
-            className={`h-2 rounded-full transition-all duration-300 ease-out block ${
-              activeSlide === 0
-                ? "w-7 bg-[#E31B23] shadow-[0_0_12px_rgba(227,27,35,0.45)]"
-                : activeSlide === 1
-                  ? "w-2 bg-white/30 hover:bg-white/50 border border-white/20"
-                  : "w-2 bg-neutral-300 hover:bg-neutral-400 border border-neutral-400/30"
-            }`}
-          />
-        </button>
-
-        {/* Dot 2: UpShift Hero */}
+          aria-label="Go to Slide 1 (The AI School)"
+          className={`h-2.5 rounded-full transition-all duration-300 ${
+            activeSlide === 0
+              ? "w-6 bg-[#EE1C25] shadow-xs"
+              : "w-2.5 bg-neutral-400/70 hover:bg-neutral-600"
+          }`}
+        />
         <button
           type="button"
-          role="tab"
-          aria-selected={activeSlide === 1}
-          aria-label="Show UpShift hero"
           onClick={() => onSlideChange?.(1)}
-          className="group relative p-2 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E31B23] rounded-full transition-all"
-        >
-          <span
-            className={`h-2 rounded-full transition-all duration-300 ease-out block ${
-              activeSlide === 1
-                ? "w-7 bg-[#E31B23] shadow-[0_0_12px_rgba(227,27,35,0.45)]"
-                : "w-2 bg-neutral-300 hover:bg-neutral-400 border border-neutral-400/30"
-            }`}
-          />
-        </button>
+          aria-label="Go to Slide 2 (UpShift)"
+          className={`h-2.5 rounded-full transition-all duration-300 ${
+            activeSlide === 1
+              ? "w-6 bg-[#EE1C25] shadow-xs"
+              : "w-2.5 bg-neutral-400/70 hover:bg-neutral-600"
+          }`}
+        />
       </div>
-
     </section>
   );
 }

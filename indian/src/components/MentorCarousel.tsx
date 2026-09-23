@@ -24,7 +24,7 @@ const founders: TeamMember[] = [
     name: "K. Spandana",
     role: "Co-Founder",
     subRole: "The AI School",
-    image: "/in/assets/spandana.png",
+    image: "/in/assets/newcofounder.png",
     chips: ["8+ Yrs Exp", "Operations", "Incubation"],
     linkedin: "https://www.linkedin.com/in/spandana-k-2b6a2713b/"
   }
@@ -78,7 +78,7 @@ const leadership: TeamMember[] = [
     name: "ReddyReddy Manaswini",
     role: "Head of Strategic Alliances",
     subRole: "Enterprise Partnerships",
-    image: "/in/assets/spandana.png", // Kept mapping as per original code
+    image: "/in/assets/newcofounder.png", // Kept mapping as per original code
     chips: ["Strategic Alliances", "Partnerships"],
     linkedin: "#"
   },

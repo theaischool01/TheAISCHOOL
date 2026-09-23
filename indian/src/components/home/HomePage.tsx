@@ -17,7 +17,7 @@ import WorldsLargestAIHackathon from "@in/components/home/WorldsLargestAIHackath
 import TeamPreview from "@in/components/home/TeamPreview";
 import GoogleReviews from "@in/components/home/GoogleReviews";
 import RegistrationForm from "@in/components/home/RegistrationForm";
-import UpshiftPrompt from "@in/components/home/UpshiftPrompt";
+import UpshiftFloatingPrompt from "@in/components/home/UpshiftFloatingPrompt";
 
 import { RegionProvider, useRegion } from "@in/context/RegionContext";
 import { SectionWrapper } from "@in/components/shared/SectionWrapper";
@@ -25,6 +25,7 @@ import { SectionWrapper } from "@in/components/shared/SectionWrapper";
 function MainLayout() {
   const { layoutConfig, regionConfig } = useRegion();
   const [activeHeroSlide, setActiveHeroSlide] = useState<0 | 1>(0);
+  const [isPopupOpen, setIsPopupOpen] = useState(true);
 
   const renderSection = (section: string) => {
     switch (section) {
@@ -34,6 +35,7 @@ function MainLayout() {
             key="hero"
             activeSlide={activeHeroSlide}
             onSlideChange={setActiveHeroSlide}
+            isPaused={isPopupOpen}
           />
         );
       case "partners":
@@ -92,8 +94,11 @@ function MainLayout() {
       {/* Dynamic Footer */}
       <Footer />
 
-      {/* UpShift Promotional Popup Launcher (AI School Hero state only) */}
-      {activeHeroSlide === 0 && <UpshiftPrompt />}
+      {/* UpShift Centered Promotional Modal & Floating Launcher */}
+      <UpshiftFloatingPrompt
+        activeHeroSlide={activeHeroSlide}
+        onOpenChange={setIsPopupOpen}
+      />
 
       {/* Localized WhatsApp Floating CTA */}
       <a
