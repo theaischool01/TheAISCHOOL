@@ -214,7 +214,7 @@ export default function HomeHero({
           className="relative w-1/2 flex-shrink-0 min-h-[calc(100vh-76px)] overflow-hidden"
           style={{ willChange: "transform" }}
         >
-          <UpshiftHeroSlide />
+          <UpshiftHeroSlide isActive={activeSlide === 1} />
         </div>
       </motion.div>
 
