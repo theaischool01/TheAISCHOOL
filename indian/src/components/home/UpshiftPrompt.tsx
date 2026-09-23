@@ -5,28 +5,32 @@ import Image from "next/image";
 import { ArrowRight, X } from "lucide-react";
 import { UPSHIFT_URL } from "@in/components/home/UpshiftHeroSlide";
 
-const AUTO_OPEN_STORAGE_KEY = "aischool_upshift_popup_auto_opened";
+const SEEN_STORAGE_KEY = "aischool_upshift_popup_seen";
 
 export default function UpshiftPrompt() {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const autoOpenTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-open after ~3 seconds once per session
+  // 1. First-visit auto-open after 2.5s (only once per device/browser via localStorage)
   useEffect(() => {
     try {
-      const alreadyAutoOpened = sessionStorage.getItem(AUTO_OPEN_STORAGE_KEY);
-      if (!alreadyAutoOpened) {
+      const alreadySeen = localStorage.getItem(SEEN_STORAGE_KEY);
+      if (!alreadySeen) {
         autoOpenTimerRef.current = setTimeout(() => {
           setIsOpen(true);
-          sessionStorage.setItem(AUTO_OPEN_STORAGE_KEY, "true");
-        }, 3000);
+          try {
+            localStorage.setItem(SEEN_STORAGE_KEY, "true");
+          } catch {
+            // ignore localStorage quota/restriction errors
+          }
+        }, 2500);
       }
     } catch {
-      // Fallback if sessionStorage is unavailable
+      // If localStorage is unavailable, fallback to session-like timeout
       autoOpenTimerRef.current = setTimeout(() => {
         setIsOpen(true);
-      }, 3000);
+      }, 2500);
     }
 
     return () => {
@@ -36,7 +40,7 @@ export default function UpshiftPrompt() {
     };
   }, []);
 
-  // Close when clicking outside
+  // 2. Close when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -55,7 +59,7 @@ export default function UpshiftPrompt() {
     };
   }, [isOpen]);
 
-  // Close on Escape key press
+  // 3. Close on Escape key press
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -79,6 +83,13 @@ export default function UpshiftPrompt() {
     setIsOpen(false);
   };
 
+  const handleToggle = () => {
+    if (autoOpenTimerRef.current) {
+      clearTimeout(autoOpenTimerRef.current);
+    }
+    setIsOpen((prev) => !prev);
+  };
+
   const handleGetStarted = () => {
     setIsOpen(false);
     window.open(UPSHIFT_URL, "_blank", "noopener,noreferrer");
@@ -87,112 +98,89 @@ export default function UpshiftPrompt() {
   return (
     <div
       ref={containerRef}
-      className="fixed bottom-[104px] right-8 z-[990] select-none pointer-events-auto max-sm:bottom-[98px] max-sm:right-5"
+      className="fixed bottom-[100px] right-8 z-[990] select-none pointer-events-auto max-sm:bottom-[96px] max-sm:right-5"
     >
-      {/* 2. Sleek Thought Popup Container */}
+      {/* Compact Utility Announcement Panel */}
       {isOpen && (
         <div
           role="dialog"
           aria-modal="false"
-          aria-label="Upskill with UpShift"
-          className="absolute bottom-[68px] right-0 sm:right-1 w-[355px] sm:w-[395px] max-w-[calc(100vw-36px)] z-[995] animate-in fade-in zoom-in-95 slide-in-from-bottom-4 duration-350 ease-out"
+          aria-label="UpShift Announcement"
+          className="absolute bottom-[58px] right-0 w-[310px] sm:w-[335px] max-w-[calc(100vw-32px)] bg-white rounded-xl border border-zinc-200/90 shadow-[0_12px_32px_rgba(0,0,0,0.12)] p-4 z-[995] animate-in fade-in zoom-in-[0.97] slide-in-from-bottom-2 duration-200 ease-out"
         >
-          {/* Main Card Shell with premium shadow & clean rounded corners */}
-          <div className="relative bg-white rounded-[28px] sm:rounded-[32px] border border-[#EDEDF0] shadow-[0_18px_45px_rgba(0,0,0,0.12)] p-6 sm:p-7 flex flex-col justify-between min-h-[225px] sm:min-h-[235px]">
-            
-            {/* Close Button (×) */}
+          {/* Header Row: [Mascot Icon + Eyebrow] ... [X Button] */}
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 min-w-0">
+              {/* Mascot Icon */}
+              <div className="relative w-6 h-6 flex-shrink-0 bg-red-50 rounded-md overflow-hidden border border-red-100 p-0.5 flex items-center justify-center">
+                <Image
+                  src="/mascot-hero.png"
+                  alt="UpShift Mascot"
+                  width={22}
+                  height={22}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <span className="text-[10px] font-black uppercase tracking-wider text-[#EE1C25] truncate">
+                READY TO LEVEL UP?
+              </span>
+            </div>
+
+            {/* Accessible Close Button */}
             <button
               type="button"
               onClick={handleClose}
-              aria-label="Close popup"
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-6 h-6 flex items-center justify-center rounded-full text-zinc-400 hover:text-zinc-800 hover:bg-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/40 z-20"
+              aria-label="Close announcement"
+              className="p-1 rounded-md text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/40 flex-shrink-0"
             >
               <X className="w-3.5 h-3.5" />
             </button>
-
-            {/* Top Section: Mascot + Heading Group */}
-            <div>
-              <div className="flex items-center gap-3.5 pr-6">
-                {/* Mascot Avatar */}
-                <div className="relative w-12 h-12 sm:w-13 sm:h-13 flex-shrink-0 bg-red-50/80 rounded-full overflow-hidden border border-red-100/90 p-1 flex items-center justify-center shadow-sm">
-                  <Image
-                    src="/mascot-hero.png"
-                    alt="UpShift Mascot"
-                    width={44}
-                    height={44}
-                    className="object-contain w-full h-full"
-                  />
-                </div>
-
-                {/* Eyebrow & Display Title */}
-                <div className="flex-1 min-w-0">
-                  <span className="block text-[10.5px] sm:text-[11px] font-black uppercase tracking-wider text-[#EE1C25]">
-                    READY TO LEVEL UP?
-                  </span>
-                  <h4 className="text-[15px] sm:text-[16px] font-black text-zinc-900 leading-tight mt-0.5 tracking-tight">
-                    Wanna upskill yourself?
-                  </h4>
-                </div>
-              </div>
-
-              {/* Body Paragraph */}
-              <p className="text-[12px] sm:text-[12.5px] text-zinc-600 leading-relaxed mt-3 max-w-[96%]">
-                Turn your AI knowledge into practical skills, real projects, and new opportunities with <span className="font-semibold text-zinc-900">UpShift</span>.
-              </p>
-            </div>
-
-            {/* Bottom CTA Action Button */}
-            <div className="mt-4 pt-1 flex items-center justify-end">
-              <button
-                type="button"
-                onClick={handleGetStarted}
-                className="inline-flex items-center justify-center gap-1.5 px-4.5 sm:px-5 py-2 sm:py-2.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-[11px] sm:text-xs font-black uppercase tracking-wider rounded-full shadow-[0_4px_14px_rgba(238,28,37,0.3)] hover:shadow-[0_6px_20px_rgba(238,28,37,0.45)] transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1"
-              >
-                <span>GET STARTED</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
           </div>
 
-          {/* Descending Connected Thought Trail (Connecting card to launcher) */}
-          <div className="relative w-full h-10 pointer-events-none overflow-visible">
-            {/* Circle 1 (16px) */}
-            <span className="absolute right-14 top-1 w-[16px] h-[16px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_4px_8px_rgba(0,0,0,0.06)]" />
-            {/* Circle 2 (12px) */}
-            <span className="absolute right-10 top-3.5 w-[12px] h-[12px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_3px_6px_rgba(0,0,0,0.05)]" />
-            {/* Circle 3 (8px) */}
-            <span className="absolute right-6.5 top-6.5 w-[8px] h-[8px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_2px_4px_rgba(0,0,0,0.04)]" />
-            {/* Circle 4 (5px) */}
-            <span className="absolute right-4 top-8.5 w-[5px] h-[5px] rounded-full bg-white border border-[#EDEDF0] shadow-[0_1px_3px_rgba(0,0,0,0.03)]" />
+          {/* Headline */}
+          <h4 className="text-[14px] sm:text-[14.5px] font-bold text-zinc-900 leading-snug mt-2 tracking-tight">
+            Wanna upskill yourself?
+          </h4>
+
+          {/* Body Copy */}
+          <p className="text-[11.5px] text-zinc-600 leading-relaxed mt-1">
+            Turn your AI knowledge into practical skills, real projects, and new opportunities with <span className="font-semibold text-zinc-900">UpShift</span>.
+          </p>
+
+          {/* Footer CTA Button */}
+          <div className="mt-3 pt-2.5 border-t border-zinc-100 flex items-center justify-end">
+            <button
+              type="button"
+              onClick={handleGetStarted}
+              className="inline-flex items-center justify-center gap-1 px-3.5 py-1.5 bg-[#EE1C25] hover:bg-[#D3131B] text-white text-[11px] font-bold uppercase tracking-wider rounded-lg shadow-sm hover:shadow transition-all duration-150 active:scale-95 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1"
+            >
+              <span>GET STARTED</span>
+              <ArrowRight className="w-3 h-3" />
+            </button>
           </div>
         </div>
       )}
 
-      {/* 1. Floating Mascot Launcher Button */}
+      {/* Floating Mascot Trigger Button */}
       <button
         type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label={isOpen ? "Close UpShift thought bubble" : "Open UpShift thought bubble"}
-        className="group relative w-14 h-14 max-sm:w-12 max-sm:h-12 bg-white rounded-full flex items-center justify-center border-2 border-red-500/30 hover:border-[#EE1C25] shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_32px_rgba(238,28,37,0.25)] hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#EE1C25] focus:ring-offset-2 overflow-visible"
+        onClick={handleToggle}
+        aria-label={isOpen ? "Close UpShift announcement" : "Open UpShift announcement"}
+        className="group relative w-12 h-12 sm:w-13 sm:h-13 bg-white rounded-full flex items-center justify-center border-2 border-red-500/30 hover:border-[#EE1C25] shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#EE1C25] focus:ring-offset-2 overflow-visible"
       >
-        {/* Subtle pulsing ring effect when closed */}
-        {!isOpen && (
-          <span className="absolute -inset-1 rounded-full bg-red-500/15 animate-ping pointer-events-none opacity-40 duration-1000" />
-        )}
-
-        {/* Mascot inside launcher */}
-        <div className="relative w-9 h-9 max-sm:w-8 max-sm:h-8 flex items-center justify-center rounded-full overflow-hidden">
+        {/* Mascot Avatar inside launcher */}
+        <div className="relative w-8 h-8 sm:w-8.5 sm:h-8.5 flex items-center justify-center rounded-full overflow-hidden">
           <Image
             src="/mascot-hero.png"
-            alt="UpShift Mascot Launcher"
-            width={36}
-            height={36}
-            className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-110"
+            alt="UpShift Mascot"
+            width={34}
+            height={34}
+            className="object-contain w-full h-full transition-transform duration-200 group-hover:scale-110"
           />
         </div>
 
         {/* Small Red Accent Indicator Dot */}
-        <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-[#EE1C25] border-2 border-white rounded-full shadow-sm" />
+        <span className="absolute top-0 right-0 w-3 h-3 bg-[#EE1C25] border-2 border-white rounded-full shadow-sm" />
       </button>
     </div>
   );
