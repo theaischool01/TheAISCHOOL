@@ -115,7 +115,7 @@ export default function UpshiftFloatingPrompt({
                   </span>
 
                   <h4 className="text-xl sm:text-2xl font-black text-zinc-900 leading-snug tracking-tight">
-                    You Know AI. Now Make It Work For You.
+                    You Know AI. Now Make It Earn For You.
                   </h4>
 
                   <p className="text-xs sm:text-[13px] text-zinc-600 mt-2 leading-relaxed">
@@ -126,18 +126,18 @@ export default function UpshiftFloatingPrompt({
 
               {/* Highlights Pill Row */}
               <div className="grid grid-cols-3 gap-2 mt-6 pt-4 border-t border-zinc-100">
-                <div className="bg-red-50/70 border border-red-100 rounded-xl py-2 px-1 text-center">
-                  <span className="block text-[10px] sm:text-[11px] font-black text-[#EE1C25] tracking-tight">
-                    PRACTICAL AI
+                <div className="bg-zinc-100/90 border border-zinc-200/80 rounded-xl py-2 px-1 text-center shadow-2xs">
+                  <span className="block text-[10px] sm:text-[11px] font-black text-black tracking-tight">
+                    BUILD THE SKILL
                   </span>
                 </div>
-                <div className="bg-red-50/70 border border-red-100 rounded-xl py-2 px-1 text-center">
-                  <span className="block text-[10px] sm:text-[11px] font-black text-[#EE1C25] tracking-tight">
+                <div className="bg-zinc-100/90 border border-zinc-200/80 rounded-xl py-2 px-1 text-center shadow-2xs">
+                  <span className="block text-[10px] sm:text-[11px] font-black text-black tracking-tight">
                     PROOF OF WORK
                   </span>
                 </div>
-                <div className="bg-red-50/70 border border-red-100 rounded-xl py-2 px-1 text-center">
-                  <span className="block text-[10px] sm:text-[11px] font-black text-[#EE1C25] tracking-tight">
+                <div className="bg-zinc-100/90 border border-zinc-200/80 rounded-xl py-2 px-1 text-center shadow-2xs">
+                  <span className="block text-[10px] sm:text-[11px] font-black text-black tracking-tight">
                     EARNING OPPORTUNITIES
                   </span>
                 </div>
