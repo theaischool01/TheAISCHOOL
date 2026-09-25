@@ -64,7 +64,7 @@ export default function UpshiftFloatingPrompt({
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Ready to Level Up with UpShift"
+          aria-label="Ready to UpShift with UpShift"
           className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200 select-none"
           onClick={handleClose}
         >
@@ -78,7 +78,7 @@ export default function UpshiftFloatingPrompt({
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-white" />
                 <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-white">
-                  READY TO LEVEL UP?
+                  READY TO UPSHIFT?
                 </span>
               </div>
 
@@ -111,7 +111,7 @@ export default function UpshiftFloatingPrompt({
                 {/* Text Content */}
                 <div className="flex-1 text-center sm:text-left">
                   <span className="inline-block text-[#EE1C25] text-[10.5px] sm:text-[11px] font-black uppercase tracking-wider mb-1">
-                    READY TO LEVEL UP?
+                    READY TO UPSHIFT?
                   </span>
 
                   <h4 className="text-xl sm:text-2xl font-black text-zinc-900 leading-snug tracking-tight">

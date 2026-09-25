@@ -148,7 +148,7 @@ export default function UpshiftPrompt() {
                 {/* Eyebrow & Display Heading */}
                 <div className="flex-1 min-w-0">
                   <span className="block text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider text-[#EE1C25]">
-                    READY TO LEVEL UP?
+                    READY TO UPSHIFT?
                   </span>
                   <h4 className="text-[14.5px] sm:text-[15.5px] font-extrabold text-zinc-900 leading-snug mt-0.5 tracking-tight">
                     Wanna upskill yourself?
